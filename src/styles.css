@@ -50,6 +50,8 @@
 @layer base {
   html {
     -webkit-font-smoothing: antialiased;
+    /* Everything sized in rem grows with this: 18px base instead of 16px. */
+    font-size: 112.5%;
   }
   html,
   body,
@@ -256,4 +258,39 @@
 }
 .page-in {
   animation: page-in 0.28s var(--ease-out);
+}
+
+/* In-game style tooltip */
+.wow-tip {
+  position: fixed;
+  z-index: 100;
+  width: max-content;
+  max-width: 320px;
+  pointer-events: none;
+  border-radius: 6px;
+  padding: 10px 12px;
+  background: linear-gradient(180deg, rgba(16, 20, 38, 0.97), rgba(8, 10, 22, 0.97));
+  box-shadow:
+    0 0 0 1px #000,
+    0 0 0 2px #8f8f9a,
+    0 8px 24px rgba(0, 0, 0, 0.6);
+  font-family: var(--font-sans);
+  text-align: left;
+}
+.wow-tip-name {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+.wow-tip-meta {
+  margin: 2px 0 0;
+  font-size: 0.85rem;
+  color: #d8d8d8;
+}
+.wow-tip-desc {
+  margin: 6px 0 0;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: #ffd100;
 }

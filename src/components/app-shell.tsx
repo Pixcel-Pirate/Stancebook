@@ -1,10 +1,11 @@
 import { useEffect, useMemo, useState } from "react";
-import { Bookmark, BookOpen, Feather, ScrollText, Search, X } from "lucide-react";
+import { Bookmark, BookOpen, Feather, ScrollText, Search, Sparkles, X } from "lucide-react";
 import { CopyButton } from "@/components/copy-button";
 import { MacroDetail } from "@/components/macro-detail";
 import { ForeverView, HowItWorks } from "@/components/guide-view";
 import { Logo } from "@/components/logo";
-import { CLASS_ICON, SpellIcon } from "@/components/spell-icon";
+import { AbilitiesView } from "@/components/abilities-view";
+import { AbilityTip, CLASS_ICON, ClassIcon, primaryAbility, SpellIcon } from "@/components/spell-icon";
 import { useFavorites } from "@/lib/favorites";
 import { guideFor } from "@/lib/guide";
 import {
@@ -24,7 +25,7 @@ import {
 import { localizeMacro, type ClientLang } from "@/lib/spells";
 import { cn } from "@/lib/utils";
 
-export type Tab = "macros" | "guide" | "forever";
+export type Tab = "macros" | "abilities" | "guide" | "forever";
 
 type State = {
   tab: Tab;
@@ -105,7 +106,7 @@ function ClassCrest({ id, size = 40, on }: { id: ClassId; size?: number; on?: bo
   const Icon = CLASS_ICON[id];
   return (
     <span
-      className="grid shrink-0 place-items-center rounded-full"
+      className="relative grid shrink-0 place-items-center overflow-hidden rounded-full"
       style={{
         width: size,
         height: size,
@@ -117,7 +118,7 @@ function ClassCrest({ id, size = 40, on }: { id: ClassId; size?: number; on?: bo
       }}
       aria-hidden
     >
-      <Icon size={Math.round(size * 0.5)} strokeWidth={1.75} />
+      <ClassIcon id={id} size={size} fallback={<Icon size={Math.round(size * 0.5)} strokeWidth={1.75} />} />
     </span>
   );
 }
@@ -201,7 +202,7 @@ export function AppShell() {
             <p className="gold-text font-deco text-2xl leading-none font-bold tracking-wide">
               Stancebook
             </p>
-            <p className="mt-1 text-[11px] font-semibold tracking-[0.25em] text-subtle uppercase">
+            <p className="mt-1 text-[0.7rem] font-semibold tracking-[0.25em] text-subtle uppercase">
               WoW Forever · Macro Skillbook
             </p>
           </div>
@@ -211,6 +212,7 @@ export function AppShell() {
           {(
             [
               ["macros", "Spellbook", BookOpen],
+              ["abilities", "Abilities", Sparkles],
               ["guide", "How they work", Feather],
               ["forever", "Forever notes", ScrollText],
             ] as const
@@ -387,14 +389,23 @@ export function AppShell() {
                                   active ? "bg-[#7c1d10]/12" : "hover:bg-[#5c442b]/10",
                                 )}
                               >
-                                <SpellIcon macro={m} size={46} glow={active} />
+                                <AbilityTip ability={primaryAbility(m)}>
+                                  <SpellIcon macro={m} size={50} glow={active} />
+                                </AbilityTip>
                                 <span className="min-w-0">
                                   <span className="block truncate font-semibold text-ink">
                                     {m.name}
                                   </span>
                                   <span className="block truncate text-xs text-ink-faint">
                                     Lv {m.level}
-                                    {m.bind && <> · Bind {m.bind}</>}
+                                    {m.bind && (
+                                      <>
+                                        {" · "}
+                                        <kbd className="rounded bg-ink px-1.5 py-px font-mono text-[0.8rem] font-bold text-gold-hi">
+                                          {m.bind}
+                                        </kbd>
+                                      </>
+                                    )}
                                     {m.forever && (
                                       <span className="font-semibold text-crimson"> · Forever</span>
                                     )}
@@ -454,7 +465,7 @@ export function AppShell() {
                           <li key={note.title}>
                             <div className="flex flex-wrap items-baseline justify-between gap-2">
                               <h3 className="font-display font-bold text-ink">{note.title}</h3>
-                              <span className="text-[11px] font-bold tracking-wider text-crimson uppercase">
+                              <span className="text-[0.7rem] font-bold tracking-wider text-crimson uppercase">
                                 {note.tag}
                               </span>
                             </div>
@@ -475,7 +486,12 @@ export function AppShell() {
           ) : (
             <section className="page h-full min-h-0 overflow-y-auto rounded-md">
               <div key={tab + classId} className="page-in px-5 py-8 sm:px-10">
-                {tab === "guide" ? (
+                {tab === "abilities" ? (
+                  <AbilitiesView
+                    classId={classId}
+                    onOpenMacro={(id) => patch({ tab: "macros", m: id })}
+                  />
+                ) : tab === "guide" ? (
                   <HowItWorks lang={lang} classId={classId} />
                 ) : (
                   <ForeverView classId={classId} />
@@ -516,7 +532,7 @@ export function AppShell() {
       {/* Action bar: the suggested binds */}
       {tab === "macros" && starters.length > 0 && (
         <footer className="flex shrink-0 items-center justify-center gap-4 border-t border-gold-lo/40 bg-gradient-to-b from-[#1b120b] to-[#0b0806] px-4 py-2.5">
-          <span className="hidden font-display text-xs font-semibold tracking-[0.2em] text-subtle uppercase md:block">
+          <span className="hidden font-display text-sm font-semibold tracking-[0.2em] text-muted uppercase md:block">
             Bind these first
           </span>
           <ul className="flex gap-2 overflow-x-auto p-1">
@@ -529,9 +545,9 @@ export function AppShell() {
                   aria-label={m.name}
                   className="relative block transition-transform hover:-translate-y-0.5"
                 >
-                  <SpellIcon macro={m} size={44} glow={selected?.id === m.id} />
+                  <SpellIcon macro={m} size={58} glow={selected?.id === m.id} />
                   {m.bind && (
-                    <span className="absolute top-0.5 right-1 font-mono text-[10px] font-bold text-white [text-shadow:0_1px_2px_#000,0_0_3px_#000]">
+                    <span className="absolute top-0.5 right-1 font-mono text-[15px] leading-none font-bold text-white [text-shadow:0_1px_2px_#000,0_0_3px_#000,0_0_3px_#000]">
                       {m.bind.replace(/Shift\+/i, "s-").replace(/Ctrl\+/i, "c-").replace(/Alt\+/i, "a-")}
                     </span>
                   )}

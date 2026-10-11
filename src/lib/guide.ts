@@ -233,6 +233,12 @@ const WARRIOR_FOREVER: ForeverNote[] = [
   { title: "Vanguard — Charge in Defensive", tag: "Protection", body: "Charge while you stay in Defensive Stance. Use the Vanguard Charge macro, not Charge/Intercept, on Protection." },
   { title: "Thunder Clap in Defensive", tag: "Protection", body: "Legal in Battle and Defensive. Slow a pack without leaving tank stance." },
   { title: "Shield Wall retune", tag: "Changed", body: "60% damage reduction for 12 seconds (Classic was 75% for 10). Still requires Defensive Stance and a shield." },
+  { title: "Rage from crits is 100%", tag: "Oct 8 patch", body: "Critical basic attacks now give full extra rage (Oct 1 added 75%, Oct 8 raised it to 100%). Heroic Strike and Cleave dumps come up more often, so keep them on an easy key." },
+  { title: "Slam is an 18-second cooldown", tag: "Sept 24 patch", body: "Slam is no longer a spammable filler. Improved Slam cuts the cooldown by 1.5 or 3 seconds. Bind it as a cooldown, not your main button." },
+  { title: "Spearing Strike wants Battle Stance", tag: "Oct 1 patch", body: "No two-hander needed anymore, but it only works in Battle Stance. Use a [stance:1] macro so one key stance-dances into it." },
+  { title: "Weapon swap macros work again", tag: "Oct 8 patch", body: "You can swap several weapons inside one global cooldown again, so a two-hander to sword and shield /equip macro is back to one press." },
+  { title: "Fury and Protection talents reshuffled", tag: "Oct 1 patch", body: "Berserker Rage is a level 30 skill, Flurry needs Death Wish (not Enrage), Bloodthirst hits harder (45% AP). Protection rows moved and Toughness is gone. Re-check your talents." },
+  { title: "Smaller fixes", tag: "Oct 8 patch", body: "Deep Wounds is required again to reach Impale. Last Stand grants the right health. Demoralizing Shout now makes threat, so it is a real AoE threat button." },
   CAP,
 ];
 
@@ -242,6 +248,10 @@ const HUNTER_FOREVER: ForeverNote[] = [
   { title: "Intimidation is a guaranteed crit", tag: "Beast Mastery", body: "/petattack first so the stun and the crit land on your target, not a leftover corpse." },
   { title: "Assist pet stance", tag: "New command", body: "/petassist: the pet fights what you fight without chain-pulling. Swap to Passive before a trap or a sheep." },
   { title: "Strider Kick", tag: "New spell", body: "Melee kick plus 30% move speed for 3 seconds. /stopattack after it so you actually run." },
+  { title: "Sniper Shot range", tag: "Oct 1 patch", body: "45-yard shot that adds 10 yards to your next 3 shots for 10 seconds. Open with it, then Aimed or Multi from far away." },
+  { title: "Disengage drops more threat", tag: "Oct 8 patch", body: "Its threat reduction is doubled. Worth a key in groups again." },
+  { title: "Expose Prey and Entrapment", tag: "Oct 8 patch", body: "Expose Prey lasts 10 seconds (was 5). Entrapment has diminishing returns and only procs when Frost Trap first goes off." },
+  { title: "Pet changes", tag: "Oct 1 patch", body: "Aggressive Mode is back on the pet spellbook tab. Furious Howl gives 40% less AP. Unleashed Fury now actually raises pet damage (Oct 8). You can't tame beasts above your level." },
   CAP,
 ];
 
@@ -249,6 +259,9 @@ const ROGUE_FOREVER: ForeverNote[] = [
   { title: "Cutthroat — Ambush without stealth", tag: "Subtlety", body: "Ambush fires while you are visible. The Ambush → Backstab macro already tries Ambush first." },
   { title: "Mutilate", tag: "Assassination", body: "Dual wield, 2 combo points, extra damage if the target is poisoned. Replaces Sinister Strike on that spec." },
   { title: "Dirty Tricks", tag: "Subtlety", body: "Cuts the energy cost of Sap and Blind. The mouseover macros do not change; they just cost less." },
+  { title: "Sap flags you for PvP", tag: "Sept 24 patch", body: "Sapping a PvP-flagged target flags you too. Watch the mouseover Sap near guards." },
+  { title: "Expose Armor and Setup fixes", tag: "Oct 1 patch", body: "A missed Expose Armor no longer wipes your combo points. Setup only gives points on the target that you dodged or resisted." },
+  { title: "Oct 8", tag: "No changes", body: "The Oct 8 patch had no rogue changes. Your macros are unchanged." },
   CAP,
 ];
 
@@ -258,6 +271,11 @@ const PALADIN_FOREVER: ForeverNote[] = [
   { title: "Seal of Fury", tag: "Protection", body: "The new tank Seal. Judging it taunts. Pair it with Righteous Fury." },
   { title: "Consecration and Kings are trained", tag: "Baseline", body: "Both at 20. Blessings last an hour, so the blessing macro is a buff-window press, not a combat weave." },
   { title: "Undead paladins", tag: "Race", body: "Undead can be paladins. Exorcism still only hits Undead and Demons." },
+  { title: "Holy Strike is a 10-second cooldown", tag: "Sept 24 patch", body: "Down from 12, and Improved Holy Strike is now baseline. Holy Power adds 15% crit to it. Press it on cooldown." },
+  { title: "Retribution Aura nerfed", tag: "Oct 8 patch", body: "It now uses your spell power (6%) and Vanilla base damage, about a third lower. Fine for leveling, no longer a tank damage plan." },
+  { title: "Holy Shield blocks 30%", tag: "Oct 1 patch", body: "Up from 20%. Redoubt was lowered to 4-20%. Holy Shield is the protection button to keep up." },
+  { title: "Seal of Fury mana fix", tag: "Oct 8 patch", body: "It no longer restores mana without the talent, and its mana return no longer creates threat. Reckoning has a 1.5-second cooldown." },
+  { title: "Righteous Fury and Vengeance", tag: "Sept 24 patch", body: "Righteous Fury's Holy threat is 60% (was 90%). Vengeance caps at 3 stacks and procs from any direct crit." },
   CAP,
 ];
 
@@ -267,6 +285,11 @@ const PRIEST_FOREVER: ForeverNote[] = [
   { title: "Shadowform is the mana fix", tag: "Shadow", body: "Half-price Shadow spells, more damage, no healing. Cancel it (Shift on the Shadowform macro) before you Flash anyone." },
   { title: "Penance and Prayer of Mending", tag: "Talents", body: "Discipline’s capstone is Penance. Holy’s is Prayer of Mending. Both are mouseover macros in this book." },
   { title: "Divine Spirit and Lightwell are trained", tag: "Baseline", body: "Divine Spirit at 30, Lightwell at 40. Lightwell is a [@cursor] drop — the raid still has to click it." },
+  { title: "Renew and Devouring Plague can crit", tag: "Sept 24 & Oct 1", body: "Renew crits (Sept 24) and Devouring Plague crits (Oct 1). Inner Focus no longer boosts periodic crits, so save it for a big direct heal or Mind Blast." },
+  { title: "Power Word: Shield can overwrite", tag: "Sept 24 patch", body: "A shield can replace an existing one on a target without Weakened Soul. The mouseover Shield macro just works." },
+  { title: "Penance retuned", tag: "Oct 8 patch", body: "Penance is now a true 2-second channel, with damage and healing lowered to match. Rank 1 costs 50% more mana. Don't move or recast during the channel." },
+  { title: "Shadow Word: Death and Shadow Weaving", tag: "Oct 1 patch", body: "Early Demise now scales with target health, so Death is best as an execute. Shadow Weaving can no longer fail to apply." },
+  { title: "Low-rank heals and Smite", tag: "Oct 8 patch", body: "Smite ranks 1-4, Lesser Heal and early Heal ranks were rebalanced. Downrank macros still work; the numbers just changed." },
   CAP,
 ];
 
@@ -276,6 +299,11 @@ const SHAMAN_FOREVER: ForeverNote[] = [
   { title: "Fire Nova is a spell", tag: "Changed", body: "It no longer eats the Fire totem slot. Drop Searing/Magma, then Nova explodes from that totem." },
   { title: "Lightning Bolt is faster", tag: "Changed", body: "Max rank is 2.5s (was 3s). Ghost Wolf is a 2s cast. Maelstrom Weapon can make bolts instant." },
   { title: "Water Shield", tag: "New shield", body: "Restoration’s mana shield. You still only wear one shield. Lightning Shield remains the melee default." },
+  { title: "Flametongue Totem rework", tag: "Sept 24 patch", body: "No duration, replaced instantly by another Fire totem, and it does not stack with Flametongue Weapon or Windfury Totem. Pick one." },
+  { title: "Air totems don't stack", tag: "Sept 24 patch", body: "Tranquil Air, Windfury and Grace of Air no longer stack. Drop one Air totem per group." },
+  { title: "Totemic Recall gives mana again", tag: "Oct 1 patch", body: "Recall your totems after a pull to get mana back. Disease Cleansing Totem lasts 5 minutes." },
+  { title: "Fire Nova keeps Elemental Focus", tag: "Oct 8 patch", body: "Fire Nova no longer eats your Clearcasting. Lightning Bolt ranks 1-5 were rebalanced, and Water Shield's tooltip now shows the mana it restores." },
+  { title: "Lava Burst and Riptide", tag: "Sept 24 patch", body: "Lava Burst ranks 1-2 hit harder and Riptide can crit. Rage of the Farseer no longer adds cast speed." },
   CAP,
 ];
 
@@ -284,6 +312,10 @@ const MAGE_FOREVER: ForeverNote[] = [
   { title: "Arcane is a real spec", tag: "Arcane", body: "Arcane Blast stacks (up to four) make the next Blast harder and more expensive. Spend into Missiles when the mana hurts." },
   { title: "Ice Lance and Fingers of Frost", tag: "Frost", body: "Instant. Weak unless the target is frozen. Not a Frostbolt replacement." },
   { title: "Heating Up", tag: "Fire", body: "Fire’s crit-chain talent. The Fireball and Fire Blast macros do not change." },
+  { title: "Hot Streak is now Heating Up", tag: "Oct 1 patch", body: "Renamed, and it lasts 20 seconds (was 15). Combustion has 3 charges (was 4). If a macro says Hot Streak, update the name." },
+  { title: "Arcane Missiles line of sight", tag: "Sept 24 patch", body: "Line of sight is only checked when the channel starts, so missiles keep flying if you or the target steps behind a pillar." },
+  { title: "Impact fix", tag: "Oct 8 patch", body: "Impact no longer procs from Flamestrike's burn. Frostbolt, Fireball and Arcane Missiles ranks were smoothed out." },
+  { title: "Winter's Chill and Improved Scorch", tag: "Oct 1 patch", body: "Neither debuff rolls to resist twice anymore, so they stack up more reliably." },
   CAP,
 ];
 
@@ -292,6 +324,10 @@ const WARLOCK_FOREVER: ForeverNote[] = [
   { title: "Incinerate, Wrack, Demonic Pact", tag: "Capstones", body: "Destruction’s 31 is Incinerate. Affliction’s is Wrack. Demonology’s is Demonic Pact." },
   { title: "The pet still needs /petattack", tag: "Unchanged", body: "Put /petattack on Shadow Bolt and Corruption. Keep a hard recall for Fear, Banish, and Howl." },
   { title: "Sayaad", tag: "Rename", body: "The Succubus line is the Sayaad. Summon names may say either — open the spellbook." },
+  { title: "Summoning stuns the current pet", tag: "Oct 8 patch", body: "Your old pet is stunned while a new one is summoned. Don't swap pets mid-pull." },
+  { title: "Hellfire can crit", tag: "Oct 1 patch", body: "Drain Soul now stops cleanly when you cast something else, so you can clip it on purpose. Soul Harvesting is renamed Soul Harvest." },
+  { title: "Shadow Bolt and Demonic Brand", tag: "Oct 8 patch", body: "Shadow Bolt ranks 1-4 were rebalanced. Demonic Brand's pet bonus only makes high threat with Shadow damage." },
+  { title: "Pet tab", tag: "Oct 1 patch", body: "Aggressive Mode is back on the pet spellbook tab. Voidwalker Sacrifice scales with 10% of spell healing." },
   CAP,
 ];
 
@@ -301,6 +337,11 @@ const DRUID_FOREVER: ForeverNote[] = [
   { title: "Eclipse", tag: "Balance", body: "Wrath shortens the next Starfires. Two keys, one loop. Moonfire remains the instant." },
   { title: "Wild Growth", tag: "Restoration", body: "AoE HoT that seeds from the ally you mouseover. Stacked melee loves it." },
   { title: "Nature’s Grasp and Omen of Clarity are trained", tag: "Baseline", body: "Grasp at 10, Omen at 20. Improved Mark of the Wild is also baseline." },
+  { title: "Mangle is now Primal Bite", tag: "Sept 24 patch", body: "The macros use Primal Bite. Its debuff was removed and its threat roughly doubled on Oct 1, so it is the bear and cat builder." },
+  { title: "Tiger's Fury is gone", tag: "Oct 1 patch", body: "Removed. New talent Shifting Power turns mana into 40 Energy in Cat Form (16-second cooldown, not usable at full Energy)." },
+  { title: "Bear threat and rage", tag: "Oct 8 patch", body: "Bear and Dire Bear threat bonus is 50% (was 30%), crits give full extra rage, and Demoralizing Roar now makes threat. Swipe scales with Attack Power again." },
+  { title: "Mana potions in forms", tag: "Oct 8 patch", body: "You can drink mana potions in Bear and Cat Form now, and Cat Form no longer lowers max health. Forms are immune to Disarm." },
+  { title: "Wrath, Thorns and HoT crits", tag: "Sept 24 & Oct 8", body: "Wrath hits about 50% harder. Rejuvenation, Tranquility and Wild Growth can crit. Thorns is back to Vanilla values with a 6% spell power ratio." },
   CAP,
 ];
 
@@ -312,7 +353,7 @@ const GUIDES: Record<ClassId, ClassGuide> = {
     intro: "Macros in WoW Forever are Classic-era: 255 characters, no rotation brain, conditions checked left to right. The rules below are the ones that actually change how a warrior plays.",
     sections: [RANK, STARTATTACK, ...CORE.slice(0, 1), STANCE, ...CORE.slice(1, 3), COMBAT, ...CORE.slice(3)],
     foreverHeading: "What changed for warriors",
-    foreverIntro: "Victory Rush, baseline Tactical Mastery, and Charge in Defensive Stance are the three that actually change which macros you bind.",
+    foreverIntro: "Updated with the Sept 24, Oct 1 and Oct 8 patches (Oct 9 and 10 had no class changes). Victory Rush, baseline Tactical Mastery, and Charge in Defensive Stance are the three that actually change which macros you bind.",
     forever: WARRIOR_FOREVER,
   },
   paladin: {
@@ -320,7 +361,7 @@ const GUIDES: Record<ClassId, ClassGuide> = {
     intro: "A paladin’s extra rule is Seals: Judgement no longer eats them, so your keys change.",
     sections: [rankExample("/cast Holy Strike", "Same rule for Flash of Light and Judgement."), STARTATTACK, SEALS, MOUSEHEAL, GCD, TARGETS, MODS, STOPCAST, SHOWTOOLTIP, CANNOT],
     foreverHeading: "What changed for paladins",
-    foreverIntro: "Holy Strike, Seal of Fury, Judgement that keeps the Seal, and baseline Consecration are the four that change which macros you bind.",
+    foreverIntro: "Updated with the Sept 24, Oct 1 and Oct 8 patches (Oct 9 and 10 had no class changes). Holy Strike, Seal of Fury, Judgement that keeps the Seal, and baseline Consecration are the four that change which macros you bind.",
     forever: PALADIN_FOREVER,
   },
   hunter: {
@@ -328,7 +369,7 @@ const GUIDES: Record<ClassId, ClassGuide> = {
     intro: "A hunter’s extra rule is the pet: it does not assist like a retail pet. You send it, or it sits on a corpse.",
     sections: [rankExample("/cast Serpent Sting", "Hunters almost never want a downrank."), PET_ATTACK, AUTO_SHOT, PET_STANCES, GCD, TARGETS, MODS, COMBAT, SHOWTOOLTIP, CANNOT],
     foreverHeading: "What changed for hunters",
-    foreverIntro: "Aimed Shot is trained, the pet gained Assist, and Summon Hawk / Strider Kick sit on shared cooldowns.",
+    foreverIntro: "Updated with the Sept 24, Oct 1 and Oct 8 patches (Oct 9 and 10 had no class changes). Aimed Shot is trained, the pet gained Assist, and Summon Hawk / Strider Kick sit on shared cooldowns.",
     forever: HUNTER_FOREVER,
   },
   rogue: {
@@ -336,7 +377,7 @@ const GUIDES: Record<ClassId, ClassGuide> = {
     intro: "A rogue’s extra rules are stealth, combo points, and /startattack so you never stand still between builders.",
     sections: [rankExample("/cast Sinister Strike", "A ranked icon from the spellbook will not upgrade when you train."), STARTATTACK, COMBO, STEALTH, GCD, TARGETS, MODS, COMBAT, SHOWTOOLTIP, CANNOT],
     foreverHeading: "What changed for rogues",
-    foreverIntro: "Cutthroat, Mutilate, and Dirty Tricks are the three that change which macros you bind.",
+    foreverIntro: "Updated with the Sept 24, Oct 1 and Oct 8 patches (Oct 9 and 10 had no class changes). Cutthroat, Mutilate, and Dirty Tricks are the three that change which macros you bind.",
     forever: ROGUE_FOREVER,
   },
   priest: {
@@ -344,7 +385,7 @@ const GUIDES: Record<ClassId, ClassGuide> = {
     intro: "A priest’s extra rule is mouseover: never tab onto a friend if you can help it.",
     sections: [rankExample("/cast Flash Heal", "Downranks are a conscious choice, not a spellbook icon."), MOUSEHEAL, GCD, TARGETS, MODS, STOPCAST, SHOWTOOLTIP, CANNOT],
     foreverHeading: "What changed for priests",
-    foreverIntro: "Fear Ward for every race, SW:Death from the trainer, a Shadowform that actually has mana, and Penance / Prayer of Mending.",
+    foreverIntro: "Updated with the Sept 24, Oct 1 and Oct 8 patches (Oct 9 and 10 had no class changes). Fear Ward for every race, SW:Death from the trainer, a Shadowform that actually has mana, and Penance / Prayer of Mending.",
     forever: PRIEST_FOREVER,
   },
   shaman: {
@@ -352,7 +393,7 @@ const GUIDES: Record<ClassId, ClassGuide> = {
     intro: "A shaman’s extra rules are a shared shock cooldown and a totem bar that finally drops four at once.",
     sections: [rankExample("/cast Lightning Bolt", "Healing Wave downranks are a separate bind if you want them."), SHOCKS, TOTEMS, STARTATTACK, MOUSEHEAL, GCD, TARGETS, MODS, STOPCAST, SHOWTOOLTIP, CANNOT],
     foreverHeading: "What changed for shaman",
-    foreverIntro: "Call of the Elements, Lava Burst, Riptide, Fire Nova as a spell, and a faster Lightning Bolt.",
+    foreverIntro: "Updated with the Sept 24, Oct 1 and Oct 8 patches (Oct 9 and 10 had no class changes). Call of the Elements, Lava Burst, Riptide, Fire Nova as a spell, and a faster Lightning Bolt.",
     forever: SHAMAN_FOREVER,
   },
   mage: {
@@ -360,7 +401,7 @@ const GUIDES: Record<ClassId, ClassGuide> = {
     intro: "A mage’s extra rule is /stopcasting: a bolt in progress will eat Blink, Counterspell, and sheep if you let it.",
     sections: [rankExample("/cast Frostbolt", "Rank 1 Frostbolt as a snare is a different macro, on purpose."), STOPCAST, AUTO_SHOT, GCD, TARGETS, MODS, SHOWTOOLTIP, CANNOT],
     foreverHeading: "What changed for mages",
-    foreverIntro: "Frostfire Bolt is trained, Arcane Blast makes Arcane a spec, and Ice Lance exists for shatter windows.",
+    foreverIntro: "Updated with the Sept 24, Oct 1 and Oct 8 patches (Oct 9 and 10 had no class changes). Frostfire Bolt is trained, Arcane Blast makes Arcane a spec, and Ice Lance exists for shatter windows.",
     forever: MAGE_FOREVER,
   },
   warlock: {
@@ -368,7 +409,7 @@ const GUIDES: Record<ClassId, ClassGuide> = {
     intro: "A warlock’s extra rule is the same as the hunter’s: the demon does not assist. You send it, or it sits on a corpse.",
     sections: [rankExample("/cast Shadow Bolt", "Corruption and Bane of Agony follow the same rule."), PET_ATTACK, BANES, GCD, TARGETS, MODS, STOPCAST, SHOWTOOLTIP, CANNOT],
     foreverHeading: "What changed for warlocks",
-    foreverIntro: "Agony and Doom are Banes, Destruction’s capstone is Incinerate, and the pet still needs /petattack on the filler.",
+    foreverIntro: "Updated with the Sept 24, Oct 1 and Oct 8 patches (Oct 9 and 10 had no class changes). Agony and Doom are Banes, Destruction’s capstone is Incinerate, and the pet still needs /petattack on the filler.",
     forever: WARLOCK_FOREVER,
   },
   druid: {
@@ -376,7 +417,7 @@ const GUIDES: Record<ClassId, ClassGuide> = {
     intro: "A druid’s extra rules are numbered forms and mouseover heals so you can stay in Cat on the kill.",
     sections: [rankExample("/cast Rejuvenation", "Healing Touch downranks are a separate bind if you want them."), FORMS, STARTATTACK, MOUSEHEAL, GCD, TARGETS, MODS, SHOWTOOLTIP, CANNOT],
     foreverHeading: "What changed for druids",
-    foreverIntro: "Lacerate, Primal Bite, Berserk, Eclipse, and Wild Growth are the ones that change keys.",
+    foreverIntro: "Updated with the Sept 24, Oct 1 and Oct 8 patches (Oct 9 and 10 had no class changes). Lacerate, Primal Bite, Berserk, Eclipse, and Wild Growth are the ones that change keys.",
     forever: DRUID_FOREVER,
   },
 };

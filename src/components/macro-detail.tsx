@@ -1,5 +1,6 @@
 import { ArrowLeft, Bookmark, BookmarkCheck, Swords } from "lucide-react";
-import { SpellIcon } from "@/components/spell-icon";
+import { AbilityTip, primaryAbility, SpellIcon } from "@/components/spell-icon";
+import { findAbility, spellsInLine, type Ability } from "@/lib/abilities";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { CopyButton } from "@/components/copy-button";
@@ -33,6 +34,15 @@ export function MacroDetail({
   const specIds = meta.specs
     .map((s) => s.id)
     .filter((id): id is Spec => id !== "all");
+  const abilities = [
+    ...new Map(
+      macro.lines
+        .flatMap((l) => spellsInLine(l.code))
+        .map((n) => findAbility(macro.classId, n))
+        .filter((a): a is Ability => Boolean(a))
+        .map((a) => [a.name, a] as const),
+    ).values(),
+  ];
   const everySpec = specIds.every((id) => macro.specs.includes(id));
 
   return (
@@ -60,7 +70,9 @@ export function MacroDetail({
           <Badge>Lv {macro.level}+</Badge>
         </div>
         <div className="flex items-center gap-4">
-          <SpellIcon macro={macro} size={64} glow />
+          <AbilityTip ability={primaryAbility(macro)}>
+            <SpellIcon macro={macro} size={64} glow />
+          </AbilityTip>
           <h2 className="font-display text-3xl font-bold text-ink">{macro.name}</h2>
         </div>
         <p className="max-w-prose text-base leading-relaxed text-ink-soft">{macro.summary}</p>
@@ -78,9 +90,9 @@ export function MacroDetail({
           {saved ? "Saved" : "Save"}
         </Button>
         {macro.bind && (
-          <span className="ml-auto font-mono text-xs text-ink-faint">
-            Suggested bind{" "}
-            <kbd className="rounded bg-ink px-1.5 py-0.5 font-bold text-gold-hi">
+          <span className="ml-auto flex items-center gap-2 font-display text-sm font-semibold text-ink-soft">
+            Suggested bind
+            <kbd className="min-w-10 rounded-md bg-ink px-3 py-1.5 text-center font-mono text-lg font-bold text-gold-hi shadow-[0_0_0_1px_var(--color-gold-lo)]">
               {macro.bind}
             </kbd>
           </span>
@@ -88,6 +100,30 @@ export function MacroDetail({
       </div>
 
       <MacroCode text={text} lang={lang} />
+
+      {abilities.length > 0 && (
+        <section>
+          <h3 className="mb-3 font-display text-sm font-bold tracking-[0.18em] text-crimson uppercase">
+            Abilities used
+          </h3>
+          <ul className="flex flex-wrap gap-2">
+            {abilities.map((a) => (
+              <li key={a.name}>
+                <AbilityTip ability={a}>
+                  <span
+                    tabIndex={0}
+                    className="flex items-center gap-2 rounded-md bg-[#fff8e8]/35 py-1 pr-3 pl-1 shadow-[inset_0_0_0_1px_var(--color-ink-line)] outline-none focus-visible:ring-2 focus-visible:ring-crimson"
+                  >
+                    <SpellIcon ability={a} size={34} />
+                    <span className="font-semibold text-ink">{a.name}</span>
+                  </span>
+                </AbilityTip>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-2 text-xs text-ink-faint italic">Hover or tab to an ability to see its tooltip.</p>
+        </section>
+      )}
 
       <section>
         <h3 className="mb-3 font-display text-sm font-bold tracking-[0.18em] text-crimson uppercase">
