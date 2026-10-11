@@ -4,7 +4,7 @@ WoW Forever macro skillbook, built with Vite + React + Tailwind.
 
 ## Download (Windows)
 
-**[⬇ Download Stancebook-Setup.exe](https://github.com/saucie83-ship-it/stancebook/raw/main/Stancebook-Setup.exe)** (2 MB)
+**[⬇ Download Stancebook-Setup.exe](https://github.com/saucie83-ship-it/Stancebook/releases/latest/download/Stancebook-Setup.exe)** (2 MB)
 
 Run it: it installs for your user only (no admin rights) and puts a Stancebook shortcut on your desktop. Windows may say "Windows protected your PC" because the app isn't code-signed; click **More info**, then **Run anyway**.
 
