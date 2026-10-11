@@ -89,7 +89,9 @@ function IconArt({ icon, size, fallback }: { icon?: string; size: number; fallba
   const [failed, setFailed] = useState(false);
   if (!icon || failed) return <>{fallback}</>;
   return (
-    <img
+    <>
+      {fallback}
+      <img
       src={ICON_CDN + icon + ".jpg"}
       alt=""
       width={size}
@@ -98,7 +100,8 @@ function IconArt({ icon, size, fallback }: { icon?: string; size: number; fallba
       draggable={false}
       onError={() => setFailed(true)}
       className="absolute inset-0 size-full rounded-[inherit] object-cover"
-    />
+      />
+    </>
   );
 }
 
