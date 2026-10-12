@@ -1,25 +1,22 @@
 import { highlightLine } from "@/lib/highlight";
-import { charCount, type ClientLang } from "@/lib/spells";
 import { cn } from "@/lib/utils";
 
 export function MacroCode({
   text,
-  lang,
   className,
 }: {
   text: string;
-  lang: ClientLang;
   className?: string;
 }) {
   const lines = text.split("\n");
-  const n = charCount(text, lang);
+  const n = text.length;
   const over = n > 255;
 
   return (
     <div className={cn("code-panel overflow-hidden", className)}>
       <div className="flex items-center justify-between gap-3 border-b border-gold-lo/40 px-4 py-2">
         <span className="font-mono text-xs tracking-wide text-subtle uppercase">
-          Macro · {lang === "fr" ? "French client" : "English client"}
+          Macro
         </span>
         <span
           className={cn(

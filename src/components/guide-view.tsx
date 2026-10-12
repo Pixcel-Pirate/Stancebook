@@ -2,9 +2,8 @@ import { CopyButton } from "@/components/copy-button";
 import { MacroCode } from "@/components/macro-code";
 import { guideFor, HOW_TO_CREATE } from "@/lib/guide";
 import type { ClassId } from "@/lib/macros";
-import type { ClientLang } from "@/lib/spells";
 
-export function HowItWorks({ lang, classId }: { lang: ClientLang; classId: ClassId }) {
+export function HowItWorks({ classId }: { classId: ClassId }) {
   const guide = guideFor(classId);
 
   return (
@@ -104,7 +103,7 @@ export function HowItWorks({ lang, classId }: { lang: ClientLang; classId: Class
                 </p>
                 <CopyButton text={section.example.code} size="icon-sm" label="Copy example" />
               </div>
-              <MacroCode text={section.example.code} lang={lang} />
+              <MacroCode text={section.example.code} />
               <p className="text-sm text-ink-soft">{section.example.note}</p>
             </div>
           )}
@@ -148,7 +147,7 @@ export function ForeverView({ classId }: { classId: ClassId }) {
       </ul>
       <p className="text-xs leading-relaxed text-ink-faint">
         Unofficial companion for World of Warcraft: Forever. Spell names match
-        the English (or French) game client so /cast works. Not affiliated with
+        the English game client so /cast works. Not affiliated with
         Blizzard Entertainment.
       </p>
     </div>

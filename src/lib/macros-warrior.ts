@@ -404,7 +404,6 @@ export const WARRIOR_MACROS: MacroDraft[] = [
     caveats: [
       "Do not write /stopmacro /focus on one line. /stopmacro takes a condition in brackets, then the next line is a separate command.",
       "Shield Bash still requires Defensive Stance and a shield. Pair with the stance-swap bash if you dance out of Defensive.",
-      "French client: Coup de bouclier. Toggle Macro language to FR before copying.",
     ],
   },
   {
@@ -697,7 +696,6 @@ export const WARRIOR_MACROS: MacroDraft[] = [
       { code: "/cast Thunder Clap(Rank 1)", why: "Cheap slow." },
     ],
     caveats: [
-      "French client: use Coup de tonnerre(Rang 1) — toggle Macro language to French and copy again.",
     ],
   },
   {

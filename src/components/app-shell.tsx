@@ -7,6 +7,7 @@ import { Logo } from "@/components/logo";
 import { AbilitiesView } from "@/components/abilities-view";
 import { TalentsView } from "@/components/talents-view";
 import { UpdateButton } from "@/components/update-button";
+import { ActionBar, dragMacro } from "@/components/action-bar";
 import { AbilityTip, CLASS_ICON, ClassIcon, primaryAbility, SpellIcon } from "@/components/spell-icon";
 import { useFavorites } from "@/lib/favorites";
 import { guideFor } from "@/lib/guide";
@@ -24,7 +25,6 @@ import {
   macroText,
   type Spec,
 } from "@/lib/macros";
-import { localizeMacro, type ClientLang } from "@/lib/spells";
 import { cn } from "@/lib/utils";
 
 export type Tab = "macros" | "abilities" | "talents" | "guide" | "forever";
@@ -36,17 +36,16 @@ type State = {
   cat: Category | "all";
   q: string;
   m?: string;
-  lang: ClientLang;
 };
 
 const PREFS_KEY = "stancebook-prefs";
 
-function loadPrefs(): Pick<State, "c" | "lang"> {
+function loadPrefs(): Pick<State, "c"> {
   try {
     const raw = JSON.parse(localStorage.getItem(PREFS_KEY) ?? "{}") as Partial<State>;
-    return { c: isClassId(raw.c) ? raw.c : "warrior", lang: raw.lang === "fr" ? "fr" : "en" };
+    return { c: isClassId(raw.c) ? raw.c : "warrior" };
   } catch {
-    return { c: "warrior", lang: "en" };
+    return { c: "warrior" };
   }
 }
 
@@ -136,7 +135,7 @@ export function AppShell() {
   const { has, toggle } = useFavorites();
   const [savedOnly, setSavedOnly] = useState(false);
 
-  const { tab, c: classId, lang } = state;
+  const { tab, c: classId } = state;
   const meta = classMeta(classId);
   const spec = state.spec;
   const cat = state.cat;
@@ -148,11 +147,11 @@ export function AppShell() {
 
   useEffect(() => {
     try {
-      localStorage.setItem(PREFS_KEY, JSON.stringify({ c: classId, lang }));
+      localStorage.setItem(PREFS_KEY, JSON.stringify({ c: classId }));
     } catch {
       /* storage unavailable: prefs just won't persist */
     }
-  }, [classId, lang]);
+  }, [classId]);
 
   function patch(p: Partial<State>) {
     setState((s) => ({ ...s, ...p }));
@@ -240,22 +239,6 @@ export function AppShell() {
 
         <div className="ml-auto">
           <UpdateButton />
-        </div>
-        <div className="flex items-center rounded-md p-0.5 btn-leather">
-          {(["en", "fr"] as const).map((l) => (
-            <button
-              key={l}
-              type="button"
-              onClick={() => patch({ lang: l })}
-              aria-pressed={lang === l}
-              className={cn(
-                "h-8 min-w-10 rounded-sm px-2 text-xs font-bold tracking-wider uppercase transition-colors",
-                lang === l ? "btn-gold" : "text-muted hover:text-gold-hi",
-              )}
-            >
-              {l}
-            </button>
-          ))}
         </div>
       </header>
 
@@ -383,12 +366,14 @@ export function AppShell() {
                       </div>
                       <ul className="grid gap-x-4 gap-y-1 xl:grid-cols-2">
                         {section.items.map((m) => {
-                          const text = localizeMacro(macroText(m), lang);
+                          const text = macroText(m);
                           const active = selected?.id === m.id;
                           return (
                             <li key={m.id} className="group relative">
                               <button
                                 type="button"
+                                draggable
+                                onDragStart={(e) => dragMacro(e, m.id)}
                                 onClick={() => patch({ m: m.id })}
                                 className={cn(
                                   "flex w-full items-center gap-3 rounded-md p-2 pr-12 text-left transition-colors",
@@ -449,7 +434,6 @@ export function AppShell() {
                   {selected ? (
                     <MacroDetail
                       macro={selected}
-                      lang={lang}
                       saved={has(selected.id)}
                       onToggleSave={() => toggle(selected.id)}
                       onBack={() => patch({ m: undefined })}
@@ -500,7 +484,7 @@ export function AppShell() {
                 ) : tab === "talents" ? (
                   <TalentsView classId={classId} />
                 ) : tab === "guide" ? (
-                  <HowItWorks lang={lang} classId={classId} />
+                  <HowItWorks classId={classId} />
                 ) : (
                   <ForeverView classId={classId} />
                 )}
@@ -537,33 +521,9 @@ export function AppShell() {
         </nav>
       </div>
 
-      {/* Action bar: the suggested binds */}
-      {tab === "macros" && starters.length > 0 && (
-        <footer className="flex shrink-0 items-center justify-center gap-4 border-t border-gold-lo/40 bg-gradient-to-b from-[#1b120b] to-[#0b0806] px-4 py-2.5">
-          <span className="hidden font-display text-sm font-semibold tracking-[0.2em] text-muted uppercase md:block">
-            Bind these first
-          </span>
-          <ul className="flex gap-2 overflow-x-auto p-1">
-            {starters.map((m) => (
-              <li key={m.id}>
-                <button
-                  type="button"
-                  onClick={() => patch({ m: m.id })}
-                  title={m.name}
-                  aria-label={m.name}
-                  className="relative block transition-transform hover:-translate-y-0.5"
-                >
-                  <SpellIcon macro={m} size={58} glow={selected?.id === m.id} />
-                  {m.bind && (
-                    <span className="absolute top-0.5 right-1 font-mono text-[15px] leading-none font-bold text-white [text-shadow:0_1px_2px_#000,0_0_3px_#000,0_0_3px_#000]">
-                      {m.bind.replace(/Shift\+/i, "s-").replace(/Ctrl\+/i, "c-").replace(/Alt\+/i, "a-")}
-                    </span>
-                  )}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </footer>
+      {/* Action bar: drag macros in */}
+      {tab === "macros" && (
+        <ActionBar classId={classId} starters={starters} selectedId={selected?.id} onOpen={(id) => patch({ m: id })} />
       )}
     </div>
   );

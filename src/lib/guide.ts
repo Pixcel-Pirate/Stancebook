@@ -224,7 +224,7 @@ const BANES: GuideSection = {
 const CAP: ForeverNote = {
   title: "255-character cap",
   tag: "Unchanged",
-  body: "Forever did not raise the cap. Every card shows the count. If a French translation pushes you over, drop #showtooltip.",
+  body: "Forever did not raise the cap. Every card shows the count. If you go over, drop #showtooltip first.",
 };
 
 const WARRIOR_FOREVER: ForeverNote[] = [

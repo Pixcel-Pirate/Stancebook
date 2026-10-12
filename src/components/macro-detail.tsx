@@ -14,22 +14,19 @@ import {
   SPEC_LABEL,
   type Spec,
 } from "@/lib/macros";
-import { localizeMacro, type ClientLang } from "@/lib/spells";
 
 export function MacroDetail({
   macro,
-  lang,
   saved,
   onToggleSave,
   onBack,
 }: {
   macro: Macro;
-  lang: ClientLang;
   saved: boolean;
   onToggleSave: () => void;
   onBack?: () => void;
 }) {
-  const text = localizeMacro(macroText(macro), lang);
+  const text = macroText(macro);
   const meta = classMeta(macro.classId);
   const specIds = meta.specs
     .map((s) => s.id)
@@ -99,7 +96,7 @@ export function MacroDetail({
         )}
       </div>
 
-      <MacroCode text={text} lang={lang} />
+      <MacroCode text={text} />
 
       {abilities.length > 0 && (
         <section>
@@ -131,7 +128,7 @@ export function MacroDetail({
         </h3>
         <ol className="flex flex-col gap-2">
           {macro.lines.map((line, i) => {
-            const code = localizeMacro(line.code, lang);
+            const code = line.code;
             return (
               <li
                 key={i}
