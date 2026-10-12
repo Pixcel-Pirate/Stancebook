@@ -1,10 +1,12 @@
 import { useEffect, useMemo, useState } from "react";
-import { Bookmark, BookOpen, Feather, ScrollText, Search, Sparkles, X } from "lucide-react";
+import { Bookmark, BookOpen, Feather, Network, ScrollText, Search, Sparkles, X } from "lucide-react";
 import { CopyButton } from "@/components/copy-button";
 import { MacroDetail } from "@/components/macro-detail";
 import { ForeverView, HowItWorks } from "@/components/guide-view";
 import { Logo } from "@/components/logo";
 import { AbilitiesView } from "@/components/abilities-view";
+import { TalentsView } from "@/components/talents-view";
+import { UpdateButton } from "@/components/update-button";
 import { AbilityTip, CLASS_ICON, ClassIcon, primaryAbility, SpellIcon } from "@/components/spell-icon";
 import { useFavorites } from "@/lib/favorites";
 import { guideFor } from "@/lib/guide";
@@ -25,7 +27,7 @@ import {
 import { localizeMacro, type ClientLang } from "@/lib/spells";
 import { cn } from "@/lib/utils";
 
-export type Tab = "macros" | "abilities" | "guide" | "forever";
+export type Tab = "macros" | "abilities" | "talents" | "guide" | "forever";
 
 type State = {
   tab: Tab;
@@ -213,6 +215,7 @@ export function AppShell() {
             [
               ["macros", "Spellbook", BookOpen],
               ["abilities", "Abilities", Sparkles],
+              ["talents", "Talents", Network],
               ["guide", "How they work", Feather],
               ["forever", "Forever notes", ScrollText],
             ] as const
@@ -235,7 +238,10 @@ export function AppShell() {
           ))}
         </nav>
 
-        <div className="ml-auto flex items-center rounded-md p-0.5 btn-leather">
+        <div className="ml-auto">
+          <UpdateButton />
+        </div>
+        <div className="flex items-center rounded-md p-0.5 btn-leather">
           {(["en", "fr"] as const).map((l) => (
             <button
               key={l}
@@ -491,6 +497,8 @@ export function AppShell() {
                     classId={classId}
                     onOpenMacro={(id) => patch({ tab: "macros", m: id })}
                   />
+                ) : tab === "talents" ? (
+                  <TalentsView classId={classId} />
                 ) : tab === "guide" ? (
                   <HowItWorks lang={lang} classId={classId} />
                 ) : (

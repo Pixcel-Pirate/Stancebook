@@ -1,5 +1,4 @@
 ## What's new
 
-- Real WoW class and ability icons, new Abilities tab with tooltips
-- Bigger text and suggested keybinds
-- Forever notes updated through the Oct 8 patch
+- New Talents tab: all three talent trees for every class, from wowforevertalents.com, with tooltips
+- Update button: the app tells you when a new version is out (desktop downloads the installer, web app refreshes itself)
