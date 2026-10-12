@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Download } from "lucide-react";
 
-const REPO = "saucie83-ship-it/Stancebook";
+const REPO = "Pixcel-Pirate/Stancebook";
 const VERSION = import.meta.env.VITE_VERSION as string | undefined;
 const DESKTOP = location.hostname === "127.0.0.1";
 

@@ -2,7 +2,7 @@
 
 **A macro spellbook for World of Warcraft: Forever.** Stancebook collects ready-to-use macros for all nine classes in one place, with notes from the latest patches. It's styled like an in-game spellbook. Pick your class and find the macro you need. Read what each line does, then copy it straight into `/macro`.
 
-**[⬇ Download for Windows](https://github.com/saucie83-ship-it/Stancebook/releases/latest/download/Stancebook-Setup.exe)** · **[Open the web app](https://saucie83-ship-it.github.io/stancebook/)** · **[All releases](https://github.com/saucie83-ship-it/Stancebook/releases)**
+**[⬇ Download for Windows](https://github.com/Pixcel-Pirate/Stancebook/releases/latest/download/Stancebook-Setup.exe)** · **[Open the web app](https://pixcel-pirate.github.io/stancebook/)** · **[All releases](https://github.com/Pixcel-Pirate/Stancebook/releases)**
 
 ## What's inside
 
@@ -21,9 +21,9 @@ Every Tuesday the patch notes are checked. Each new release updates the class no
 
 ## Install
 
-**Windows app:** run [Stancebook-Setup.exe](https://github.com/saucie83-ship-it/Stancebook/releases/latest/download/Stancebook-Setup.exe). It installs for your user only, needs no admin rights, and adds a desktop shortcut. The app isn't code-signed, so Windows may show "Windows protected your PC". If it does, click **More info**, then **Run anyway**.
+**Windows app:** run [Stancebook-Setup.exe](https://github.com/Pixcel-Pirate/Stancebook/releases/latest/download/Stancebook-Setup.exe). It installs for your user only, needs no admin rights, and adds a desktop shortcut. The app isn't code-signed, so Windows may show "Windows protected your PC". If it does, click **More info**, then **Run anyway**.
 
-**Web app (no warnings, works offline):** open https://saucie83-ship-it.github.io/stancebook/ in Edge or Chrome. Then click **Install** in the address bar, or go to menu → Apps → Install Stancebook.
+**Web app (no warnings, works offline):** open https://pixcel-pirate.github.io/stancebook/ in Edge or Chrome. Then click **Install** in the address bar, or go to menu → Apps → Install Stancebook.
 
 ## Privacy
 

@@ -1,5 +1,3 @@
 ## What's new
 
-- Talent calculator: spend all 51 points (level 10 to 60) in every class's full talent trees, saved automatically
-- Action bar: drag macros from the spellbook onto 12 slots; drag off or right-click to clear, reset restores the suggestions
-- English only: the French toggle is gone
+- Moved to the new GitHub name Pixcel-Pirate: links, the web app address and the Update button now point there
