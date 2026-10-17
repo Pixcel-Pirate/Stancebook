@@ -1,3 +1,3 @@
 ## What's new
 
-- Moved to the new GitHub name Pixcel-Pirate: links, the web app address and the Update button now point there
+- Update prompt: when you open the book and a newer version is on GitHub, a window pops up with Update now / Later
