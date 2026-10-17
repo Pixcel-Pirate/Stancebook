@@ -212,7 +212,7 @@ const DATA: Record<ClassId, Row[]> = {
     ["Frostbolt", "spell_frost_frostbolt02", "Cast · 30 yd", "Frost bolt that slows the target. Ranks 4–5 hit harder since Oct 8."],
     ["Fireball", "spell_fire_flamebolt", "Cast · 35 yd", "Fire bolt with a small burn. Ranks 4–5 hit harder since Oct 8."],
     ["Frostfire Bolt", "ability_mage_frostfirebolt", "Cast · Trained at 40", "Fire and Frost in one bolt. Trained, not a talent."],
-    ["Arcane Blast", "spell_arcane_blast", "Cast · 30 yd", "Each Blast makes the next stronger and more expensive, up to 4 stacks."],
+    ["Arcane Blast", "spell_arcane_blast", "Cast · 30 yd", "Each Blast grants stacking spell damage (based on Intellect) for 15 sec."],
     ["Ice Lance", "spell_frost_frostblast", "Instant · 30 yd", "Weak, but much stronger against frozen targets."],
     ["Scorch", "spell_fire_soulburn", "1.5 sec cast · 30 yd", "Quick Fire damage."],
     ["Fire Blast", "spell_fire_fireball", "Instant · 8 sec cooldown · 20 yd", "Instant Fire damage."],

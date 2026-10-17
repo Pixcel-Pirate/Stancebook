@@ -58,7 +58,7 @@ export const MAGE_MACROS: Macro[] = [
     classId: "mage",
     name: "Arcane Blast",
     summary: "Arcane talent. Each stack makes the next Blast harder and more expensive.",
-    how: "Arcane Blast is how Forever makes Arcane a real spec. Stacks (up to four) increase damage and mana cost. A macro cannot dump stacks for you — you decide when to switch to Arcane Missiles / a consume talent (Missile Barrage). This button is just the Blast.",
+    how: "Arcane Blast is how Forever makes Arcane a real spec. Since the Oct 15 patch each Blast gives you a stacking spell damage buff for 15 seconds, so keep it rolling. A macro cannot track the stacks for you; you decide when to weave in Arcane Missiles. This button is just the Blast.",
     when: "Arcane’s filler until the mana cost hurts, then you spend the stacks.",
     category: "combat",
     specs: ["arcane"],

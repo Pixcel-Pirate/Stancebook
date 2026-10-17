@@ -21,7 +21,11 @@ export function UpdateButton() {
     if (!VERSION) return; // local/dev builds don't nag
     fetch(`https://api.github.com/repos/${REPO}/releases/latest`)
       .then((r) => (r.ok ? r.json() : null))
-      .then((j) => j?.tag_name && j.tag_name !== VERSION && setLatest(j.tag_name))
+      .then((j) => {
+        const tag = j?.tag_name;
+        // only trust tags shaped like our release tags (vYYYY.MM.DD[.N])
+        if (typeof tag === "string" && /^v\d{4}\.\d{2}\.\d{2}(\.\d+)?$/.test(tag) && tag !== VERSION) setLatest(tag);
+      })
       .catch(() => {});
   }, []);
 

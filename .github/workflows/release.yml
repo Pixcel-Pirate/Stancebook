@@ -10,8 +10,8 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with: { node-version: 22 }
       - name: Pick the version
         run: |
@@ -22,8 +22,8 @@ jobs:
             while git ls-remote --exit-code --tags origin "$TAG" >/dev/null; do n=$((n+1)); TAG="v$(date +%Y.%m.%d).$n"; done
           fi
           echo "TAG=$TAG" >> $GITHUB_ENV
-      - run: npm ci && VITE_VERSION=$TAG npm run build
-        env: { ELECTRON_SKIP_BINARY_DOWNLOAD: "1" }
+      # --ignore-scripts: no dependency gets to run install scripts on the release machine
+      - run: npm ci --ignore-scripts && VITE_VERSION=$TAG npm run build
 
       - name: Deploy web app to gh-pages
         run: |
@@ -38,7 +38,7 @@ jobs:
           mkdir -p /tmp/neu/resources && cd /tmp/neu
           cp $GITHUB_WORKSPACE/desktop-lite/neutralino.config.json .
           cp -r $GITHUB_WORKSPACE/dist/. resources/ && cp $GITHUB_WORKSPACE/public/icon-512.png resources/icon.png
-          npx -y @neutralinojs/neu@11 update && npx -y @neutralinojs/neu@11 build --release
+          npx -y @neutralinojs/neu@11.8.0 update && npx -y @neutralinojs/neu@11.8.0 build --release
           mkdir /tmp/inst && cd /tmp/inst
           cp /tmp/neu/dist/Stancebook/Stancebook-win_x64.exe Stancebook.exe
           cp /tmp/neu/dist/Stancebook/resources.neu .

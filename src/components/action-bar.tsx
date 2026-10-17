@@ -5,6 +5,8 @@ import { findMacro, type ClassId, type Macro } from "@/lib/macros";
 import { cn, useStored } from "@/lib/utils";
 
 const KEYS = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "="];
+const isBar = (v: unknown): v is (string | null)[] =>
+  Array.isArray(v) && v.length === KEYS.length && v.every((s) => s === null || typeof s === "string");
 export const DRAG_TYPE = "text/x-stancebook-macro";
 
 /** Start dragging a macro from anywhere in the app. */
@@ -26,7 +28,7 @@ export function ActionBar({
   onOpen: (id: string) => void;
 }) {
   const fill = () => KEYS.map((_, i) => starters[i]?.id ?? null);
-  const [slots, setSlots] = useStored<(string | null)[]>(`stancebook-bar-${classId}`, fill);
+  const [slots, setSlots] = useStored(`stancebook-bar-${classId}`, fill, isBar);
   const [over, setOver] = useState<number | null>(null);
   const put = (i: number, id: string | null) => setSlots(slots.map((s, j) => (j === i ? id : s)));
 
@@ -34,8 +36,9 @@ export function ActionBar({
     e.preventDefault();
     setOver(null);
     const id = e.dataTransfer.getData(DRAG_TYPE);
-    if (!id) return;
+    if (!findMacro(id)) return; // drops can come from other pages; only accept real macros
     const from = Number(e.dataTransfer.getData("text/x-slot") || -1);
+    if (!(Number.isInteger(from) && from < KEYS.length)) return;
     const next = [...slots];
     if (from >= 0) next[from] = next[i]; // swap when moving between slots
     next[i] = id;

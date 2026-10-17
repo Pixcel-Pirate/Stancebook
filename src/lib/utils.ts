@@ -6,12 +6,14 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-/** useState that survives reloads (per key). Falls back to `init` if storage is unavailable or the key changes. */
-export function useStored<T>(key: string, init: () => T) {
+/** useState that survives reloads (per key). Falls back to `init` if storage is unavailable, the key changes,
+ *  or the saved value fails `valid` (storage can be edited by hand or left over from an older version). */
+export function useStored<T>(key: string, init: () => T, valid: (v: unknown) => v is T) {
   const load = () => {
     try {
       const raw = localStorage.getItem(key);
-      return raw ? (JSON.parse(raw) as T) : init();
+      const v: unknown = raw ? JSON.parse(raw) : undefined;
+      return valid(v) ? v : init();
     } catch {
       return init();
     }

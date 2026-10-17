@@ -5,11 +5,30 @@ import { canAdd, canRemove, change, grandTotal, MAX_POINTS, treeTotal, type Spen
 import { TALENTS_SOURCE, treesFor, type Talent } from "@/lib/talents";
 import { cn, useStored } from "@/lib/utils";
 
+const isObj = (v: unknown): v is Record<string, unknown> => typeof v === "object" && v !== null && !Array.isArray(v);
+const isSpent = (v: unknown): v is Spent =>
+  isObj(v) &&
+  Object.entries(v).every(
+    ([k, tree]) => ["0", "1", "2"].includes(k) && isObj(tree) && Object.values(tree).every((r) => Number.isInteger(r) && (r as number) >= 0 && (r as number) <= 5),
+  );
+
 /** Talent calculator: click to add a point, right-click (or Shift+click) to take one back. 51 points = level 60. */
 export function TalentsView({ classId }: { classId: ClassId }) {
   const trees = treesFor(classId);
   const meta = classMeta(classId);
-  const [spent, setSpent] = useStored<Spent>(`stancebook-talents-${classId}`, () => ({}));
+  const [saved, setSpent] = useStored(`stancebook-talents-${classId}`, (): Spent => ({}), isSpent);
+  // patches remove talents and lower ranks; drop or clamp those so old builds still add up
+  const spent: Spent = Object.fromEntries(
+    Object.entries(saved).map(([k, tree]) => [
+      k,
+      Object.fromEntries(
+        Object.entries(tree).flatMap(([n, r]) => {
+          const t = trees[+k]?.talents.find((x) => x.n === n);
+          return t ? [[n, Math.min(r, t.r)]] : [];
+        }),
+      ),
+    ]),
+  );
   const total = grandTotal(spent);
 
   function click(tree: number, t: Talent, remove: boolean) {
