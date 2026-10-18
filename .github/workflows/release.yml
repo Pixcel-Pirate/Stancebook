@@ -43,7 +43,7 @@ jobs:
           cp /tmp/neu/dist/Stancebook/Stancebook-win_x64.exe Stancebook.exe
           cp /tmp/neu/dist/Stancebook/resources.neu .
           cp $GITHUB_WORKSPACE/desktop-lite/installer.nsi $GITHUB_WORKSPACE/desktop-lite/icon.ico .
-          makensis -V2 installer.nsi
+          makensis -V2 -DVERSION="$TAG" installer.nsi
 
       - name: Publish release
         env: { GH_TOKEN: "${{ github.token }}" }

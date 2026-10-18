@@ -1,5 +1,8 @@
 Unicode true
 !include "MUI2.nsh"
+!ifndef VERSION
+  !define VERSION "dev"
+!endif
 Name "Stancebook"
 OutFile "Stancebook-Setup.exe"
 InstallDir "$LOCALAPPDATA\Programs\Stancebook"
@@ -9,7 +12,6 @@ SetCompressor /SOLID lzma
 !define MUI_UNICON "icon.ico"
 !define MUI_FINISHPAGE_RUN "$INSTDIR\Stancebook.exe"
 !define MUI_FINISHPAGE_RUN_TEXT "Open Stancebook"
-!insertmacro MUI_PAGE_DIRECTORY
 !insertmacro MUI_PAGE_INSTFILES
 !insertmacro MUI_PAGE_FINISH
 !insertmacro MUI_UNPAGE_CONFIRM
@@ -20,6 +22,11 @@ SetCompressor /SOLID lzma
 !define WV2 "{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}"
 
 Section "Install"
+  ; Always the same folder, so a new version replaces the old one in place.
+  ; Close a running copy first, otherwise Windows won't let us overwrite it.
+  nsExec::Exec 'taskkill /F /IM Stancebook.exe'
+  Pop $0
+  Sleep 500
   SetOutPath "$INSTDIR"
   File "Stancebook.exe"
   File "resources.neu"
@@ -30,7 +37,8 @@ Section "Install"
   WriteRegStr HKCU "${UNINST}" "DisplayName" "Stancebook"
   WriteRegStr HKCU "${UNINST}" "DisplayIcon" "$INSTDIR\icon.ico"
   WriteRegStr HKCU "${UNINST}" "Publisher" "pixcel"
-  WriteRegStr HKCU "${UNINST}" "DisplayVersion" "1.0.0"
+  WriteRegStr HKCU "${UNINST}" "DisplayVersion" "${VERSION}"
+  WriteRegStr HKCU "${UNINST}" "InstallLocation" "$INSTDIR"
   WriteRegStr HKCU "${UNINST}" "UninstallString" '"$INSTDIR\Uninstall.exe"'
 
   ; The app draws with Microsoft Edge WebView2 (built into Windows 11 and up-to-date Windows 10).
