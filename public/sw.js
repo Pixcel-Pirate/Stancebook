@@ -1,5 +1,5 @@
 // Offline support: serve from cache, refresh the cache in the background.
-const CACHE = "stancebook-v8";
+const CACHE = "stancebook-v9";
 self.addEventListener("install", (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(["./", "./index.html"])));
   self.skipWaiting();
@@ -13,7 +13,7 @@ self.addEventListener("fetch", (e) => {
   e.respondWith(
     caches.open(CACHE).then(async (c) => {
       const hit = await c.match(e.request);
-      const net = fetch(e.request).then((r) => { if (r.ok) c.put(e.request, r.clone()); return r; });
+      const net = fetch(e.request).then((r) => { if (r.ok) c.put(e.request, r.clone()); return r; }).catch(() => hit); // offline: keep the cached copy
       return hit || net;
     }),
   );

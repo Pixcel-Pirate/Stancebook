@@ -3,15 +3,26 @@ Unicode true
 !ifndef VERSION
   !define VERSION "dev"
 !endif
+!ifndef VNUM
+  !define VNUM "0.0.0.0"
+!endif
+VIProductVersion "${VNUM}"
+VIAddVersionKey "ProductName" "Stancebook"
+VIAddVersionKey "CompanyName" "pixcel"
+VIAddVersionKey "FileDescription" "Stancebook installer"
+VIAddVersionKey "FileVersion" "${VNUM}"
+VIAddVersionKey "ProductVersion" "${VERSION}"
+VIAddVersionKey "LegalCopyright" "pixcel"
 Name "Stancebook"
 OutFile "Stancebook-Setup.exe"
 InstallDir "$LOCALAPPDATA\Programs\Stancebook"
 RequestExecutionLevel user
-SetCompressor /SOLID lzma
+SetCompressor zlib
 !define MUI_ICON "icon.ico"
 !define MUI_UNICON "icon.ico"
 !define MUI_FINISHPAGE_RUN "$INSTDIR\Stancebook.exe"
 !define MUI_FINISHPAGE_RUN_TEXT "Open Stancebook"
+!insertmacro MUI_PAGE_WELCOME
 !insertmacro MUI_PAGE_INSTFILES
 !insertmacro MUI_PAGE_FINISH
 !insertmacro MUI_UNPAGE_CONFIRM
@@ -23,10 +34,16 @@ SetCompressor /SOLID lzma
 
 Section "Install"
   ; Always the same folder, so a new version replaces the old one in place.
-  ; Close a running copy first, otherwise Windows won't let us overwrite it.
-  nsExec::Exec 'taskkill /F /IM Stancebook.exe'
-  Pop $0
-  Sleep 500
+  ; Windows won't let us replace the app while it's open, so ask the user to close it.
+  retry:
+  ClearErrors
+  IfFileExists "$INSTDIR\Stancebook.exe" 0 copy
+  Delete "$INSTDIR\Stancebook.exe"
+  IfErrors 0 copy
+  MessageBox MB_RETRYCANCEL "Stancebook is still open. Close it, then click Retry." IDRETRY retry IDCANCEL quit
+  quit:
+  Abort
+  copy:
   SetOutPath "$INSTDIR"
   File "Stancebook.exe"
   File "resources.neu"
@@ -46,14 +63,20 @@ Section "Install"
   StrCmp $0 "" 0 done
   ReadRegStr $0 HKCU "Software\Microsoft\EdgeUpdate\Clients\${WV2}" "pv"
   StrCmp $0 "" 0 done
-  MessageBox MB_YESNO "Stancebook needs Microsoft Edge WebView2, which isn't on this PC yet. Open Microsoft's download page now?" IDNO done
-  ExecShell "open" "https://go.microsoft.com/fwlink/p/?LinkId=2124703"
+  MessageBox MB_OK "Stancebook needs Microsoft Edge WebView2, which isn't on this PC yet. Get it from Microsoft: search for $\"WebView2 Runtime$\" or go to go.microsoft.com/fwlink/p/?LinkId=2124703"
   done:
 SectionEnd
 
 Section "Uninstall"
   Delete "$DESKTOP\Stancebook.lnk"
   Delete "$SMPROGRAMS\Stancebook.lnk"
-  RMDir /r "$INSTDIR"
+  ; only our own files, so a misplaced Uninstall.exe can't wipe a whole folder
+  Delete "$INSTDIR\Stancebook.exe"
+  Delete "$INSTDIR\resources.neu"
+  Delete "$INSTDIR\icon.ico"
+  Delete "$INSTDIR\Uninstall.exe"
+  RMDir /r "$INSTDIR\.tmp"
+  RMDir /r "$INSTDIR\.storage"
+  RMDir "$INSTDIR"
   DeleteRegKey HKCU "${UNINST}"
 SectionEnd

@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with: { persist-credentials: false } # keep the write token out of .git/config, away from build tools
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with: { node-version: 22 }
       - name: Pick the version
@@ -38,16 +39,21 @@ jobs:
           mkdir -p /tmp/neu/resources && cd /tmp/neu
           cp $GITHUB_WORKSPACE/desktop-lite/neutralino.config.json .
           cp -r $GITHUB_WORKSPACE/dist/. resources/ && cp $GITHUB_WORKSPACE/public/icon-512.png resources/icon.png
-          npx -y @neutralinojs/neu@11.8.0 update && npx -y @neutralinojs/neu@11.8.0 build --release
+          export npm_config_ignore_scripts=true
+          npx -y @neutralinojs/neu@11.8.0 update
+          # refuse to ship a Neutralino binary that isn't the exact 6.10.0 we checked
+          echo "1b3f87c0dd1b53015f8b33aae17ea2fa806cceba18afe2737b9f522438ed043d  bin/neutralino-win_x64.exe" | sha256sum -c
+          npx -y @neutralinojs/neu@11.8.0 build --release
           mkdir /tmp/inst && cd /tmp/inst
           cp /tmp/neu/dist/Stancebook/Stancebook-win_x64.exe Stancebook.exe
           cp /tmp/neu/dist/Stancebook/resources.neu .
           cp $GITHUB_WORKSPACE/desktop-lite/installer.nsi $GITHUB_WORKSPACE/desktop-lite/icon.ico .
-          makensis -V2 -DVERSION="$TAG" installer.nsi
+          VNUM=$(echo "${TAG#v}" | awk -F. '{printf "%d.%d.%d.%d", $1, $2, $3, $4}')
+          makensis -V2 -DVERSION="$TAG" -DVNUM="$VNUM" installer.nsi
 
       - name: Publish release
         env: { GH_TOKEN: "${{ github.token }}" }
         run: |
-          [ "${GITHUB_REF_TYPE}" = tag ] || { git tag "$TAG"; git push origin "$TAG"; }
-          NOTES=RELEASE_NOTES.md; [ -f $NOTES ] || NOTES=/dev/null
-          gh release create "$TAG" /tmp/inst/Stancebook-Setup.exe --title "Stancebook $TAG" --notes-file $NOTES --generate-notes
+          { cat RELEASE_NOTES.md 2>/dev/null; echo; echo "Stancebook-Setup.exe SHA-256: \`$(sha256sum /tmp/inst/Stancebook-Setup.exe | cut -d' ' -f1)\`"; } > /tmp/notes.md
+          # gh creates the tag on this commit when it doesn't exist yet
+          gh release create "$TAG" /tmp/inst/Stancebook-Setup.exe --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" --title "Stancebook $TAG" --notes-file /tmp/notes.md --generate-notes
