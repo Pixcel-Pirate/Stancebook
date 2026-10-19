@@ -4,9 +4,9 @@ import { cn } from "@/lib/utils";
 const VARIANT = {
   primary: "btn-gold",
   secondary: "btn-leather",
-  ghost: "text-ink-soft hover:bg-ink/8 hover:text-ink",
+  ghost: "text-fg-soft hover:bg-fg/8 hover:text-fg",
   rust: "btn-blood",
-  outline: "text-ink shadow-[inset_0_0_0_1px_var(--color-ink-line)] hover:bg-ink/8",
+  outline: "text-fg shadow-[inset_0_0_0_1px_var(--color-line)] hover:bg-fg/8",
 };
 const SIZE = {
   sm: "h-9 rounded-sm px-3 text-sm [&_svg]:size-4",

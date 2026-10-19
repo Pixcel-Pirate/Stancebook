@@ -73,16 +73,17 @@ const EMPTY_HINT: Record<ClassId, string> = {
   druid: "Nothing matches. Clear a filter or try “rejuv”, “bear”, or “prowl”.",
 };
 
+// Hex values for --cls (a registered <color>, so it must be a literal, not var()).
 const CLASS_COLOR: Record<ClassId, string> = {
-  warrior: "var(--color-warrior)",
-  paladin: "var(--color-paladin)",
-  hunter: "var(--color-hunter)",
-  rogue: "var(--color-rogue)",
-  priest: "var(--color-priest)",
-  shaman: "var(--color-shaman)",
-  mage: "var(--color-mage)",
-  warlock: "var(--color-warlock)",
-  druid: "var(--color-druid)",
+  warrior: "#c69b6d",
+  paladin: "#f48cba",
+  hunter: "#aad372",
+  rogue: "#fff468",
+  priest: "#f0ebe0",
+  shaman: "#2a8cff",
+  mage: "#3fc7eb",
+  warlock: "#8788ee",
+  druid: "#ff7c0a",
 };
 
 function matchesQuery(m: Macro, q: string): boolean {
@@ -107,15 +108,16 @@ function ClassCrest({ id, size = 40, on }: { id: ClassId; size?: number; on?: bo
   const Icon = CLASS_ICON[id];
   return (
     <span
-      className="relative grid shrink-0 place-items-center overflow-hidden rounded-full"
+      className="relative grid shrink-0 place-items-center overflow-hidden rounded-[30%] transition-[filter,opacity] duration-200"
       style={{
         width: size,
         height: size,
-        color: on ? "#1a0f06" : CLASS_COLOR[id],
-        background: on
-          ? `radial-gradient(circle at 35% 30%, #fff8, transparent 50%), ${CLASS_COLOR[id]}`
-          : "radial-gradient(circle at 35% 30%, #4a311d, #160d07)",
-        boxShadow: `0 0 0 1px #000, 0 0 0 2px ${on ? "var(--color-gold-hi)" : "var(--color-gold-lo)"}, 0 0 0 3px #000${on ? ", 0 0 16px rgba(247,220,140,.45)" : ""}`,
+        color: CLASS_COLOR[id],
+        background: "radial-gradient(circle at 35% 30%, #2a2833, #0c0b10)",
+        boxShadow: on
+          ? `0 0 0 1px #000, 0 0 0 2px ${CLASS_COLOR[id]}, 0 4px 18px -2px ${CLASS_COLOR[id]}`
+          : "0 0 0 1px #000, 0 0 0 2px rgba(255,255,255,.1)",
+        filter: on ? undefined : "saturate(.55) brightness(.8)",
       }}
       aria-hidden
     >
@@ -123,6 +125,14 @@ function ClassCrest({ id, size = 40, on }: { id: ClassId; size?: number; on?: bo
     </span>
   );
 }
+
+const TABS = [
+  ["macros", "Spellbook", BookOpen],
+  ["abilities", "Abilities", Sparkles],
+  ["talents", "Talents", Network],
+  ["guide", "How they work", Feather],
+  ["forever", "Forever notes", ScrollText],
+] as const;
 
 export function AppShell() {
   const [state, setState] = useState<State>(() => ({
@@ -144,6 +154,11 @@ export function AppShell() {
   const selected = requested && requested.classId === classId ? requested : undefined;
   const catOptions = CATEGORIES.filter((c) => meta.categories.includes(c.id));
   const guide = guideFor(classId);
+
+  // Dye the whole book in the class color; html transitions --cls so the change fades in.
+  useEffect(() => {
+    document.documentElement.style.setProperty("--cls", CLASS_COLOR[classId]);
+  }, [classId]);
 
   useEffect(() => {
     try {
@@ -194,116 +209,120 @@ export function AppShell() {
   }, [filtered, meta.categories]);
 
   return (
-    <div className="flex h-full flex-col">
-      {/* Title bar */}
-      <header className="flex shrink-0 flex-wrap items-center gap-x-6 gap-y-2 px-4 pt-3 pb-2 sm:px-6">
-        <div className="flex items-center gap-3">
-          <Logo className="size-9 text-gold drop-shadow-[0_0_8px_rgba(214,170,78,.45)]" />
-          <div>
-            <p className="gold-text font-deco text-2xl leading-none font-bold tracking-wide">
-              Stancebook
-            </p>
-            <p className="mt-1 text-[0.7rem] font-semibold tracking-[0.25em] text-subtle uppercase">
-              WoW Forever · Macro Skillbook
-            </p>
-          </div>
-        </div>
-
-        <nav className="order-3 flex gap-1 sm:order-none" aria-label="Sections">
-          {(
-            [
-              ["macros", "Spellbook", BookOpen],
-              ["abilities", "Abilities", Sparkles],
-              ["talents", "Talents", Network],
-              ["guide", "How they work", Feather],
-              ["forever", "Forever notes", ScrollText],
-            ] as const
-          ).map(([id, label, Icon]) => (
-            <button
-              key={id}
-              type="button"
-              onClick={() => patch({ tab: id })}
-              aria-current={tab === id ? "page" : undefined}
-              className={cn(
-                "inline-flex h-10 items-center gap-2 rounded-md px-4 font-display text-sm font-semibold tracking-wide transition-colors",
-                tab === id
-                  ? "btn-leather"
-                  : "text-muted hover:text-gold-hi",
-              )}
-            >
-              <Icon className="size-4" />
-              {label}
-            </button>
-          ))}
-        </nav>
-
-        <div className="ml-auto">
-          <UpdateButton />
-        </div>
-      </header>
-
-      {/* Class tabs, horizontal on small windows */}
+    <div className="flex h-full">
+      {/* Class rail, like the bookmark tabs down the side of the in-game spellbook */}
       <nav
-        className="flex shrink-0 gap-3 overflow-x-auto px-4 py-2 sm:px-6 lg:hidden"
+        className="hidden w-[4.75rem] shrink-0 flex-col items-center gap-1.5 border-r border-line bg-black/25 py-4 lg:flex"
         aria-label="Class"
       >
-        {CLASS_META.map((c) => (
-          <button
-            key={c.id}
-            type="button"
-            onClick={() => pickClass(c.id)}
-            aria-pressed={classId === c.id}
-            aria-label={c.label}
-            title={c.label}
-            className="p-1"
-          >
-            <ClassCrest id={c.id} size={38} on={classId === c.id} />
-          </button>
-        ))}
+        <Logo className="mb-3 size-9 text-gold-hi" />
+        {CLASS_META.map((c) => {
+          const on = classId === c.id;
+          return (
+            <button
+              key={c.id}
+              type="button"
+              onClick={() => pickClass(c.id)}
+              aria-pressed={on}
+              aria-label={c.label}
+              className="group relative grid h-14 w-full place-items-center"
+            >
+              <span
+                className={cn(
+                  "absolute top-2 bottom-2 left-0 w-[3px] rounded-r-full bg-cls transition-[opacity,scale] duration-200",
+                  on ? "opacity-100" : "scale-y-0 opacity-0",
+                )}
+              />
+              <span className="transition-transform duration-150 ease-out group-active:scale-95">
+                <ClassCrest id={c.id} size={42} on={on} />
+              </span>
+              <span className="pointer-events-none absolute left-full z-20 ml-1 rounded-md bg-[#101326] px-2.5 py-1 text-sm font-semibold whitespace-nowrap text-white opacity-0 shadow-lg ring-1 ring-[#8f8f9a] transition-opacity group-hover:opacity-100">
+                {c.label}
+              </span>
+            </button>
+          );
+        })}
       </nav>
 
-      <div className="flex min-h-0 flex-1 gap-0 px-3 pb-3 sm:px-6 lg:pr-0">
-        <div className="book min-h-0 flex-1">
+      <div className="flex min-w-0 flex-1 flex-col">
+        {/* Class banner */}
+        <header className="shrink-0 px-3 pt-3 pt-[max(0.75rem,env(safe-area-inset-top))] sm:px-5">
+          <div className="banner">
+            <ClassIcon id={classId} size={240} fallback={null} imgClassName="banner-art" />
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-3 px-4 pt-4 sm:px-6 sm:pt-5">
+              <ClassCrest id={classId} size={56} on />
+              <div className="min-w-0 flex-1">
+                <div className="flex flex-wrap items-baseline gap-x-3">
+                  <h1 className="font-display text-3xl leading-tight font-bold text-white sm:text-4xl">{meta.label}</h1>
+                  <span className="text-sm font-semibold text-fg-soft tabular-nums">{bookCount} macros</span>
+                </div>
+                <p className="text-sm text-fg-soft">{meta.hint}</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <UpdateButton />
+                <p className="hidden text-right leading-tight sm:block">
+                  <span className="block font-deco text-lg font-bold text-gold-hi">Stancebook</span>
+                  <span className="block text-xs text-fg-soft">WoW Forever macros</span>
+                </p>
+              </div>
+            </div>
+
+            {/* Class picker on narrow windows */}
+            <nav className="flex gap-2 overflow-x-auto px-4 pt-4 sm:px-6 lg:hidden" aria-label="Class">
+              {CLASS_META.map((c) => (
+                <button
+                  key={c.id}
+                  type="button"
+                  onClick={() => pickClass(c.id)}
+                  aria-pressed={classId === c.id}
+                  aria-label={c.label}
+                  className="shrink-0 p-1 transition-transform duration-150 ease-out active:scale-95"
+                >
+                  <ClassCrest id={c.id} size={38} on={classId === c.id} />
+                </button>
+              ))}
+            </nav>
+
+            <nav className="mt-2 flex overflow-x-auto px-2 sm:px-4" aria-label="Sections">
+              {TABS.map(([id, label, Icon]) => (
+                <button
+                  key={id}
+                  type="button"
+                  onClick={() => patch({ tab: id })}
+                  aria-current={tab === id ? "page" : undefined}
+                  className="tab"
+                >
+                  <Icon className="size-4" />
+                  {label}
+                </button>
+              ))}
+            </nav>
+          </div>
+        </header>
+
+        <main className="book flex min-h-0 flex-1 flex-col p-3 sm:px-5">
           {tab === "macros" ? (
-            <div className="grid h-full min-h-0 gap-[3px] lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
-              {/* Left page: the spell list */}
-              <section
-                className={cn(
-                  "page page-left min-h-0 overflow-y-auto",
-                  selected && "hidden lg:block",
-                )}
-              >
-                <div key={classId} className="page-in flex flex-col gap-4 px-5 py-6 sm:px-8">
-                  <header className="flex items-center gap-4">
-                    <ClassCrest id={classId} size={52} on />
-                    <div className="min-w-0 flex-1">
-                      <div className="flex items-baseline justify-between gap-3">
-                        <h1 className="font-display text-3xl font-bold text-crimson">
-                          {meta.label}
-                        </h1>
-                        <span className="shrink-0 font-display text-sm text-ink-faint">
-                          {bookCount} spells
-                        </span>
-                      </div>
-                      <p className="text-sm text-ink-soft italic">{meta.hint}</p>
-                    </div>
-                  </header>
-                  <p className="text-[15px] leading-relaxed text-ink-soft">{guide.intro}</p>
+            <div className="grid h-full min-h-0 gap-3 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)]">
+              {/* Spell list */}
+              <section className={cn("page min-h-0 overflow-y-auto", selected && "hidden lg:block")}>
+                <div key={classId} className="page-in flex flex-col gap-4 px-4 py-5 sm:px-6">
+                  <p className="max-w-prose text-[15px] leading-relaxed text-fg-soft">{guide.intro}</p>
 
                   <label className="relative block">
                     <span className="sr-only">Search macros</span>
-                    <Search className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-ink-faint" />
+                    <Search className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-fg-faint" />
                     <input
                       type="search"
+                      enterKeyHint="search"
                       value={state.q}
                       onChange={(e) => patch({ q: e.target.value })}
                       placeholder={SEARCH_HINT[classId]}
-                      className="h-11 w-full rounded-md bg-[#fff8e8]/45 pr-10 pl-10 text-sm text-ink shadow-[inset_0_0_0_1px_var(--color-ink-line),inset_0_2px_4px_rgba(80,50,20,.12)] outline-none placeholder:text-ink-faint focus:bg-[#fff8e8]/70"
+                      className="h-11 w-full rounded-lg bg-inset pr-10 pl-10 text-fg shadow-[inset_0_0_0_1px_var(--color-line)] outline-none transition-shadow placeholder:text-fg-faint focus:shadow-[inset_0_0_0_1px_var(--cls)]"
                     />
                     {state.q && (
                       <button
                         type="button"
-                        className="absolute top-1/2 right-1 flex size-9 -translate-y-1/2 items-center justify-center text-ink-faint hover:text-ink"
+                        className="absolute top-1/2 right-1 flex size-9 -translate-y-1/2 items-center justify-center text-fg-faint hover:text-fg"
                         onClick={() => patch({ q: "" })}
                         aria-label="Clear search"
                       >
@@ -351,20 +370,17 @@ export function AppShell() {
                   </div>
 
                   {filtered.length === 0 && (
-                    <p className="py-10 text-center text-sm text-ink-soft italic">
-                      {EMPTY_HINT[classId]}
-                    </p>
+                    <p className="py-10 text-center text-sm text-fg-soft">{EMPTY_HINT[classId]}</p>
                   )}
 
                   {sections.map((section) => (
-                    <section key={section.id} className="flex flex-col gap-3">
-                      <div className="flex items-center gap-3 pt-2">
-                        <h2 className="font-display text-sm font-bold tracking-[0.18em] text-crimson uppercase">
-                          {section.label}
-                        </h2>
+                    <section key={section.id} className="flex flex-col gap-2">
+                      <div className="flex items-center gap-3 pt-3">
+                        <h2 className="font-display text-base font-bold text-white">{section.label}</h2>
+                        <span className="text-xs text-fg-faint tabular-nums">{section.items.length}</span>
                         <div className="rule-ornate flex-1" />
                       </div>
-                      <ul className="grid gap-x-4 gap-y-1 xl:grid-cols-2">
+                      <ul className="grid gap-1 xl:grid-cols-2">
                         {section.items.map((m) => {
                           const text = macroText(m);
                           const active = selected?.id === m.id;
@@ -375,33 +391,27 @@ export function AppShell() {
                                 draggable
                                 onDragStart={(e) => dragMacro(e, m.id)}
                                 onClick={() => patch({ m: m.id })}
-                                className={cn(
-                                  "flex w-full items-center gap-3 rounded-md p-2 pr-12 text-left transition-colors",
-                                  active ? "bg-[#7c1d10]/12" : "hover:bg-[#5c442b]/10",
-                                )}
+                                aria-current={active || undefined}
+                                className="spell-row flex w-full items-center gap-3 rounded-lg p-2 pr-12 text-left"
                               >
                                 <AbilityTip ability={primaryAbility(m)}>
-                                  <SpellIcon macro={m} size={50} glow={active} />
+                                  <SpellIcon macro={m} size={46} glow={active} />
                                 </AbilityTip>
                                 <span className="min-w-0">
-                                  <span className="block truncate font-semibold text-ink">
-                                    {m.name}
-                                  </span>
-                                  <span className="block truncate text-xs text-ink-faint">
+                                  <span className="block truncate font-semibold text-fg">{m.name}</span>
+                                  <span className="block truncate text-xs text-fg-faint">
                                     Lv {m.level}
                                     {m.bind && (
                                       <>
                                         {" · "}
-                                        <kbd className="rounded bg-ink px-1.5 py-px font-mono text-[0.8rem] font-bold text-gold-hi">
+                                        <kbd className="rounded bg-inset px-1.5 py-px font-mono text-[0.8rem] font-bold text-gold-hi ring-1 ring-line">
                                           {m.bind}
                                         </kbd>
                                       </>
                                     )}
-                                    {m.forever && (
-                                      <span className="font-semibold text-crimson"> · Forever</span>
-                                    )}
-                                    {m.talent && <span className="text-ink-soft"> · Talent</span>}
-                                    <span className={text.length > 255 ? "text-crimson" : ""}>
+                                    {m.forever && <span className="font-semibold text-cls"> · Forever</span>}
+                                    {m.talent && <span className="text-fg-soft"> · Talent</span>}
+                                    <span className={cn("tabular-nums", text.length > 255 && "text-rust")}>
                                       {" "}· {text.length}/255
                                     </span>
                                   </span>
@@ -423,14 +433,9 @@ export function AppShell() {
                 </div>
               </section>
 
-              {/* Right page: detail, or the Forever primer */}
-              <section
-                className={cn(
-                  "page page-right min-h-0 overflow-y-auto",
-                  !selected && "hidden lg:block",
-                )}
-              >
-                <div key={selected?.id ?? classId} className="page-in px-5 py-6 sm:px-8">
+              {/* Detail, or the Forever primer */}
+              <section className={cn("page min-h-0 overflow-y-auto", !selected && "hidden lg:block")}>
+                <div key={selected?.id ?? classId} className="page-in px-4 py-5 sm:px-7">
                   {selected ? (
                     <MacroDetail
                       macro={selected}
@@ -440,33 +445,24 @@ export function AppShell() {
                     />
                   ) : (
                     <aside className="flex flex-col gap-4">
-                      <p className="font-display text-xs font-bold tracking-[0.25em] text-crimson uppercase">
-                        Forever
-                      </p>
-                      <h2 className="-mt-2 font-display text-2xl font-bold text-ink">
-                        {guide.foreverHeading}
-                      </h2>
-                      <p className="text-[15px] leading-relaxed text-ink-soft">
-                        {guide.foreverIntro}
-                      </p>
+                      <h2 className="font-display text-2xl font-bold text-white">{guide.foreverHeading}</h2>
+                      <p className="max-w-prose text-[15px] leading-relaxed text-fg-soft">{guide.foreverIntro}</p>
                       <div className="rule-ornate" />
-                      <ul className="flex flex-col gap-4">
+                      <ul className="flex flex-col gap-5">
                         {guide.forever.slice(0, 4).map((note) => (
                           <li key={note.title}>
                             <div className="flex flex-wrap items-baseline justify-between gap-2">
-                              <h3 className="font-display font-bold text-ink">{note.title}</h3>
-                              <span className="text-[0.7rem] font-bold tracking-wider text-crimson uppercase">
+                              <h3 className="font-semibold text-fg">{note.title}</h3>
+                              <span className="rounded-full px-2 py-0.5 text-xs font-semibold text-cls ring-1 ring-current/40">
                                 {note.tag}
                               </span>
                             </div>
-                            <p className="mt-1 text-sm leading-relaxed text-ink-soft">
-                              {note.body}
-                            </p>
+                            <p className="mt-1 max-w-prose text-sm leading-relaxed text-fg-soft">{note.body}</p>
                           </li>
                         ))}
                       </ul>
-                      <p className="mt-2 text-sm text-ink-faint italic">
-                        Pick any spell on the left to read it line by line and copy it for /macro.
+                      <p className="mt-2 text-sm text-fg-faint">
+                        Pick any macro on the left to read it line by line and copy it for /macro.
                       </p>
                     </aside>
                   )}
@@ -474,13 +470,10 @@ export function AppShell() {
               </section>
             </div>
           ) : (
-            <section className="page h-full min-h-0 overflow-y-auto rounded-md">
-              <div key={tab + classId} className="page-in px-5 py-8 sm:px-10">
+            <section className="page h-full min-h-0 overflow-y-auto">
+              <div key={tab + classId} className="page-in px-4 py-7 sm:px-10">
                 {tab === "abilities" ? (
-                  <AbilitiesView
-                    classId={classId}
-                    onOpenMacro={(id) => patch({ tab: "macros", m: id })}
-                  />
+                  <AbilitiesView classId={classId} onOpenMacro={(id) => patch({ tab: "macros", m: id })} />
                 ) : tab === "talents" ? (
                   <TalentsView classId={classId} />
                 ) : tab === "guide" ? (
@@ -491,40 +484,13 @@ export function AppShell() {
               </div>
             </section>
           )}
-        </div>
+        </main>
 
-        {/* Side bookmark tabs, like the in-game spellbook */}
-        <nav className="hidden w-16 shrink-0 flex-col gap-2 pt-8 lg:flex" aria-label="Class">
-          {CLASS_META.map((c) => {
-            const on = classId === c.id;
-            return (
-              <button
-                key={c.id}
-                type="button"
-                onClick={() => pickClass(c.id)}
-                aria-pressed={on}
-                title={c.label}
-                className={cn(
-                  "group relative flex h-14 items-center rounded-r-lg pl-2 transition-[width,background] duration-200",
-                  on
-                    ? "w-16 bg-gradient-to-r from-leather to-leather-hi shadow-[inset_0_0_0_1px_var(--color-gold-lo)]"
-                    : "w-13 bg-gradient-to-r from-[#140c07] to-leather hover:w-16",
-                )}
-              >
-                <ClassCrest id={c.id} size={38} on={on} />
-                <span className="pointer-events-none absolute left-full ml-2 rounded bg-black/85 px-2 py-1 font-display text-xs whitespace-nowrap text-gold-hi opacity-0 shadow-lg ring-1 ring-gold-lo transition-opacity group-hover:opacity-100">
-                  {c.label}
-                </span>
-              </button>
-            );
-          })}
-        </nav>
+        {/* Action bar: drag macros in */}
+        {tab === "macros" && (
+          <ActionBar classId={classId} starters={starters} selectedId={selected?.id} onOpen={(id) => patch({ m: id })} />
+        )}
       </div>
-
-      {/* Action bar: drag macros in */}
-      {tab === "macros" && (
-        <ActionBar classId={classId} starters={starters} selectedId={selected?.id} onOpen={(id) => patch({ m: id })} />
-      )}
     </div>
   );
 }

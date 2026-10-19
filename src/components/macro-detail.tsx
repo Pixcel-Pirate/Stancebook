@@ -48,7 +48,7 @@ export function MacroDetail({
         <button
           type="button"
           onClick={onBack}
-          className="inline-flex h-10 items-center gap-1.5 self-start text-sm font-semibold text-ink-soft hover:text-ink lg:hidden"
+          className="inline-flex h-10 items-center gap-1.5 self-start text-sm font-semibold text-fg-soft hover:text-fg lg:hidden"
         >
           <ArrowLeft className="size-4" /> All {meta.label} macros
         </button>
@@ -70,9 +70,9 @@ export function MacroDetail({
           <AbilityTip ability={primaryAbility(macro)}>
             <SpellIcon macro={macro} size={64} glow />
           </AbilityTip>
-          <h2 className="font-display text-3xl font-bold text-ink">{macro.name}</h2>
+          <h2 className="font-display text-2xl font-bold text-white sm:text-3xl">{macro.name}</h2>
         </div>
-        <p className="max-w-prose text-base leading-relaxed text-ink-soft">{macro.summary}</p>
+        <p className="max-w-prose text-base leading-relaxed text-fg-soft">{macro.summary}</p>
       </header>
 
       <div className="flex flex-wrap items-center gap-2">
@@ -87,9 +87,9 @@ export function MacroDetail({
           {saved ? "Saved" : "Save"}
         </Button>
         {macro.bind && (
-          <span className="ml-auto flex items-center gap-2 font-display text-sm font-semibold text-ink-soft">
+          <span className="ml-auto flex items-center gap-2 text-sm font-semibold text-fg-soft">
             Suggested bind
-            <kbd className="min-w-10 rounded-md bg-ink px-3 py-1.5 text-center font-mono text-lg font-bold text-gold-hi shadow-[0_0_0_1px_var(--color-gold-lo)]">
+            <kbd className="min-w-10 rounded-md bg-inset px-3 py-1.5 text-center font-mono text-lg font-bold text-gold-hi shadow-[0_0_0_1px_var(--color-gold-lo)]">
               {macro.bind}
             </kbd>
           </span>
@@ -100,7 +100,7 @@ export function MacroDetail({
 
       {abilities.length > 0 && (
         <section>
-          <h3 className="mb-3 font-display text-sm font-bold tracking-[0.18em] text-crimson uppercase">
+          <h3 className="mb-3 font-display text-base font-bold text-white">
             Abilities used
           </h3>
           <ul className="flex flex-wrap gap-2">
@@ -109,21 +109,21 @@ export function MacroDetail({
                 <AbilityTip ability={a}>
                   <span
                     tabIndex={0}
-                    className="flex items-center gap-2 rounded-md bg-[#fff8e8]/35 py-1 pr-3 pl-1 shadow-[inset_0_0_0_1px_var(--color-ink-line)] outline-none focus-visible:ring-2 focus-visible:ring-crimson"
+                    className="flex items-center gap-2 rounded-md bg-white/[0.035] py-1 pr-3 pl-1 shadow-[inset_0_0_0_1px_var(--color-line)] outline-none focus-visible:ring-2 focus-visible:ring-[var(--cls)]"
                   >
                     <SpellIcon ability={a} size={34} />
-                    <span className="font-semibold text-ink">{a.name}</span>
+                    <span className="font-semibold text-fg">{a.name}</span>
                   </span>
                 </AbilityTip>
               </li>
             ))}
           </ul>
-          <p className="mt-2 text-xs text-ink-faint italic">Hover or tab to an ability to see its tooltip.</p>
+          <p className="mt-2 text-xs text-fg-faint italic">Hover or tab to an ability to see its tooltip.</p>
         </section>
       )}
 
       <section>
-        <h3 className="mb-3 font-display text-sm font-bold tracking-[0.18em] text-crimson uppercase">
+        <h3 className="mb-3 font-display text-base font-bold text-white">
           Line by line
         </h3>
         <ol className="flex flex-col gap-2">
@@ -132,16 +132,16 @@ export function MacroDetail({
             return (
               <li
                 key={i}
-                className="grid grid-cols-[auto_1fr] gap-x-3 gap-y-1 border-b border-ink-line py-3 last:border-0 sm:grid-cols-[2rem_minmax(0,1fr)] sm:gap-x-4"
+                className="grid grid-cols-[auto_1fr] gap-x-3 gap-y-1 border-b border-line py-3 last:border-0 sm:grid-cols-[2rem_minmax(0,1fr)] sm:gap-x-4"
               >
-                <span className="pt-1.5 font-display text-sm font-bold text-crimson tabular-nums">
+                <span className="pt-1.5 font-mono text-sm font-medium text-cls tabular-nums">
                   {i + 1}
                 </span>
                 <div className="min-w-0">
                   <pre className="code-panel overflow-x-auto px-3 py-1.5 font-mono text-sm">
                     <code>{highlightLine(code)}</code>
                   </pre>
-                  <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">{line.why}</p>
+                  <p className="mt-1.5 text-sm leading-relaxed text-fg-soft">{line.why}</p>
                 </div>
               </li>
             );
@@ -150,27 +150,27 @@ export function MacroDetail({
       </section>
 
       <section className="grid gap-4 md:grid-cols-2">
-        <div className="rounded-lg bg-[#fff8e8]/35 p-4 shadow-[inset_0_0_0_1px_var(--color-ink-line)]">
-          <h3 className="mb-2 flex items-center gap-2 font-display text-sm font-bold tracking-[0.12em] text-crimson uppercase">
+        <div className="rounded-lg bg-white/[0.035] p-4 shadow-[inset_0_0_0_1px_var(--color-line)]">
+          <h3 className="mb-2 flex items-center gap-2 font-semibold text-white">
             <Swords className="size-3.5" strokeWidth={2} />
             How it works
           </h3>
-          <p className="text-sm leading-relaxed text-ink">{macro.how}</p>
+          <p className="text-sm leading-relaxed text-fg">{macro.how}</p>
         </div>
-        <div className="rounded-lg bg-[#fff8e8]/35 p-4 shadow-[inset_0_0_0_1px_var(--color-ink-line)]">
-          <h3 className="mb-2 font-display text-sm font-bold tracking-[0.12em] text-crimson uppercase">
+        <div className="rounded-lg bg-white/[0.035] p-4 shadow-[inset_0_0_0_1px_var(--color-line)]">
+          <h3 className="mb-2 font-semibold text-white">
             When to press it
           </h3>
-          <p className="text-sm leading-relaxed text-ink">{macro.when}</p>
+          <p className="text-sm leading-relaxed text-fg">{macro.when}</p>
         </div>
       </section>
 
       {macro.caveats && macro.caveats.length > 0 && (
-        <section className="rounded-lg bg-[#7c1d10]/10 p-4 shadow-[inset_0_0_0_1px_rgba(124,29,16,.3)]">
-          <h3 className="mb-2 font-display text-sm font-bold tracking-[0.12em] text-crimson uppercase">
+        <section className="rounded-lg bg-rust/8 p-4 shadow-[inset_0_0_0_1px_color-mix(in_oklab,var(--color-rust)_35%,transparent)]">
+          <h3 className="mb-2 font-semibold text-white">
             Watch out
           </h3>
-          <ul className="flex flex-col gap-1.5 text-sm leading-relaxed text-ink">
+          <ul className="flex flex-col gap-1.5 text-sm leading-relaxed text-fg">
             {macro.caveats.map((c) => (
               <li key={c} className="pl-4 -indent-4">
                 — {c}

@@ -37,27 +37,24 @@ export function AbilitiesView({
   return (
     <div className="mx-auto flex w-full max-w-5xl flex-col gap-6 pb-16">
       <header className="flex flex-col gap-3">
-        <p className="font-display text-xs font-bold tracking-[0.25em] text-crimson uppercase">
-          Abilities
-        </p>
-        <h2 className="font-display text-3xl font-bold text-ink">
+        <h2 className="font-display text-3xl font-bold text-fg">
           Every {meta.label.toLowerCase()} ability in the book
         </h2>
-        <p className="max-w-prose leading-relaxed text-ink-soft">
+        <p className="max-w-prose leading-relaxed text-fg-soft">
           {entries.length} abilities used by the {meta.label.toLowerCase()} macros. Hover an icon
           for its in-game style tooltip, and click a macro to open it. Notes from the latest Forever
           patches are included where they changed the ability.
         </p>
         <label className="relative block max-w-md">
           <span className="sr-only">Search abilities</span>
-          <Search className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-ink-faint" />
+          <Search className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-fg-faint" />
           <input
             id="ability-search"
             type="search"
             value={q}
             onChange={(e) => setQ(e.target.value)}
             placeholder="Search abilities…"
-            className="h-11 w-full rounded-md bg-[#fff8e8]/45 pr-3 pl-10 text-ink shadow-[inset_0_0_0_1px_var(--color-ink-line)] outline-none placeholder:text-ink-faint focus:bg-[#fff8e8]/70"
+            className="h-11 w-full rounded-md bg-white/[0.035] pr-3 pl-10 text-fg shadow-[inset_0_0_0_1px_var(--color-line)] outline-none placeholder:text-fg-faint focus:bg-white/[0.07]"
           />
         </label>
       </header>
@@ -66,20 +63,20 @@ export function AbilitiesView({
         {shown.map(({ ability: a, usedIn }) => (
           <li
             key={a.name}
-            className="flex gap-4 rounded-lg bg-[#fff8e8]/35 p-4 shadow-[inset_0_0_0_1px_var(--color-ink-line)]"
+            className="flex gap-4 rounded-lg bg-white/[0.035] p-4 shadow-[inset_0_0_0_1px_var(--color-line)]"
           >
             <AbilityTip ability={a}>
-              <span tabIndex={0} className="block rounded-md outline-none focus-visible:ring-2 focus-visible:ring-crimson">
+              <span tabIndex={0} className="block rounded-md outline-none focus-visible:ring-2 focus-visible:ring-[var(--cls)]">
                 <SpellIcon ability={a} size={56} />
               </span>
             </AbilityTip>
             <div className="min-w-0 flex-1">
-              <h3 className="font-display text-lg font-bold text-ink">{a.name}</h3>
-              <p className="text-sm font-semibold text-ink-faint">{a.meta}</p>
-              <p className="mt-1.5 leading-relaxed text-ink-soft">{a.desc}</p>
+              <h3 className="font-display text-lg font-bold text-fg">{a.name}</h3>
+              <p className="text-sm font-semibold text-fg-faint">{a.meta}</p>
+              <p className="mt-1.5 leading-relaxed text-fg-soft">{a.desc}</p>
               {usedIn.length > 0 && (
                 <div className="mt-2 flex flex-wrap items-center gap-1.5">
-                  <span className="text-xs font-bold tracking-wider text-crimson uppercase">Used in</span>
+                  <span className="text-xs font-bold tracking-wider text-cls uppercase">Used in</span>
                   {usedIn.map((m) => (
                     <button
                       key={m.id}
@@ -97,7 +94,7 @@ export function AbilitiesView({
         ))}
       </ul>
       {shown.length === 0 && (
-        <p className="py-10 text-center text-ink-soft italic">No ability matches “{q}”.</p>
+        <p className="py-10 text-center text-fg-soft italic">No ability matches “{q}”.</p>
       )}
     </div>
   );

@@ -46,9 +46,9 @@ export function ActionBar({
   }
 
   return (
-    <footer className="flex shrink-0 items-center justify-center gap-4 border-t border-gold-lo/40 bg-gradient-to-b from-[#1b120b] to-[#0b0806] px-4 py-2.5">
+    <footer className="flex shrink-0 items-center justify-center gap-4 border-t border-line bg-black/40 px-4 pt-2.5 pb-[max(0.625rem,env(safe-area-inset-bottom))] backdrop-blur-md">
       <div className="hidden flex-col items-end md:flex">
-        <span className="font-display text-sm font-semibold tracking-[0.2em] text-muted uppercase">Action bar</span>
+        <span className="font-semibold text-fg">Action bar</span>
         <span className="text-xs text-subtle">Drag macros onto a slot</span>
       </div>
       <ul className="flex gap-1.5 overflow-x-auto p-1">
@@ -64,7 +64,7 @@ export function ActionBar({
               }}
               onDragLeave={() => setOver(null)}
               onDrop={(e) => drop(e, i)}
-              className={cn("relative rounded-md", over === i && "ring-2 ring-gold-hi")}
+              className={cn("relative rounded-md", over === i && "ring-2 ring-[var(--cls)]")}
             >
               {m ? (
                 <AbilityTip ability={primaryAbility(m)}>
@@ -88,7 +88,7 @@ export function ActionBar({
                   </button>
                 </AbilityTip>
               ) : (
-                <span className="block size-[54px] rounded-md bg-[#120d09] shadow-[inset_0_0_0_1px_var(--color-gold-lo),inset_0_2px_8px_#000]" />
+                <span className="block size-[54px] rounded-md bg-inset shadow-[inset_0_0_0_1px_var(--color-line),inset_0_2px_8px_#000]" />
               )}
               <span className="pointer-events-none absolute top-0.5 right-1 font-mono text-[15px] leading-none font-bold text-white [text-shadow:0_1px_2px_#000,0_0_3px_#000,0_0_3px_#000]">
                 {KEYS[i]}
