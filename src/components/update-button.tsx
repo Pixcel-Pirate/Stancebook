@@ -66,22 +66,22 @@ export function UpdateButton() {
               type="button"
               aria-label="Close"
               onClick={() => (setPopup(false), setDownloaded(false))}
-              className="absolute top-3 right-3 text-ink-faint hover:text-ink"
+              className="absolute top-3 right-3 text-fg-faint hover:text-fg"
             >
               <X className="size-5" />
             </button>
             {downloaded ? (
               <>
-                <p className="font-display text-lg font-bold text-ink">Almost done</p>
-                <p className="mt-1 text-ink-soft">
+                <p className="font-display text-lg font-bold text-fg">Almost done</p>
+                <p className="mt-1 text-fg-soft">
                   When the download finishes, close Stancebook and run <b>Stancebook-Setup.exe</b>. Your saved macros,
                   action bar and talents are kept.
                 </p>
               </>
             ) : (
               <>
-                <p className="font-display text-lg font-bold text-ink">A new version of the book is out</p>
-                <p className="mt-1 text-ink-soft">
+                <p className="font-display text-lg font-bold text-fg">A new version of the book is out</p>
+                <p className="mt-1 text-fg-soft">
                   {latest} is ready (you have {VERSION}).{" "}
                   {DESKTOP ? "Update downloads the new installer." : "Update reloads the book with the new version."}
                 </p>

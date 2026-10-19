@@ -39,21 +39,20 @@ export function TalentsView({ classId }: { classId: ClassId }) {
   return (
     <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 pb-16">
       <header className="flex flex-col gap-3">
-        <p className="font-display text-xs font-bold tracking-[0.25em] text-crimson uppercase">Talents</p>
-        <h2 className="font-display text-3xl font-bold text-ink">{meta.label} talent calculator</h2>
-        <p className="max-w-prose leading-relaxed text-ink-soft">
+        <h2 className="font-display text-3xl font-bold text-fg">{meta.label} talent calculator</h2>
+        <p className="max-w-prose leading-relaxed text-fg-soft">
           Click a talent to spend a point, right-click to take it back. Every 5 points in a tree opens the next row.
           Gold-marked talents are new or changed in Forever. Your build is saved. Talent data from{" "}
-          <a className="font-semibold text-crimson underline" href={TALENTS_SOURCE} target="_blank" rel="noreferrer">
+          <a className="font-semibold text-cls underline" href={TALENTS_SOURCE} target="_blank" rel="noreferrer">
             wowforevertalents.com
           </a>
           .
         </p>
         <div className="flex flex-wrap items-center gap-3">
-          <span className="rounded-md bg-ink px-3 py-1.5 font-display font-bold text-gold-hi">
+          <span className="rounded-md bg-inset px-3 py-1.5 font-bold text-gold-hi tabular-nums ring-1 ring-line">
             {total} / {MAX_POINTS} points
           </span>
-          <span className="font-semibold text-ink-soft">
+          <span className="font-semibold text-fg-soft">
             {total ? `Needs level ${total + 9}` : "Points start at level 10"}
             {" · "}
             {trees.map((t, i) => treeTotal(spent, i)).join(" / ")}
@@ -124,7 +123,7 @@ export function TalentsView({ classId }: { classId: ClassId }) {
         })}
       </div>
       {trees.length === 0 && (
-        <p className="py-10 text-center text-ink-soft italic">Talent data for this class isn’t loaded yet.</p>
+        <p className="py-10 text-center text-fg-soft italic">Talent data for this class isn’t loaded yet.</p>
       )}
     </div>
   );

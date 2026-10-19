@@ -85,7 +85,7 @@ export function primaryAbility(macro: Macro): Ability | undefined {
 }
 
 /** Real in-game icon art; falls back to a drawn glyph offline or if the art is missing. */
-function IconArt({ icon, size, fallback }: { icon?: string; size: number; fallback: ReactNode }) {
+function IconArt({ icon, size, fallback, className }: { icon?: string; size: number; fallback: ReactNode; className?: string }) {
   const [failed, setFailed] = useState(false);
   if (!icon || failed) return <>{fallback}</>;
   return (
@@ -99,7 +99,7 @@ function IconArt({ icon, size, fallback }: { icon?: string; size: number; fallba
       loading="lazy"
       draggable={false}
       onError={() => setFailed(true)}
-      className="absolute inset-0 size-full rounded-[inherit] object-cover"
+      className={className ?? "absolute inset-0 size-full rounded-[inherit] object-cover"}
       />
     </>
   );
@@ -145,8 +145,18 @@ export function SpellIcon({
   );
 }
 
-export function ClassIcon({ id, size, fallback }: { id: ClassId; size: number; fallback: ReactNode }) {
-  return <IconArt icon={CLASS_ICON_NAME[id]} size={size} fallback={fallback} />;
+export function ClassIcon({
+  id,
+  size,
+  fallback,
+  imgClassName,
+}: {
+  id: ClassId;
+  size: number;
+  fallback: ReactNode;
+  imgClassName?: string;
+}) {
+  return <IconArt icon={CLASS_ICON_NAME[id]} size={size} fallback={fallback} className={imgClassName} />;
 }
 
 /** WoW-style tooltip shown on hover or keyboard focus. Rendered in a portal so scroll areas never clip it. */
