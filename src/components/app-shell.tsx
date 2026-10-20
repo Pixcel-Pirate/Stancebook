@@ -151,7 +151,7 @@ function PatchStrip({ classId, onOpenNotes }: { classId: ClassId; onOpenNotes: (
           </span>
         </p>
         <button type="button" onClick={onOpenNotes} className="ml-auto shrink-0 text-sm font-semibold text-fg-soft hover:text-fg">
-          All Forever notes
+          All notes
         </button>
         {notes.length > 0 && (
           <button
