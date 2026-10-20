@@ -169,6 +169,12 @@
     mask-image: radial-gradient(circle, #000 30%, transparent 70%);
   }
 
+  /* Patch news along the top edge, tinted by the class dye */
+  .patch-strip {
+    background: linear-gradient(90deg, color-mix(in oklab, var(--cls) 14%, #0c0b10), #0c0b10 70%);
+    box-shadow: inset 0 -1px 0 var(--color-line);
+  }
+
   .rule-ornate {
     height: 1px;
     background: linear-gradient(90deg, color-mix(in oklab, var(--cls) 55%, transparent), var(--color-line) 40%, transparent);

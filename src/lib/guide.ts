@@ -441,3 +441,21 @@ const GUIDES: Record<ClassId, ClassGuide> = {
 export function guideFor(classId: ClassId): ClassGuide {
   return GUIDES[classId];
 }
+
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
+/** "Oct 15 patch" → sortable 1015; anything else → -1. */
+function patchOrder(tag: string): number {
+  const m = /^(\w+) (\d+) patch$/.exec(tag);
+  const month = m ? MONTHS.indexOf(m[1] === "Sep" ? "Sept" : m[1]) : -1;
+  return month < 0 ? -1 : (month + 1) * 100 + Number(m![2]);
+}
+
+/** The newest "<Mon D> patch" tag across every class, so all classes show the same patch. */
+export const LATEST_PATCH: string = Object.values(GUIDES)
+  .flatMap((g) => g.forever.map((n) => n.tag))
+  .reduce((best, tag) => (patchOrder(tag) > patchOrder(best) ? tag : best), "");
+
+/** This class's notes from the newest patch (empty when the patch didn't touch the class). */
+export function latestPatchNotes(classId: ClassId): ForeverNote[] {
+  return GUIDES[classId].forever.filter((n) => n.tag === LATEST_PATCH);
+}
