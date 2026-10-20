@@ -6,8 +6,11 @@
   "documentRoot": "/resources/",
   "url": "/",
   "enableServer": true,
-  "enableNativeAPI": false,
-  "logging": { "enabled": false, "writeToLogFile": false },
+  "enableNativeAPI": true,
+  "logging": {
+    "enabled": false,
+    "writeToLogFile": false
+  },
   "modes": {
     "window": {
       "title": "Stancebook",
@@ -19,7 +22,9 @@
       "icon": "/resources/icon.png",
       "enableInspector": false,
       "resizable": true,
-      "exitProcessOnClose": true
+      "exitProcessOnClose": true,
+      "injectGlobals": true,
+      "injectClientLibrary": true
     }
   },
   "cli": {
@@ -27,6 +32,12 @@
     "resourcesPath": "/resources/",
     "extensionsPath": "/extensions/",
     "binaryVersion": "6.10.0",
-    "clientVersion": "6.10.0"
-  }
+    "clientVersion": "6.10.0",
+    "clientLibrary": "/resources/js/neutralino.js"
+  },
+  "nativeAllowList": [
+    "filesystem.writeBinaryFile",
+    "os.execCommand",
+    "app.exit"
+  ]
 }
