@@ -38,6 +38,7 @@
   "nativeAllowList": [
     "filesystem.writeBinaryFile",
     "os.execCommand",
-    "app.exit"
+    "app.exit",
+    "app.restartProcess"
   ]
 }

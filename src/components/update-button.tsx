@@ -25,7 +25,10 @@ async function updateDesktop() {
   // a cut-off download would leave the app unable to start, so refuse anything that small
   if (!pack || pack.byteLength < 200_000) throw new Error("download failed");
   await w.Neutralino.filesystem.writeBinaryFile(w.NL_PATH + "/resources.neu", pack);
-  await w.Neutralino.app.restartProcess();
+  // the new files are in place now; if the restart is refused, reopening the app finishes the update
+  await w.Neutralino.app.restartProcess().catch(() => {
+    throw new Error("restart");
+  });
 }
 
 /** Checks GitHub when the book opens. If there's a newer release, pops up an update prompt and keeps a button in the header. */
@@ -33,6 +36,7 @@ export function UpdateButton() {
   const [latest, setLatest] = useState<string | null>(null);
   const [popup, setPopup] = useState(true);
   const [downloaded, setDownloaded] = useState(false);
+  const [reopen, setReopen] = useState(false);
   const [busy, setBusy] = useState(false);
 
   useEffect(() => {
@@ -55,10 +59,11 @@ export function UpdateButton() {
     setBusy(true);
     try {
       await updateDesktop();
-    } catch {
-      // builds from before in-place updates can't write their own files: fall back to the installer
+    } catch (e) {
       setBusy(false);
       setDownloaded(true);
+      if ((e as Error).message === "restart") return setReopen(true);
+      // builds from before in-place updates can't write their own files: fall back to the installer
       location.href = INSTALLER;
     }
   }
@@ -88,7 +93,12 @@ export function UpdateButton() {
             >
               <X className="size-5" />
             </button>
-            {downloaded ? (
+            {reopen ? (
+              <>
+                <p className="font-display text-lg font-bold text-fg">Update installed</p>
+                <p className="mt-1 text-fg-soft">Close Stancebook and open it again to start the new version.</p>
+              </>
+            ) : downloaded ? (
               <>
                 <p className="font-display text-lg font-bold text-fg">Almost done</p>
                 <p className="mt-1 text-fg-soft">
