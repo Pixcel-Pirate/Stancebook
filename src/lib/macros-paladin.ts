@@ -321,10 +321,10 @@ export const PALADIN_MACROS: Macro[] = [
   {
     id: "paladin-blessing",
     classId: "paladin",
-    name: "Blessing picker (Might / Kings / Wisdom)",
-    summary: "Might by default. Shift Kings. Ctrl Wisdom. Mouseover the ally.",
-    how: "Forever blessings last an hour, so this is a once-per-buff-window press, not a combat weave. Kings is baseline at 20 (it was a talent). Greater Blessings still want a Symbol of Kings — this macro is the single-target version.",
-    when: "Out of combat, on the raid, after a wipe. Might on melee, Wisdom on casters, Kings on everyone if you are the Kings paladin.",
+    name: "Blessing picker (Might / Wisdom / Greater Kings)",
+    summary: "Might by default. Shift Greater Kings. Ctrl Wisdom. Mouseover the ally.",
+    how: "Forever blessings last an hour, so this is a once-per-buff-window press, not a combat weave. Single-target Blessing of Kings is gone in Forever; Kings now only exists as Greater Blessing of Kings, trained at 60, which covers every party and raid member of the class you click.",
+    when: "Out of combat, on the raid, after a wipe. Might on melee, Wisdom on casters, Greater Kings on each class if you are the Kings paladin (level 60).",
     category: "utility",
     specs: ALL,
     level: 20,
@@ -332,8 +332,8 @@ export const PALADIN_MACROS: Macro[] = [
     lines: [
       { code: "#showtooltip", why: "Follows the blessing this press will apply." },
       {
-        code: "/cast [mod:shift,@mouseover,help,nodead][mod:shift] Blessing of Kings; [mod:ctrl,@mouseover,help,nodead][mod:ctrl] Blessing of Wisdom; [@mouseover,help,nodead][] Blessing of Might",
-        why: "Shift Kings, Ctrl Wisdom, plain Might. Mouseover if there is one.",
+        code: "/cast [mod:shift,@mouseover,help,nodead][mod:shift] Greater Blessing of Kings; [mod:ctrl,@mouseover,help,nodead][mod:ctrl] Blessing of Wisdom; [@mouseover,help,nodead][] Blessing of Might",
+        why: "Shift Greater Kings, Ctrl Wisdom, plain Might. Mouseover if there is one.",
       },
     ],
   },
