@@ -227,6 +227,12 @@ const CAP: ForeverNote = {
   body: "Forever did not raise the cap. Every card shows the count. If you go over, drop #showtooltip first.",
 };
 
+const RACIALS: ForeverNote = {
+  title: "Racials retuned",
+  tag: "Oct 26 patch",
+  body: "No class changes, only racials. Orc Blood Fury is a 2-minute cooldown (was 3) and Command is back (+5% pet damage, replacing Savage). Troll Berserking lasts 15 seconds (was 10). Undead Touch of the Grave can proc every 15 seconds. Dwarves trade Earth Fury for 1% hit, Human crit drops to 1% and Spirit rises to 10%, Tauren Endurance is 5% health again. A burst macro with Blood Fury now lines up with your other 2-minute cooldowns.",
+};
+
 const WARRIOR_FOREVER: ForeverNote[] = [
   { title: "Victory Rush (level 20)", tag: "New spell", body: "After you kill a non-trivial enemy you have 20 seconds to press Victory Rush: instant, no rage, a heal. Train it the moment you hit 20." },
   { title: "Tactical Mastery is trained", tag: "Baseline", body: "Taught at 14. You keep 10 rage through a stance change without spending a talent point." },
@@ -241,6 +247,7 @@ const WARRIOR_FOREVER: ForeverNote[] = [
   { title: "Smaller fixes", tag: "Oct 8 patch", body: "Deep Wounds is required again to reach Impale. Last Stand grants the right health. Demoralizing Shout now makes threat, so it is a real AoE threat button." },
   { title: "Battle Shout is raid-wide", tag: "Oct 15 patch", body: "It now reaches the whole raid, so one shout covers everyone. Keep it on a key you can refresh between pulls." },
   { title: "Slam ignores pushback", tag: "Oct 15 patch", body: "Getting hit no longer delays Slam, so the Slam cooldown key is safe to press in melee. Overpower also works on much lower-level enemies now." },
+  RACIALS,
   CAP,
 ];
 
@@ -256,6 +263,7 @@ const HUNTER_FOREVER: ForeverNote[] = [
   { title: "Pet changes", tag: "Oct 1 patch", body: "Aggressive Mode is back on the pet spellbook tab. Furious Howl gives 40% less AP. Unleashed Fury now actually raises pet damage (Oct 8). You can't tame beasts above your level." },
   { title: "Auto Shot waits half a second", tag: "Oct 15 patch", body: "You must stand still for 0.5 seconds before Auto Shot fires. Stop moving before your opener macro, or the first shot is lost." },
   { title: "Traps and pets", tag: "Oct 15 patch", body: "Fire Traps scale with Attack Power, and you can have one Fire and one Ice Trap out at once. Trueshot Aura is raid-wide, Strider Kick works while disarmed, and pet exotic skills got longer cooldowns." },
+  RACIALS,
   CAP,
 ];
 
@@ -267,6 +275,7 @@ const ROGUE_FOREVER: ForeverNote[] = [
   { title: "Expose Armor and Setup fixes", tag: "Oct 1 patch", body: "A missed Expose Armor no longer wipes your combo points. Setup only gives points on the target that you dodged or resisted." },
   { title: "Oct 8", tag: "No changes", body: "The Oct 8 patch had no rogue changes. Your macros are unchanged." },
   { title: "Small fixes", tag: "Oct 15 patch", body: "Sap no longer triggers weapon procs, and Cold Blood is used up correctly when Mutilate crits. No macro changes." },
+  RACIALS,
   CAP,
 ];
 
@@ -283,6 +292,7 @@ const PALADIN_FOREVER: ForeverNote[] = [
   { title: "Righteous Fury and Vengeance", tag: "Sept 24 patch", body: "Righteous Fury's Holy threat is 60% (was 90%). Vengeance caps at 3 stacks and procs from any direct crit." },
   { title: "Salvation is its own buff", tag: "Oct 15 patch", body: "Blessing of Salvation is now Salvation and Mass Salvation, and it no longer replaces your other blessing. Revoke removes it from a tank. Update any [@mouseover] Salvation macro to the new name." },
   { title: "Reckoning and Righteous Fury", tag: "Oct 15 patch", body: "Reckoning stores up to 4 charges that fire on your next swing. Righteous Fury threat is up to 90%, so tanks should keep it on. Consecration and Champion of the Light numbers changed too." },
+  RACIALS,
   CAP,
 ];
 
@@ -299,6 +309,7 @@ const PRIEST_FOREVER: ForeverNote[] = [
   { title: "Low-rank heals and Smite", tag: "Oct 8 patch", body: "Smite ranks 1-4, Lesser Heal and early Heal ranks were rebalanced. Downrank macros still work; the numbers just changed." },
   { title: "Shadow cooldowns are longer", tag: "Oct 15 patch", body: "Devouring Plague is now 24 seconds, Shadow Word: Death 18 seconds and Vampiric Embrace 30 seconds. Bind them as cooldowns, not rotation keys." },
   { title: "Shadow talents reshuffled", tag: "Oct 15 patch", body: "Dark Inspiration is new, Improved Mind Flay adds damage per tick, and Improved Fade and Shadow Infinity are gone. Re-check your talents." },
+  RACIALS,
   CAP,
 ];
 
@@ -315,6 +326,7 @@ const SHAMAN_FOREVER: ForeverNote[] = [
   { title: "Lava Burst and Riptide", tag: "Sept 24 patch", body: "Lava Burst ranks 1-2 hit harder and Riptide can crit. Rage of the Farseer no longer adds cast speed." },
   { title: "Cheaper Chain Lightning", tag: "Oct 15 patch", body: "Chain Lightning costs about 35% less mana. Fire Nova was retuned, and the air and earth totems are raid-wide." },
   { title: "Elemental Mastery is back", tag: "Oct 15 patch", body: "It returns as the 31-point Elemental talent. Lava Burst moved to row 5 and Call of Thunder is gone. Stormstrike now costs mana. Re-check your talents." },
+  RACIALS,
   CAP,
 ];
 
@@ -329,6 +341,7 @@ const MAGE_FOREVER: ForeverNote[] = [
   { title: "Winter's Chill and Improved Scorch", tag: "Oct 1 patch", body: "Neither debuff rolls to resist twice anymore, so they stack up more reliably." },
   { title: "Arcane Blast redesigned", tag: "Oct 15 patch", body: "Arcane Blast now gives you stacking spell damage for 15 seconds instead of making itself pricier. Arcane Wrath is a new talent. Keep Blast as your Arcane filler." },
   { title: "Frost Blast and frost changes", tag: "Oct 15 patch", body: "New Frost Blast (level 24) slows by 40%. Winter's Chill now empowers Cone of Cold, and Ice Lance on frozen targets is 200%. Fire Power was redesigned." },
+  RACIALS,
   CAP,
 ];
 
@@ -342,6 +355,7 @@ const WARLOCK_FOREVER: ForeverNote[] = [
   { title: "Shadow Bolt and Demonic Brand", tag: "Oct 8 patch", body: "Shadow Bolt ranks 1-4 were rebalanced. Demonic Brand's pet bonus only makes high threat with Shadow damage." },
   { title: "Pet tab", tag: "Oct 1 patch", body: "Aggressive Mode is back on the pet spellbook tab. Voidwalker Sacrifice scales with 10% of spell healing." },
   { title: "Range talents", tag: "Oct 15 patch", body: "Malediction is replaced by Grim Reach (Affliction range), and Destructive Reach adds Destruction range. Shadow Mastery is up to 10%. Re-check your talents." },
+  RACIALS,
   CAP,
 ];
 
@@ -358,6 +372,7 @@ const DRUID_FOREVER: ForeverNote[] = [
   { title: "Wrath, Thorns and HoT crits", tag: "Sept 24 & Oct 8", body: "Wrath hits about 50% harder. Rejuvenation, Tranquility and Wild Growth can crit. Thorns is back to Vanilla values with a 6% spell power ratio." },
   { title: "Raid-wide auras and Faerie Fire", tag: "Oct 15 patch", body: "Moonkin Aura and Leader of the Pack are raid-wide. Faerie Fire makes threat in bear form and no longer procs Omen of Clarity, so it is a real tank pull button." },
   { title: "Feral fixes", tag: "Oct 15 patch", body: "Shred is learned at level 20. Furor keeps your cat Energy when you shift to bear. Rejuvenation ranks no longer block other druids." },
+  RACIALS,
   CAP,
 ];
 
@@ -369,7 +384,7 @@ const GUIDES: Record<ClassId, ClassGuide> = {
     intro: "Macros in WoW Forever are Classic-era: 255 characters, no rotation brain, conditions checked left to right. The rules below are the ones that actually change how a warrior plays.",
     sections: [RANK, STARTATTACK, ...CORE.slice(0, 1), STANCE, ...CORE.slice(1, 3), COMBAT, ...CORE.slice(3)],
     foreverHeading: "What changed for warriors",
-    foreverIntro: "Updated with the Sept 24, Oct 1, Oct 8 and Oct 15 patches. Victory Rush, baseline Tactical Mastery, and Charge in Defensive Stance are the three that actually change which macros you bind.",
+    foreverIntro: "Updated with the Sept 24, Oct 1, Oct 8, Oct 15 and Oct 26 patches. Victory Rush, baseline Tactical Mastery, and Charge in Defensive Stance are the three that actually change which macros you bind.",
     forever: WARRIOR_FOREVER,
   },
   paladin: {
@@ -377,7 +392,7 @@ const GUIDES: Record<ClassId, ClassGuide> = {
     intro: "A paladin’s extra rule is Seals: Judgement no longer eats them, so your keys change.",
     sections: [rankExample("/cast Holy Strike", "Same rule for Flash of Light and Judgement."), STARTATTACK, SEALS, MOUSEHEAL, GCD, TARGETS, MODS, STOPCAST, SHOWTOOLTIP, CANNOT],
     foreverHeading: "What changed for paladins",
-    foreverIntro: "Updated with the Sept 24, Oct 1, Oct 8 and Oct 15 patches. Holy Strike, Seal of Fury, Judgement that keeps the Seal, and baseline Consecration are the four that change which macros you bind.",
+    foreverIntro: "Updated with the Sept 24, Oct 1, Oct 8, Oct 15 and Oct 26 patches. Holy Strike, Seal of Fury, Judgement that keeps the Seal, and baseline Consecration are the four that change which macros you bind.",
     forever: PALADIN_FOREVER,
   },
   hunter: {
@@ -385,7 +400,7 @@ const GUIDES: Record<ClassId, ClassGuide> = {
     intro: "A hunter’s extra rule is the pet: it does not assist like a retail pet. You send it, or it sits on a corpse.",
     sections: [rankExample("/cast Serpent Sting", "Hunters almost never want a downrank."), PET_ATTACK, AUTO_SHOT, PET_STANCES, GCD, TARGETS, MODS, COMBAT, SHOWTOOLTIP, CANNOT],
     foreverHeading: "What changed for hunters",
-    foreverIntro: "Updated with the Sept 24, Oct 1, Oct 8 and Oct 15 patches. Aimed Shot is trained, the pet gained Assist, and Summon Hawk / Strider Kick sit on shared cooldowns.",
+    foreverIntro: "Updated with the Sept 24, Oct 1, Oct 8, Oct 15 and Oct 26 patches. Aimed Shot is trained, the pet gained Assist, and Summon Hawk / Strider Kick sit on shared cooldowns.",
     forever: HUNTER_FOREVER,
   },
   rogue: {
@@ -393,7 +408,7 @@ const GUIDES: Record<ClassId, ClassGuide> = {
     intro: "A rogue’s extra rules are stealth, combo points, and /startattack so you never stand still between builders.",
     sections: [rankExample("/cast Sinister Strike", "A ranked icon from the spellbook will not upgrade when you train."), STARTATTACK, COMBO, STEALTH, GCD, TARGETS, MODS, COMBAT, SHOWTOOLTIP, CANNOT],
     foreverHeading: "What changed for rogues",
-    foreverIntro: "Updated with the Sept 24, Oct 1, Oct 8 and Oct 15 patches. Cutthroat, Mutilate, and Dirty Tricks are the three that change which macros you bind.",
+    foreverIntro: "Updated with the Sept 24, Oct 1, Oct 8, Oct 15 and Oct 26 patches. Cutthroat, Mutilate, and Dirty Tricks are the three that change which macros you bind.",
     forever: ROGUE_FOREVER,
   },
   priest: {
@@ -401,7 +416,7 @@ const GUIDES: Record<ClassId, ClassGuide> = {
     intro: "A priest’s extra rule is mouseover: never tab onto a friend if you can help it.",
     sections: [rankExample("/cast Flash Heal", "Downranks are a conscious choice, not a spellbook icon."), MOUSEHEAL, GCD, TARGETS, MODS, STOPCAST, SHOWTOOLTIP, CANNOT],
     foreverHeading: "What changed for priests",
-    foreverIntro: "Updated with the Sept 24, Oct 1, Oct 8 and Oct 15 patches. Fear Ward for every race, SW:Death from the trainer, a Shadowform that actually has mana, and Penance / Prayer of Mending.",
+    foreverIntro: "Updated with the Sept 24, Oct 1, Oct 8, Oct 15 and Oct 26 patches. Fear Ward for every race, SW:Death from the trainer, a Shadowform that actually has mana, and Penance / Prayer of Mending.",
     forever: PRIEST_FOREVER,
   },
   shaman: {
@@ -409,7 +424,7 @@ const GUIDES: Record<ClassId, ClassGuide> = {
     intro: "A shaman’s extra rules are a shared shock cooldown and a totem bar that finally drops four at once.",
     sections: [rankExample("/cast Lightning Bolt", "Healing Wave downranks are a separate bind if you want them."), SHOCKS, TOTEMS, STARTATTACK, MOUSEHEAL, GCD, TARGETS, MODS, STOPCAST, SHOWTOOLTIP, CANNOT],
     foreverHeading: "What changed for shaman",
-    foreverIntro: "Updated with the Sept 24, Oct 1, Oct 8 and Oct 15 patches. Call of the Elements, Lava Burst, Riptide, Fire Nova as a spell, and a faster Lightning Bolt.",
+    foreverIntro: "Updated with the Sept 24, Oct 1, Oct 8, Oct 15 and Oct 26 patches. Call of the Elements, Lava Burst, Riptide, Fire Nova as a spell, and a faster Lightning Bolt.",
     forever: SHAMAN_FOREVER,
   },
   mage: {
@@ -417,7 +432,7 @@ const GUIDES: Record<ClassId, ClassGuide> = {
     intro: "A mage’s extra rule is /stopcasting: a bolt in progress will eat Blink, Counterspell, and sheep if you let it.",
     sections: [rankExample("/cast Frostbolt", "Rank 1 Frostbolt as a snare is a different macro, on purpose."), STOPCAST, AUTO_SHOT, GCD, TARGETS, MODS, SHOWTOOLTIP, CANNOT],
     foreverHeading: "What changed for mages",
-    foreverIntro: "Updated with the Sept 24, Oct 1, Oct 8 and Oct 15 patches. Frostfire Bolt is trained, Arcane Blast makes Arcane a spec, and Ice Lance exists for shatter windows.",
+    foreverIntro: "Updated with the Sept 24, Oct 1, Oct 8, Oct 15 and Oct 26 patches. Frostfire Bolt is trained, Arcane Blast makes Arcane a spec, and Ice Lance exists for shatter windows.",
     forever: MAGE_FOREVER,
   },
   warlock: {
@@ -425,7 +440,7 @@ const GUIDES: Record<ClassId, ClassGuide> = {
     intro: "A warlock’s extra rule is the same as the hunter’s: the demon does not assist. You send it, or it sits on a corpse.",
     sections: [rankExample("/cast Shadow Bolt", "Corruption and Bane of Agony follow the same rule."), PET_ATTACK, BANES, GCD, TARGETS, MODS, STOPCAST, SHOWTOOLTIP, CANNOT],
     foreverHeading: "What changed for warlocks",
-    foreverIntro: "Updated with the Sept 24, Oct 1, Oct 8 and Oct 15 patches. Agony and Doom are Banes, Destruction’s capstone is Incinerate, and the pet still needs /petattack on the filler.",
+    foreverIntro: "Updated with the Sept 24, Oct 1, Oct 8, Oct 15 and Oct 26 patches. Agony and Doom are Banes, Destruction’s capstone is Incinerate, and the pet still needs /petattack on the filler.",
     forever: WARLOCK_FOREVER,
   },
   druid: {
@@ -433,7 +448,7 @@ const GUIDES: Record<ClassId, ClassGuide> = {
     intro: "A druid’s extra rules are numbered forms and mouseover heals so you can stay in Cat on the kill.",
     sections: [rankExample("/cast Rejuvenation", "Healing Touch downranks are a separate bind if you want them."), FORMS, STARTATTACK, MOUSEHEAL, GCD, TARGETS, MODS, SHOWTOOLTIP, CANNOT],
     foreverHeading: "What changed for druids",
-    foreverIntro: "Updated with the Sept 24, Oct 1, Oct 8 and Oct 15 patches. Lacerate, Primal Bite, Berserk, Eclipse, and Wild Growth are the ones that change keys.",
+    foreverIntro: "Updated with the Sept 24, Oct 1, Oct 8, Oct 15 and Oct 26 patches. Lacerate, Primal Bite, Berserk, Eclipse, and Wild Growth are the ones that change keys.",
     forever: DRUID_FOREVER,
   },
 };
