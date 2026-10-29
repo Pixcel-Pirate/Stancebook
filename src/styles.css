@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* The active class color. Registered so switching class fades the dye instead of snapping. */
+/* The active class color. Registered so switching class fades the glow instead of snapping. */
 @property --cls {
   syntax: "<color>";
   inherits: true;
@@ -8,32 +8,32 @@
 }
 
 @theme {
-  /* Obsidian book */
-  --color-bg: #0c0b10;
-  --color-surface: #15141b;
-  --color-surface-hi: #1d1c25;
-  --color-inset: #09080c;
-  --color-line: rgba(255, 255, 255, 0.085);
+  /* Holo-glass: near-black blue ground, frosted panels, light-line edges */
+  --color-bg: #06070c;
+  --color-surface: #10121b;
+  --color-surface-hi: #171a26;
+  --color-inset: rgba(3, 4, 8, 0.62);
+  --color-line: rgba(176, 196, 255, 0.1);
 
   /* Text */
-  --color-fg: #eee9df;
-  --color-fg-soft: #bdb6a8;
-  --color-fg-faint: #8f887b;
-  --color-muted: #bdb6a8;
-  --color-subtle: #8f887b;
+  --color-fg: #eef1f7;
+  --color-fg-soft: #b4bccb;
+  --color-fg-faint: #8a93a6;
+  --color-muted: #b4bccb;
+  --color-subtle: #8a93a6;
 
   /* Macro syntax */
   --color-accent: #9fd3ff;
   --color-rust: #ff8a6b;
   --color-warn: #f3c969;
 
-  /* Class dye: text-cls, bg-cls ... follow the class you picked */
+  /* Class light: text-cls, bg-cls ... follow the class you picked */
   --color-cls: var(--cls);
 
-  /* Gold trim */
-  --color-gold: #d6aa4e;
-  --color-gold-hi: #f2d48a;
-  --color-gold-lo: #7a5a22;
+  /* Glow trim, tinted by the class light */
+  --color-glow: color-mix(in oklab, var(--cls) 72%, #fff);
+  --color-glow-hi: color-mix(in oklab, var(--cls) 42%, #fff);
+  --color-glow-lo: color-mix(in oklab, var(--cls) 45%, #06070c);
 
   --color-warrior: #c69b6d;
   --color-paladin: #f48cba;
@@ -45,12 +45,13 @@
   --color-warlock: #8788ee;
   --color-druid: #ff7c0a;
 
-  --font-display: "Cinzel", "Times New Roman", serif;
-  --font-deco: "Cinzel Decorative", "Cinzel", serif;
+  --font-display: "Chakra Petch", "Segoe UI", system-ui, sans-serif;
+  --font-deco: "Chakra Petch", "Segoe UI", system-ui, sans-serif;
   --font-sans: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
 
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 @layer base {
@@ -62,22 +63,36 @@
     /* Everything sized in rem grows with this: 18px base instead of 16px. */
     font-size: 112.5%;
     color-scheme: dark;
-    transition: --cls 0.45s var(--ease-out);
+    transition: --cls 0.5s var(--ease-out);
   }
   html,
   body {
     height: 100%;
   }
   #app {
+    position: relative;
+    z-index: 1;
     height: 100dvh;
   }
   body {
     margin: 0;
     font-family: var(--font-sans);
     color: var(--color-fg);
+    background: var(--color-bg);
+  }
+  /* Aurora in the class light, drifting slowly behind the glass */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: -20vmax;
+    z-index: 0;
+    pointer-events: none;
     background:
-      radial-gradient(ellipse 70% 50% at 20% -10%, color-mix(in oklab, var(--cls) 16%, transparent), transparent 70%),
-      var(--color-bg);
+      radial-gradient(38vmax 30vmax at 18% 12%, color-mix(in oklab, var(--cls) 40%, transparent), transparent 70%),
+      radial-gradient(34vmax 26vmax at 86% 78%, color-mix(in oklab, var(--cls) 22%, transparent), transparent 70%),
+      radial-gradient(28vmax 22vmax at 70% 8%, rgba(90, 120, 255, 0.1), transparent 70%);
+    filter: saturate(1.2);
+    animation: aurora 28s var(--ease-in-out) infinite alternate;
   }
   button,
   a,
@@ -96,8 +111,13 @@
   select {
     font-size: max(16px, 1rem);
   }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
   ::selection {
-    background: color-mix(in oklab, var(--cls) 40%, transparent);
+    background: color-mix(in oklab, var(--cls) 45%, transparent);
     color: #fff;
   }
   :focus-visible {
@@ -106,7 +126,7 @@
   }
   * {
     scrollbar-width: thin;
-    scrollbar-color: rgba(255, 255, 255, 0.14) transparent;
+    scrollbar-color: color-mix(in oklab, var(--cls) 30%, rgba(176, 196, 255, 0.2)) transparent;
   }
   input {
     caret-color: var(--cls);
@@ -118,41 +138,63 @@
   .book {
     position: relative;
   }
-  /* A raised slate panel with a gold hairline along its top edge */
+  /* A frosted glass pane. The top edge catches the class light. */
   .page {
     position: relative;
     color: var(--color-fg);
-    border-radius: 14px;
-    background: linear-gradient(180deg, var(--color-surface-hi), var(--color-surface) 220px);
+    border-radius: 18px;
+    background: linear-gradient(180deg, rgba(24, 27, 40, 0.72), rgba(12, 14, 22, 0.66) 260px);
+    backdrop-filter: blur(22px) saturate(1.4);
+    -webkit-backdrop-filter: blur(22px) saturate(1.4);
     box-shadow:
-      inset 0 1px 0 rgba(242, 212, 138, 0.18),
+      inset 0 1px 0 color-mix(in oklab, var(--cls) 38%, transparent),
       inset 0 0 0 1px var(--color-line),
-      0 18px 40px -24px rgba(0, 0, 0, 0.9);
+      0 30px 60px -36px rgba(0, 0, 0, 0.95);
     overscroll-behavior: contain;
   }
 
-  /* Class banner: the class color carries this whole field */
+  /* Class banner: a pane lit from the top-left by the class light */
   .banner {
     position: relative;
     isolation: isolate;
     overflow: hidden;
-    border-radius: 16px;
+    border-radius: 20px;
     background:
-      radial-gradient(ellipse 60% 140% at 0% 0%, color-mix(in oklab, var(--cls) 46%, transparent), transparent 70%),
-      linear-gradient(100deg, color-mix(in oklab, var(--cls) 30%, #0c0b10), color-mix(in oklab, var(--cls) 9%, #0c0b10) 70%);
+      radial-gradient(ellipse 55% 160% at 0% 0%, color-mix(in oklab, var(--cls) 42%, transparent), transparent 70%),
+      linear-gradient(100deg, color-mix(in oklab, var(--cls) 16%, rgba(16, 18, 28, 0.8)), rgba(10, 12, 20, 0.7) 70%);
+    backdrop-filter: blur(22px) saturate(1.5);
+    -webkit-backdrop-filter: blur(22px) saturate(1.5);
     box-shadow:
-      inset 0 1px 0 color-mix(in oklab, var(--cls) 55%, transparent),
-      inset 0 0 0 1px color-mix(in oklab, var(--cls) 28%, transparent),
-      0 20px 50px -30px color-mix(in oklab, var(--cls) 60%, #000);
+      inset 0 1px 0 color-mix(in oklab, var(--cls) 60%, transparent),
+      inset 0 0 0 1px color-mix(in oklab, var(--cls) 22%, var(--color-line)),
+      0 30px 70px -40px color-mix(in oklab, var(--cls) 70%, #000);
   }
-  /* Gilded hem along the bottom of the banner */
+  /* Light-line along the bottom of the banner */
   .banner::after {
     content: "";
     position: absolute;
     inset: auto 0 0 0;
     height: 1px;
-    background: linear-gradient(90deg, var(--cls), color-mix(in oklab, var(--cls) 30%, var(--color-gold)) 50%, transparent);
-    opacity: 0.85;
+    background: linear-gradient(90deg, transparent, var(--cls) 20%, color-mix(in oklab, var(--cls) 40%, #fff) 45%, transparent 85%);
+    box-shadow: 0 0 12px var(--cls);
+    opacity: 0.8;
+  }
+  /* Signature: a beam of light crosses the banner each time you pick a class */
+  .sweep {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: linear-gradient(
+      105deg,
+      transparent 35%,
+      color-mix(in oklab, var(--cls) 30%, transparent) 46%,
+      rgba(255, 255, 255, 0.16) 50%,
+      color-mix(in oklab, var(--cls) 30%, transparent) 54%,
+      transparent 65%
+    );
+    translate: -100% 0;
+    animation: sweep 0.9s var(--ease-in-out) 0.05s;
   }
   .banner-art {
     position: absolute;
@@ -164,20 +206,28 @@
     translate: 0 -50%;
     border-radius: 50%;
     object-fit: cover;
-    opacity: 0.22;
+    opacity: 0.2;
     filter: saturate(1.2);
     mask-image: radial-gradient(circle, #000 30%, transparent 70%);
   }
+  /* The class name resolves out of a blur when the class changes */
+  .dye-in {
+    animation: dye-in 0.45s var(--ease-out);
+  }
 
-  /* Patch news along the top edge, tinted by the class dye */
+  /* Patch news along the top edge, tinted by the class light */
   .patch-strip {
-    background: linear-gradient(90deg, color-mix(in oklab, var(--cls) 14%, #0c0b10), #0c0b10 70%);
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(90deg, color-mix(in oklab, var(--cls) 14%, rgba(8, 9, 15, 0.8)), rgba(8, 9, 15, 0.72) 70%);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     box-shadow: inset 0 -1px 0 var(--color-line);
   }
 
   .rule-ornate {
     height: 1px;
-    background: linear-gradient(90deg, color-mix(in oklab, var(--cls) 55%, transparent), var(--color-line) 40%, transparent);
+    background: linear-gradient(90deg, color-mix(in oklab, var(--cls) 60%, transparent), var(--color-line) 40%, transparent);
   }
 
   /* Spell icon slot */
@@ -186,62 +236,74 @@
     flex: none;
     display: grid;
     place-items: center;
-    border-radius: 8px;
-    color: #fff8e6;
+    border-radius: 10px;
+    color: #f4f7ff;
     background:
-      radial-gradient(circle at 35% 28%, rgba(255, 255, 255, 0.3), transparent 45%),
+      radial-gradient(circle at 35% 28%, rgba(255, 255, 255, 0.28), transparent 45%),
       linear-gradient(145deg, var(--slot-a), var(--slot-b));
     box-shadow:
-      0 0 0 1px #000,
-      0 0 0 2px rgba(214, 170, 78, 0.45),
-      inset 0 0 0 1px rgba(255, 255, 255, 0.14),
-      0 4px 10px rgba(0, 0, 0, 0.5);
+      0 0 0 1px rgba(0, 0, 0, 0.85),
+      0 0 0 2px rgba(190, 210, 255, 0.16),
+      0 6px 14px -4px rgba(0, 0, 0, 0.7);
+    transition: box-shadow 0.2s var(--ease-out);
   }
   .slot::after {
-    /* inner bevel over the icon art */
+    /* glass sheen over the icon art */
     content: "";
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12), inset 0 -8px 14px rgba(0, 0, 0, 0.35);
+    background: linear-gradient(160deg, rgba(255, 255, 255, 0.16), transparent 42%);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1), inset 0 -8px 14px rgba(0, 0, 0, 0.3);
     pointer-events: none;
   }
   .slot svg {
     filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.7));
   }
-  /* Selected spell: the in-game "this one" highlight */
+  /* Selected spell: lit in the class light */
   .slot-glow {
     box-shadow:
-      0 0 0 1px #000,
-      0 0 0 2px var(--color-gold-hi),
-      0 2px 14px 1px rgba(242, 212, 138, 0.5),
-      inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+      0 0 0 1px rgba(0, 0, 0, 0.85),
+      0 0 0 2px var(--color-glow-hi),
+      0 0 22px -2px var(--cls);
   }
 
-  .btn-gold {
-    color: #1f1405;
-    background: linear-gradient(180deg, var(--color-gold-hi), var(--color-gold));
+  .btn-glow {
+    color: #06070c;
+    background: linear-gradient(180deg, var(--color-glow-hi), var(--color-glow));
     box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.5),
-      0 0 0 1px #4a3210,
-      0 2px 8px -2px rgba(0, 0, 0, 0.6);
+      inset 0 1px 0 rgba(255, 255, 255, 0.55),
+      0 0 0 1px color-mix(in oklab, var(--cls) 55%, #000),
+      0 10px 26px -12px var(--cls);
+    transition: filter 0.15s, transform 0.16s var(--ease-out), box-shadow 0.2s;
   }
-  .btn-blood {
+  .btn-tint {
     color: var(--color-fg);
-    background: color-mix(in oklab, var(--cls) 26%, var(--color-surface-hi));
+    background: color-mix(in oklab, var(--cls) 22%, var(--color-surface-hi));
     box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--cls) 60%, transparent);
+    transition: transform 0.16s var(--ease-out);
   }
-  .btn-leather {
+  .btn-glass {
     color: var(--color-fg);
-    background: var(--color-surface-hi);
-    box-shadow: inset 0 0 0 1px var(--color-line), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: inset 0 0 0 1px var(--color-line), inset 0 1px 0 rgba(255, 255, 255, 0.07);
+    transition: background-color 0.15s, transform 0.16s var(--ease-out);
+  }
+  .btn-glow:active,
+  .btn-tint:active,
+  .btn-glass:active {
+    transform: scale(0.97);
   }
   @media (hover: hover) and (pointer: fine) {
-    .btn-gold:hover {
+    .btn-glow:hover {
       filter: brightness(1.08);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.55),
+        0 0 0 1px color-mix(in oklab, var(--cls) 55%, #000),
+        0 12px 30px -10px var(--cls);
     }
-    .btn-leather:hover {
-      background: #262531;
+    .btn-glass:hover {
+      background: rgba(255, 255, 255, 0.09);
     }
   }
 
@@ -249,30 +311,32 @@
     height: 2rem;
     flex: none;
     border-radius: 999px;
-    padding: 0 0.85rem;
+    padding: 0 0.9rem;
     font-size: 0.82rem;
     font-weight: 600;
     color: var(--color-fg-soft);
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(255, 255, 255, 0.035);
     box-shadow: inset 0 0 0 1px var(--color-line);
-    transition: background-color 0.15s, color 0.15s, box-shadow 0.15s, transform 0.12s var(--ease-out);
+    transition: background-color 0.18s, color 0.18s, box-shadow 0.25s var(--ease-out), transform 0.14s var(--ease-out);
   }
   .chip:active {
     transform: scale(0.96);
   }
   @media (hover: hover) and (pointer: fine) {
     .chip:hover {
-      background: rgba(255, 255, 255, 0.07);
+      background: rgba(255, 255, 255, 0.075);
       color: var(--color-fg);
     }
   }
   .chip[aria-pressed="true"] {
-    color: var(--color-fg);
-    background: color-mix(in oklab, var(--cls) 24%, transparent);
-    box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--cls) 70%, transparent);
+    color: #fff;
+    background: color-mix(in oklab, var(--cls) 22%, transparent);
+    box-shadow:
+      inset 0 0 0 1px color-mix(in oklab, var(--cls) 70%, transparent),
+      0 0 18px -6px var(--cls);
   }
 
-  /* Section tabs: underline in the class color */
+  /* Section tabs: a lit rail under the current one */
   .tab {
     position: relative;
     display: inline-flex;
@@ -281,8 +345,10 @@
     gap: 0.5rem;
     padding: 0 0.9rem;
     flex: none;
-    font-size: 0.92rem;
+    font-family: var(--font-display);
+    font-size: 0.9rem;
     font-weight: 600;
+    letter-spacing: 0.02em;
     color: var(--color-fg-soft);
     transition: color 0.15s;
   }
@@ -294,15 +360,18 @@
     bottom: 0;
     height: 2px;
     border-radius: 2px;
-    background: var(--cls);
+    background: color-mix(in oklab, var(--cls) 70%, #fff);
+    box-shadow: 0 0 10px 1px var(--cls);
     scale: 0 1;
-    transition: scale 0.22s var(--ease-out);
+    opacity: 0;
+    transition: scale 0.28s var(--ease-out), opacity 0.2s;
   }
   .tab[aria-current="page"] {
     color: #fff;
   }
   .tab[aria-current="page"]::after {
     scale: 1 1;
+    opacity: 1;
   }
   @media (hover: hover) and (pointer: fine) {
     .tab:hover {
@@ -311,20 +380,23 @@
   }
 
   .code-panel {
-    border-radius: 10px;
+    border-radius: 12px;
     background: var(--color-inset);
     box-shadow:
       inset 0 0 0 1px var(--color-line),
       inset 0 1px 0 rgba(255, 255, 255, 0.04);
   }
 
-  .gold-text {
-    color: var(--color-gold-hi);
+  .glow-text {
+    color: var(--color-glow-hi);
   }
 
   /* Spell rows in the list */
   .spell-row {
-    transition: background-color 0.15s;
+    transition: background-color 0.15s, box-shadow 0.2s;
+  }
+  .spell-row:active {
+    background: rgba(255, 255, 255, 0.06);
   }
   @media (hover: hover) and (pointer: fine) {
     .spell-row:hover {
@@ -332,28 +404,81 @@
     }
   }
   .spell-row[aria-current="true"] {
-    background: color-mix(in oklab, var(--cls) 16%, transparent);
-    box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--cls) 40%, transparent);
+    background: linear-gradient(90deg, color-mix(in oklab, var(--cls) 20%, transparent), color-mix(in oklab, var(--cls) 6%, transparent));
+    box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--cls) 45%, transparent);
   }
+
+  /* Rows arrive in a short cascade when a list first appears */
+  .stagger > * {
+    animation: rise-in 0.32s var(--ease-out) backwards;
+  }
+  .stagger > :nth-child(2) { animation-delay: 30ms; }
+  .stagger > :nth-child(3) { animation-delay: 60ms; }
+  .stagger > :nth-child(4) { animation-delay: 90ms; }
+  .stagger > :nth-child(5) { animation-delay: 120ms; }
+  .stagger > :nth-child(6) { animation-delay: 150ms; }
+  .stagger > :nth-child(n + 7) { animation-delay: 180ms; }
+
 }
 
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
+@keyframes aurora {
+  to {
+    transform: translate3d(4vmax, 3vmax, 0) scale(1.08);
   }
 }
-
-@keyframes page-in {
+@keyframes sweep {
+  from {
+    translate: -100% 0;
+  }
+  to {
+    translate: 100% 0;
+  }
+}
+@keyframes dye-in {
+  from {
+    opacity: 0;
+    filter: blur(6px);
+    transform: translateX(-6px);
+  }
+}
+@keyframes rise-in {
   from {
     opacity: 0;
     transform: translateY(6px);
   }
 }
+@keyframes page-in {
+  from {
+    opacity: 0;
+    filter: blur(4px);
+    transform: translateY(8px);
+  }
+}
 .page-in {
-  animation: page-in 0.24s var(--ease-out);
+  animation: page-in 0.3s var(--ease-out);
+}
+
+/* Reduced motion: no drifting, sweeping or sliding; fades and color changes stay */
+@media (prefers-reduced-motion: reduce) {
+  body::before,
+  .sweep {
+    animation: none;
+  }
+  .page-in,
+  .dye-in,
+  .stagger > * {
+    animation-name: fade-in;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-property: color, background-color, opacity, box-shadow, --cls !important;
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
 }
 
 /* In-game style tooltip */
@@ -363,13 +488,13 @@
   width: max-content;
   max-width: 320px;
   pointer-events: none;
-  border-radius: 6px;
+  border-radius: 8px;
   padding: 10px 12px;
   background: linear-gradient(180deg, rgba(16, 20, 38, 0.97), rgba(8, 10, 22, 0.97));
   box-shadow:
     0 0 0 1px #000,
     0 0 0 2px #8f8f9a,
-    0 8px 24px rgba(0, 0, 0, 0.6);
+    0 10px 28px rgba(0, 0, 0, 0.6);
   animation: tip-in 0.14s var(--ease-out);
   font-family: var(--font-sans);
   text-align: left;

@@ -27,7 +27,7 @@ Copy into the in-game macro window (255 character limit). Keybind planning on a 
 - Local-only storage: favorites, action bar per class, talent builds.
 
 ## Brand Commitments
-Name "Stancebook". The owner asked for "a sleek and modern design, kind of like a real WoW Forever skill book". Class colors follow WoW's official class colors. Real WoW spell icons.
+Name "Stancebook". The owner asked for "a sleek and modern design, kind of like a real WoW Forever skill book", then (Oct 2026) "a more futuristic style with sleek animations". Class colors follow WoW's official class colors. Real WoW spell icons.
 
 ## Evidence on Hand
 Real macro, ability, talent and patch-note content in the repo. No testimonials or usage numbers; do not invent any.

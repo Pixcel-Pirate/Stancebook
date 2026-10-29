@@ -1,3 +1,6 @@
 ## What's new
 
-- **Patch news at the top:** a strip above the class icons shows what the newest WoW Forever patch changed for the class you're on. It updates by itself each time a patch lands. Hide it with the arrow; it comes back when the next patch is out. "All notes" opens the full Forever notes.
+- **New futuristic look:** frosted glass panels lit by your class color, a light sweep when you switch class, a sharper heading font, and a floating action bar.
+- **Smoother motion:** pages fade in, lists cascade in, buttons respond to presses. If your system asks for reduced motion, only gentle fades remain.
+- **Oct 26 patch:** racials were retuned (Blood Fury 2 min, Berserking 15 sec and more). Every class has a note about it; there were no class changes.
+- **Talent fixes:** Mage Frost no longer lists Piercing Ice (removed in Forever) and Elemental Precision is 3 ranks. Rogue Lethality unlocks at 10 points. All nine trees were re-checked.
