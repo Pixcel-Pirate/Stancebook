@@ -46,7 +46,7 @@ export function ActionBar({
   }
 
   return (
-    <footer className="flex shrink-0 items-center justify-center gap-4 border-t border-line bg-black/40 px-4 pt-2.5 pb-[max(0.625rem,env(safe-area-inset-bottom))] backdrop-blur-md">
+    <footer className="mx-3 mb-[max(0.75rem,env(safe-area-inset-bottom))] flex max-w-[calc(100%-1.5rem)] shrink-0 items-center justify-center gap-4 self-center rounded-2xl bg-[rgba(12,14,22,0.72)] px-3 py-1.5 shadow-[inset_0_1px_0_color-mix(in_oklab,var(--cls)_40%,transparent),inset_0_0_0_1px_var(--color-line),0_24px_50px_-24px_#000] backdrop-blur-xl sm:px-4">
       <div className="hidden flex-col items-end md:flex">
         <span className="font-semibold text-fg">Action bar</span>
         <span className="text-xs text-subtle">Drag macros onto a slot</span>
@@ -64,7 +64,7 @@ export function ActionBar({
               }}
               onDragLeave={() => setOver(null)}
               onDrop={(e) => drop(e, i)}
-              className={cn("relative rounded-md", over === i && "ring-2 ring-[var(--cls)]")}
+              className={cn("relative rounded-[10px]", over === i && "ring-2 ring-[var(--cls)] shadow-[0_0_18px_-2px_var(--cls)]")}
             >
               {m ? (
                 <AbilityTip ability={primaryAbility(m)}>
@@ -82,13 +82,13 @@ export function ActionBar({
                       put(i, null);
                     }}
                     aria-label={`${KEYS[i]}: ${m.name}`}
-                    className="block transition-transform hover:-translate-y-0.5"
+                    className="block transition-transform duration-200 ease-out hover:-translate-y-0.5 active:scale-95"
                   >
                     <SpellIcon macro={m} size={54} glow={selectedId === m.id} />
                   </button>
                 </AbilityTip>
               ) : (
-                <span className="block size-[54px] rounded-md bg-inset shadow-[inset_0_0_0_1px_var(--color-line),inset_0_2px_8px_#000]" />
+                <span className="block size-[54px] rounded-[10px] bg-inset shadow-[inset_0_0_0_1px_var(--color-line),inset_0_2px_8px_#000]" />
               )}
               <span className="pointer-events-none absolute top-0.5 right-1 font-mono text-[15px] leading-none font-bold text-white [text-shadow:0_1px_2px_#000,0_0_3px_#000,0_0_3px_#000]">
                 {KEYS[i]}
@@ -102,7 +102,7 @@ export function ActionBar({
         onClick={() => setSlots(fill())}
         title="Reset to the suggested macros"
         aria-label="Reset action bar"
-        className="btn-leather grid size-9 place-items-center rounded-md"
+        className="btn-glass grid size-9 place-items-center rounded-lg"
       >
         <RotateCcw className="size-4" />
       </button>

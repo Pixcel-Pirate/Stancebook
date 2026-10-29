@@ -49,7 +49,7 @@ export function UpdateButton() {
 
   if (!latest) return null;
 
-  const cls = "btn-gold inline-flex h-9 items-center gap-2 rounded-md px-3 font-display text-sm font-bold disabled:opacity-60";
+  const cls = "btn-glow inline-flex h-9 items-center gap-2 rounded-md px-3 font-display text-sm font-bold disabled:opacity-60";
   async function update() {
     if (!DESKTOP) return reloadFresh();
     setBusy(true);

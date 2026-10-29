@@ -108,15 +108,15 @@ function ClassCrest({ id, size = 40, on }: { id: ClassId; size?: number; on?: bo
   const Icon = CLASS_ICON[id];
   return (
     <span
-      className="relative grid shrink-0 place-items-center overflow-hidden rounded-[30%] transition-[filter,opacity] duration-200"
+      className="relative grid shrink-0 place-items-center overflow-hidden rounded-[30%] transition-[filter,box-shadow] duration-300 ease-out"
       style={{
         width: size,
         height: size,
         color: CLASS_COLOR[id],
-        background: "radial-gradient(circle at 35% 30%, #2a2833, #0c0b10)",
+        background: "radial-gradient(circle at 35% 30%, #20253a, #07080d)",
         boxShadow: on
-          ? `0 0 0 1px #000, 0 0 0 2px ${CLASS_COLOR[id]}, 0 4px 18px -2px ${CLASS_COLOR[id]}`
-          : "0 0 0 1px #000, 0 0 0 2px rgba(255,255,255,.1)",
+          ? `0 0 0 1px #000, 0 0 0 2px ${CLASS_COLOR[id]}, 0 0 22px -2px ${CLASS_COLOR[id]}`
+          : "0 0 0 1px #000, 0 0 0 2px rgba(190,210,255,.12)",
         filter: on ? undefined : "saturate(.55) brightness(.8)",
       }}
       aria-hidden
@@ -141,9 +141,9 @@ function PatchStrip({ classId, onOpenNotes }: { classId: ClassId; onOpenNotes: (
       className="patch-strip shrink-0 px-3 pt-[max(0.5rem,env(safe-area-inset-top))] pb-2 sm:px-5"
     >
       <div className="flex items-center gap-2.5">
-        <ScrollText className="size-4 shrink-0 text-gold-hi" />
+        <ScrollText className="size-4 shrink-0 text-cls" />
         <p className="min-w-0 truncate text-sm font-semibold text-fg">
-          <span className="text-gold-hi">{LATEST_PATCH}</span>
+          <span className="font-display text-glow-hi">{LATEST_PATCH}</span>
           <span className="text-fg-faint"> · </span>
           <span className="text-cls">{label}</span>
           <span className="font-normal text-fg-soft">
@@ -166,9 +166,9 @@ function PatchStrip({ classId, onOpenNotes }: { classId: ClassId; onOpenNotes: (
         )}
       </div>
       {open && notes.length > 0 && (
-        <ul key={classId} className="page-in mt-2 grid gap-2 md:grid-cols-2 xl:grid-cols-3">
+        <ul key={classId} className="stagger mt-2 grid gap-2 md:grid-cols-2 xl:grid-cols-3">
           {notes.map((n) => (
-            <li key={n.title} className="rounded-lg bg-white/[0.035] px-3 py-2 shadow-[inset_0_0_0_1px_var(--color-line)]">
+            <li key={n.title} className="rounded-xl bg-white/[0.04] px-3 py-2 shadow-[inset_0_0_0_1px_var(--color-line)]">
               <p className="text-sm font-semibold text-fg">{n.title}</p>
               <p className="mt-0.5 line-clamp-2 text-sm leading-snug text-fg-soft">{n.body}</p>
             </li>
@@ -267,10 +267,10 @@ export function AppShell() {
       <div className="flex min-h-0 flex-1">
         {/* Class rail, like the bookmark tabs down the side of the in-game spellbook */}
         <nav
-          className="hidden w-[4.75rem] shrink-0 flex-col items-center gap-1.5 border-r border-line bg-black/25 py-4 lg:flex"
+          className="relative z-[1] hidden w-[4.75rem] shrink-0 flex-col items-center gap-1.5 bg-white/[0.02] py-4 shadow-[inset_-1px_0_0_var(--color-line)] backdrop-blur-xl lg:flex"
           aria-label="Class"
         >
-          <Logo className="mb-3 size-9 text-gold-hi" />
+          <Logo className="mb-3 size-9 text-glow-hi drop-shadow-[0_0_8px_var(--cls)]" />
           {CLASS_META.map((c) => {
             const on = classId === c.id;
             return (
@@ -284,7 +284,7 @@ export function AppShell() {
               >
                 <span
                   className={cn(
-                    "absolute top-2 bottom-2 left-0 w-[3px] rounded-r-full bg-cls transition-[opacity,scale] duration-200",
+                    "absolute top-2 bottom-2 left-0 w-[3px] rounded-r-full bg-cls shadow-[0_0_10px_var(--cls)] transition-[opacity,scale] duration-300 ease-out",
                     on ? "opacity-100" : "scale-y-0 opacity-0",
                   )}
                 />
@@ -303,12 +303,13 @@ export function AppShell() {
           {/* Class banner */}
           <header className="shrink-0 px-3 pt-3 sm:px-5">
             <div className="banner">
+              <span key={classId} className="sweep" aria-hidden />
               <ClassIcon id={classId} size={240} fallback={null} imgClassName="banner-art" />
               <div className="flex flex-wrap items-center gap-x-5 gap-y-3 px-4 pt-4 sm:px-6 sm:pt-5">
                 <ClassCrest id={classId} size={56} on />
-                <div className="min-w-0 flex-1">
+                <div key={classId} className="dye-in min-w-0 flex-1">
                   <div className="flex flex-wrap items-baseline gap-x-3">
-                    <h1 className="font-display text-3xl leading-tight font-bold text-white sm:text-4xl">{meta.label}</h1>
+                    <h1 className="font-display text-3xl leading-tight font-bold tracking-[0.01em] text-white uppercase sm:text-4xl">{meta.label}</h1>
                     <span className="text-sm font-semibold text-fg-soft tabular-nums">{bookCount} macros</span>
                   </div>
                   <p className="text-sm text-fg-soft">{meta.hint}</p>
@@ -316,8 +317,8 @@ export function AppShell() {
                 <div className="flex items-center gap-3">
                   <UpdateButton />
                   <p className="hidden text-right leading-tight sm:block">
-                    <span className="block font-deco text-lg font-bold text-gold-hi">Stancebook</span>
-                    <span className="block text-xs text-fg-soft">WoW Forever macros</span>
+                    <span className="block font-display text-base font-semibold tracking-[0.24em] text-glow-hi uppercase">Stancebook</span>
+                    <span className="block text-xs tracking-[0.04em] text-fg-soft">WoW Forever macros</span>
                   </p>
                 </div>
               </div>
@@ -372,7 +373,7 @@ export function AppShell() {
                         value={state.q}
                         onChange={(e) => patch({ q: e.target.value })}
                         placeholder={SEARCH_HINT[classId]}
-                        className="h-11 w-full rounded-lg bg-inset pr-10 pl-10 text-fg shadow-[inset_0_0_0_1px_var(--color-line)] outline-none transition-shadow placeholder:text-fg-faint focus:shadow-[inset_0_0_0_1px_var(--cls)]"
+                        className="h-11 w-full rounded-xl bg-inset pr-10 pl-10 text-fg shadow-[inset_0_0_0_1px_var(--color-line)] outline-none transition-shadow duration-200 placeholder:text-fg-faint focus:shadow-[inset_0_0_0_1px_var(--cls),0_0_20px_-8px_var(--cls)]"
                       />
                       {state.q && (
                         <button
@@ -431,11 +432,11 @@ export function AppShell() {
                     {sections.map((section) => (
                       <section key={section.id} className="flex flex-col gap-2">
                         <div className="flex items-center gap-3 pt-3">
-                          <h2 className="font-display text-base font-bold text-white">{section.label}</h2>
+                          <h2 className="font-display text-sm font-semibold tracking-[0.14em] text-white uppercase">{section.label}</h2>
                           <span className="text-xs text-fg-faint tabular-nums">{section.items.length}</span>
                           <div className="rule-ornate flex-1" />
                         </div>
-                        <ul className="grid gap-1 xl:grid-cols-2">
+                        <ul className="stagger grid gap-1 xl:grid-cols-2">
                           {section.items.map((m) => {
                             const text = macroText(m);
                             const active = selected?.id === m.id;
@@ -447,7 +448,7 @@ export function AppShell() {
                                   onDragStart={(e) => dragMacro(e, m.id)}
                                   onClick={() => patch({ m: m.id })}
                                   aria-current={active || undefined}
-                                  className="spell-row flex w-full items-center gap-3 rounded-lg p-2 pr-12 text-left"
+                                  className="spell-row flex w-full items-center gap-3 rounded-xl p-2 pr-12 text-left"
                                 >
                                   <AbilityTip ability={primaryAbility(m)}>
                                     <SpellIcon macro={m} size={46} glow={active} />
@@ -459,7 +460,7 @@ export function AppShell() {
                                       {m.bind && (
                                         <>
                                           {" · "}
-                                          <kbd className="rounded bg-inset px-1.5 py-px font-mono text-[0.8rem] font-bold text-gold-hi ring-1 ring-line">
+                                          <kbd className="rounded bg-inset px-1.5 py-px font-mono text-[0.8rem] font-bold text-glow-hi ring-1 ring-line">
                                             {m.bind}
                                           </kbd>
                                         </>
@@ -503,7 +504,7 @@ export function AppShell() {
                         <h2 className="font-display text-2xl font-bold text-white">{guide.foreverHeading}</h2>
                         <p className="max-w-prose text-[15px] leading-relaxed text-fg-soft">{guide.foreverIntro}</p>
                         <div className="rule-ornate" />
-                        <ul className="flex flex-col gap-5">
+                        <ul className="stagger flex flex-col gap-5">
                           {guide.forever.slice(0, 4).map((note) => (
                             <li key={note.title}>
                               <div className="flex flex-wrap items-baseline justify-between gap-2">

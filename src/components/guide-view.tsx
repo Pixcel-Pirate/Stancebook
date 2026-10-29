@@ -29,10 +29,10 @@ export function HowItWorks({ classId }: { classId: ClassId }) {
               key={step}
               className="rounded-md bg-inset px-3 py-3 text-sm"
             >
-              <span className="block font-display text-xs font-bold text-gold tabular-nums">
+              <span className="block font-display text-xs font-bold text-glow tabular-nums">
                 {i + 1}
               </span>
-              <span className="font-semibold text-gold-hi">{step}</span>
+              <span className="font-semibold text-glow-hi">{step}</span>
             </li>
           ))}
         </ol>

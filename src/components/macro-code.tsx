@@ -14,7 +14,7 @@ export function MacroCode({
 
   return (
     <div className={cn("code-panel overflow-hidden", className)}>
-      <div className="flex items-center justify-between gap-3 border-b border-gold-lo/40 px-4 py-2">
+      <div className="flex items-center justify-between gap-3 border-b border-glow-lo/40 px-4 py-2">
         <span className="font-mono text-xs tracking-wide text-subtle uppercase">
           Macro
         </span>

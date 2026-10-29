@@ -42,14 +42,14 @@ export function TalentsView({ classId }: { classId: ClassId }) {
         <h2 className="font-display text-3xl font-bold text-fg">{meta.label} talent calculator</h2>
         <p className="max-w-prose leading-relaxed text-fg-soft">
           Click a talent to spend a point, right-click to take it back. Every 5 points in a tree opens the next row.
-          Gold-marked talents are new or changed in Forever. Your build is saved. Talent data from{" "}
+          Hover a talent to read it; Forever ones say so. Your build is saved. Talent data from{" "}
           <a className="font-semibold text-cls underline" href={TALENTS_SOURCE} target="_blank" rel="noreferrer">
             wowforevertalents.com
           </a>
           .
         </p>
         <div className="flex flex-wrap items-center gap-3">
-          <span className="rounded-md bg-inset px-3 py-1.5 font-bold text-gold-hi tabular-nums ring-1 ring-line">
+          <span className="rounded-lg bg-inset px-3 py-1.5 font-display font-semibold text-glow-hi tabular-nums ring-1 ring-line">
             {total} / {MAX_POINTS} points
           </span>
           <span className="font-semibold text-fg-soft">
@@ -68,7 +68,7 @@ export function TalentsView({ classId }: { classId: ClassId }) {
           const tiers = Math.max(...tree.talents.map((t) => t.t));
           return (
             <section key={tree.tree} className="code-panel flex flex-col items-center gap-3 p-4">
-              <h3 className="gold-text font-display text-xl font-bold">
+              <h3 className="glow-text font-display text-lg font-semibold tracking-[0.12em] uppercase">
                 {tree.tree} <span className="text-base">({treeTotal(spent, ti)})</span>
               </h3>
               <div className="grid gap-x-3 gap-y-4" style={{ gridTemplateColumns: "repeat(4, 52px)" }}>
@@ -96,7 +96,10 @@ export function TalentsView({ classId }: { classId: ClassId }) {
                               e.preventDefault();
                               click(ti, t, true);
                             }}
-                            className={cn("relative block rounded-md transition", !open && "opacity-40 grayscale")}
+                            className={cn(
+                              "relative block rounded-[10px] transition-[opacity,filter,transform] duration-200 ease-out active:scale-95",
+                              !open && "opacity-40 grayscale",
+                            )}
                           >
                             <SpellIcon
                               ability={{ name: t.n, icon: t.i ?? "", meta: "", desc: "" }}
@@ -105,8 +108,8 @@ export function TalentsView({ classId }: { classId: ClassId }) {
                             />
                             <span
                               className={cn(
-                                "absolute -right-2 -bottom-2 rounded bg-[#0b0806] px-1 font-mono text-xs font-bold ring-1",
-                                rank === t.r ? "text-gold-hi ring-gold" : rank ? "text-[#7fe07f] ring-[#3b7a3b]" : "text-muted ring-gold-lo",
+                                "absolute -right-2 -bottom-2 z-[1] rounded bg-[#06070c] px-1 font-mono text-xs font-bold ring-1",
+                                rank === t.r ? "text-glow-hi ring-glow" : rank ? "text-[#7fe07f] ring-[#3b7a3b]" : "text-muted ring-glow-lo",
                               )}
                             >
                               {rank}/{t.r}

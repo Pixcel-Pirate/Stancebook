@@ -89,7 +89,7 @@ export function MacroDetail({
         {macro.bind && (
           <span className="ml-auto flex items-center gap-2 text-sm font-semibold text-fg-soft">
             Suggested bind
-            <kbd className="min-w-10 rounded-md bg-inset px-3 py-1.5 text-center font-mono text-lg font-bold text-gold-hi shadow-[0_0_0_1px_var(--color-gold-lo)]">
+            <kbd className="min-w-10 rounded-md bg-inset px-3 py-1.5 text-center font-mono text-lg font-bold text-glow-hi shadow-[0_0_0_1px_var(--color-glow-lo)]">
               {macro.bind}
             </kbd>
           </span>
@@ -100,7 +100,7 @@ export function MacroDetail({
 
       {abilities.length > 0 && (
         <section>
-          <h3 className="mb-3 font-display text-base font-bold text-white">
+          <h3 className="mb-3 font-display text-sm font-semibold tracking-[0.14em] text-white uppercase">
             Abilities used
           </h3>
           <ul className="flex flex-wrap gap-2">
@@ -123,7 +123,7 @@ export function MacroDetail({
       )}
 
       <section>
-        <h3 className="mb-3 font-display text-base font-bold text-white">
+        <h3 className="mb-3 font-display text-sm font-semibold tracking-[0.14em] text-white uppercase">
           Line by line
         </h3>
         <ol className="flex flex-col gap-2">
