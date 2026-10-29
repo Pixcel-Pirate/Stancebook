@@ -394,23 +394,6 @@ export const PRIEST_MACROS: Macro[] = [
     ],
   },
   {
-    id: "priest-lightwell",
-    classId: "priest",
-    name: "Lightwell at cursor",
-    summary: "Forever baseline at 40 (was a Holy talent). Drop it on the mouse, no extra click.",
-    how: "Lightwell is a clickable well. [@cursor] skips the targeting circle. Place it where melee can click without standing in fire. Players have to click it themselves — a macro cannot click it for them.",
-    when: "Before a stacked fight. Holy’s raid tool. Do not drop it on the tank in a patch of void.",
-    category: "heal",
-    specs: ["holy", "discipline", "shadow"],
-    level: 40,
-    bind: "Shift+4",
-    forever: true,
-    lines: [
-      { code: "#showtooltip Lightwell", why: "Well cooldown." },
-      { code: "/cast [@cursor] Lightwell", why: "Place at the mouse." },
-    ],
-  },
-  {
     id: "priest-devouring",
     classId: "priest",
     name: "Devouring Plague",

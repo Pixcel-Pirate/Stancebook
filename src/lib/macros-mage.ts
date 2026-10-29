@@ -332,18 +332,18 @@ export const MAGE_MACROS: Macro[] = [
   {
     id: "mage-remove-curse",
     classId: "mage",
-    name: "Mouseover Remove Curse",
+    name: "Mouseover Remove Lesser Curse",
     summary: "Decurse the ally under the cursor — or yourself.",
-    how: "Remove Curse is the mage raid utility. Warlock curses, some dungeon curses. Mouseover so you can stay on the sheep or the kill. [@player] last.",
+    how: "Remove Lesser Curse is the mage raid utility, and in Forever it removes banes too. Warlock curses, some dungeon curses. Mouseover so you can stay on the sheep or the kill. [@player] last.",
     when: "Any curse on a teammate. A warlock’s Curse of Exhaustion on the tank. Yourself.",
     category: "utility",
     specs: ALL,
     level: 18,
     bind: "Shift+T",
     lines: [
-      { code: "#showtooltip Remove Curse", why: "Decurse." },
+      { code: "#showtooltip Remove Lesser Curse", why: "Decurse." },
       {
-        code: "/cast [@mouseover,help,nodead][@target,help,nodead][@player] Remove Curse",
+        code: "/cast [@mouseover,help,nodead][@target,help,nodead][@player] Remove Lesser Curse",
         why: "Mouseover, else friendly target, else self.",
       },
     ],

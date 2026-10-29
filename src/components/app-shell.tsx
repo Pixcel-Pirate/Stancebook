@@ -1,11 +1,12 @@
 import { useEffect, useMemo, useState } from "react";
-import { Bookmark, BookOpen, ChevronDown, Feather, Network, ScrollText, Search, Sparkles, X } from "lucide-react";
+import { Bookmark, BookOpen, ChevronDown, Feather, Network, ScrollText, Search, Sparkles, Users, X } from "lucide-react";
 import { CopyButton } from "@/components/copy-button";
 import { MacroDetail } from "@/components/macro-detail";
 import { ForeverView, HowItWorks } from "@/components/guide-view";
 import { Logo } from "@/components/logo";
 import { AbilitiesView } from "@/components/abilities-view";
 import { TalentsView } from "@/components/talents-view";
+import { RacesView } from "@/components/races-view";
 import { UpdateButton } from "@/components/update-button";
 import { ActionBar, dragMacro } from "@/components/action-bar";
 import { AbilityTip, CLASS_ICON, ClassIcon, primaryAbility, SpellIcon } from "@/components/spell-icon";
@@ -27,7 +28,7 @@ import {
 } from "@/lib/macros";
 import { cn, useStored } from "@/lib/utils";
 
-export type Tab = "macros" | "abilities" | "talents" | "guide" | "forever";
+export type Tab = "macros" | "abilities" | "talents" | "races" | "guide" | "forever";
 
 type State = {
   tab: Tab;
@@ -183,6 +184,7 @@ const TABS = [
   ["macros", "Spellbook", BookOpen],
   ["abilities", "Abilities", Sparkles],
   ["talents", "Talents", Network],
+  ["races", "Races", Users],
   ["guide", "How they work", Feather],
   ["forever", "Forever notes", ScrollText],
 ] as const;
@@ -532,6 +534,8 @@ export function AppShell() {
                     <AbilitiesView classId={classId} onOpenMacro={(id) => patch({ tab: "macros", m: id })} />
                   ) : tab === "talents" ? (
                     <TalentsView classId={classId} />
+                  ) : tab === "races" ? (
+                    <RacesView classId={classId} />
                   ) : tab === "guide" ? (
                     <HowItWorks classId={classId} />
                   ) : (

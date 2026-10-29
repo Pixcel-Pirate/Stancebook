@@ -1,6 +1,6 @@
 ## What's new
 
-- **New futuristic look:** frosted glass panels lit by your class color, a light sweep when you switch class, a sharper heading font, and a floating action bar.
-- **Smoother motion:** pages fade in, lists cascade in, buttons respond to presses. If your system asks for reduced motion, only gentle fades remain.
-- **Oct 26 patch:** racials were retuned (Blood Fury 2 min, Berserking 15 sec and more). Every class has a note about it; there were no class changes.
-- **Talent fixes:** Mage Frost no longer lists Piercing Ice (removed in Forever) and Elemental Precision is 3 ranks. Rogue Lethality unlocks at 10 points. All nine trees were re-checked.
+- **Every ability, every class:** the Abilities tab now shows each class's full WoW Forever spellbook, not just the spells the macros use. New Forever spells are in (Aspect of the Viper, Frost Blast, Revoke, Explorer Imp, Call of the Ancestors and more), and ones Forever removed are gone (Lightwell, single-target Blessing of Kings, Tiger's Fury, Tranquil Air Totem and others).
+- **Talent abilities marked:** every ability you get from a talent says "Talent" with its tree and the points it needs. Filter by Trainer, Talent or Pet & items.
+- **New Races tab:** all races, including both Skyborne factions, with their racials as of the Oct 26 patch. Races that can be priests show their two priest-only spells.
+- **Macro fixes:** the paladin blessing macro uses Greater Blessing of Kings, the mage decurse macro uses Remove Lesser Curse, and the Lightwell macro is removed.

@@ -4,7 +4,22 @@ import { AbilityTip, SpellIcon } from "@/components/spell-icon";
 import { abilitiesFor, spellsInLine } from "@/lib/abilities";
 import { classMeta, macrosFor, type ClassId, type Macro } from "@/lib/macros";
 
-/** One entry per ability the class's macros cast, with its tooltip and the macros that use it. */
+type Kind = "all" | "trainer" | "talent" | "racial" | "other";
+const KINDS: [Kind, string][] = [
+  ["all", "All"],
+  ["trainer", "Trainer"],
+  ["talent", "Talent"],
+  ["racial", "Race only"],
+  ["other", "Pet & items"],
+];
+function kindOf(meta: string): Exclude<Kind, "all"> {
+  if (meta.includes("Talent")) return "talent";
+  if (meta.endsWith(" priests")) return "racial";
+  if (/^(Pet ability|Food|Item|Felhunter)/.test(meta)) return "other";
+  return "trainer";
+}
+
+/** The class's whole Forever spellbook plus talent abilities, with tooltips and the macros that use each one. */
 export function AbilitiesView({
   classId,
   onOpenMacro,
@@ -13,6 +28,7 @@ export function AbilitiesView({
   onOpenMacro: (id: string) => void;
 }) {
   const [q, setQ] = useState("");
+  const [kind, setKind] = useState<Kind>("all");
   const meta = classMeta(classId);
 
   const entries = useMemo(() => {
@@ -28,22 +44,23 @@ export function AbilitiesView({
   }, [classId]);
 
   const needle = q.trim().toLowerCase();
-  const shown = needle
-    ? entries.filter(({ ability: a }) =>
-        `${a.name} ${a.meta} ${a.desc}`.toLowerCase().includes(needle),
-      )
-    : entries;
+  const shown = entries.filter(
+    ({ ability: a }) =>
+      (kind === "all" || kindOf(a.meta) === kind) &&
+      (!needle || `${a.name} ${a.meta} ${a.desc}`.toLowerCase().includes(needle)),
+  );
+  const kinds = KINDS.filter(([k]) => k === "all" || entries.some(({ ability: a }) => kindOf(a.meta) === k));
 
   return (
     <div className="mx-auto flex w-full max-w-5xl flex-col gap-6 pb-16">
       <header className="flex flex-col gap-3">
         <h2 className="font-display text-3xl font-bold text-fg">
-          Every {meta.label.toLowerCase()} ability in the book
+          Every {meta.label.toLowerCase()} ability in Forever
         </h2>
         <p className="max-w-prose leading-relaxed text-fg-soft">
-          {entries.length} abilities used by the {meta.label.toLowerCase()} macros. Hover an icon
-          for its in-game style tooltip, and click a macro to open it. Notes from the latest Forever
-          patches are included where they changed the ability.
+          {entries.length} abilities: the full {meta.label.toLowerCase()} trainer list, plus every talent that
+          gives you a button (marked Talent, with the tree and points it needs). Hover an icon for its
+          tooltip, and click a macro to open it. Forever changes up to the Oct 26 patch are noted.
         </p>
         <label className="relative block max-w-md">
           <span className="sr-only">Search abilities</span>
@@ -57,6 +74,13 @@ export function AbilitiesView({
             className="h-11 w-full rounded-md bg-white/[0.035] pr-3 pl-10 text-fg shadow-[inset_0_0_0_1px_var(--color-line)] outline-none placeholder:text-fg-faint focus:bg-white/[0.07]"
           />
         </label>
+        <div className="flex flex-wrap gap-2">
+          {kinds.map(([k, label]) => (
+            <button key={k} type="button" className="chip" aria-pressed={kind === k} onClick={() => setKind(k)}>
+              {label}
+            </button>
+          ))}
+        </div>
       </header>
 
       <ul className="grid gap-3 md:grid-cols-2">
