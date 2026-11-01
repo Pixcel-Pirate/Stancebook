@@ -42,6 +42,27 @@ export const HUNTER_MACROS: Macro[] = [
     ],
   },
   {
+    id: "hunter-shot-smart",
+    classId: "hunter",
+    name: "Shot (smart target Auto Shot)",
+    summary:
+      "Drops dead or friendly targets, grabs the nearest enemy, and starts Auto Shot on your mouseover first.",
+    how: "/cleartarget [dead][help] throws away a corpse or a friendly target. /targetenemy [noexists] then tabs to the nearest enemy only when you have nothing targeted. The last line shoots the living enemy under your cursor if there is one, otherwise your target. The ! keeps a second press from toggling Auto Shot off.",
+    when: "A main attack key for questing and chain-pulling, where you are constantly retargeting after kills. 134/255 characters.",
+    category: "essential",
+    specs: ALL,
+    level: 1,
+    lines: [
+      { code: "#showtooltip Auto Shot", why: "Bar shows Auto Shot." },
+      { code: "/cleartarget [dead][help]", why: "Drop a dead or friendly target." },
+      { code: "/targetenemy [noexists]", why: "No target? Tab to the nearest enemy." },
+      {
+        code: "/cast [@mouseover,harm,exists,nodead] !Auto Shot; !Auto Shot",
+        why: "Shoot the living enemy under the cursor, else your target. Never toggles off.",
+      },
+    ],
+  },
+  {
     id: "hunter-mouseover-pet",
     classId: "hunter",
     name: "Mouseover pet attack",
@@ -224,6 +245,28 @@ export const HUNTER_MACROS: Macro[] = [
       { code: "/petattack", why: "Keep the pet on this target through the cast." },
       { code: "/cast Aimed Shot", why: "The hard-hitting cast. 2 seconds in Forever." },
       { code: "/cast !Auto Shot", why: "Resume white shots the moment Aimed Shot finishes or is interrupted." },
+    ],
+  },
+  {
+    id: "hunter-ap",
+    classId: "hunter",
+    name: "AP (Aimed Shot all-in-one)",
+    summary:
+      "One button that retargets, Raptor Strikes in melee, fires Aimed Shot, restarts Auto Shot, and sends the pet.",
+    how: "Same retarget lines as the Shot macro. Raptor Strike is next-swing and only works in melee, so at range it fails silently and the macro moves on to Aimed Shot. If something is on you, the same press also queues a Raptor Strike. /cast !Auto Shot restarts white shots after the cast, and /petattack keeps the pet on your target.",
+    when: "A spam key that works whether the mob is at range or in your face. 139/255 characters.",
+    category: "combat",
+    specs: ALL,
+    level: 20,
+    forever: true,
+    lines: [
+      { code: "#showtooltip Aimed Shot", why: "Bar shows Aimed Shot and its cooldown." },
+      { code: "/cleartarget [dead][help]", why: "Drop a dead or friendly target." },
+      { code: "/targetenemy [noexists]", why: "No target? Tab to the nearest enemy." },
+      { code: "/cast Raptor Strike", why: "Melee only. Fails quietly at range and the macro continues." },
+      { code: "/cast Aimed Shot", why: "The hard-hitting cast." },
+      { code: "/cast !Auto Shot", why: "Resume Auto Shot. Never toggles it off." },
+      { code: "/petattack", why: "Send the pet onto the same target." },
     ],
   },
   {
