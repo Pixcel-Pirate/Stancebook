@@ -1,5 +1,6 @@
 ## What's new
 
+- **Dressing room in the Armory:** pick a race and Male or Female, then click any slot (head to ranged) to put on Classic gear, with real icons and quality borders. Try on puts a whole set on at once. The Equipped list shows each piece's slot, type and source, and its name opens it on Wowhead in 3D. Your outfit is remembered.
 - **Gear sets in 3D:** every Classic set in the Armory has a View set in 3D on Wowhead button. It opens the set on Wowhead, where you can see it worn by any race and gender.
 - **Races in 3D:** the Races tab has a View races in 3D on Wowhead button. It opens Wowhead's Classic dressing room, where you pick the race and gender and drag to rotate. Skyborne is Forever-only, so it has no model there.
 - **New Armory tab:** every Classic gear set (Dungeon Sets 1 and 2, Tier 1 to 3, Zul'Gurub, Ahn'Qiraj, PvP, Arathi Basin, crafted and dungeon sets) with the real icon for every piece, every epic weapon and shield, and WoW Forever's new Hyjal sets with their set bonuses. Filter by cloth, leather, mail or plate, weapons, or shields, pick a race to see only what its classes can use, or show only your class's gear. Hover a piece for where it drops.

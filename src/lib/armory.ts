@@ -4,7 +4,7 @@ import type { Race } from "./races";
 
 /** Classic gear from Wowhead's Classic database (scripts/armory.gen.ts) plus WoW Forever's new sets. */
 export type Armor = "cloth" | "leather" | "mail" | "plate";
-export type Piece = { n: string; i: string; s: string; q: number; src: string };
+export type Piece = { id: number; n: string; i: string; s: string; q: number; src: string };
 export type GearSet = {
   id: number;
   name: string;
@@ -15,7 +15,7 @@ export type GearSet = {
   items: Piece[];
   bonuses?: string[];
 };
-export type Weapon = { n: string; i: string; q: number; src: string; kind: string; hand: string };
+export type Weapon = { id: number; n: string; i: string; q: number; src: string; kind: string; hand: string };
 
 export const SETS = data.sets as GearSet[];
 export const WEAPONS = data.weapons as Weapon[];
@@ -91,3 +91,28 @@ export const FOREVER_SETS: GearSet[] = [
   forever(-17, "warrior", "Battlegear of Glory", ["2: +1% attack and casting speed", "3: Intimidating Shout cooldown -30 sec", "4: +36 attack power against Humanoids", "5: Recklessness cooldown -30 sec"]),
   forever(-18, "warrior", "Battleplate of Glory", ["2: +7 Defense", "3: Intervene cooldown -10 sec", "4: 1.2% less chance to be dodged or parried", "5: Shield Wall cooldown -30 sec"]),
 ];
+
+/** Paper-doll slots for the dressing room, in the order the in-game character frame shows them. */
+export const SLOTS = {
+  left: ["Head", "Neck", "Shoulder", "Back", "Chest", "Wrist"],
+  right: ["Hands", "Waist", "Legs", "Feet", "Finger", "Trinket"],
+  bottom: ["Main Hand", "Off Hand", "Ranged"],
+} as const;
+export type Slot = (typeof SLOTS)[keyof typeof SLOTS][number];
+
+/** One wearable item with everything the dressing room needs to filter and list it. */
+export type Wearable = { id: number; n: string; i: string; q: number; src: string; type: string; slots: Slot[]; classes: ClassId[]; faction: Race["faction"] | null; twoHand?: boolean };
+
+const byId = new Map<number, Wearable>();
+for (const s of SETS)
+  for (const p of s.items) {
+    const slot = (p.s === "Weapon" ? "Main Hand" : p.s) as Slot;
+    byId.set(p.id, { id: p.id, n: p.n, i: p.i, q: p.q, src: p.src || s.group, type: s.armor ? s.armor[0].toUpperCase() + s.armor.slice(1) : p.s, slots: [slot], classes: setClasses(s), faction: s.faction });
+  }
+// ponytail: One-Hand weapons are offered in the off hand to every class that can use them, not only dual wielders.
+const HAND_SLOTS: Record<string, Slot[]> = { "Main Hand": ["Main Hand"], "One-Hand": ["Main Hand", "Off Hand"], "Two-Hand": ["Main Hand"], "Off Hand": ["Off Hand"], Ranged: ["Ranged"] };
+for (const w of WEAPONS)
+  byId.set(w.id, { id: w.id, n: w.n, i: w.i, q: w.q, src: w.src || "Classic", type: `${w.hand} ${w.kind}`, slots: HAND_SLOTS[w.hand] ?? [], classes: weaponClasses(w), faction: null, twoHand: w.hand === "Two-Hand" });
+
+export const WEARABLES = [...byId.values()].sort((a, b) => b.q - a.q || a.n.localeCompare(b.n));
+export const wearable = (id: number) => byId.get(id);

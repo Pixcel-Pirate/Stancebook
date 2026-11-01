@@ -23,7 +23,7 @@ export function RacesView({ classId }: { classId: ClassId }) {
           Races that can be priests also list the two priest spells only they get. Hover an icon for its tooltip.
         </p>
         <p className="max-w-prose text-sm leading-relaxed text-fg-soft">
-          <a className="btn-glow mr-2 inline-flex" href={WOWHEAD_3D} target="_blank" rel="noreferrer">
+          <a className="btn-glow mr-2 mb-1 inline-flex h-9 items-center gap-2 rounded-md px-3 font-display text-sm font-bold" href={WOWHEAD_3D} target="_blank" rel="noreferrer">
             View races in 3D on Wowhead
           </a>
           Opens Wowhead's Classic dressing room. Choose the race and gender in its menu and drag to rotate. The
