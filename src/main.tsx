@@ -11,6 +11,11 @@ import "@fontsource/ibm-plex-mono/500.css";
 import "./styles.css";
 import { AppShell } from "@/components/app-shell";
 
+// Desktop app: connect to Neutralino right away, while the one-time token is fresh. init() also keeps the token in
+// sessionStorage, so a reload (F5) can reconnect; without this a reload before Update lost it (NE_CL_IVCTOKN).
+const Neutralino = (window as unknown as { Neutralino?: { init(): void } }).Neutralino;
+if (location.hostname === "127.0.0.1" && Neutralino) Neutralino.init();
+
 createRoot(document.getElementById("app")!).render(
   <StrictMode>
     <AppShell />

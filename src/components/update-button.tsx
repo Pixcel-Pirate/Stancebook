@@ -19,10 +19,9 @@ async function reloadFresh() {
  * The installer only replaces the program files, so saved macros, action bar and talents are kept.
  */
 async function updateDesktop(tag: string) {
-  // index.html loads Neutralino's globals and client in the desktop app
+  // index.html loads Neutralino's client and main.tsx connects it at startup
   const N = (window as unknown as { Neutralino?: any }).Neutralino;
   if (!N) throw new Error("no native API");
-  N.init();
   const exe = `"%TEMP%\\Stancebook-Setup.exe"`;
   const url = `https://github.com/${REPO}/releases/download/${tag}/Stancebook-Setup.exe`;
   // curl.exe ships with Windows 10 and 11; -f fails on a bad download instead of saving an error page
