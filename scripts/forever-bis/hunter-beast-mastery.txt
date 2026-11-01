@@ -1,0 +1,17 @@
+Head|Cryptstalker Headpiece|22438|Quest in Naxxramas (level 60)|
+Neck|Prestor's Talisman of Connivery|19377|Drops from Nefarian (20%) in Blackwing Lair|
+Shoulders|Cryptstalker Spaulders|22439|Quest in Naxxramas (level 60)|
+Back|Shroud of Dominion|23045|Drops from Sapphiron (20%) in Naxxramas|Not in beta client
+Chest|Cryptstalker Tunic|22436|Quest in Naxxramas (level 60)|
+Wrists|Cryptstalker Wristguards|22443|Quest in Naxxramas (level 60)|
+Hands|Giantstalker's Gloves|16852|Drops from Shazzrah (33.3%) in Molten Core|Not in beta client
+Waist|Belt of Never-ending Agony|21586|Drops from C'Thun (18.4%) in Ahn'Qiraj Temple|
+Legs|Cryptstalker Legguards|22437|Quest in Naxxramas (level 60)|
+Feet|Boots of the Shadow Flame|19381|Drops from Nefarian (20%) in Blackwing Lair|Not in beta client
+Ring 1|Band of Unnatural Forces|23038|Drops from Loatheb (20%) in Naxxramas|
+Ring 2|Band of Accuria|17063|Drops from Ragnaros (20%) in Molten Core|Not in beta client
+Trinket 1|Drake Fang Talisman|19406|Drops from Ebonroc (18%) in Blackwing Lair|
+Trinket 2|Slayer's Crest|23041|Drops from Sapphiron (20%) in Naxxramas|
+Main hand|Kingsfall|22802|Drops from Kel'Thuzad (16.7%) in Naxxramas|Not in beta client
+Off hand|Claw of the Frost Wyrm|23242|Drops from Sapphiron (20%) in Naxxramas|Not in beta client
+Ranged|Nerubian Slavemaker|22812|Drops from Kel'Thuzad (16.7%) in Naxxramas|Not in beta client

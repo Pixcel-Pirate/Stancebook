@@ -1,0 +1,17 @@
+Head|Don Rigoberto's Lost Hat|21615|Drops from Ouro (16.7%) in Ahn'Qiraj Temple|Changed
+Neck|Life Channeling Necklace|23058|Unknown source|
+Shoulders|Shoulderpads of Faith|22515|Quest Shoulderpads of Faith (level 60) in Naxxramas|
+Back|Cloak of Suturing|22960|Drops from Patchwerk (20%) in Naxxramas|Not in beta client
+Chest|Robes of the Guardian Saint|21663|Drops from Fankriss the Unyielding (18%) in Ahn'Qiraj Temple|Changed
+Wrists|Bracelets of Royal Redemption|21604|Drops from Emperor Vek'nilash (14.3%) in Ahn'Qiraj Temple|
+Hands|Gloves of Faith|22517|Quest Gloves of Faith (level 60) in Naxxramas|
+Waist|Belt of Faith|22518|Quest Belt of Faith (level 60) in Naxxramas|
+Legs|Empowered Leggings|19385|Drops from Chromaggus (20%) in Blackwing Lair|Not in beta client
+Feet|Sandals of Faith|22516|Quest Sandals of Faith (level 60) in Naxxramas|
+Ring 1|Ring of Faith|23061|Drops from Kel'Thuzad (21%) in Naxxramas|
+Ring 2|Cauterizing Band|19140|Drops from Flamewaker Elite (0.46%) in Molten Core|Changed
+Trinket 1|Rejuvenating Gem|19395|Drops from Flamegor (14%) in Blackwing Lair|
+Trinket 2|Eye of the Dead|23047|Drops from Sapphiron (20%) in Naxxramas|
+Main hand|Hammer of the Twisting Nether|23056|Drops from Kel'Thuzad (20%) in Naxxramas|Not in beta client
+Off hand|Sapphiron's Right Eye|23048|Drops from Sapphiron (20%) in Naxxramas|Not in beta client
+Ranged|Doomfinger|22821|Drops from Kel'Thuzad (20%) in Naxxramas|Not in beta client

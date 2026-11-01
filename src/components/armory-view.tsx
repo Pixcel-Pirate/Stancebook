@@ -18,7 +18,7 @@ const KINDS: [Kind, string][] = [
 ];
 const ALL_SETS = [...FOREVER_SETS, ...SETS];
 
-/** Every Classic and WoW Forever gear set, epic weapon and shield, filtered by armor type, race and class. */
+/** Every WoW Forever gear set (new Hyjal sets plus the carried-over Classic ones), epic weapon and shield, filtered by armor type, race and class. */
 export function ArmoryView({ classId }: { classId: ClassId }) {
   const [kind, setKind] = useState<Kind>("all");
   const [raceId, setRaceId] = useState("all");
@@ -56,9 +56,10 @@ export function ArmoryView({ classId }: { classId: ClassId }) {
       <header className="flex flex-col gap-3">
         <h2 className="font-display text-3xl font-bold text-fg">Armory</h2>
         <p className="max-w-prose leading-relaxed text-fg-soft">
-          Every Classic gear set from dungeon sets to Naxxramas, the PvP and crafted sets, every epic weapon and shield, plus
-          WoW Forever's new Hyjal sets. Classic items come from Wowhead's Classic database. Pick a race below to see only
-          what its classes can wear. Hover an icon for where it drops.
+          WoW Forever's gear: level 60 best-in-slot lists for every spec, the new Hyjal sets, and the Classic sets, epic
+          weapons and shields Forever carries over. Those carried-over items still use Classic stats and drop data from
+          Wowhead's Classic database, since Forever hasn't published its own yet. Pick a race below to see only what its
+          classes can wear. Hover an icon for where it drops.
         </p>
         <div className="flex flex-wrap gap-2" role="group" aria-label="Gear type">
           {KINDS.map(([id, label]) => (

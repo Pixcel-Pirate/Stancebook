@@ -1,0 +1,17 @@
+Head|Dreadnaught Helmet|22418|Quest Dreadnaught Helmet (level 60) in Naxxramas|
+Neck|Mark of C'Thun|22732|Drops from C'Thun (21%) in Ahn'Qiraj Temple|
+Shoulders|Dreadnaught Pauldrons|22419|Quest Dreadnaught Pauldrons (level 60) in Naxxramas|
+Back|Cryptfiend Silk Cloak|22938|Drops from Anub'Rekhan (20%) in Naxxramas|Not in beta client
+Chest|Dreadnaught Breastplate|22416|Quest Dreadnaught Breastplate (level 60) in Naxxramas|
+Wrists|Dreadnaught Bracers|22423|Quest Dreadnaught Bracers (level 60) in Naxxramas|
+Hands|Dreadnaught Gauntlets|22421|Quest Dreadnaught Gauntlets (level 60) in Naxxramas|
+Waist|Dreadnaught Waistguard|22422|Quest Dreadnaught Waistguard (level 60) in Naxxramas|
+Legs|Dreadnaught Legplates|22417|Quest Dreadnaught Legplates (level 60) in Naxxramas|
+Feet|Dreadnaught Sabatons|22420|Quest Dreadnaught Sabatons (level 60) in Naxxramas|
+Ring 1|Ring of the Dreadnaught|23059|Drops from Kel'Thuzad (21%) in Naxxramas|
+Ring 2|Angelista's Touch|21695|Drops from Lord Kri (16.7%) in Ahn'Qiraj Temple|
+Trinket 1|Styleen's Impeding Scarab|19431|Drops from Flamegor (20%) in Blackwing Lair|
+Trinket 2|Drake Fang Talisman|19406|Drops from Ebonroc (18%) in Blackwing Lair|
+Main hand|The End of Dreams|22988|Drops from Grobbulus (20%) in Naxxramas|Not in beta client
+Off hand|The Face of Death|23043|Drops from Sapphiron (20%) in Naxxramas|Not in beta client
+Ranged|Crossbow of Imminent Doom|21459|Drops from Ossirian the Unscarred (10%) in Ruins of Ahn'Qiraj|Not in beta client

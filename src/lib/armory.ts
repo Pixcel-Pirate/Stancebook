@@ -93,14 +93,9 @@ export const FOREVER_SETS: GearSet[] = [
   forever(-18, "warrior", "Battleplate of Glory", ["2: +7 Defense", "3: Intervene cooldown -10 sec", "4: 1.2% less chance to be dodged or parried", "5: Shield Wall cooldown -30 sec"]),
 ];
 
-/** Classic best-in-slot lists per class and spec, by race (racial weapon skills change the weapon picks). */
-export type BisList = [slot: string, itemId: number][];
-export type BisSpec = { name: string; lists: Record<string, { pre: BisList; end: BisList }> };
-export type BisItem = { n: string; i: string; q: number; src: string; p: number };
-export const BIS = data.bis as unknown as { cls: ClassId; specs: BisSpec[] }[];
+/** WoW Forever level 60 best-in-slot lists per class and spec, from The Forever Era (see scripts/armory.gen.ts). */
+export type BisFlag = "" | "New in Forever" | "Changed" | "Not in beta client";
+export type BisRow = [slot: string, itemId: number, source: string, flag: BisFlag];
+export type BisItem = { n: string; i: string; q: number };
+export const BIS = data.bis as unknown as { cls: ClassId; specs: { name: string; list: BisRow[] }[] }[];
 export const BIS_ITEMS = data.bisItems as unknown as Record<string, BisItem>;
-/** What each Classic content phase added, as the BIS source counts them. */
-export const PHASE_NAME: Record<number, string> = {
-  0: "launch", 1: "Molten Core and Onyxia", 1.5: "Molten Core and Onyxia", 2: "Dire Maul and world bosses", 2.5: "Dire Maul and world bosses",
-  3: "Blackwing Lair", 4: "Zul'Gurub", 5: "Ahn'Qiraj", 6: "Naxxramas",
-};

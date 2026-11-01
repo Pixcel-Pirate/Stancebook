@@ -1,0 +1,16 @@
+Head|Don Rigoberto's Lost Hat|21615|Drops from Ouro (16.7%) in Ahn'Qiraj Temple|Changed
+Neck|Life Channeling Necklace|23058|Unknown source|
+Shoulders|Redemption Spaulders|22429|Quest Redemption Spaulders (level 60) in Naxxramas|
+Back|Cloak of Suturing|22960|Drops from Patchwerk (20%) in Naxxramas|Not in beta client
+Chest|Robes of the Guardian Saint|21663|Drops from Fankriss the Unyielding (18%) in Ahn'Qiraj Temple|Changed
+Wrists|Bracelets of Royal Redemption|21604|Drops from Emperor Vek'nilash (14.3%) in Ahn'Qiraj Temple|
+Hands|Peacekeeper Gauntlets|20264|Drops from Hakkar (14.3%) in Zul'Gurub|Not in beta client
+Waist|Corehound Belt|19162|Crafted Leatherworking|Changed
+Legs|Martyr's Legplates|250600|Crafted Blacksmithing|New in Forever
+Feet|Redemption Boots|22430|Quest Redemption Boots (level 60) in Naxxramas|
+Ring 1|Cauterizing Band|19140|Drops from Flamewaker Elite (0.46%) in Molten Core|Changed
+Ring 2|Ring of the Martyr|21620|Drops from Princess Huhuran (16.7%) in Ahn'Qiraj Temple|
+Trinket 1|Rejuvenating Gem|19395|Drops from Flamegor (14%) in Blackwing Lair|
+Trinket 2|Eye of the Dead|23047|Drops from Sapphiron (20%) in Naxxramas|
+Main hand|Hammer of the Twisting Nether|23056|Drops from Kel'Thuzad (20%) in Naxxramas|Not in beta client
+Off hand|Shield of Condemnation|22819|Drops from Kel'Thuzad (20%) in Naxxramas|Not in beta client

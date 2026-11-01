@@ -1,0 +1,17 @@
+Head|Bonescythe Helmet|22478|Quest Bonescythe Helmet (level 60) in Naxxramas|
+Neck|Prestor's Talisman of Connivery|19377|Drops from Nefarian (20%) in Blackwing Lair|
+Shoulders|Bonescythe Pauldrons|22479|Quest Bonescythe Pauldrons (level 60) in Naxxramas|
+Back|Cloak of Concentrated Hatred|21701|Drops from The Prophet Skeram (18%) in Ahn'Qiraj Temple|Not in beta client
+Chest|Bonescythe Breastplate|22476|Quest Bonescythe Breastplate (level 60) in Naxxramas|
+Wrists|Bonescythe Bracers|22483|Quest Bonescythe Bracers (level 60) in Naxxramas|
+Hands|Bonescythe Gauntlets|22481|Quest Bonescythe Gauntlets (level 60) in Naxxramas|
+Waist|Belt of Never-ending Agony|21586|Drops from C'Thun (18.4%) in Ahn'Qiraj Temple|
+Legs|Bonescythe Legplates|22477|Quest Bonescythe Legplates (level 60) in Naxxramas|
+Feet|Bonescythe Sabatons|22480|Quest Bonescythe Sabatons (level 60) in Naxxramas|
+Ring 1|Band of Unnatural Forces|23038|Drops from Loatheb (20%) in Naxxramas|
+Ring 2|Bonescythe Ring|23060|Drops from Kel'Thuzad (21%) in Naxxramas|
+Trinket 1|Drake Fang Talisman|19406|Drops from Ebonroc (18%) in Blackwing Lair|
+Trinket 2|Slayer's Crest|23041|Drops from Sapphiron (20%) in Naxxramas|
+Main hand|Kingsfall|22802|Drops from Kel'Thuzad (16.7%) in Naxxramas|Not in beta client
+Off hand|The End of Dreams|22988|Drops from Grobbulus (20%) in Naxxramas|Not in beta client
+Ranged|Nerubian Slavemaker|22812|Drops from Kel'Thuzad (16.7%) in Naxxramas|Not in beta client

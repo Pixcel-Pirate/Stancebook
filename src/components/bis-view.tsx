@@ -1,78 +1,63 @@
 import { useState } from "react";
 import { AbilityTip, SpellIcon } from "@/components/spell-icon";
-import { BIS, BIS_ITEMS, PHASE_NAME, QUALITY, QUALITY_COLOR } from "@/lib/armory";
+import { BIS, BIS_ITEMS, QUALITY, QUALITY_COLOR, type BisFlag } from "@/lib/armory";
 import { classMeta, type ClassId } from "@/lib/macros";
-import { RACES } from "@/lib/races";
+import { cn } from "@/lib/utils";
 
-const wowheadItem = (id: number) => `https://www.wowhead.com/classic/item=${id}`;
+const FOREVER_ERA = "https://theforeverera.com/en/bis/";
+const itemLink = (id: number, flag: BisFlag) => `https://theforeverera.com/en/items/${flag === "New in Forever" ? `${id}/` : `#item-${id}`}`;
+const FLAG_STYLE: Record<Exclude<BisFlag, "">, string> = {
+  "New in Forever": "bg-emerald-400/15 text-emerald-300",
+  Changed: "bg-sky-400/15 text-sky-300",
+  "Not in beta client": "bg-amber-400/15 text-amber-300",
+};
+const FLAG_TIP: Record<Exclude<BisFlag, "">, string> = {
+  "New in Forever": "A new WoW Forever item.",
+  Changed: "Exists in Forever with different stats from Classic.",
+  "Not in beta client": "Wasn't in the Forever beta client, so it may not be in the game.",
+};
 
-/** Classic best-in-slot gear for each spec of the picked class, pre-raid or raid, with where every piece comes from. */
+/** WoW Forever level 60 best-in-slot gear for each spec of the picked class, with where every piece comes from. */
 export function BisView({ classId }: { classId: ClassId }) {
   const specs = BIS.find((b) => b.cls === classId)?.specs ?? [];
-  const races = RACES.filter((r) => r.classes.includes(classId) && specs[0]?.lists[r.id]);
-  const [pick, setPick] = useState({ classId, spec: 0, race: races[0]?.id ?? "", tier: "pre" as "pre" | "end" });
-  // Switching class resets the spec and race to ones that class has.
-  const p = pick.classId === classId ? pick : { classId, spec: 0, race: races[0]?.id ?? "", tier: pick.tier };
-  const spec = specs[p.spec];
-  const list = spec?.lists[p.race]?.[p.tier] ?? [];
+  const [pick, setPick] = useState({ classId, spec: 0 });
+  const spec = specs[pick.classId === classId ? pick.spec : 0];
   if (!spec) return null;
-  const top = Math.max(...list.map(([, id]) => BIS_ITEMS[id].p));
+  const missing = spec.list.filter(([, , , f]) => f === "Not in beta client").length;
 
   return (
     <section className="flex flex-col gap-4 rounded-xl bg-white/[0.03] p-4 shadow-[inset_0_0_0_1px_var(--color-line)] sm:p-6" aria-label="Best in slot">
       <div className="flex flex-col gap-1">
         <h3 className="font-display text-2xl font-bold text-fg">Best in slot · {classMeta(classId).label}</h3>
         <p className="max-w-prose text-sm text-fg-soft">
-          Classic BIS lists from the Best In Slot Classic addon, which collects them from Fight Club and the class Discords. They
-          follow original Classic, so Forever's talent and item changes may shift a pick. Hover an item for where it drops, or
-          click its name to open it on Wowhead.
+          WoW Forever level 60 lists from{" "}
+          <a className="text-cls hover:underline" href={FOREVER_ERA} target="_blank" rel="noreferrer">
+            The Forever Era
+          </a>
+          , built from the Forever beta client (Oct 25). The beta stopped at level 30, so these are forecasts, and most drop
+          locations are still Classic data until Forever's raids are out. Items are tagged when they're new in Forever, changed
+          from Classic, or missing from the beta client. Hover an item for details, or click its name for its Forever stats.
         </p>
       </div>
 
       <div className="flex flex-wrap gap-2" role="group" aria-label="Spec">
         {specs.map((s, k) => (
-          <button key={s.name} type="button" className="chip" aria-pressed={p.spec === k} onClick={() => setPick({ ...p, spec: k })}>
+          <button key={s.name} type="button" className="chip" aria-pressed={spec === s} onClick={() => setPick({ classId, spec: k })}>
             {s.name}
           </button>
         ))}
       </div>
-      <div className="flex flex-wrap items-center gap-2">
-        <div className="flex gap-2" role="group" aria-label="Gear stage">
-          <button type="button" className="chip" aria-pressed={p.tier === "pre"} onClick={() => setPick({ ...p, tier: "pre" })}>
-            Pre-raid
-          </button>
-          <button type="button" className="chip" aria-pressed={p.tier === "end"} onClick={() => setPick({ ...p, tier: "end" })}>
-            Raid
-          </button>
-        </div>
-        <span className="mx-1 h-5 w-px bg-line" aria-hidden />
-        <div className="flex flex-wrap gap-2" role="group" aria-label="Race">
-          {races.map((r) => (
-            <button
-              key={r.id}
-              type="button"
-              className="chip inline-flex items-center gap-2 pl-1"
-              aria-pressed={p.race === r.id}
-              onClick={() => setPick({ ...p, race: r.id })}
-            >
-              <SpellIcon ability={{ name: r.name, icon: r.icon, meta: "", desc: "" }} size={24} className="rounded-full" />
-              {r.name}
-            </button>
-          ))}
-        </div>
-      </div>
-      <p className="text-xs text-fg-faint">
-        {p.tier === "pre"
-          ? "Dungeons, quests, crafting and world drops only, nothing from a raid."
-          : `Best gear through ${PHASE_NAME[top] ?? "the last phase"}${top < 6 ? ". This spec's source list stops there" : ""}.`}{" "}
-        Race only changes the weapon picks. Skyborne can use any race's list without the racial weapon bonuses.
-      </p>
+      {missing > 0 && (
+        <p className="text-xs text-fg-faint">
+          {missing} of these {missing === 1 ? "piece wasn't" : "pieces weren't"} in the beta client, so {missing === 1 ? "it" : "they"} may be
+          cut or replaced in Forever.
+        </p>
+      )}
 
       <ul className="grid gap-1.5 md:grid-cols-2">
-        {list.map(([slot, id], k) => {
+        {spec.list.map(([slot, id, src, flag], k) => {
           const it = BIS_ITEMS[id];
-          const where = it.src === "Drop" ? "Drop (zone not listed)" : it.src || "Source not listed";
-          const tip = { name: it.n, icon: it.i, meta: `${QUALITY[it.q]} · ${slot}`, desc: where };
+          const tip = { name: it.n, icon: it.i, meta: [QUALITY[it.q], slot, flag].filter(Boolean).join(" · "), desc: [src, flag && FLAG_TIP[flag]].filter(Boolean).join(" ") };
           return (
             <li key={slot + k} className="flex items-center gap-3 rounded-lg bg-white/[0.035] p-2 shadow-[inset_0_0_0_1px_var(--color-line)]">
               <AbilityTip ability={tip}>
@@ -81,13 +66,16 @@ export function BisView({ classId }: { classId: ClassId }) {
                 </span>
               </AbilityTip>
               <div className="min-w-0 flex-1">
-                <p className="text-[0.65rem] font-bold tracking-wider text-fg-faint uppercase">{slot}</p>
+                <p className="flex items-center gap-2 text-[0.65rem] font-bold tracking-wider text-fg-faint uppercase">
+                  {slot}
+                  {flag && <span className={cn("rounded px-1.5 py-px tracking-normal normal-case", FLAG_STYLE[flag])}>{flag}</span>}
+                </p>
                 <AbilityTip ability={tip}>
-                  <a href={wowheadItem(id)} target="_blank" rel="noreferrer" className="block truncate font-semibold hover:underline" style={{ color: QUALITY_COLOR[it.q] }}>
+                  <a href={itemLink(id, flag)} target="_blank" rel="noreferrer" className="block truncate font-semibold hover:underline" style={{ color: QUALITY_COLOR[it.q] }}>
                     {it.n}
                   </a>
                 </AbilityTip>
-                <p className="truncate text-xs text-fg-soft">{where}</p>
+                <p className="truncate text-xs text-fg-soft">{src}</p>
               </div>
             </li>
           );
