@@ -1,5 +1,6 @@
 ## What's new
 
+- **Gear sets in 3D:** every Classic set in the Armory has a View set in 3D on Wowhead button. It opens the set on Wowhead, where you can see it worn by any race and gender.
 - **Races in 3D:** the Races tab has a View races in 3D on Wowhead button. It opens Wowhead's Classic dressing room, where you pick the race and gender and drag to rotate. Skyborne is Forever-only, so it has no model there.
 - **New Armory tab:** every Classic gear set (Dungeon Sets 1 and 2, Tier 1 to 3, Zul'Gurub, Ahn'Qiraj, PvP, Arathi Basin, crafted and dungeon sets) with the real icon for every piece, every epic weapon and shield, and WoW Forever's new Hyjal sets with their set bonuses. Filter by cloth, leather, mail or plate, weapons, or shields, pick a race to see only what its classes can use, or show only your class's gear. Hover a piece for where it drops.
 - **Every ability, every class:** the Abilities tab now shows each class's full WoW Forever spellbook, not just the spells the macros use. New Forever spells are in (Aspect of the Viper, Frost Blast, Revoke, Explorer Imp, Call of the Ancestors and more), and ones Forever removed are gone (Lightwell, single-target Blessing of Kings, Tiger's Fury, Tranquil Air Totem and others).
