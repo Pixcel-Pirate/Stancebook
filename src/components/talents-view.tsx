@@ -14,6 +14,7 @@ import {
   lockReason,
   pointsAt,
   rankOf,
+  rankText,
   treeTotal,
   type Spent,
 } from "@/lib/talent-rules";
@@ -242,7 +243,7 @@ function TreePane({
               <div key={t.n} className="talent" data-state={state} style={pos(t)}>
                 <AbilityTip
                   className="block size-full"
-                  ability={{ name: t.n, icon: t.i ?? "", meta: `Rank ${rank}/${t.r}${req ? ` · ${req}` : ""}`, desc: t.e }}
+                  ability={{ name: t.n, icon: t.i ?? "", meta: `Rank ${rank}/${t.r}${req ? ` · ${req}` : ""}`, desc: rankText(t, rank), next: rank > 0 && rank < t.r ? rankText(t, rank + 1) : undefined }}
                 >
                   <button
                     type="button"

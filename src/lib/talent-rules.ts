@@ -67,3 +67,15 @@ export function decode(trees: Tree[], code: string, max = MAX_POINTS): Spent {
     );
   return s;
 }
+
+/** A talent's text at one rank: "{1|5}%" reads 3% at rank 3 of 5. Middle ranks are interpolated
+ *  (the site lists only the first and last), rounded like the game does. */
+export function rankText(t: Talent, rank: number): string {
+  const k = Math.min(Math.max(rank, 1), t.r);
+  return t.e.replace(/\{([\d.]+)\|([\d.]+)\}/g, (_, a: string, b: string) => {
+    const lo = Number(a), hi = Number(b);
+    const v = t.r < 2 ? hi : lo + ((hi - lo) * (k - 1)) / (t.r - 1);
+    const dec = a.includes(".") || b.includes(".");
+    return String(dec ? Math.round(v * 100) / 100 : Math.round(v));
+  });
+}

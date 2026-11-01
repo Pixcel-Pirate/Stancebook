@@ -1,6 +1,7 @@
 import type { ClassId } from "@/lib/macros";
 
 /** One talent, paraphrased from wowforevertalents.com. t = row (tier), c = column 1-4, r = max ranks,
+ *  e marks per-rank numbers as {rank 1|max rank}; rankText fills in the ranks between.
  *  s = "n" new in Forever / "c" changed from Classic (absent = same as Classic), p = talent it needs maxed first. */
 export type Talent = { n: string; t: number; c: number; r: number; i: string | null; e: string; s?: "n" | "c"; p?: string };
 export type Tree = { tree: string; talents: Talent[] };
@@ -25,3 +26,4 @@ export const SPEC_ART: Record<ClassId, [icon: string, a: string, b: string][]> =
 };
 
 export const TALENTS_SOURCE = "https://wowforevertalents.com";
+

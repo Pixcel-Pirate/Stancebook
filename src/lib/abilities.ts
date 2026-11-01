@@ -13,6 +13,8 @@ export type Ability = {
   /** Cast type, cooldown, range, requirements: one short line. */
   meta: string;
   desc: string;
+  /** Talents only: what the next rank gives, shown under "Next rank:". */
+  next?: string;
 };
 
 type Row = [name: string, icon: string, meta: string, desc: string];
