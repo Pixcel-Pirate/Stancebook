@@ -2,21 +2,25 @@ import type { ClassId } from "./macros";
 
 /**
  * Every WoW Forever class change, simplified, one line each, newest patch first.
- * Sources: Blizzard's "WoW Forever Beta Development Notes" forum thread, cross-checked
- * with kami-labs.fr, warcrafttavern.com, pcgames.de and conquestcapped.com summaries.
- * Add a new patch at the top of PATCHES and give every class an entry (or leave it out
- * to show "No changes for your class").
+ * Official: Blizzard's "WoW Forever Beta Development Notes" forum thread (US post dates),
+ * cross-checked with kami-labs.fr, warcrafttavern.com and pcgames.de.
+ * Datamined (no Blizzard notes): wowforevertalents.com/patch-notes and playfulls.com/patch-notes.
+ * Add a new patch at the top of PATCHES and give each changed class an entry
+ * (a class left out shows "No changes for your class").
  */
-export type Patch = { id: string; label: string; summary: string };
+export type Patch = { id: string; label: string; date?: string; official: boolean; summary: string };
 
 export const PATCHES: Patch[] = [
-  { id: "oct30", label: "Oct 30 patch", summary: "Last tuning before launch, plus the Oct 31 hotfix. Found in game data; no official notes yet." },
-  { id: "oct26", label: "Oct 26 patch", summary: "Racials only. No class changes." },
-  { id: "oct15", label: "Oct 15 patch", summary: "Raid-wide buffs, race rework, big talent pass." },
-  { id: "oct8", label: "Oct 8 patch", summary: "Tank rage fixes and early spell ranks retuned." },
-  { id: "oct1", label: "Oct 1 patch", summary: "Level 30 update: crit rage, Fury and Feral talent rework." },
-  { id: "sept24", label: "Sept 24 patch", summary: "First beta tuning pass for all nine classes." },
-  { id: "launch", label: "Forever vs Classic", summary: "What Forever changed from original Classic before the first patch." },
+  { id: "oct31", label: "Oct 31 hotfix", date: "2026-10-31", official: false, summary: "Server hotfix with big Paladin and Druid talent changes." },
+  { id: "oct30", label: "Oct 30 patch", date: "2026-10-30", official: false, summary: "Last client build before launch: Mage and Hunter tuning." },
+  { id: "oct26", label: "Oct 26 patch", date: "2026-10-26", official: true, summary: "Racials only (with an Oct 27 addendum). No class changes." },
+  { id: "oct23", label: "Oct 23 build", date: "2026-10-23", official: false, summary: "Frost Mage talents and a few small fixes." },
+  { id: "oct18", label: "Oct 18 build", date: "2026-10-18", official: false, summary: "A handful of small tuning changes." },
+  { id: "oct15", label: "Oct 15 patch", date: "2026-10-15", official: true, summary: "Raid-wide buffs, race rework, big talent pass." },
+  { id: "oct8", label: "Oct 8 patch", date: "2026-10-08", official: true, summary: "Tank rage fixes and early spell ranks retuned." },
+  { id: "oct1", label: "Oct 1 patch", date: "2026-10-01", official: true, summary: "Level 30 update: crit rage, Fury and Feral talent rework." },
+  { id: "sept24", label: "Sept 24 patch", date: "2026-09-24", official: true, summary: "First beta tuning pass for all nine classes." },
+  { id: "launch", label: "Forever vs Classic", official: true, summary: "What Forever changed from original Classic before the first patch." },
 ];
 
 type ClassNotes = Partial<Record<string, string[]>>;
@@ -74,9 +78,8 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   paladin: {
-    oct30: [
-      "Righteous Fury is learned at level 10 (was 16) and adds 33% threat.",
-      "Seal of Fury taunts for 3 seconds (was 4). Holy Shield is retuned to 4 ranks.",
+    oct31: [
+      "Righteous Fury adds 33% threat. Seal of Fury taunts for 3 seconds (was 4). Holy Shield is retuned to 4 ranks.",
       "Salvation, Mass Salvation, Revoke and Blessing of Light were pulled from the spell data.",
       "Holy: Holy Power now adds 50% critical healing. New talents Oath of Light and Boundless Light (Holy Shock crit). Light's Vigil is friendly-only.",
       "Holy: Spiritual Focus is 5 ranks, Reverence 2, Divine Precision gives 8% Holy hit (was 18%).",
@@ -84,6 +87,12 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
       "Protection: Swift Judgement judges your Seal without using it, on its own cooldown. Sacred Duty shortens Forbearance by 10 seconds.",
       "Retribution: Conviction gives 6% crit to all attacks and spells. Two-Handed Weapon Specialization adds 6% damage and 20% less threat.",
       "Retribution: Champion of the Light is 5 ranks and speeds Hammer of Wrath. Twist of Light is now Unsealed Wrath. Turn Evil replaces Instrument of Law.",
+    ],
+    oct30: [
+      "Righteous Fury is learned at level 10 (was 16).",
+    ],
+    oct18: [
+      "Champion of the Light gives 60% of Intellect as spell damage at rank 3 (was 30%).",
     ],
     oct15: [
       "Blessing of Salvation is now Salvation and Mass Salvation. Still -30% threat, but no longer a blessing.",
@@ -129,19 +138,23 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   hunter: {
+    oct31: [
+      "Beast Mastery: Pathfinding moved to row 3.",
+    ],
     oct30: [
       "Aspect of the Hawk gives much less ranged Attack Power (47 at max rank, was 90).",
       "Trueshot Aura bonus halved (talent 15, was 30).",
-      "Hunter's Mark rank 4 roughly doubles its ranged Attack Power bonus.",
       "Scare Beast is a 30-second cooldown.",
       "Entrapment, Counterattack and Improved Wing Clip roots share diminishing returns with other roots.",
-      "Beast Mastery: Pathfinding moved to row 3.",
+    ],
+    oct23: [
+      "Hunter's Mark rank 4 roughly doubles its ranged Attack Power bonus (143, was 71).",
     ],
     oct15: [
       "Auto Shot needs you to stand still for 0.5 seconds before it fires.",
       "Trueshot Aura reaches the whole raid.",
       "Fire Trap scales with Attack Power. You can have one Fire and one Ice Trap out at once.",
-      "Multi-Shot is instant (was a 0.5 second cast).",
+      "Multi-Shot is reported to be instant (was a 0.5 second cast); Blizzard's notes don't list it.",
       "Strider Kick works while disarmed or with no main-hand weapon.",
       "Resourcefulness procs 50/100% and now from ability crits, not traps.",
       "Pets use Expertise and the higher of your melee or ranged crit.",
@@ -197,10 +210,13 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   priest: {
-    oct30: [
+    oct31: [
       "Binding Heal is replaced by Holy Binding: you heal yourself for 50% of what Flash Heal heals others.",
       "Shadow Word: Death backlash is 30% of your max health if the target lives (was 10%).",
       "Cure Disease and Abolish Disease work in Shadowform.",
+    ],
+    oct18: [
+      "Holy Fire rank 1 hits slightly softer (52-66, was 56-70).",
     ],
     oct15: [
       WANDS,
@@ -242,6 +258,9 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
   shaman: {
     oct30: [
       "Lava Burst rank 3's bonus against Flame Shocked targets no longer scales with level.",
+    ],
+    oct23: [
+      "Lava Burst rank 3's bonus against Flame Shocked targets is back to 20% (Oct 15 had raised it to 54%).",
     ],
     oct15: [
       "Grace of Air, Strength of Earth, Windfury and Flametongue Totems reach the whole raid.",
@@ -285,14 +304,27 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   mage: {
-    oct30: [
+    oct31: [
       "Arcane Blast gives 12% of Intellect per stack (was 15%), stacks last 18 seconds, and the mana cost rises 100% per stack.",
-      "Ice Lance does 300% to frozen targets again but has an 8-second cooldown.",
+      "Ice Lance does 300% to frozen targets again (was 200%).",
+      "Arcane Resilience is 3 ranks and gives more armor.",
+      "Frost: Ice Barrier adds 15% Frost damage for 1 minute. Winter's Chill adds 20% Cone of Cold damage per stack. Arctic Reach covers Ice Lance.",
+    ],
+    oct30: [
+      "Ice Lance has an 8-second cooldown.",
       "Frost Blast can no longer be trained.",
-      "Arcane: Arcane Focus removed. Arcane Resilience is 3 ranks and gives more armor.",
+      "Arcane: Arcane Focus removed. Arcane Resilience and Missile Barrage swapped places.",
       "Fire: Improved Fireball is now Accelerant (also speeds Arcane Wrath). Incineration is 5 ranks for 10% crit, Critical Mass 3 ranks for 6%.",
       "Elemental Precision is now Precision and covers all spells.",
-      "Frost: Ice Barrier adds 15% Frost damage for 1 minute. Winter's Chill adds 20% Cone of Cold damage per stack. Arctic Reach covers Ice Lance.",
+    ],
+    oct23: [
+      "Frost: Piercing Ice removed. Frost Channeling and Improved Blizzard moved.",
+      "Elemental Precision is 3 ranks for 6% hit (was 5 ranks).",
+      "Frost Warding gives Frost Ward a 20% chance to negate spells and adds 20% to Ice Barrier and Frost Ward absorbs.",
+      "Ice Barrier and Frost Ward absorbs scale with 10% of Frost spell power. Ice Barrier adds 3% Frost damage.",
+    ],
+    oct18: [
+      "Frost Blast can now trigger Missile Barrage.",
     ],
     oct15: [
       WANDS,
@@ -330,15 +362,17 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   warlock: {
-    oct30: [
+    oct31: [
       "Improved Drains boosts Drain Life, Drain Soul and Drain Mana by 20% (no longer Wrack).",
+    ],
+    oct18: [
+      "Amplify Curse now makes Curse of Exhaustion 20% stronger.",
     ],
     oct15: [
       WANDS,
       "Shadow Mastery gives 2-10% Shadow damage (was 1-5%).",
       "Affliction: Malediction is replaced by Grim Reach (+10/20% Affliction range).",
       "Destructive Reach only adds Destruction range now.",
-      "Amplify Curse makes Curse of Exhaustion 50% (was 20%).",
       "Curse of Recklessness can't stack from several warlocks.",
       "Summon Incubus needs a Soul Shard with the Reagent Economy perk.",
     ],
@@ -368,7 +402,7 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   druid: {
-    oct30: [
+    oct31: [
       "Feral: Berserk removed. Primal Bite moved to row 7 (needs Leader of the Pack), now 2 ranks learned at 50 and 60.",
       "Feral: Lacerate is a stacking bleed (up to 5) that also adds weapon damage per stack.",
       "Feral: Ferocious Bite has 5 ranks with lower damage per rank. New Predatory Discipline stops Bite spending extra Energy.",

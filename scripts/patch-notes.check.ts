@@ -4,6 +4,7 @@ import assert from "node:assert";
 import { PATCHES, PATCH_NOTES } from "../src/lib/patch-notes.ts";
 
 const ids = new Set(PATCHES.map((p) => p.id));
+for (const p of PATCHES) if (p.id !== "launch") assert.match(p.date ?? "", /^2026-\d\d-\d\d$/, `${p.id}: needs a date`);
 for (const [cls, notes] of Object.entries(PATCH_NOTES)) {
   for (const id of Object.keys(notes)) assert.ok(ids.has(id), `${cls}: unknown patch ${id}`);
   assert.ok(notes.launch?.length, `${cls}: missing launch notes`);

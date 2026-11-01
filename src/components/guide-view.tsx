@@ -149,6 +149,13 @@ export function ForeverView({ classId }: { classId: ClassId }) {
   );
 }
 
+/** "2026-10-31" -> "Saturday, October 31, 2026" (UTC so the day never shifts). */
+function fullDate(iso: string): string {
+  return new Date(`${iso}T12:00:00Z`).toLocaleDateString("en-US", {
+    weekday: "long", month: "long", day: "numeric", year: "numeric", timeZone: "UTC",
+  });
+}
+
 export function PatchNotesView({ classId }: { classId: ClassId }) {
   const patches = patchNotesFor(classId);
   const label = classMeta(classId).label;
@@ -168,12 +175,26 @@ export function PatchNotesView({ classId }: { classId: ClassId }) {
           open={p.notes.length > 0 && i < 3}
           className="group scroll-mt-48 rounded-xl bg-white/[0.035] shadow-[inset_0_0_0_1px_var(--color-line)]"
         >
-          <summary className="flex cursor-pointer list-none flex-wrap items-baseline justify-between gap-2 p-5 [&::-webkit-details-marker]:hidden">
-            <h3 className="font-display text-lg font-bold text-fg">
-              <span className="mr-2 inline-block text-cls transition-transform duration-200 group-open:rotate-90">›</span>
-              {p.label}
-            </h3>
-            <span className="text-sm text-fg-faint">{p.summary}</span>
+          <summary className="flex cursor-pointer list-none flex-col gap-1 p-5 [&::-webkit-details-marker]:hidden">
+            <div className="flex flex-wrap items-baseline justify-between gap-2">
+              <h3 className="font-display text-lg font-bold text-fg">
+                <span className="mr-2 inline-block text-cls transition-transform duration-200 group-open:rotate-90">›</span>
+                {p.label}
+              </h3>
+              {p.date && (
+                <time dateTime={p.date} className="text-sm font-semibold text-fg-soft tabular-nums">
+                  {fullDate(p.date)}
+                </time>
+              )}
+            </div>
+            <p className="pl-5 text-sm text-fg-faint">
+              {!p.official && (
+                <span className="mr-2 rounded-full px-2 py-0.5 text-xs font-semibold text-cls ring-1 ring-current/40">
+                  From game data
+                </span>
+              )}
+              {p.summary}
+            </p>
           </summary>
           {p.notes.length ? (
             <ul className="flex list-disc flex-col gap-2 px-5 pb-5 pl-10 marker:text-cls">
@@ -187,7 +208,7 @@ export function PatchNotesView({ classId }: { classId: ClassId }) {
         </details>
       ))}
       <p className="text-xs leading-relaxed text-fg-faint">
-        Simplified from Blizzard's WoW Forever beta development notes. Numbers can change before launch.
+        Simplified from Blizzard's WoW Forever beta development notes. Updates marked From game data had no official notes and were read from the game files. Numbers can change before launch.
       </p>
     </div>
   );
