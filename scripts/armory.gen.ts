@@ -70,7 +70,7 @@ const sets = GROUPS.flatMap(([group, ids]) =>
       (/^(Field Marshal|Lieutenant Commander|The Highlander)/.test(name) ? "Alliance" : /^(Warlord|Champion|The Defiler)/.test(name) ? "Horde" : null);
     return {
       id, name, group, cls, armor, faction,
-      items: its.map((i) => ({ n: i.name, i: i.icon, s: SLOT[i.type] ?? "", q: i.quality, src: source(i) })),
+      items: its.map((i) => ({ id: i.id, n: i.name, i: i.icon, s: SLOT[i.type] ?? "", q: i.quality, src: source(i) })),
     };
   }),
 );
@@ -79,7 +79,7 @@ const seen = new Set<string>();
 const weapons = items
   .filter((i) => (i.type === 13 || i.type === 14) && i.quality >= 4 && !seen.has(i.name) && seen.add(i.name))
   .map((i) => ({
-    n: i.name, i: i.icon, q: i.quality, src: source(i),
+    id: i.id, n: i.name, i: i.icon, q: i.quality, src: source(i),
     kind: i.type === 14 ? RANGED[i.rangedWeaponType ?? 0] : WEAPON[i.weaponType ?? 0],
     hand: i.type === 14 ? "Ranged" : HAND[i.handType ?? 0],
   }))
