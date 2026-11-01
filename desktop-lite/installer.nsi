@@ -73,6 +73,8 @@ Section "Uninstall"
   ; only our own files, so a misplaced Uninstall.exe can't wipe a whole folder
   Delete "$INSTDIR\Stancebook.exe"
   Delete "$INSTDIR\resources.neu"
+  Delete "$INSTDIR\resources.new"
+  Delete "$INSTDIR\update.cmd"
   Delete "$INSTDIR\icon.ico"
   Delete "$INSTDIR\Uninstall.exe"
   RMDir /r "$INSTDIR\.tmp"
