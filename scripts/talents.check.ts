@@ -35,6 +35,7 @@ for (const f of fs.readdirSync("src/data/talents")) {
     const spots = new Set(tr.talents.map((t) => `${t.t}.${t.c}`));
     assert.equal(spots.size, tr.talents.length, `${f} ${tr.tree} overlapping talents`);
     for (const t of tr.talents) {
+      assert(/^[a-z0-9_]+$/.test(t.i ?? ""), `${f} ${t.n} needs a zamimg icon name`);
       assert(t.c >= 1 && t.c <= 4 && t.t >= 1 && t.t <= 7 && t.r >= 1 && t.r <= 5, `${f} ${t.n} out of grid`);
       const p = t.p && tr.talents.find((u) => u.n === t.p);
       if (t.p) assert(p && (p.t < t.t || (p.t === t.t && p.c < t.c)), `${f} ${t.n} prerequisite ${t.p}`);

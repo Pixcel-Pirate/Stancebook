@@ -13,7 +13,7 @@ export function treesFor(id: ClassId): Tree[] {
 
 /** Spec emblem icon and two backdrop colors per tree, in tree order. */
 export const SPEC_ART: Record<ClassId, [icon: string, a: string, b: string][]> = {
-  warrior: [["ability_warrior_savageblow", "#c2602a", "#3a1a0c"], ["ability_warrior_innerrage", "#d8361c", "#2e0b06"], ["ability_warrior_defensivestance", "#3f7f9a", "#0f2430"]],
+  warrior: [["ability_rogue_eviscerate", "#c2602a", "#3a1a0c"], ["ability_warrior_innerrage", "#d8361c", "#2e0b06"], ["inv_shield_06", "#3f7f9a", "#0f2430"]],
   paladin: [["spell_holy_holybolt", "#e9b44c", "#3a2608"], ["spell_holy_devotionaura", "#4f86b8", "#0e1d30"], ["spell_holy_auraoflight", "#e07a2c", "#3a1606"]],
   hunter: [["ability_hunter_beasttaming", "#3a5fb0", "#0b1430"], ["ability_marksmanship", "#b0904e", "#2b2010"], ["ability_hunter_swiftstrike", "#3aa07a", "#0c2a20"]],
   rogue: [["ability_rogue_eviscerate", "#3f8f94", "#0b2326"], ["ability_backstab", "#9a6a3c", "#26180c"], ["ability_stealth", "#4f7f7a", "#0d1f1d"]],

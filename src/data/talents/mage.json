@@ -28,7 +28,7 @@
 {"n":"Improved Flamestrike","t":3,"c":2,"r":3,"i":"spell_fire_selfdestruct","e":"Adds critical strike chance to Flamestrike."},
 {"n":"Pyroblast","t":3,"c":3,"r":1,"i":"spell_fire_fireball02","e":"Slow, large Fire hit with a damage-over-time component.","s":"c"},
 {"n":"Improved Fire Blast","t":3,"c":4,"r":2,"i":"spell_fire_lavaspawn","e":"Shorter Fire Blast cooldown and longer range.","s":"c"},
-{"n":"Improved Scorch","t":4,"c":1,"r":3,"i":"spell_fire_windsofwoe","e":"Scorch makes targets vulnerable to Fire damage, stacking up to five times.","s":"c"},
+{"n":"Improved Scorch","t":4,"c":1,"r":3,"i":"spell_fire_soulburn","e":"Scorch makes targets vulnerable to Fire damage, stacking up to five times.","s":"c"},
 {"n":"Improved Fire Ward","t":4,"c":2,"r":2,"i":"spell_fire_firearmor","e":"Fire Ward gains a chance to reflect Fire spells."},
 {"n":"Heating Up","t":4,"c":3,"r":1,"i":"spell_fire_firebolt","e":"Fire crits from several spells shorten your next Pyroblast cast.","s":"n","p":"Pyroblast"},
 {"n":"Master of Elements","t":4,"c":4,"r":3,"i":"spell_fire_masterofelements","e":"Fire and Frost critical strikes refund part of their mana cost.","s":"c"},

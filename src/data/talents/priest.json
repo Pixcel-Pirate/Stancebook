@@ -30,7 +30,7 @@
 {"n":"Holy Reach","t":4,"c":1,"r":2,"i":"spell_holy_purify","e":"Extends range of Smite and Holy Fire and radius of group spells."},
 {"n":"Improved Healing","t":4,"c":2,"r":3,"i":"spell_holy_heal02","e":"Lowers mana cost of several heals and Penance.","s":"c"},
 {"n":"Searing Light","t":4,"c":3,"r":2,"i":"spell_holy_searinglightpriest","e":"Raises Holy damage and sometimes makes Holy Nova cost no mana.","s":"c","p":"Divine Fury"},
-{"n":"Binding Heal","t":4,"c":4,"r":1,"i":"spell_holy_blindingheal","e":"Heals a target and you for a shared amount.","s":"n"},
+{"n":"Holy Binding","t":4,"c":4,"r":1,"i":"spell_holy_blindingheal","e":"Heals a target and you for a shared amount.","s":"n"},
 {"n":"Litany of Light","t":5,"c":1,"r":2,"i":"inv_scroll_07","e":"Gain mana when you cast a heal that differs from your previous heal.","s":"n"},
 {"n":"Spirit of Redemption","t":5,"c":2,"r":1,"i":"inv_enchant_essenceeternallarge","e":"Become a healing spirit for longer after you die.","s":"c"},
 {"n":"Spiritual Guidance","t":5,"c":3,"r":5,"i":"spell_holy_spiritualguidence","e":"Adds spell healing and some spell damage based on your Spirit.","s":"c"},
