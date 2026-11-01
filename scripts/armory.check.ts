@@ -10,10 +10,13 @@ for (const s of sets) {
 }
 for (const w of weapons) assert(icon.test(w.i) && w.id > 0 && w.id < 24000, `${w.n} needs a zamimg icon name and a Classic item id`);
 assert(sets.some((s: { armor: string }) => s.armor === "plate") && weapons.some((w: { kind: string }) => w.kind === "Shield"));
-// Every spec has a pre-raid and raid BIS list for each race, and every listed item has a real icon and a source.
+// All 28 Forever specs have a level 60 list of at least 15 slots, each with a source, and every item has a real icon.
+const FLAGS = ["", "New in Forever", "Changed", "Not in beta client"];
+assert.equal(bis.reduce((n: number, b: { specs: unknown[] }) => n + b.specs.length, 0), 28);
 for (const b of bis)
-  for (const sp of b.specs)
-    for (const [race, l] of Object.entries(sp.lists) as [string, { pre: [string, number][]; end: [string, number][] }][])
-      assert(l.pre.length >= 12 && l.end.length >= 12, `${b.cls} ${sp.name} ${race}: BIS list too short`);
-for (const [id, it] of Object.entries(bisItems) as [string, { i: string; src: string }][]) assert(icon.test(it.i) && it.src, `BIS item ${id} needs an icon and a source`);
+  for (const sp of b.specs) {
+    assert(sp.list.length >= 15, `${b.cls} ${sp.name}: BIS list too short`);
+    for (const [slot, id, src, flag] of sp.list) assert(bisItems[id] && src && FLAGS.includes(flag), `${b.cls} ${sp.name} ${slot}: bad row`);
+  }
+for (const [id, it] of Object.entries(bisItems) as [string, { i: string }][]) assert(icon.test(it.i), `BIS item ${id} needs an icon`);
 console.log(`armory ok: ${sets.length} sets, ${weapons.length} weapons`);

@@ -1,0 +1,16 @@
+Head|Don Rigoberto's Lost Hat|21615|Drops from Ouro (16.7%) in Ahn'Qiraj Temple|Changed
+Neck|Life Channeling Necklace|23058|Unknown source|
+Shoulders|Earthshatter Spaulders|22467|Quest Earthshatter Spaulders (level 60) in Naxxramas|
+Back|Cloak of Clarity|21583|Drops from C'Thun (21%) in Ahn'Qiraj Temple|
+Chest|Robes of the Guardian Saint|21663|Drops from Fankriss the Unyielding (18%) in Ahn'Qiraj Temple|Changed
+Wrists|Bracelets of Royal Redemption|21604|Drops from Emperor Vek'nilash (14.3%) in Ahn'Qiraj Temple|
+Hands|Gloves of the Messiah|21619|Drops from Princess Huhuran (16.7%) in Ahn'Qiraj Temple|Changed
+Waist|Corehound Belt|19162|Crafted Leatherworking|Changed
+Legs|Earthshatter Legguards|22465|Quest Earthshatter Legguards (level 60) in Naxxramas|
+Feet|Boots of Pure Thought|19437|Drops from Death Talon Wyrmkin (4.1%) in Blackwing Lair|Not in beta client
+Ring 1|Cauterizing Band|19140|Drops from Flamewaker Elite (0.46%) in Molten Core|Changed
+Ring 2|Ring of the Martyr|21620|Drops from Princess Huhuran (16.7%) in Ahn'Qiraj Temple|
+Trinket 1|Rejuvenating Gem|19395|Drops from Flamegor (14%) in Blackwing Lair|
+Trinket 2|Eye of the Dead|23047|Drops from Sapphiron (20%) in Naxxramas|
+Main hand|Hammer of the Twisting Nether|23056|Drops from Kel'Thuzad (20%) in Naxxramas|Not in beta client
+Off hand|Shield of Condemnation|22819|Drops from Kel'Thuzad (20%) in Naxxramas|Not in beta client

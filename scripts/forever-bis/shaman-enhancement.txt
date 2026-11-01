@@ -1,0 +1,15 @@
+Head|Crown of Destruction|18817|Drops from Ragnaros (20%) in Molten Core|Not in beta client
+Neck|Stormrage's Talisman of Seething|23053|Drops from Kel'Thuzad (16.7%) in Naxxramas|
+Shoulders|Mantle of Wicked Revenge|21665|Drops from Fankriss the Unyielding (18%) in Ahn'Qiraj Temple|
+Back|Cloak of Concentrated Hatred|21701|Drops from The Prophet Skeram (18%) in Ahn'Qiraj Temple|Not in beta client
+Chest|Ghoul Skin Tunic|23226|Drops from Death Touched Warrior (2.1%) in Naxxramas|Not in beta client
+Wrists|Qiraji Execution Bracers|21602|Drops from Emperor Vek'lor (16.7%) in Ahn'Qiraj Temple|
+Hands|Gloves of Enforcement|21672|Drops from Battleguard Sartura (15%) in Ahn'Qiraj Temple|
+Waist|Belt of Never-ending Agony|21586|Drops from C'Thun (18.4%) in Ahn'Qiraj Temple|
+Legs|Scaled Sand Reaver Leggings|21651|Drops from Fankriss the Unyielding (18%) in Ahn'Qiraj Temple|Not in beta client
+Feet|Boots of the Shadow Flame|19381|Drops from Nefarian (20%) in Blackwing Lair|Not in beta client
+Ring 1|Band of Unnatural Forces|23038|Drops from Loatheb (20%) in Naxxramas|
+Ring 2|Band of Accuria|17063|Drops from Ragnaros (20%) in Molten Core|Not in beta client
+Trinket 1|Drake Fang Talisman|19406|Drops from Ebonroc (18%) in Blackwing Lair|
+Trinket 2|Neltharion's Tear|19379|Drops from Nefarian (20%) in Blackwing Lair|
+Main hand|Might of Menethil|22798|Drops from Kel'Thuzad (16.7%) in Naxxramas|Not in beta client

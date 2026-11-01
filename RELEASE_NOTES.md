@@ -1,5 +1,6 @@
 ## What's new
 
+- **WoW Forever BIS lists:** the Armory's best-in-slot lists are now WoW Forever's level 60 lists for all 28 specs (from The Forever Era, built from the Forever beta client), replacing the Classic addon lists. Items are tagged New in Forever, Changed, or Not in beta client, and links open the item's Forever page. They're forecasts until Forever reaches level 60.
 - **Best in slot lists in the Armory:** pre-raid and raid BIS for every class and spec (25 specs, from the Best In Slot Classic addon's lists), with the weapon picks for your race. Every item shows where it drops or how it's made. Hover for the tooltip, or click the name to open it on Wowhead. The dressing room is gone.
 - **Gear sets in 3D:** every Classic set in the Armory has a View set in 3D on Wowhead button. It opens the set on Wowhead, where you can see it worn by any race and gender.
 - **Races in 3D:** the Races tab has a View races in 3D on Wowhead button. It opens Wowhead's Classic dressing room, where you pick the race and gender and drag to rotate. Skyborne is Forever-only, so it has no model there.
