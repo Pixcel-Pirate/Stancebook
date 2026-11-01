@@ -4,10 +4,17 @@ import assert from "node:assert";
 import fs from "node:fs";
 const { sets, weapons, bis, bisItems } = JSON.parse(fs.readFileSync("src/data/armory.json", "utf8"));
 const icon = /^[a-z0-9_]+$/;
+// Sets are WoW Forever's own (client ids, so Forever-new pieces have ids above 24000). Only the Hyjal sets, whose pieces
+// aren't in the client yet, may have no pieces; every piece shown has a real icon.
 for (const s of sets) {
-  assert(s.items.length > 0, `${s.name} has no pieces`);
-  for (const p of s.items) assert(icon.test(p.i) && p.id > 0 && p.id < 24000, `${s.name}: ${p.n} needs a zamimg icon name and a Classic item id`);
+  assert(s.id > 0 && s.bonuses.length > 0, `${s.name} needs a Wowhead set id and its bonuses`);
+  assert(s.items.length > 0 || s.group.includes("Hyjal"), `${s.name} has no pieces`);
+  for (const p of s.items) assert(icon.test(p.i) && p.id > 0, `${s.name}: ${p.n} needs a zamimg icon name`);
 }
+const names = new Set(sets.map((s: { name: string }) => s.name));
+for (const n of ["Inquisition Warplate", "Inquisition Armor", "Inquisition Bulwark", "Inquisition Shockplate", "Battlegear of Glory", "Dreamwalker Raiment"])
+  assert(names.has(n), `${n} is missing`);
+assert(sets.length > 300, "expected every Forever set");
 for (const w of weapons) assert(icon.test(w.i) && w.id > 0 && w.id < 24000, `${w.n} needs a zamimg icon name and a Classic item id`);
 assert(sets.some((s: { armor: string }) => s.armor === "plate") && weapons.some((w: { kind: string }) => w.kind === "Shield"));
 // All 28 Forever specs have a level 60 list of at least 15 slots, each with a source, and every item has a real icon.
