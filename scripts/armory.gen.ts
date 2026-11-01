@@ -86,5 +86,109 @@ const weapons = items
   .filter((w) => w.kind)
   .sort((a, b) => a.kind.localeCompare(b.kind) || b.q - a.q || a.n.localeCompare(b.n));
 
-fs.writeFileSync("src/data/armory.json", JSON.stringify({ sets, weapons }));
-console.log(`armory: ${sets.length} sets, ${weapons.length} weapons and shields`);
+// BIS lists come from the Best In Slot Classic addon (github.com/Warkdev/BestInSlotClassic, GPL-2, lists from Fight Club,
+// class Discords and similar spreadsheets). Per class/spec/race: lower Priority is better, items carry a content phase.
+const BISC = "https://raw.githubusercontent.com/Warkdev/BestInSlotClassic/master/data/";
+const lua = async (f: string) => (await fetch(BISC + f)).text();
+const links = [...(await lua("bis_data.lua")).matchAll(/ClassId = (\d+), SpecId = (\d+), ItemId = (\d+), Priority = (\d+), OffHand = (\w+), Races = (nil|\{[^}]*\})/g)].map(
+  (m) => ({ cls: +m[1], spec: +m[2], id: +m[3], prio: +m[4], off: m[5] === "true", races: m[6] === "nil" ? null : (m[6].match(/\d+/g) ?? []).map(Number) }),
+);
+const meta = new Map(
+  [...(await lua("items.lua")).matchAll(/BIS_ITEMS\[(\d+)\] = \{Phase = ([\d.]+), PvP = (\w+), PvPRank = \d+, Raid = (\w+), WorldBoss = (\w+), TwoHands = (\w+), Faction = (nil|\{ "(\w+)" \}), Slot = (\d+)/g)].map(
+    (m) => [+m[1], { phase: +m[2], pvp: m[3] === "true", raid: m[4] === "true", boss: m[5] === "true", twoHand: m[6] === "true", faction: m[8] ?? null, slot: +m[9] }],
+  ),
+);
+// The addon's own spec names, in its SpecId order (higher SpecIds are fire/nature/frost resistance sets, which we skip).
+const SPECS: Record<number, [string, string[]]> = {
+  1: ["warrior", ["Fury", "Protection (threat)", "Protection (mitigation)"]],
+  2: ["paladin", ["Holy", "Protection", "Retribution", "Retribution (spell damage)"]],
+  3: ["hunter", ["Ranged", "Melee weave"]],
+  4: ["rogue", ["Swords", "Daggers"]],
+  5: ["priest", ["Holy / Discipline", "Shadow"]],
+  7: ["shaman", ["Restoration", "Enhancement"]],
+  8: ["mage", ["Frost / Fire", "Zero spell power", "Alternative"]],
+  9: ["warlock", ["Any spec"]],
+  11: ["druid", ["Feral tank (value)", "Feral tank (mitigation)", "Feral tank (threat)", "Feral DPS", "Restoration", "Balance"]],
+};
+const RACE_ID: Record<string, number> = { human: 1, orc: 2, dwarf: 3, nightelf: 4, undead: 5, tauren: 6, gnome: 7, troll: 8 };
+const RACE_FACTION: Record<number, string> = { 1: "Alliance", 3: "Alliance", 4: "Alliance", 7: "Alliance", 2: "Horde", 5: "Horde", 6: "Horde", 8: "Horde" };
+// Paper-doll order. Rings and trinkets take the best two.
+const ORDER: [number, string, number][] = [[1, "Head", 1], [2, "Neck", 1], [3, "Shoulder", 1], [15, "Back", 1], [5, "Chest", 1], [9, "Wrist", 1], [10, "Hands", 1], [6, "Waist", 1], [7, "Legs", 1], [8, "Feet", 1], [11, "Finger", 2], [13, "Trinket", 2], [16, "Main Hand", 1], [17, "Off Hand", 1], [18, "Ranged", 1]];
+const itemById = new Map(items.map((i) => [i.id, i]));
+
+/** Best item per slot for one class/spec/race, from what `ok` allows. Ties go to the earlier link, like the addon. */
+function pick(cls: number, spec: number, race: number, ok: (m: NonNullable<ReturnType<typeof meta.get>>, id: number) => boolean) {
+  const cands = links
+    .filter((l) => l.cls === cls && l.spec === spec && (!l.races || l.races.includes(race)) && itemById.has(l.id))
+    .flatMap((l) => {
+      const m = meta.get(l.id);
+      if (!m || !ok(m, l.id) || (m.faction && m.faction !== RACE_FACTION[race])) return [];
+      const slot = m.slot === 23 ? 17 : m.slot === 16 && l.off ? 17 : m.slot === 12 ? 11 : m.slot === 14 ? 13 : m.slot;
+      return [{ ...l, slot, twoHand: m.twoHand }];
+    })
+    .sort((a, b) => a.prio - b.prio);
+  const best = (slot: number, n: number) => [...new Set(cands.filter((c) => c.slot === slot).map((c) => c.id))].slice(0, n);
+  // Two-hander or main hand plus off hand: whichever ranks better; a tie goes to dual wield/shield when an off hand exists.
+  const mh = cands.filter((c) => c.slot === 16);
+  const top = mh.find((c) => c.prio === mh[0]?.prio && !c.twoHand && best(17, 1).length) ?? mh[0];
+  return ORDER.flatMap(([slot, label, n]): [string, number][] => {
+    const ids = slot === 16 ? (top ? [top.id] : []) : slot === 17 ? (top?.twoHand ? [] : best(17, 1)) : best(slot, n);
+    return ids.map((id) => [label, id]);
+  });
+}
+
+// Where wowsims has no source, fall back to the addon's own loot, crafting, quest and vendor tables.
+const [lootLua, craftLua, questLua, vendorLua] = await Promise.all(["items_loot.lua", "items_craft.lua", "items_quests.lua", "items_vendor.lua"].map(lua));
+const has = (text: string, table: string, id: number) => text.includes(`${table}[${id}] =`);
+function bisSource(id: number) {
+  const craft = craftLua.match(new RegExp(`ITEMS_CRAFT\\[${id}\\] = \\{CraftLabel = "([^"]+)", CraftLevel = "(\\d+)"`));
+  if (craft) return `Crafted · ${craft[1]} (${craft[2]})`;
+  const loot = lootLua.match(new RegExp(`ITEMS_LOOT\\[${id}\\] = \\{ NPC = \\{(.*)\\} \\};`))?.[1];
+  if (loot) {
+    const drops = [...loot.matchAll(/Id = (\d+), Zone = (\d+), Chance = ([\d.]+)/g)].sort((a, b) => +b[3] - +a[3]);
+    const d = drops.find((x) => npc.has(+x[1])) ?? drops[0];
+    if (d) return ["Drop", npc.get(+d[1]), zone.get(+d[2])].filter(Boolean).join(" · ");
+  }
+  if (has(questLua, "ITEMS_QUEST", id)) return "Quest reward";
+  if (has(vendorLua, "ITEMS_VENDOR", id)) return "Vendor";
+  return "";
+}
+
+const RAIDS = /Molten Core|Onyxia|Blackwing Lair|Zul'Gurub|Ahn'Qiraj|Naxxramas/;
+/** Drop location; Naxxramas bosses are missing from wowsims' zone data, but every phase 6 raid item comes from there. */
+function srcOf(id: number) {
+  const own = source(itemById.get(id)!);
+  const src = own && own !== "Drop" ? own : bisSource(id) || own;
+  const m = meta.get(id)!;
+  if (m.phase === 6 && src === "Drop") return "Drop · Naxxramas";
+  if (m.phase === 6 && src === "Quest reward" && m.raid) return "Quest reward · Naxxramas token";
+  return src;
+}
+
+const bisIds = new Set<number>();
+const bis = Object.entries(SPECS).map(([c, [cls, names]]) => ({
+  cls,
+  specs: names.map((name, k) => {
+    const races = Object.entries(RACE_ID).filter(([, r]) => links.some((l) => l.cls === +c && (!l.races || l.races.includes(r))));
+    const lists = Object.fromEntries(
+      races.map(([id, r]) => {
+        // Pre-raid: dungeon, quest, crafted and world gear up to Dire Maul (phase 2.5), nothing from a raid or world boss.
+        // The addon's Raid flag misses some raid drops (tier pieces), so the drop zone is checked too.
+        const pre = pick(+c, k + 1, r, (m, id) => m.phase <= 2.5 && !m.raid && !m.boss && !m.pvp && !RAIDS.test(srcOf(id)));
+        const end = pick(+c, k + 1, r, (m) => !m.pvp);
+        for (const [, i] of [...pre, ...end]) bisIds.add(i);
+        return [id, { pre, end }];
+      }).filter(([, l]) => l.end.length), // races that can't be this class have no entries
+    );
+    return { name, lists };
+  }),
+}));
+const bisItems = Object.fromEntries(
+  [...bisIds].map((id) => {
+    const i = itemById.get(id)!;
+    return [id, { n: i.name, i: i.icon, q: i.quality, src: srcOf(id), p: meta.get(id)!.phase }];
+  }),
+);
+
+fs.writeFileSync("src/data/armory.json", JSON.stringify({ sets, weapons, bis, bisItems }));
+console.log(`armory: ${sets.length} sets, ${weapons.length} weapons and shields, BIS for ${bis.reduce((n, b) => n + b.specs.length, 0)} specs (${bisIds.size} items)`);

@@ -21,6 +21,7 @@ export const SETS = data.sets as GearSet[];
 export const WEAPONS = data.weapons as Weapon[];
 
 export const QUALITY = ["Poor", "Common", "Uncommon", "Rare", "Epic", "Legendary"];
+export const QUALITY_COLOR = ["#9d9d9d", "#fff", "#1eff00", "#0070dd", "#a335ee", "#ff8000"];
 
 /** Who can wear each armor type, at any level, in Classic. */
 export const ARMOR_CLASSES: Record<Armor, ClassId[]> = {
@@ -92,27 +93,14 @@ export const FOREVER_SETS: GearSet[] = [
   forever(-18, "warrior", "Battleplate of Glory", ["2: +7 Defense", "3: Intervene cooldown -10 sec", "4: 1.2% less chance to be dodged or parried", "5: Shield Wall cooldown -30 sec"]),
 ];
 
-/** Paper-doll slots for the dressing room, in the order the in-game character frame shows them. */
-export const SLOTS = {
-  left: ["Head", "Neck", "Shoulder", "Back", "Chest", "Wrist"],
-  right: ["Hands", "Waist", "Legs", "Feet", "Finger", "Trinket"],
-  bottom: ["Main Hand", "Off Hand", "Ranged"],
-} as const;
-export type Slot = (typeof SLOTS)[keyof typeof SLOTS][number];
-
-/** One wearable item with everything the dressing room needs to filter and list it. */
-export type Wearable = { id: number; n: string; i: string; q: number; src: string; type: string; slots: Slot[]; classes: ClassId[]; faction: Race["faction"] | null; twoHand?: boolean };
-
-const byId = new Map<number, Wearable>();
-for (const s of SETS)
-  for (const p of s.items) {
-    const slot = (p.s === "Weapon" ? "Main Hand" : p.s) as Slot;
-    byId.set(p.id, { id: p.id, n: p.n, i: p.i, q: p.q, src: p.src || s.group, type: s.armor ? s.armor[0].toUpperCase() + s.armor.slice(1) : p.s, slots: [slot], classes: setClasses(s), faction: s.faction });
-  }
-// ponytail: One-Hand weapons are offered in the off hand to every class that can use them, not only dual wielders.
-const HAND_SLOTS: Record<string, Slot[]> = { "Main Hand": ["Main Hand"], "One-Hand": ["Main Hand", "Off Hand"], "Two-Hand": ["Main Hand"], "Off Hand": ["Off Hand"], Ranged: ["Ranged"] };
-for (const w of WEAPONS)
-  byId.set(w.id, { id: w.id, n: w.n, i: w.i, q: w.q, src: w.src || "Classic", type: `${w.hand} ${w.kind}`, slots: HAND_SLOTS[w.hand] ?? [], classes: weaponClasses(w), faction: null, twoHand: w.hand === "Two-Hand" });
-
-export const WEARABLES = [...byId.values()].sort((a, b) => b.q - a.q || a.n.localeCompare(b.n));
-export const wearable = (id: number) => byId.get(id);
+/** Classic best-in-slot lists per class and spec, by race (racial weapon skills change the weapon picks). */
+export type BisList = [slot: string, itemId: number][];
+export type BisSpec = { name: string; lists: Record<string, { pre: BisList; end: BisList }> };
+export type BisItem = { n: string; i: string; q: number; src: string; p: number };
+export const BIS = data.bis as unknown as { cls: ClassId; specs: BisSpec[] }[];
+export const BIS_ITEMS = data.bisItems as unknown as Record<string, BisItem>;
+/** What each Classic content phase added, as the BIS source counts them. */
+export const PHASE_NAME: Record<number, string> = {
+  0: "launch", 1: "Molten Core and Onyxia", 1.5: "Molten Core and Onyxia", 2: "Dire Maul and world bosses", 2.5: "Dire Maul and world bosses",
+  3: "Blackwing Lair", 4: "Zul'Gurub", 5: "Ahn'Qiraj", 6: "Naxxramas",
+};

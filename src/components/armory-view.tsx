@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
-import { DressingRoom, QUALITY_COLOR, useLook, wearAll } from "@/components/dressing-room";
+import { BisView } from "@/components/bis-view";
 import { AbilityTip, CLASS_ICON, ClassIcon, SpellIcon } from "@/components/spell-icon";
-import { FOREVER_SETS, QUALITY, SETS, setClasses, WEAPONS, weaponClasses, type Armor, type GearSet } from "@/lib/armory";
+import { FOREVER_SETS, QUALITY, QUALITY_COLOR, SETS, setClasses, WEAPONS, weaponClasses, type Armor, type GearSet } from "@/lib/armory";
 import { classMeta, type ClassId } from "@/lib/macros";
 import { RACES } from "@/lib/races";
 import { cn } from "@/lib/utils";
@@ -23,7 +23,6 @@ export function ArmoryView({ classId }: { classId: ClassId }) {
   const [kind, setKind] = useState<Kind>("all");
   const [raceId, setRaceId] = useState("all");
   const [onlyMine, setOnlyMine] = useState(false);
-  const [look, setLook] = useLook();
   const race = RACES.find((r) => r.id === raceId);
   const meta = classMeta(classId);
 
@@ -58,10 +57,9 @@ export function ArmoryView({ classId }: { classId: ClassId }) {
         <h2 className="font-display text-3xl font-bold text-fg">Armory</h2>
         <p className="max-w-prose leading-relaxed text-fg-soft">
           Every Classic gear set from dungeon sets to Naxxramas, the PvP and crafted sets, every epic weapon and shield, plus
-          WoW Forever's new Hyjal sets. Classic items come from Wowhead's Classic database. Dress any race in it here, or
-          pick a race below to see only what its classes can wear. Hover an icon for where it drops.
+          WoW Forever's new Hyjal sets. Classic items come from Wowhead's Classic database. Pick a race below to see only
+          what its classes can wear. Hover an icon for where it drops.
         </p>
-        <DressingRoom classId={classId} look={look} setLook={setLook} />
         <div className="flex flex-wrap gap-2" role="group" aria-label="Gear type">
           {KINDS.map(([id, label]) => (
             <button key={id} type="button" className="chip" aria-pressed={kind === id} onClick={() => setKind(id)}>
@@ -93,6 +91,8 @@ export function ArmoryView({ classId }: { classId: ClassId }) {
         </div>
       </header>
 
+      <BisView classId={classId} />
+
       {empty && (
         <p className="text-fg-soft">
           Nothing here fits that pick{race && onlyMine && !race.classes.includes(classId) ? `: a ${race.name} can't be a ${meta.label.toLowerCase()}` : ""}.
@@ -111,15 +111,7 @@ export function ArmoryView({ classId }: { classId: ClassId }) {
           )}
           <ul className="grid gap-3 lg:grid-cols-2">
             {sets.map((s) => (
-              <SetCard
-                key={s.id}
-                set={s}
-                classId={classId}
-                onTryOn={() => {
-                  setLook(wearAll(look, s.items.map((p) => p.id)));
-                  document.querySelector('[aria-label="Dressing room"]')?.scrollIntoView({ behavior: "smooth" });
-                }}
-              />
+              <SetCard key={s.id} set={s} classId={classId} />
             ))}
           </ul>
         </section>
@@ -158,7 +150,7 @@ export function ArmoryView({ classId }: { classId: ClassId }) {
   );
 }
 
-function SetCard({ set: s, classId, onTryOn }: { set: GearSet; classId: ClassId; onTryOn: () => void }) {
+function SetCard({ set: s, classId }: { set: GearSet; classId: ClassId }) {
   const src = s.items.find((i) => i.src)?.src;
   return (
     <li className="flex flex-col gap-3 rounded-lg bg-white/[0.035] p-4 shadow-[inset_0_0_0_1px_var(--color-line)]">
@@ -223,9 +215,6 @@ function SetCard({ set: s, classId, onTryOn }: { set: GearSet; classId: ClassId;
 
       {s.id > 0 && (
         <div className="flex flex-wrap gap-2">
-          <button type="button" className="btn-glow inline-flex h-9 items-center gap-2 rounded-md px-3 font-display text-sm font-bold" onClick={onTryOn}>
-            Try on
-          </button>
           <a className="btn-glass inline-flex h-9 items-center gap-2 rounded-md px-3 font-display text-sm font-bold" href={`https://www.wowhead.com/classic/item-set=${s.id}`} target="_blank" rel="noreferrer">
             View set in 3D on Wowhead
           </a>
