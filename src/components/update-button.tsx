@@ -18,12 +18,14 @@ async function reloadFresh() {
  * The swap happens after exit because Windows won't let a running app overwrite its own files.
  */
 async function updateDesktop(tag: string) {
-  // Neutralino injects its client and globals into the desktop window (injectGlobals/injectClientLibrary)
-  const w = window as unknown as { Neutralino?: any; NL_PATH?: string };
+  // index.html loads Neutralino's globals and client in the desktop app
+  const w = window as unknown as { Neutralino?: any; NL_PATH?: string; NL_CWD?: string };
   const N = w.Neutralino;
   if (!N || !w.NL_PATH) throw new Error("no native API");
   N.init();
-  const dir = w.NL_PATH.replace(/\//g, "\\");
+  // NL_PATH can be relative to the working folder when the app was started by a relative path
+  const abs = /^([a-zA-Z]:|[\\/])/.test(w.NL_PATH) ? w.NL_PATH : `${w.NL_CWD}/${w.NL_PATH}`;
+  const dir = abs.replace(/\//g, "\\");
   const url = `https://github.com/${REPO}/releases/download/${tag}/resources.neu`;
   // curl.exe ships with Windows 10 and 11; -f leaves nothing behind on a failed download
   const r = await N.os.execCommand(`curl.exe -fsSL --retry 2 -o "${dir}\\resources.new" "${url}"`);
