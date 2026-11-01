@@ -1,10 +1,13 @@
 import { useState } from "react";
 import { X } from "lucide-react";
+import ModelView from "@/components/model-view";
 import { AbilityTip, SpellIcon } from "@/components/spell-icon";
 import { QUALITY, SLOTS, WEARABLES, wearable, type Slot, type Wearable } from "@/lib/armory";
 import { classMeta, type ClassId } from "@/lib/macros";
 import { RACES } from "@/lib/races";
 import { cn, useStored } from "@/lib/utils";
+
+const MODEL_FILES = ".gltf,.glb,.bin,.obj,.mtl,.png,.jpg,.jpeg,.webp,.tga";
 
 export const QUALITY_COLOR = ["#9d9d9d", "#fff", "#1eff00", "#0070dd", "#a335ee", "#ff8000"];
 const ALL_SLOTS: Slot[] = [...SLOTS.left, ...SLOTS.right, ...SLOTS.bottom];
@@ -50,6 +53,15 @@ export function wearAll(look: Look, ids: number[]): Look {
 /** Wowhead-style dressing room: pick a race and gender, then fill each paper-doll slot with Classic gear. */
 export function DressingRoom({ classId, look, setLook }: { classId: ClassId; look: Look; setLook: (l: Look) => void }) {
   const [open, setOpen] = useState<Slot | null>(null);
+  const [model, setModel] = useState<File[] | null>(null);
+  const [modelNote, setModelNote] = useState("");
+  const [dragging, setDragging] = useState(false);
+  const openModel = (list: FileList | null) => {
+    const picked = [...(list ?? [])];
+    if (!picked.length) return;
+    setModelNote("");
+    setModel(picked);
+  };
   const [query, setQuery] = useState("");
   const [onlyMine, setOnlyMine] = useState(false);
   const race = RACES.find((r) => r.id === look.race) ?? RACES[0];
@@ -137,28 +149,76 @@ export function DressingRoom({ classId, look, setLook }: { classId: ClassId; loo
 
       <div className="grid grid-cols-[auto_1fr_auto] items-start gap-3 sm:gap-6">
         <ul className="flex flex-col gap-2">{SLOTS.left.map(slotButton)}</ul>
-        <div className="flex min-h-full flex-col items-center justify-center gap-3 rounded-lg bg-[radial-gradient(circle_at_50%_40%,color-mix(in_oklab,var(--cls)_22%,transparent),transparent_70%)] py-6 text-center">
-          <SpellIcon
-            ability={{
-              name: race.name,
-              icon: raceIcon(race.icon, look.female),
-              meta: "",
-              desc: "",
-            }}
-            size={128}
-            className="rounded-full"
-            glow
-          />
-          <p className="font-display text-xl font-bold text-fg">
-            {look.female ? "Female" : "Male"} {race.name}
-          </p>
-          <p className={cn("text-xs font-bold tracking-wider uppercase", race.faction === "Alliance" ? "text-sky-300" : "text-red-300")}>
-            {race.faction}
-          </p>
-          <p className="max-w-56 text-xs text-fg-faint">
-            {equipped.length ? `${equipped.length} of ${ALL_SLOTS.length} slots filled.` : "Click a slot to put gear on."} Open any piece on
-            Wowhead to see it in 3D.
-          </p>
+        <div
+          className={cn(
+            "flex min-h-full flex-col items-center justify-center gap-3 rounded-lg bg-[radial-gradient(circle_at_50%_40%,color-mix(in_oklab,var(--cls)_22%,transparent),transparent_70%)] py-6 text-center",
+            dragging && "ring-2 ring-[var(--cls)]",
+          )}
+          onDragOver={(e) => (e.preventDefault(), setDragging(true))}
+          onDragLeave={() => setDragging(false)}
+          onDrop={(e) => {
+            e.preventDefault();
+            setDragging(false);
+            openModel(e.dataTransfer.files);
+          }}
+        >
+          {model ? (
+            <ModelView files={model} onError={setModelNote} />
+          ) : (
+            <>
+              <SpellIcon
+                ability={{
+                  name: race.name,
+                  icon: raceIcon(race.icon, look.female),
+                  meta: "",
+                  desc: "",
+                }}
+                size={128}
+                className="rounded-full"
+                glow
+              />
+              <p className="font-display text-xl font-bold text-fg">
+                {look.female ? "Female" : "Male"} {race.name}
+              </p>
+              <p
+                className={cn("text-xs font-bold tracking-wider uppercase", race.faction === "Alliance" ? "text-sky-300" : "text-red-300")}
+              >
+                {race.faction}
+              </p>
+              <p className="max-w-56 text-xs text-fg-faint">
+                {equipped.length ? `${equipped.length} of ${ALL_SLOTS.length} slots filled.` : "Click a slot to put gear on."} Open any
+                piece on Wowhead to see it in 3D, or open a model you exported from your game.
+              </p>
+            </>
+          )}
+          {!model && (
+            <p className="max-w-64 text-xs text-fg-faint">
+              Export a character from your game with wow.export as glTF or OBJ, then pick every file in the export folder (or drop them
+              here). Nothing leaves your PC.
+            </p>
+          )}
+          {modelNote && (
+            <p className="max-w-80 px-2 text-xs text-amber-300" role="status">
+              {modelNote}
+            </p>
+          )}
+          <div className="flex flex-wrap justify-center gap-2">
+            <label className="chip inline-flex cursor-pointer items-center focus-within:ring-2 focus-within:ring-[var(--cls)]">
+              {model ? "Open another model" : "Open 3D model"}
+              <input
+                type="file"
+                multiple
+                accept={MODEL_FILES}
+                className="sr-only"
+                onChange={(e) => (openModel(e.target.files), (e.target.value = ""))}
+              />
+            </label>
+            {model && (
+              <button type="button" className="chip" onClick={() => (setModel(null), setModelNote(""))}>
+                Close model
+              </button>
+            )}
+          </div>
         </div>
         <ul className="flex flex-col gap-2">{SLOTS.right.map(slotButton)}</ul>
       </div>
