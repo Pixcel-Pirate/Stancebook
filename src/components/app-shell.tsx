@@ -136,7 +136,7 @@ function ClassCrest({ id, size = 40, on }: { id: ClassId; size?: number; on?: bo
   );
 }
 
-/** One line at the top: what the newest patch was about, and a button to this class's notes. */
+/** One line at the top: the newest patch's name, and a button to this class's notes. */
 function PatchStrip({ classId, onOpenNotes }: { classId: ClassId; onOpenNotes: () => void }) {
   const latest = PATCHES[0];
   const label = classMeta(classId).label;
@@ -149,8 +149,8 @@ function PatchStrip({ classId, onOpenNotes }: { classId: ClassId; onOpenNotes: (
       <div className="flex items-center gap-2.5">
         <ScrollText className="size-4 shrink-0 text-cls" />
         <p className="min-w-0 truncate text-sm font-semibold text-fg">
+          <span className="font-normal text-fg-soft">Latest update: </span>
           <span className="font-display text-glow-hi">{latest.label}</span>
-          <span className="font-normal text-fg-soft"> · {latest.summary}</span>
         </p>
         <button type="button" onClick={onOpenNotes} className="ml-auto shrink-0 text-sm font-semibold text-cls hover:text-fg">
           {count ? `See ${count} ${label} ${count === 1 ? "change" : "changes"}` : `See ${label} notes`} →
