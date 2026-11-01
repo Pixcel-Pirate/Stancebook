@@ -35,11 +35,19 @@ SetCompressor zlib
 Section "Install"
   ; Always the same folder, so a new version replaces the old one in place.
   ; Windows won't let us replace the app while it's open, so ask the user to close it.
+  ; A silent install (/S) comes from the in-app Update button, which is quitting right now: give it up to 30 seconds.
+  StrCpy $1 0
   retry:
   ClearErrors
   IfFileExists "$INSTDIR\Stancebook.exe" 0 copy
   Delete "$INSTDIR\Stancebook.exe"
   IfErrors 0 copy
+  IfSilent 0 ask
+  IntOp $1 $1 + 1
+  IntCmp $1 30 quit 0 quit
+  Sleep 1000
+  Goto retry
+  ask:
   MessageBox MB_RETRYCANCEL "Stancebook is still open. Close it, then click Retry." IDRETRY retry IDCANCEL quit
   quit:
   Abort
@@ -69,6 +77,9 @@ Section "Install"
   StrCmp $0 "" 0 done
   MessageBox MB_OK "Stancebook needs Microsoft Edge WebView2, which isn't on this PC yet. Get it from Microsoft: search for $\"WebView2 Runtime$\" or go to go.microsoft.com/fwlink/p/?LinkId=2124703"
   done:
+  ; the in-app Update reopens the book on the new version
+  IfSilent 0 +2
+  Exec '"$INSTDIR\Stancebook.exe"'
 SectionEnd
 
 Section "Uninstall"

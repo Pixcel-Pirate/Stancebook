@@ -13,11 +13,31 @@ async function reloadFresh() {
   location.reload();
 }
 
+/**
+ * Desktop: one click, like an installed game. Download the release's installer into %TEMP%, start it in silent mode
+ * (/S) and quit. The installer waits for Stancebook to close, swaps the files and reopens it on the new version.
+ * The installer only replaces the program files, so saved macros, action bar and talents are kept.
+ */
+async function updateDesktop(tag: string) {
+  // index.html loads Neutralino's globals and client in the desktop app
+  const N = (window as unknown as { Neutralino?: any }).Neutralino;
+  if (!N) throw new Error("no native API");
+  N.init();
+  const exe = `"%TEMP%\\Stancebook-Setup.exe"`;
+  const url = `https://github.com/${REPO}/releases/download/${tag}/Stancebook-Setup.exe`;
+  // curl.exe ships with Windows 10 and 11; -f fails on a bad download instead of saving an error page
+  const r = await N.os.execCommand(`cmd /c curl.exe -fsSL --retry 2 -o ${exe} "${url}"`);
+  if (r.exitCode !== 0) throw new Error(r.stdErr || "download failed");
+  await N.os.execCommand(`cmd /c start "" ${exe} /S`, { background: true });
+  await N.app.exit();
+}
+
 /** Checks GitHub when the book opens. If there's a newer release, pops up an update prompt and keeps a button in the header. */
 export function UpdateButton() {
   const [latest, setLatest] = useState<string | null>(null);
   const [popup, setPopup] = useState(true);
-  const [downloaded, setDownloaded] = useState(false);
+  const [busy, setBusy] = useState(false);
+  const [failed, setFailed] = useState(false);
 
   useEffect(() => {
     if (!VERSION) return; // local/dev builds don't nag
@@ -34,23 +54,27 @@ export function UpdateButton() {
   if (!latest) return null;
 
   const cls = "btn-glow inline-flex h-9 items-center gap-2 rounded-md px-3 font-display text-sm font-bold disabled:opacity-60";
-  function update() {
+  async function update() {
     if (!DESKTOP) return reloadFresh();
-    // Desktop: download the new installer; running it replaces the app in place and keeps saved data.
-    setDownloaded(true);
-    location.href = INSTALLER;
+    setBusy(true);
+    try {
+      await updateDesktop(latest!);
+    } catch {
+      setBusy(false);
+      setFailed(true);
+    }
   }
   const button = (label: string) => (
-    <button type="button" className={cls} onClick={update}>
-      <Download className="size-4" /> {label}
+    <button type="button" className={cls} onClick={update} disabled={busy}>
+      <Download className="size-4" /> {busy ? "Updating…" : label}
     </button>
   );
 
   return (
     <>
-      {!(popup || downloaded) && button("Update")}
+      {!(popup || failed) && button("Update")}
 
-      {(popup || downloaded) &&
+      {(popup || failed) &&
         createPortal(
         <div
           role="dialog"
@@ -61,25 +85,27 @@ export function UpdateButton() {
             <button
               type="button"
               aria-label="Close"
-              onClick={() => (setPopup(false), setDownloaded(false))}
+              onClick={() => (setPopup(false), setFailed(false))}
               className="absolute top-3 right-3 text-fg-faint hover:text-fg"
             >
               <X className="size-5" />
             </button>
-            {downloaded ? (
+            {failed ? (
               <>
-                <p className="font-display text-lg font-bold text-fg">Almost done</p>
+                <p className="font-display text-lg font-bold text-fg">Update didn't finish</p>
                 <p className="mt-1 text-fg-soft">
-                  When the download finishes, close Stancebook and run <b>Stancebook-Setup.exe</b>. Your saved macros,
-                  action bar and talents are kept.
+                  Check your internet and try again. If it keeps failing, install the latest{" "}
+                  <a className="underline" href={INSTALLER}>Stancebook-Setup.exe</a> once. Your saved macros, action bar
+                  and talents are kept.
                 </p>
+                <div className="mt-4 flex gap-2">{button("Try again")}</div>
               </>
             ) : (
               <>
                 <p className="font-display text-lg font-bold text-fg">A new version of the book is out</p>
                 <p className="mt-1 text-fg-soft">
                   {latest} is ready (you have {VERSION}).{" "}
-                  {DESKTOP ? "Update downloads the new installer." : "Update reloads the book with the new version."}
+                  {DESKTOP ? "Update installs it and restarts Stancebook." : "Update reloads the book with the new version."}
                 </p>
                 <div className="mt-4 flex gap-2">
                   {button("Update now")}
