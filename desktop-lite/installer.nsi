@@ -75,7 +75,7 @@ Section "Install"
   StrCmp $0 "" 0 done
   ReadRegStr $0 HKCU "Software\Microsoft\EdgeUpdate\Clients\${WV2}" "pv"
   StrCmp $0 "" 0 done
-  MessageBox MB_OK "Stancebook needs Microsoft Edge WebView2, which isn't on this PC yet. Get it from Microsoft: search for $\"WebView2 Runtime$\" or go to go.microsoft.com/fwlink/p/?LinkId=2124703"
+  MessageBox MB_OK /SD IDOK "Stancebook needs Microsoft Edge WebView2, which isn't on this PC yet. Get it from Microsoft: search for $\"WebView2 Runtime$\" or go to go.microsoft.com/fwlink/p/?LinkId=2124703"
   done:
   ; the in-app Update reopens the book on the new version
   IfSilent 0 +2

@@ -9,10 +9,8 @@
     <link rel="manifest" href="./manifest.webmanifest" />
     <link rel="apple-touch-icon" href="./icon-192.png" />
     <title>Stancebook</title>
-    <!-- Desktop app only (404s harmlessly on the web): Neutralino's globals, a token keeper, then its client.
-         Loaded as files, not injected, because the injected copies arrive without the one-time token. -->
-    <script src="./__neutralino_globals.js"></script>
-    <script src="./nl-token.js"></script>
+    <!-- Desktop app only (404s harmlessly on the web): Neutralino's client, which the app server prefixes with its
+         globals and the one-time NL_TOKEN. Load nothing else that asks for globals: only the first response gets the token. -->
     <script src="./js/neutralino.js"></script>
   </head>
   <body>
