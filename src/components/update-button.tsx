@@ -31,6 +31,10 @@ async function updateDesktop(tag: string) {
   const script = [
     "@echo off",
     "chcp 65001 >nul",
+    // wait until the old copy has fully quit, or the new window talks to its dying server and gets a stale token
+    `for /l %%i in (1,1,30) do (tasklist /fi "imagename eq Stancebook.exe" | find /i "Stancebook.exe" >nul || goto gone & ping -n 2 127.0.0.1 >nul)`,
+    `taskkill /im Stancebook.exe /f >nul 2>&1`,
+    ":gone",
     `for /l %%i in (1,1,15) do (move /y "${dir}\\resources.new" "${dir}\\resources.neu" >nul 2>&1 && goto run & ping -n 2 127.0.0.1 >nul)`,
     ":run",
     // keep the version shown in Settings > Apps current
