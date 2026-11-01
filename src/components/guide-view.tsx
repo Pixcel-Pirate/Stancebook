@@ -1,7 +1,8 @@
 import { CopyButton } from "@/components/copy-button";
 import { MacroCode } from "@/components/macro-code";
 import { guideFor, HOW_TO_CREATE } from "@/lib/guide";
-import type { ClassId } from "@/lib/macros";
+import { classMeta, type ClassId } from "@/lib/macros";
+import { patchNotesFor } from "@/lib/patch-notes";
 
 export function HowItWorks({ classId }: { classId: ClassId }) {
   const guide = guideFor(classId);
@@ -143,6 +144,64 @@ export function ForeverView({ classId }: { classId: ClassId }) {
         Unofficial companion for World of Warcraft: Forever. Spell names match
         the English game client so /cast works. Not affiliated with
         Blizzard Entertainment.
+      </p>
+    </div>
+  );
+}
+
+export function PatchNotesView({ classId }: { classId: ClassId }) {
+  const patches = patchNotesFor(classId);
+  const label = classMeta(classId).label;
+  const total = patches.reduce((n, p) => n + p.notes.length, 0);
+
+  return (
+    <div className="mx-auto flex w-full max-w-3xl flex-col gap-6 pb-16">
+      <header className="flex flex-col gap-3">
+        <h2 className="font-display text-3xl font-bold text-fg">{label} patch notes</h2>
+        <p className="max-w-prose text-base leading-relaxed text-fg-soft">
+          Every WoW Forever change to the {label.toLowerCase()}, in plain words, newest first.{" "}
+          <span className="text-fg-faint tabular-nums">{total} changes across {patches.length} updates.</span>
+        </p>
+        <nav aria-label="Patches" className="flex flex-wrap gap-2">
+          {patches.map((p) => (
+            <a
+              key={p.id}
+              href={`#patch-${p.id}`}
+              className="rounded-full px-3 py-1 text-xs font-semibold text-fg-soft ring-1 ring-line hover:text-cls hover:ring-current/40"
+            >
+              {p.label}
+              <span className="ml-1.5 text-fg-faint tabular-nums">{p.notes.length}</span>
+            </a>
+          ))}
+        </nav>
+      </header>
+      {patches.map((p, i) => (
+        <details
+          key={p.id}
+          id={`patch-${p.id}`}
+          open={p.notes.length > 0 && i < 3}
+          className="group scroll-mt-48 rounded-xl bg-white/[0.035] shadow-[inset_0_0_0_1px_var(--color-line)]"
+        >
+          <summary className="flex cursor-pointer list-none flex-wrap items-baseline justify-between gap-2 p-5 [&::-webkit-details-marker]:hidden">
+            <h3 className="font-display text-lg font-bold text-fg">
+              <span className="mr-2 inline-block text-cls transition-transform duration-200 group-open:rotate-90">›</span>
+              {p.label}
+            </h3>
+            <span className="text-sm text-fg-faint">{p.summary}</span>
+          </summary>
+          {p.notes.length ? (
+            <ul className="flex list-disc flex-col gap-2 px-5 pb-5 pl-10 marker:text-cls">
+              {p.notes.map((n) => (
+                <li key={n} className="text-sm leading-relaxed text-fg-soft">{n}</li>
+              ))}
+            </ul>
+          ) : (
+            <p className="px-5 pb-5 text-sm text-fg-faint">No changes for your class in this update.</p>
+          )}
+        </details>
+      ))}
+      <p className="text-xs leading-relaxed text-fg-faint">
+        Simplified from Blizzard's WoW Forever beta development notes. Numbers can change before launch.
       </p>
     </div>
   );
