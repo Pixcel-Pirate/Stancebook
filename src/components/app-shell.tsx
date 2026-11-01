@@ -5,7 +5,7 @@ import { MacroDetail } from "@/components/macro-detail";
 import { ForeverView, HowItWorks } from "@/components/guide-view";
 import { Logo } from "@/components/logo";
 import { AbilitiesView } from "@/components/abilities-view";
-import { TalentsView } from "@/components/talents-view";
+import { TALENT_HASH, TalentsView } from "@/components/talents-view";
 import { RacesView } from "@/components/races-view";
 import { KeybindsView } from "@/components/keybinds-view";
 import { UpdateButton } from "@/components/update-button";
@@ -41,6 +41,12 @@ type State = {
 };
 
 const PREFS_KEY = "stancebook-prefs";
+
+/** A shared talent link (#talents=<class>:<code>) opens straight on that class's talents. */
+function sharedBuild(): Partial<State> {
+  const m = TALENT_HASH.exec(location.hash);
+  return m && isClassId(m[1]) ? { tab: "talents", c: m[1] } : {};
+}
 
 function loadPrefs(): Pick<State, "c"> {
   try {
@@ -198,6 +204,7 @@ export function AppShell() {
     cat: "all",
     q: "",
     ...loadPrefs(),
+    ...sharedBuild(),
   }));
   const { has, toggle } = useFavorites();
   const [savedOnly, setSavedOnly] = useState(false);
