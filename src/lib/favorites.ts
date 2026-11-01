@@ -1,35 +1,10 @@
-import { useEffect, useState } from "react";
+import { useStored } from "@/lib/utils";
 
-const KEY = "stancebook-favorites";
+const isIdList = (v: unknown): v is string[] => Array.isArray(v) && v.every((x) => typeof x === "string");
 
-function read(): string[] {
-  try {
-    const raw = localStorage.getItem(KEY);
-    if (!raw) return [];
-    const parsed = JSON.parse(raw) as unknown;
-    return Array.isArray(parsed) ? parsed.filter((x) => typeof x === "string") : [];
-  } catch {
-    return [];
-  }
-}
-
+/** Favorite macro ids, saved across reloads. Uses useStored so a full or blocked storage can't crash the app. */
 export function useFavorites() {
-  const [ids, setIds] = useState<string[]>([]);
-  const [ready, setReady] = useState(false);
-
-  useEffect(() => {
-    setIds(read());
-    setReady(true);
-  }, []);
-
-  useEffect(() => {
-    if (!ready) return;
-    localStorage.setItem(KEY, JSON.stringify(ids));
-  }, [ids, ready]);
-
-  function toggle(id: string) {
-    setIds((prev) => (prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]));
-  }
-
-  return { ids, toggle, has: (id: string) => ids.includes(id), ready };
+  const [ids, setIds] = useStored("stancebook-favorites", () => [] as string[], isIdList);
+  const toggle = (id: string) => setIds(ids.includes(id) ? ids.filter((x) => x !== id) : [...ids, id]);
+  return { ids, toggle, has: (id: string) => ids.includes(id) };
 }
