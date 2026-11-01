@@ -1,5 +1,6 @@
 ## What's new
 
+- **Simpler patch bar:** the bar at the top is now one line that says what the newest patch was about, with a button straight to your class's patch notes. The Patch notes tab opens with a short description instead of counts and chips.
 - **Patch notes for every class:** a new Patch notes tab lists every WoW Forever change to your class in plain words, grouped by patch (Sept 24, Oct 1, Oct 8, Oct 15, Oct 26) plus what Forever changed from original Classic. The All notes link in the patch strip opens it.
 - **WoW Forever BIS lists:** the Armory's best-in-slot lists are now WoW Forever's level 60 lists for all 28 specs (from The Forever Era, built from the Forever beta client), replacing the Classic addon lists. Items are tagged New in Forever, Changed, or Not in beta client, and links open the item's Forever page. They're forecasts until Forever reaches level 60.
 - **Best in slot lists in the Armory:** pre-raid and raid BIS for every class and spec (25 specs, from the Best In Slot Classic addon's lists), with the weapon picks for your race. Every item shows where it drops or how it's made. Hover for the tooltip, or click the name to open it on Wowhead. The dressing room is gone.

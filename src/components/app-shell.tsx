@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { Bookmark, BookOpen, Shield, ChevronDown, Feather, FileText, Keyboard, Network, ScrollText, Search, Sparkles, Users, X } from "lucide-react";
+import { Bookmark, BookOpen, Shield, Feather, FileText, Keyboard, Network, ScrollText, Search, Sparkles, Users, X } from "lucide-react";
 import { CopyButton } from "@/components/copy-button";
 import { MacroDetail } from "@/components/macro-detail";
 import { ForeverView, HowItWorks, PatchNotesView } from "@/components/guide-view";
@@ -13,7 +13,8 @@ import { UpdateButton } from "@/components/update-button";
 import { ActionBar, dragMacro } from "@/components/action-bar";
 import { AbilityTip, CLASS_ICON, ClassIcon, primaryAbility, SpellIcon } from "@/components/spell-icon";
 import { useFavorites } from "@/lib/favorites";
-import { guideFor, LATEST_PATCH, latestPatchNotes } from "@/lib/guide";
+import { guideFor } from "@/lib/guide";
+import { PATCHES, PATCH_NOTES } from "@/lib/patch-notes";
 import {
   CATEGORIES,
   categoryLabel,
@@ -28,7 +29,7 @@ import {
   macroText,
   type Spec,
 } from "@/lib/macros";
-import { cn, useStored } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 
 export type Tab = "macros" | "abilities" | "talents" | "keybinds" | "races" | "armory" | "guide" | "forever" | "patches";
 
@@ -135,55 +136,26 @@ function ClassCrest({ id, size = 40, on }: { id: ClassId; size?: number; on?: bo
   );
 }
 
-const isText = (v: unknown): v is string => typeof v === "string";
-
-/** Brief "what changed for my class" from the newest patch. Closing it sticks until the next patch lands. */
+/** One line at the top: what the newest patch was about, and a button to this class's notes. */
 function PatchStrip({ classId, onOpenNotes }: { classId: ClassId; onOpenNotes: () => void }) {
-  const [closedFor, setClosedFor] = useStored("stancebook-patch-closed", () => "", isText);
-  if (!LATEST_PATCH) return null;
-  const notes = latestPatchNotes(classId);
-  const open = closedFor !== LATEST_PATCH;
+  const latest = PATCHES[0];
   const label = classMeta(classId).label;
+  const count = PATCH_NOTES[classId][latest.id]?.length ?? 0;
   return (
     <section
-      aria-label={`${LATEST_PATCH} changes for ${label}`}
+      aria-label={`${latest.label} for ${label}`}
       className="patch-strip shrink-0 px-3 pt-[max(0.5rem,env(safe-area-inset-top))] pb-2 sm:px-5"
     >
       <div className="flex items-center gap-2.5">
         <ScrollText className="size-4 shrink-0 text-cls" />
         <p className="min-w-0 truncate text-sm font-semibold text-fg">
-          <span className="font-display text-glow-hi">{LATEST_PATCH}</span>
-          <span className="text-fg-faint"> · </span>
-          <span className="text-cls">{label}</span>
-          <span className="font-normal text-fg-soft">
-            {notes.length ? ` · ${notes.length} ${notes.length === 1 ? "change" : "changes"}` : " · no changes this patch"}
-          </span>
+          <span className="font-display text-glow-hi">{latest.label}</span>
+          <span className="font-normal text-fg-soft"> · {latest.summary}</span>
         </p>
-        <button type="button" onClick={onOpenNotes} className="ml-auto shrink-0 text-sm font-semibold text-fg-soft hover:text-fg">
-          All notes
+        <button type="button" onClick={onOpenNotes} className="ml-auto shrink-0 text-sm font-semibold text-cls hover:text-fg">
+          {count ? `See ${count} ${label} ${count === 1 ? "change" : "changes"}` : `See ${label} notes`} →
         </button>
-        {notes.length > 0 && (
-          <button
-            type="button"
-            onClick={() => setClosedFor(open ? LATEST_PATCH : "")}
-            aria-expanded={open}
-            aria-label={open ? "Hide patch changes" : "Show patch changes"}
-            className="grid size-8 shrink-0 place-items-center rounded-md text-fg-soft hover:bg-white/5 hover:text-fg"
-          >
-            <ChevronDown className={cn("size-4 transition-transform duration-200", open && "rotate-180")} />
-          </button>
-        )}
       </div>
-      {open && notes.length > 0 && (
-        <ul key={classId} className="stagger mt-2 grid gap-2 md:grid-cols-2 xl:grid-cols-3">
-          {notes.map((n) => (
-            <li key={n.title} className="rounded-xl bg-white/[0.04] px-3 py-2 shadow-[inset_0_0_0_1px_var(--color-line)]">
-              <p className="text-sm font-semibold text-fg">{n.title}</p>
-              <p className="mt-0.5 line-clamp-2 text-sm leading-snug text-fg-soft">{n.body}</p>
-            </li>
-          ))}
-        </ul>
-      )}
     </section>
   );
 }
