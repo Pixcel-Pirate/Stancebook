@@ -23,8 +23,8 @@
       "enableInspector": false,
       "resizable": true,
       "exitProcessOnClose": true,
-      "injectGlobals": true,
-      "injectClientLibrary": true
+      "injectGlobals": false,
+      "injectClientLibrary": false
     }
   },
   "cli": {
