@@ -10,6 +10,7 @@ import type { ClassId } from "./macros";
 export type Patch = { id: string; label: string; summary: string };
 
 export const PATCHES: Patch[] = [
+  { id: "oct31", label: "Oct 31 hotfixes", summary: "Last tuning before launch (Oct 30-31), found in game data. No official notes yet." },
   { id: "oct26", label: "Oct 26 patch", summary: "Racials only. No class changes." },
   { id: "oct15", label: "Oct 15 patch", summary: "Raid-wide buffs, race rework, big talent pass." },
   { id: "oct8", label: "Oct 8 patch", summary: "Tank rage fixes and early spell ranks retuned." },
@@ -24,6 +25,10 @@ const WANDS = "Wands need you to stand still for 0.5 seconds before they shoot."
 
 export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
   warrior: {
+    oct31: [
+      "Revenge and Victory Rush now scale with Attack Power.",
+      "Improved Hamstring's root shares diminishing returns with mage and hunter roots.",
+    ],
     oct15: [
       "Battle Shout now reaches the whole raid.",
       "Slam is no longer delayed when you get hit while casting it.",
@@ -69,6 +74,17 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   paladin: {
+    oct31: [
+      "Righteous Fury is learned at level 10 (was 16) and adds 33% threat.",
+      "Seal of Fury taunts for 3 seconds (was 4). Holy Shield is retuned to 4 ranks.",
+      "Salvation, Mass Salvation, Revoke and Blessing of Light were pulled from the spell data.",
+      "Holy: Holy Power now adds 50% critical healing. New talents Oath of Light and Boundless Light (Holy Shock crit). Light's Vigil is friendly-only.",
+      "Holy: Spiritual Focus is 5 ranks, Reverence 2, Divine Precision gives 8% Holy hit (was 18%).",
+      "Protection: Redoubt is 30% block. Improved Righteous Fury is 9% damage reduction. New Stoicism and Shieldsworn. Improved Seal of Fury and One-Handed Weapon Specialization removed.",
+      "Protection: Swift Judgement judges your Seal without using it, on its own cooldown. Sacred Duty shortens Forbearance by 10 seconds.",
+      "Retribution: Conviction gives 6% crit to all attacks and spells. Two-Handed Weapon Specialization adds 6% damage and 20% less threat.",
+      "Retribution: Champion of the Light is 5 ranks and speeds Hammer of Wrath. Twist of Light is now Unsealed Wrath. Turn Evil replaces Instrument of Law.",
+    ],
     oct15: [
       "Blessing of Salvation is now Salvation and Mass Salvation. Still -30% threat, but no longer a blessing.",
       "New spell Revoke removes Salvation from one player (for tanks).",
@@ -113,6 +129,14 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   hunter: {
+    oct31: [
+      "Aspect of the Hawk gives much less ranged Attack Power (47 at max rank, was 90).",
+      "Trueshot Aura bonus halved (talent 15, was 30).",
+      "Hunter's Mark rank 4 roughly doubles its ranged Attack Power bonus.",
+      "Scare Beast is a 30-second cooldown.",
+      "Entrapment, Counterattack and Improved Wing Clip roots share diminishing returns with other roots.",
+      "Beast Mastery: Pathfinding moved to row 3.",
+    ],
     oct15: [
       "Auto Shot needs you to stand still for 0.5 seconds before it fires.",
       "Trueshot Aura reaches the whole raid.",
@@ -173,6 +197,11 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   priest: {
+    oct31: [
+      "Binding Heal is replaced by Holy Binding: you heal yourself for 50% of what Flash Heal heals others.",
+      "Shadow Word: Death backlash is 30% of your max health if the target lives (was 10%).",
+      "Cure Disease and Abolish Disease work in Shadowform.",
+    ],
     oct15: [
       WANDS,
       "Devouring Plague cooldown is 24 seconds (was 1 minute).",
@@ -211,6 +240,9 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   shaman: {
+    oct31: [
+      "Lava Burst rank 3's bonus against Flame Shocked targets no longer scales with level.",
+    ],
     oct15: [
       "Grace of Air, Strength of Earth, Windfury and Flametongue Totems reach the whole raid.",
       "Grace of Air now works alongside Windfury or Flametongue Totem.",
@@ -253,6 +285,15 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   mage: {
+    oct31: [
+      "Arcane Blast gives 12% of Intellect per stack (was 15%), stacks last 18 seconds, and the mana cost rises 100% per stack.",
+      "Ice Lance does 300% to frozen targets again but has an 8-second cooldown.",
+      "Frost Blast can no longer be trained.",
+      "Arcane: Arcane Focus removed. Arcane Resilience is 3 ranks and gives more armor.",
+      "Fire: Improved Fireball is now Accelerant (also speeds Arcane Wrath). Incineration is 5 ranks for 10% crit, Critical Mass 3 ranks for 6%.",
+      "Elemental Precision is now Precision and covers all spells.",
+      "Frost: Ice Barrier adds 15% Frost damage for 1 minute. Winter's Chill adds 20% Cone of Cold damage per stack. Arctic Reach covers Ice Lance.",
+    ],
     oct15: [
       WANDS,
       "New spell Frost Blast (level 24): 1.5 second cast, 40% slow. Replaces Frostbolt rank 1.",
@@ -289,6 +330,9 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   warlock: {
+    oct31: [
+      "Improved Drains boosts Drain Life, Drain Soul and Drain Mana by 20% (no longer Wrack).",
+    ],
     oct15: [
       WANDS,
       "Shadow Mastery gives 2-10% Shadow damage (was 1-5%).",
@@ -324,6 +368,15 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   druid: {
+    oct31: [
+      "Feral: Berserk removed. Primal Bite moved to row 7 (needs Leader of the Pack), now 2 ranks learned at 50 and 60.",
+      "Feral: Lacerate is a stacking bleed (up to 5) that also adds weapon damage per stack.",
+      "Feral: Ferocious Bite has 5 ranks with lower damage per rank. New Predatory Discipline stops Bite spending extra Energy.",
+      "Feral: Shifting Power is a 1-rank talent and Improved Shifting Power is gone. Furor and Heart of the Wild swapped trees.",
+      "Moonkin Form and Moonkin Aura crit now also covers attacks. Leader of the Pack crit also covers spells.",
+      "Restoration: Wild Growth has a 3-second cast (was instant). Naturalist can cut it by 0.5 seconds.",
+      "Restoration: Bloom replaces Gift of the Earthmother (heal when Rejuvenation or Regrowth ends). Genesis is 10%.",
+    ],
     oct15: [
       "Moonkin Aura (spell crit) and Leader of the Pack (melee and ranged crit) reach the whole raid and stack.",
       "Faerie Fire makes threat in bear form, no longer procs Omen of Clarity, and can't stack from several druids.",

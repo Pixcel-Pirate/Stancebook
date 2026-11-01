@@ -1,5 +1,6 @@
 ## What's new
 
+- **Oct 31 hotfixes in Patch notes:** the last pre-launch tuning (Oct 30-31) is in every class's Patch notes. It comes from game data because Blizzard hasn't posted notes for it yet.
 - **Simpler patch bar:** the bar at the top now just names the latest patch update, with a button straight to your class's patch notes. The Patch notes tab opens with a short description instead of counts and chips.
 - **Patch notes for every class:** a new Patch notes tab lists every WoW Forever change to your class in plain words, grouped by patch (Sept 24, Oct 1, Oct 8, Oct 15, Oct 26) plus what Forever changed from original Classic. The All notes link in the patch strip opens it.
 - **WoW Forever BIS lists:** the Armory's best-in-slot lists are now WoW Forever's level 60 lists for all 28 specs (from The Forever Era, built from the Forever beta client), replacing the Classic addon lists. Items are tagged New in Forever, Changed, or Not in beta client, and links open the item's Forever page. They're forecasts until Forever reaches level 60.
