@@ -137,10 +137,30 @@ function ClassCrest({ id, size = 40, on }: { id: ClassId; size?: number; on?: bo
 }
 
 /** One line at the top: the newest patch's name, and a button to this class's notes. */
+/** How many changes a class got in the newest patch. */
+function latestCount(id: ClassId): number {
+  return PATCH_NOTES[id][PATCHES[0].id]?.length ?? 0;
+}
+
+/** Small count bubble on a class icon when the newest patch changed that class. */
+function ChangeBadge({ id }: { id: ClassId }) {
+  const n = latestCount(id);
+  if (!n) return null;
+  return (
+    <span className="pointer-events-none absolute -top-1 -right-1 grid h-5 min-w-5 place-items-center rounded-full bg-cls px-1 text-[11px] font-bold text-[#0b0d18] tabular-nums shadow-[0_0_8px_var(--cls)]">
+      {n}
+    </span>
+  );
+}
+
+function changesText(n: number): string {
+  return n ? `${n} ${n === 1 ? "change" : "changes"}` : "no changes";
+}
+
 function PatchStrip({ classId, onOpenNotes }: { classId: ClassId; onOpenNotes: () => void }) {
   const latest = PATCHES[0];
   const label = classMeta(classId).label;
-  const count = PATCH_NOTES[classId][latest.id]?.length ?? 0;
+  const count = latestCount(classId);
   return (
     <section
       aria-label={`${latest.label} for ${label}`}
@@ -151,9 +171,13 @@ function PatchStrip({ classId, onOpenNotes }: { classId: ClassId; onOpenNotes: (
         <p className="min-w-0 truncate text-sm font-semibold text-fg">
           <span className="font-normal text-fg-soft">Latest update: </span>
           <span className="font-display text-glow-hi">{latest.label}</span>
+          <span className="text-fg-faint"> · </span>
+          <span className={count ? "text-cls" : "font-normal text-fg-faint"}>
+            {label}: {changesText(count)}
+          </span>
         </p>
         <button type="button" onClick={onOpenNotes} className="ml-auto shrink-0 text-sm font-semibold text-cls hover:text-fg">
-          {count ? `See ${count} ${label} ${count === 1 ? "change" : "changes"}` : `See ${label} notes`} →
+          See notes →
         </button>
       </div>
     </section>
@@ -265,7 +289,7 @@ export function AppShell() {
                 type="button"
                 onClick={() => pickClass(c.id)}
                 aria-pressed={on}
-                aria-label={c.label}
+                aria-label={`${c.label}, ${changesText(latestCount(c.id))} in ${PATCHES[0].label}`}
                 className="group relative grid h-14 w-full place-items-center"
               >
                 <span
@@ -274,8 +298,9 @@ export function AppShell() {
                     on ? "opacity-100" : "scale-y-0 opacity-0",
                   )}
                 />
-                <span className="transition-transform duration-150 ease-out group-active:scale-95">
+                <span className="relative transition-transform duration-150 ease-out group-active:scale-95">
                   <ClassCrest id={c.id} size={42} on={on} />
+                  <ChangeBadge id={c.id} />
                 </span>
                 <span className="pointer-events-none absolute left-full z-20 ml-1 rounded-md bg-[#101326] px-2.5 py-1 text-sm font-semibold whitespace-nowrap text-white opacity-0 shadow-lg ring-1 ring-[#8f8f9a] transition-opacity group-hover:opacity-100">
                   {c.label}
@@ -317,10 +342,11 @@ export function AppShell() {
                     type="button"
                     onClick={() => pickClass(c.id)}
                     aria-pressed={classId === c.id}
-                    aria-label={c.label}
-                    className="shrink-0 p-1 transition-transform duration-150 ease-out active:scale-95"
+                    aria-label={`${c.label}, ${changesText(latestCount(c.id))} in ${PATCHES[0].label}`}
+                    className="relative shrink-0 p-1 transition-transform duration-150 ease-out active:scale-95"
                   >
                     <ClassCrest id={c.id} size={38} on={classId === c.id} />
+                    <ChangeBadge id={c.id} />
                   </button>
                 ))}
               </nav>

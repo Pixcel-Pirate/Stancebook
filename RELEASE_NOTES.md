@@ -1,5 +1,6 @@
 ## What's new
 
+- **See your class's changes at a glance:** the top bar says how many changes your class got in the latest patch (or "no changes"), and each class icon shows a small count bubble when the latest patch changed it.
 - **Every patch checked and dated:** the Patch notes tab now shows the full date of every update and lists two updates it was missing (Oct 18 and Oct 23). Oct 30 and Oct 31 are now separate, each change sits under the update that made it, and updates with no official notes are marked "From game data".
 - **Simpler patch bar:** the bar at the top now just names the latest patch update, with a button straight to your class's patch notes. The Patch notes tab opens with a short description instead of counts and chips.
 - **Patch notes for every class:** a new Patch notes tab lists every WoW Forever change to your class in plain words, grouped by patch (Sept 24, Oct 1, Oct 8, Oct 15, Oct 26) plus what Forever changed from original Classic. The All notes link in the patch strip opens it.
