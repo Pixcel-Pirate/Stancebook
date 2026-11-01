@@ -210,6 +210,17 @@ function SetCard({ set: s, classId }: { set: GearSet; classId: ClassId }) {
       )}
 
       {src && <p className="text-xs text-fg-faint">{src}</p>}
+
+      {s.id > 0 && (
+        <a
+          className="btn-glass self-start text-sm"
+          href={`https://www.wowhead.com/classic/item-set=${s.id}`}
+          target="_blank"
+          rel="noreferrer"
+        >
+          View set in 3D on Wowhead
+        </a>
+      )}
     </li>
   );
 }
