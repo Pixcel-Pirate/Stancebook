@@ -6,37 +6,46 @@ const REPO = "Pixcel-Pirate/Stancebook";
 const VERSION = import.meta.env.VITE_VERSION as string | undefined;
 const DESKTOP = location.hostname === "127.0.0.1";
 const INSTALLER = `https://github.com/${REPO}/releases/latest/download/Stancebook-Setup.exe`;
-// The desktop app's own files, published with the web app on every release.
-const PACK = "https://pixcel-pirate.github.io/stancebook/desktop/resources.neu";
 
 async function reloadFresh() {
   await Promise.all((await caches.keys()).map((k) => caches.delete(k)));
   location.reload();
 }
 
-/** Desktop: swap in the new app files next to Stancebook.exe and restart. No installer. */
-async function updateDesktop() {
+/**
+ * Desktop: download the new book files (the release's resources.neu) next to Stancebook.exe, then hand off to a
+ * tiny script that waits for the app to close, swaps the files in and reopens it. No installer, nothing in Downloads.
+ * The swap happens after exit because Windows won't let a running app overwrite its own files.
+ */
+async function updateDesktop(tag: string) {
   // Neutralino injects its client and globals into the desktop window (injectGlobals/injectClientLibrary)
-  const w = window as unknown as { Neutralino?: any; NL_PATH: string };
-  if (!w.Neutralino) throw new Error("no native API"); // installs from before in-place updates
-  w.Neutralino.init();
-  const r = await fetch(PACK, { cache: "no-store" });
-  const pack = r.ok ? await r.arrayBuffer() : null;
-  // a cut-off download would leave the app unable to start, so refuse anything that small
-  if (!pack || pack.byteLength < 200_000) throw new Error("download failed");
-  await w.Neutralino.filesystem.writeBinaryFile(w.NL_PATH + "/resources.neu", pack);
-  // the new files are in place now; if the restart is refused, reopening the app finishes the update
-  await w.Neutralino.app.restartProcess().catch(() => {
-    throw new Error("restart");
-  });
+  const w = window as unknown as { Neutralino?: any; NL_PATH?: string };
+  const N = w.Neutralino;
+  if (!N || !w.NL_PATH) throw new Error("no native API");
+  N.init();
+  const dir = w.NL_PATH.replace(/\//g, "\\");
+  const url = `https://github.com/${REPO}/releases/download/${tag}/resources.neu`;
+  // curl.exe ships with Windows 10 and 11; -f leaves nothing behind on a failed download
+  const r = await N.os.execCommand(`curl.exe -fsSL --retry 2 -o "${dir}\\resources.new" "${url}"`);
+  if (r.exitCode !== 0) throw new Error(r.stdErr || "download failed");
+  const script = [
+    "@echo off",
+    "chcp 65001 >nul",
+    `for /l %%i in (1,1,15) do (move /y "${dir}\\resources.new" "${dir}\\resources.neu" >nul 2>&1 && goto run & ping -n 2 127.0.0.1 >nul)`,
+    ":run",
+    `start "" "${dir}\\Stancebook.exe"`,
+    "",
+  ].join("\r\n");
+  await N.filesystem.writeBinaryFile(`${dir}\\update.cmd`, new TextEncoder().encode(script).buffer);
+  await N.os.execCommand(`cmd /c start "" /min cmd /c "${dir}\\update.cmd"`, { background: true });
+  await N.app.exit();
 }
 
 /** Checks GitHub when the book opens. If there's a newer release, pops up an update prompt and keeps a button in the header. */
 export function UpdateButton() {
   const [latest, setLatest] = useState<string | null>(null);
   const [popup, setPopup] = useState(true);
-  const [downloaded, setDownloaded] = useState(false);
-  const [reopen, setReopen] = useState(false);
+  const [failed, setFailed] = useState(false);
   const [busy, setBusy] = useState(false);
 
   useEffect(() => {
@@ -58,13 +67,10 @@ export function UpdateButton() {
     if (!DESKTOP) return reloadFresh();
     setBusy(true);
     try {
-      await updateDesktop();
-    } catch (e) {
+      await updateDesktop(latest!);
+    } catch {
       setBusy(false);
-      setDownloaded(true);
-      if ((e as Error).message === "restart") return setReopen(true);
-      // builds from before in-place updates can't write their own files: fall back to the installer
-      location.href = INSTALLER;
+      setFailed(true); // never auto-download the installer; the message links it for a manual fix
     }
   }
   const button = (label: string) => (
@@ -75,9 +81,9 @@ export function UpdateButton() {
 
   return (
     <>
-      {!(popup || downloaded) && button("Update")}
+      {!(popup || failed) && button("Update")}
 
-      {(popup || downloaded) &&
+      {(popup || failed) &&
         createPortal(
         <div
           role="dialog"
@@ -88,23 +94,20 @@ export function UpdateButton() {
             <button
               type="button"
               aria-label="Close"
-              onClick={() => (setPopup(false), setDownloaded(false))}
+              onClick={() => (setPopup(false), setFailed(false))}
               className="absolute top-3 right-3 text-fg-faint hover:text-fg"
             >
               <X className="size-5" />
             </button>
-            {reopen ? (
+            {failed ? (
               <>
-                <p className="font-display text-lg font-bold text-fg">Update installed</p>
-                <p className="mt-1 text-fg-soft">Close Stancebook and open it again to start the new version.</p>
-              </>
-            ) : downloaded ? (
-              <>
-                <p className="font-display text-lg font-bold text-fg">Almost done</p>
+                <p className="font-display text-lg font-bold text-fg">Update didn't finish</p>
                 <p className="mt-1 text-fg-soft">
-                  When the download finishes, close Stancebook and run <b>Stancebook-Setup.exe</b>. Your saved macros,
-                  action bar and talents are kept.
+                  Check your internet and try again. If it keeps failing, install the latest{" "}
+                  <a className="underline" href={INSTALLER}>Stancebook-Setup.exe</a> once. Your saved macros, action bar
+                  and talents are kept.
                 </p>
+                <div className="mt-4 flex gap-2">{button("Try again")}</div>
               </>
             ) : (
               <>
