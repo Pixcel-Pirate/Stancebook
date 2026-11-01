@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { Bookmark, BookOpen, ChevronDown, Feather, Keyboard, Network, ScrollText, Search, Sparkles, Users, X } from "lucide-react";
+import { Bookmark, BookOpen, Shield, ChevronDown, Feather, Keyboard, Network, ScrollText, Search, Sparkles, Users, X } from "lucide-react";
 import { CopyButton } from "@/components/copy-button";
 import { MacroDetail } from "@/components/macro-detail";
 import { ForeverView, HowItWorks } from "@/components/guide-view";
@@ -7,6 +7,7 @@ import { Logo } from "@/components/logo";
 import { AbilitiesView } from "@/components/abilities-view";
 import { TALENT_HASH, TalentsView } from "@/components/talents-view";
 import { RacesView } from "@/components/races-view";
+import { ArmoryView } from "@/components/armory-view";
 import { KeybindsView } from "@/components/keybinds-view";
 import { UpdateButton } from "@/components/update-button";
 import { ActionBar, dragMacro } from "@/components/action-bar";
@@ -29,7 +30,7 @@ import {
 } from "@/lib/macros";
 import { cn, useStored } from "@/lib/utils";
 
-export type Tab = "macros" | "abilities" | "talents" | "keybinds" | "races" | "guide" | "forever";
+export type Tab = "macros" | "abilities" | "talents" | "keybinds" | "races" | "armory" | "guide" | "forever";
 
 type State = {
   tab: Tab;
@@ -193,6 +194,7 @@ const TABS = [
   ["talents", "Talents", Network],
   ["keybinds", "Keybinds", Keyboard],
   ["races", "Races", Users],
+  ["armory", "Armory", Shield],
   ["guide", "How they work", Feather],
   ["forever", "Forever notes", ScrollText],
 ] as const;
@@ -547,6 +549,8 @@ export function AppShell() {
                     <KeybindsView classId={classId} />
                   ) : tab === "races" ? (
                     <RacesView classId={classId} />
+                  ) : tab === "armory" ? (
+                    <ArmoryView classId={classId} />
                   ) : tab === "guide" ? (
                     <HowItWorks classId={classId} />
                   ) : (
