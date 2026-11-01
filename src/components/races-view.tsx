@@ -5,6 +5,9 @@ import { classMeta, type ClassId } from "@/lib/macros";
 import { RACES } from "@/lib/races";
 import { cn } from "@/lib/utils";
 
+// ponytail: Wowhead's hash format for preselecting race/gender is undocumented, so this opens the plain dressing room.
+const WOWHEAD_3D = "https://www.wowhead.com/classic/dressing-room";
+
 /** Every playable race with its racials; races that can be priests also show their two priest spells. */
 export function RacesView({ classId }: { classId: ClassId }) {
   const meta = classMeta(classId);
@@ -18,6 +21,13 @@ export function RacesView({ classId }: { classId: ClassId }) {
         <p className="max-w-prose leading-relaxed text-fg-soft">
           Every race in WoW Forever, including both Skyborne factions, with its racials as of the Oct 26 patch.
           Races that can be priests also list the two priest spells only they get. Hover an icon for its tooltip.
+        </p>
+        <p className="max-w-prose text-sm leading-relaxed text-fg-soft">
+          <a className="btn-glow mr-2 inline-flex" href={WOWHEAD_3D} target="_blank" rel="noreferrer">
+            View races in 3D on Wowhead
+          </a>
+          Opens Wowhead's Classic dressing room. Choose the race and gender in its menu and drag to rotate. The
+          Skyborne races are Forever-only, so Wowhead has no model for them.
         </p>
         <div className="flex flex-wrap gap-2">
           <button type="button" className="chip" aria-pressed={!onlyMine} onClick={() => setOnlyMine(false)}>
