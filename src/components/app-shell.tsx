@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
-import { Bookmark, BookOpen, Shield, ChevronDown, Feather, Keyboard, Network, ScrollText, Search, Sparkles, Users, X } from "lucide-react";
+import { Bookmark, BookOpen, Shield, ChevronDown, Feather, FileText, Keyboard, Network, ScrollText, Search, Sparkles, Users, X } from "lucide-react";
 import { CopyButton } from "@/components/copy-button";
 import { MacroDetail } from "@/components/macro-detail";
-import { ForeverView, HowItWorks } from "@/components/guide-view";
+import { ForeverView, HowItWorks, PatchNotesView } from "@/components/guide-view";
 import { Logo } from "@/components/logo";
 import { AbilitiesView } from "@/components/abilities-view";
 import { TALENT_HASH, TalentsView } from "@/components/talents-view";
@@ -30,7 +30,7 @@ import {
 } from "@/lib/macros";
 import { cn, useStored } from "@/lib/utils";
 
-export type Tab = "macros" | "abilities" | "talents" | "keybinds" | "races" | "armory" | "guide" | "forever";
+export type Tab = "macros" | "abilities" | "talents" | "keybinds" | "races" | "armory" | "guide" | "forever" | "patches";
 
 type State = {
   tab: Tab;
@@ -197,6 +197,7 @@ const TABS = [
   ["armory", "Armory", Shield],
   ["guide", "How they work", Feather],
   ["forever", "Forever notes", ScrollText],
+  ["patches", "Patch notes", FileText],
 ] as const;
 
 export function AppShell() {
@@ -276,7 +277,7 @@ export function AppShell() {
 
   return (
     <div className="flex h-full flex-col">
-      <PatchStrip classId={classId} onOpenNotes={() => patch({ tab: "forever" })} />
+      <PatchStrip classId={classId} onOpenNotes={() => patch({ tab: "patches" })} />
       <div className="flex min-h-0 flex-1">
         {/* Class rail, like the bookmark tabs down the side of the in-game spellbook */}
         <nav
@@ -553,6 +554,8 @@ export function AppShell() {
                     <ArmoryView classId={classId} />
                   ) : tab === "guide" ? (
                     <HowItWorks classId={classId} />
+                  ) : tab === "patches" ? (
+                    <PatchNotesView classId={classId} />
                   ) : (
                     <ForeverView classId={classId} />
                   )}
