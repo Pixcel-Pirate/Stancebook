@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { BisView } from "@/components/bis-view";
 import { AbilityTip, CLASS_ICON, ClassIcon, SpellIcon } from "@/components/spell-icon";
-import { FOREVER_SETS, QUALITY, QUALITY_COLOR, SETS, setClasses, WEAPONS, weaponClasses, type Armor, type GearSet } from "@/lib/armory";
+import { QUALITY, QUALITY_COLOR, SETS, setClasses, WEAPONS, weaponClasses, type Armor, type GearSet } from "@/lib/armory";
 import { classMeta, type ClassId } from "@/lib/macros";
 import { RACES } from "@/lib/races";
 import { cn } from "@/lib/utils";
@@ -16,13 +16,13 @@ const KINDS: [Kind, string][] = [
   ["weapons", "Weapons"],
   ["shields", "Shields and off-hands"],
 ];
-const ALL_SETS = [...FOREVER_SETS, ...SETS];
 
-/** Every WoW Forever gear set (new Hyjal sets plus the carried-over Classic ones), epic weapon and shield, filtered by armor type, race and class. */
+/** Every WoW Forever gear set (from the Forever client), epic weapon and shield, filtered by armor type, race, class and name. */
 export function ArmoryView({ classId }: { classId: ClassId }) {
   const [kind, setKind] = useState<Kind>("all");
   const [raceId, setRaceId] = useState("all");
   const [onlyMine, setOnlyMine] = useState(false);
+  const [query, setQuery] = useState("");
   const race = RACES.find((r) => r.id === raceId);
   const meta = classMeta(classId);
 
@@ -34,10 +34,11 @@ export function ArmoryView({ classId }: { classId: ClassId }) {
   const groups = useMemo(() => {
     const out = new Map<string, GearSet[]>();
     if (kind === "weapons" || kind === "shields") return out;
-    for (const s of ALL_SETS)
-      if ((kind === "all" || s.armor === kind) && usable(setClasses(s), s.faction)) out.set(s.group, [...(out.get(s.group) ?? []), s]);
+    const q = query.trim().toLowerCase();
+    for (const s of SETS)
+      if ((kind === "all" || s.armor === kind) && usable(setClasses(s), s.faction) && (!q || s.name.toLowerCase().includes(q) || s.items.some((p) => p.n.toLowerCase().includes(q)))) out.set(s.group, [...(out.get(s.group) ?? []), s]);
     return out;
-  }, [kind, raceId, onlyMine, classId]);
+  }, [kind, raceId, onlyMine, classId, query]);
 
   const weapons = useMemo(() => {
     const out = new Map<string, typeof WEAPONS>();
@@ -56,10 +57,10 @@ export function ArmoryView({ classId }: { classId: ClassId }) {
       <header className="flex flex-col gap-3">
         <h2 className="font-display text-3xl font-bold text-fg">Armory</h2>
         <p className="max-w-prose leading-relaxed text-fg-soft">
-          WoW Forever's gear: level 60 best-in-slot lists for every spec, the new Hyjal sets, and the Classic sets, epic
-          weapons and shields Forever carries over. Those carried-over items still use Classic stats and drop data from
-          Wowhead's Classic database, since Forever hasn't published its own yet. Pick a race below to see only what its
-          classes can wear. Hover an icon for where it drops.
+          Every gear set in WoW Forever's game files, for every class: the new Hyjal sets, Scarlet Enclave's Inquisition
+          and tier sets, Forever's PvP sets, and all the raid, dungeon and crafted sets it keeps. Open any set on Wowhead to
+          see the whole set on a character in 3D. There are also level 60 best-in-slot lists for every spec and Classic's
+          epic weapons and shields. Pick a race to see only what its classes can wear. Hover an icon for the piece.
         </p>
         <div className="flex flex-wrap gap-2" role="group" aria-label="Gear type">
           {KINDS.map(([id, label]) => (
@@ -85,7 +86,15 @@ export function ArmoryView({ classId }: { classId: ClassId }) {
             </button>
           ))}
         </div>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap items-center gap-2">
+          <input
+            type="search"
+            className="chip h-9 min-w-0 flex-1 basis-56 bg-transparent px-3 outline-none placeholder:text-fg-faint sm:max-w-xs"
+            placeholder="Find a set or piece"
+            aria-label="Find a set or piece"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+          />
           <button type="button" className="chip" aria-pressed={onlyMine} onClick={() => setOnlyMine(!onlyMine)}>
             Only {meta.label.toLowerCase()} gear
           </button>
@@ -105,9 +114,9 @@ export function ArmoryView({ classId }: { classId: ClassId }) {
           <h3 className="text-xs font-bold tracking-[0.18em] text-cls uppercase">
             {group} <span className="text-fg-faint">· {sets.length}</span>
           </h3>
-          {sets[0].bonuses && (
+          {sets.every((s) => !s.items.length) && (
             <p className="text-sm text-fg-faint">
-              The pieces aren't in the game files yet, so only the datamined set bonuses are known. They may change before launch.
+              These pieces aren't in the game files yet, so only the datamined set bonuses are known. They may change before launch.
             </p>
           )}
           <ul className="grid gap-3 lg:grid-cols-2">
@@ -161,7 +170,7 @@ function SetCard({ set: s, classId }: { set: GearSet; classId: ClassId }) {
             {s.name}
           </p>
           <p className="text-xs font-semibold tracking-wider text-fg-faint uppercase">
-            {[s.armor ?? "Accessories", s.faction, s.items.length ? `${s.items.length} pieces` : null].filter(Boolean).join(" · ")}
+            {[s.armor ?? "Accessories", s.faction, s.items.length + s.missing ? `${s.items.length + s.missing} pieces` : null].filter(Boolean).join(" · ")}
           </p>
         </div>
         {s.cls.length > 0 && (
@@ -201,7 +210,13 @@ function SetCard({ set: s, classId }: { set: GearSet; classId: ClassId }) {
         </div>
       )}
 
-      {s.bonuses && (
+      {s.missing > 0 && (
+        <p className="text-xs text-fg-faint">
+          {s.items.length ? `+${s.missing} more ${s.missing === 1 ? "piece" : "pieces"} not in the game files yet` : "Pieces not in the game files yet"}
+        </p>
+      )}
+
+      {s.bonuses.length > 0 && (
         <ul className="flex flex-col gap-1 text-sm text-fg-soft">
           {s.bonuses.map((b) => (
             <li key={b}>
@@ -214,13 +229,11 @@ function SetCard({ set: s, classId }: { set: GearSet; classId: ClassId }) {
 
       {src && <p className="text-xs text-fg-faint">{src}</p>}
 
-      {s.id > 0 && (
-        <div className="flex flex-wrap gap-2">
-          <a className="btn-glass inline-flex h-9 items-center gap-2 rounded-md px-3 font-display text-sm font-bold" href={`https://www.wowhead.com/classic/item-set=${s.id}`} target="_blank" rel="noreferrer">
-            View set in 3D on Wowhead
-          </a>
-        </div>
-      )}
+      <div className="flex flex-wrap gap-2">
+        <a className="btn-glass inline-flex h-9 items-center gap-2 rounded-md px-3 font-display text-sm font-bold" href={`https://www.wowhead.com/forever/item-set=${s.id}`} target="_blank" rel="noreferrer">
+          View full set in 3D on Wowhead
+        </a>
+      </div>
     </li>
   );
 }
