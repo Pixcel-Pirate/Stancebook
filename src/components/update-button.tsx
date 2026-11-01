@@ -9,6 +9,7 @@ const INSTALLER = `https://github.com/${REPO}/releases/latest/download/Stanceboo
 
 async function reloadFresh() {
   await Promise.all((await caches.keys()).map((k) => caches.delete(k)));
+  // the page itself is fetched past the HTTP cache by sw.js, so this lands on the new version
   location.reload();
 }
 
