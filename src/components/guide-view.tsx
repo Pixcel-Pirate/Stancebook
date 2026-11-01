@@ -152,28 +152,14 @@ export function ForeverView({ classId }: { classId: ClassId }) {
 export function PatchNotesView({ classId }: { classId: ClassId }) {
   const patches = patchNotesFor(classId);
   const label = classMeta(classId).label;
-  const total = patches.reduce((n, p) => n + p.notes.length, 0);
 
   return (
     <div className="mx-auto flex w-full max-w-3xl flex-col gap-6 pb-16">
       <header className="flex flex-col gap-3">
         <h2 className="font-display text-3xl font-bold text-fg">{label} patch notes</h2>
         <p className="max-w-prose text-base leading-relaxed text-fg-soft">
-          Every WoW Forever change to the {label.toLowerCase()}, in plain words, newest first.{" "}
-          <span className="text-fg-faint tabular-nums">{total} changes across {patches.length} updates.</span>
+          Every WoW Forever change to the {label.toLowerCase()} in plain words, newest patch first. Pick another class to see theirs.
         </p>
-        <nav aria-label="Patches" className="flex flex-wrap gap-2">
-          {patches.map((p) => (
-            <a
-              key={p.id}
-              href={`#patch-${p.id}`}
-              className="rounded-full px-3 py-1 text-xs font-semibold text-fg-soft ring-1 ring-line hover:text-cls hover:ring-current/40"
-            >
-              {p.label}
-              <span className="ml-1.5 text-fg-faint tabular-nums">{p.notes.length}</span>
-            </a>
-          ))}
-        </nav>
       </header>
       {patches.map((p, i) => (
         <details
