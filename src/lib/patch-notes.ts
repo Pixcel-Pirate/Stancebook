@@ -10,7 +10,7 @@ import type { ClassId } from "./macros";
 export type Patch = { id: string; label: string; summary: string };
 
 export const PATCHES: Patch[] = [
-  { id: "oct31", label: "Oct 31 hotfixes", summary: "Last tuning before launch (Oct 30-31), found in game data. No official notes yet." },
+  { id: "oct30", label: "Oct 30 patch", summary: "Last tuning before launch, plus the Oct 31 hotfix. Found in game data; no official notes yet." },
   { id: "oct26", label: "Oct 26 patch", summary: "Racials only. No class changes." },
   { id: "oct15", label: "Oct 15 patch", summary: "Raid-wide buffs, race rework, big talent pass." },
   { id: "oct8", label: "Oct 8 patch", summary: "Tank rage fixes and early spell ranks retuned." },
@@ -25,7 +25,7 @@ const WANDS = "Wands need you to stand still for 0.5 seconds before they shoot."
 
 export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
   warrior: {
-    oct31: [
+    oct30: [
       "Revenge and Victory Rush now scale with Attack Power.",
       "Improved Hamstring's root shares diminishing returns with mage and hunter roots.",
     ],
@@ -74,7 +74,7 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   paladin: {
-    oct31: [
+    oct30: [
       "Righteous Fury is learned at level 10 (was 16) and adds 33% threat.",
       "Seal of Fury taunts for 3 seconds (was 4). Holy Shield is retuned to 4 ranks.",
       "Salvation, Mass Salvation, Revoke and Blessing of Light were pulled from the spell data.",
@@ -129,7 +129,7 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   hunter: {
-    oct31: [
+    oct30: [
       "Aspect of the Hawk gives much less ranged Attack Power (47 at max rank, was 90).",
       "Trueshot Aura bonus halved (talent 15, was 30).",
       "Hunter's Mark rank 4 roughly doubles its ranged Attack Power bonus.",
@@ -197,7 +197,7 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   priest: {
-    oct31: [
+    oct30: [
       "Binding Heal is replaced by Holy Binding: you heal yourself for 50% of what Flash Heal heals others.",
       "Shadow Word: Death backlash is 30% of your max health if the target lives (was 10%).",
       "Cure Disease and Abolish Disease work in Shadowform.",
@@ -240,7 +240,7 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   shaman: {
-    oct31: [
+    oct30: [
       "Lava Burst rank 3's bonus against Flame Shocked targets no longer scales with level.",
     ],
     oct15: [
@@ -285,7 +285,7 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   mage: {
-    oct31: [
+    oct30: [
       "Arcane Blast gives 12% of Intellect per stack (was 15%), stacks last 18 seconds, and the mana cost rises 100% per stack.",
       "Ice Lance does 300% to frozen targets again but has an 8-second cooldown.",
       "Frost Blast can no longer be trained.",
@@ -330,7 +330,7 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   warlock: {
-    oct31: [
+    oct30: [
       "Improved Drains boosts Drain Life, Drain Soul and Drain Mana by 20% (no longer Wrack).",
     ],
     oct15: [
@@ -368,7 +368,7 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   druid: {
-    oct31: [
+    oct30: [
       "Feral: Berserk removed. Primal Bite moved to row 7 (needs Leader of the Pack), now 2 ranks learned at 50 and 60.",
       "Feral: Lacerate is a stacking bleed (up to 5) that also adds weapon damage per stack.",
       "Feral: Ferocious Bite has 5 ranks with lower damage per rank. New Predatory Discipline stops Bite spending extra Energy.",
