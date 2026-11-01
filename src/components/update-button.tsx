@@ -12,49 +12,11 @@ async function reloadFresh() {
   location.reload();
 }
 
-/**
- * Desktop: download the new book files (the release's resources.neu) next to Stancebook.exe, then hand off to a
- * tiny script that waits for the app to close, swaps the files in and reopens it. No installer, nothing in Downloads.
- * The swap happens after exit because Windows won't let a running app overwrite its own files.
- */
-async function updateDesktop(tag: string) {
-  // index.html loads Neutralino's globals and client in the desktop app
-  const w = window as unknown as { Neutralino?: any; NL_PATH?: string; NL_CWD?: string };
-  const N = w.Neutralino;
-  if (!N || !w.NL_PATH) throw new Error("no native API");
-  N.init();
-  // NL_PATH can be relative to the working folder when the app was started by a relative path
-  const abs = /^([a-zA-Z]:|[\\/])/.test(w.NL_PATH) ? w.NL_PATH : `${w.NL_CWD}/${w.NL_PATH}`;
-  const dir = abs.replace(/\//g, "\\");
-  const url = `https://github.com/${REPO}/releases/download/${tag}/resources.neu`;
-  // curl.exe ships with Windows 10 and 11; -f leaves nothing behind on a failed download
-  const r = await N.os.execCommand(`curl.exe -fsSL --retry 2 -o "${dir}\\resources.new" "${url}"`);
-  if (r.exitCode !== 0) throw new Error(r.stdErr || "download failed");
-  const script = [
-    "@echo off",
-    "chcp 65001 >nul",
-    // wait until the old copy has fully quit, or the new window talks to its dying server and gets a stale token
-    `for /l %%i in (1,1,30) do (tasklist /fi "imagename eq Stancebook.exe" | find /i "Stancebook.exe" >nul || goto gone & ping -n 2 127.0.0.1 >nul)`,
-    `taskkill /im Stancebook.exe /f >nul 2>&1`,
-    ":gone",
-    `for /l %%i in (1,1,15) do (move /y "${dir}\\resources.new" "${dir}\\resources.neu" >nul 2>&1 && goto run & ping -n 2 127.0.0.1 >nul)`,
-    ":run",
-    // keep the version shown in Settings > Apps current
-    `reg add "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Stancebook" /v DisplayVersion /d ${tag} /f >nul 2>&1`,
-    `start "" "${dir}\\Stancebook.exe"`,
-    "",
-  ].join("\r\n");
-  await N.filesystem.writeBinaryFile(`${dir}\\update.cmd`, new TextEncoder().encode(script).buffer);
-  await N.os.execCommand(`cmd /c start "" /min cmd /c "${dir}\\update.cmd"`, { background: true });
-  await N.app.exit();
-}
-
 /** Checks GitHub when the book opens. If there's a newer release, pops up an update prompt and keeps a button in the header. */
 export function UpdateButton() {
   const [latest, setLatest] = useState<string | null>(null);
   const [popup, setPopup] = useState(true);
-  const [failed, setFailed] = useState(false);
-  const [busy, setBusy] = useState(false);
+  const [downloaded, setDownloaded] = useState(false);
 
   useEffect(() => {
     if (!VERSION) return; // local/dev builds don't nag
@@ -71,27 +33,23 @@ export function UpdateButton() {
   if (!latest) return null;
 
   const cls = "btn-glow inline-flex h-9 items-center gap-2 rounded-md px-3 font-display text-sm font-bold disabled:opacity-60";
-  async function update() {
+  function update() {
     if (!DESKTOP) return reloadFresh();
-    setBusy(true);
-    try {
-      await updateDesktop(latest!);
-    } catch {
-      setBusy(false);
-      setFailed(true); // never auto-download the installer; the message links it for a manual fix
-    }
+    // Desktop: download the new installer; running it replaces the app in place and keeps saved data.
+    setDownloaded(true);
+    location.href = INSTALLER;
   }
   const button = (label: string) => (
-    <button type="button" className={cls} onClick={update} disabled={busy}>
-      <Download className="size-4" /> {busy ? "Updating…" : label}
+    <button type="button" className={cls} onClick={update}>
+      <Download className="size-4" /> {label}
     </button>
   );
 
   return (
     <>
-      {!(popup || failed) && button("Update")}
+      {!(popup || downloaded) && button("Update")}
 
-      {(popup || failed) &&
+      {(popup || downloaded) &&
         createPortal(
         <div
           role="dialog"
@@ -102,27 +60,25 @@ export function UpdateButton() {
             <button
               type="button"
               aria-label="Close"
-              onClick={() => (setPopup(false), setFailed(false))}
+              onClick={() => (setPopup(false), setDownloaded(false))}
               className="absolute top-3 right-3 text-fg-faint hover:text-fg"
             >
               <X className="size-5" />
             </button>
-            {failed ? (
+            {downloaded ? (
               <>
-                <p className="font-display text-lg font-bold text-fg">Update didn't finish</p>
+                <p className="font-display text-lg font-bold text-fg">Almost done</p>
                 <p className="mt-1 text-fg-soft">
-                  Check your internet and try again. If it keeps failing, install the latest{" "}
-                  <a className="underline" href={INSTALLER}>Stancebook-Setup.exe</a> once. Your saved macros, action bar
-                  and talents are kept.
+                  When the download finishes, close Stancebook and run <b>Stancebook-Setup.exe</b>. Your saved macros,
+                  action bar and talents are kept.
                 </p>
-                <div className="mt-4 flex gap-2">{button("Try again")}</div>
               </>
             ) : (
               <>
                 <p className="font-display text-lg font-bold text-fg">A new version of the book is out</p>
                 <p className="mt-1 text-fg-soft">
                   {latest} is ready (you have {VERSION}).{" "}
-                  {DESKTOP ? "Update installs it and restarts Stancebook." : "Update reloads the book with the new version."}
+                  {DESKTOP ? "Update downloads the new installer." : "Update reloads the book with the new version."}
                 </p>
                 <div className="mt-4 flex gap-2">
                   {button("Update now")}
