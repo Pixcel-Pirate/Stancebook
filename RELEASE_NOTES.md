@@ -1,5 +1,6 @@
 ## What's new
 
+- **Real 3D models in the dressing room:** export a character from your own game with the free wow.export tool (glTF or OBJ), then press Open 3D model in the Armory's dressing room and pick every file from the export folder, or drag them in. The model spins in the middle of the dressing room: drag to rotate, scroll to zoom. Your files stay on your PC.
 - **Dressing room in the Armory:** pick a race and Male or Female, then click any slot (head to ranged) to put on Classic gear, with real icons and quality borders. Try on puts a whole set on at once. The Equipped list shows each piece's slot, type and source, and its name opens it on Wowhead in 3D. Your outfit is remembered.
 - **Gear sets in 3D:** every Classic set in the Armory has a View set in 3D on Wowhead button. It opens the set on Wowhead, where you can see it worn by any race and gender.
 - **Races in 3D:** the Races tab has a View races in 3D on Wowhead button. It opens Wowhead's Classic dressing room, where you pick the race and gender and drag to rotate. Skyborne is Forever-only, so it has no model there.
