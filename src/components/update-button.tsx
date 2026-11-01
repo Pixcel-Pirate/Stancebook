@@ -33,6 +33,8 @@ async function updateDesktop(tag: string) {
     "chcp 65001 >nul",
     `for /l %%i in (1,1,15) do (move /y "${dir}\\resources.new" "${dir}\\resources.neu" >nul 2>&1 && goto run & ping -n 2 127.0.0.1 >nul)`,
     ":run",
+    // keep the version shown in Settings > Apps current
+    `reg add "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Stancebook" /v DisplayVersion /d ${tag} /f >nul 2>&1`,
     `start "" "${dir}\\Stancebook.exe"`,
     "",
   ].join("\r\n");

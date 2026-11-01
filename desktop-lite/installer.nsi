@@ -57,6 +57,10 @@ Section "Install"
   WriteRegStr HKCU "${UNINST}" "DisplayVersion" "${VERSION}"
   WriteRegStr HKCU "${UNINST}" "InstallLocation" "$INSTDIR"
   WriteRegStr HKCU "${UNINST}" "UninstallString" '"$INSTDIR\Uninstall.exe"'
+  WriteRegStr HKCU "${UNINST}" "QuietUninstallString" '"$INSTDIR\Uninstall.exe" /S'
+  WriteRegDWORD HKCU "${UNINST}" "NoModify" 1
+  WriteRegDWORD HKCU "${UNINST}" "NoRepair" 1
+  WriteRegDWORD HKCU "${UNINST}" "EstimatedSize" 4096
 
   ; The app draws with Microsoft Edge WebView2 (built into Windows 11 and up-to-date Windows 10).
   ReadRegStr $0 HKLM "SOFTWARE\WOW6432Node\Microsoft\EdgeUpdate\Clients\${WV2}" "pv"
