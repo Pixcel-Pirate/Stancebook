@@ -650,6 +650,11 @@
   line-height: 1.45;
   color: #ffd100;
 }
+.wow-tip-next {
+  margin: 8px 0 0;
+  font-size: 0.85rem;
+  color: #fff;
+}
 
 @keyframes tip-in {
   from {

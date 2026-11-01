@@ -203,6 +203,12 @@ export function AbilityTip({
             <p className="wow-tip-name">{ability.name}</p>
             <p className="wow-tip-meta">{ability.meta}</p>
             <p className="wow-tip-desc">{ability.desc}</p>
+            {ability.next && (
+              <>
+                <p className="wow-tip-next">Next rank:</p>
+                <p className="wow-tip-desc">{ability.next}</p>
+              </>
+            )}
           </div>,
           document.body,
         )}
