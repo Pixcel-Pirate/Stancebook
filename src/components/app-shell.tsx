@@ -29,7 +29,7 @@ import {
   macroText,
   type Spec,
 } from "@/lib/macros";
-import { cn } from "@/lib/utils";
+import { cn, useStored } from "@/lib/utils";
 
 export type Tab = "macros" | "abilities" | "talents" | "keybinds" | "races" | "armory" | "guide" | "forever" | "patches";
 
@@ -142,10 +142,14 @@ function latestCount(id: ClassId): number {
   return PATCH_NOTES[id][PATCHES[0].id]?.length ?? 0;
 }
 
-/** Small count bubble on a class icon when the newest patch changed that class. */
-function ChangeBadge({ id }: { id: ClassId }) {
+/** Which patch id each class's changes were last viewed for, like read/unread. */
+type Seen = Partial<Record<ClassId, string>>;
+const isSeen = (v: unknown): v is Seen => typeof v === "object" && v !== null && !Array.isArray(v);
+
+/** Small "unread" count bubble on a class icon until you view that class after the newest patch. */
+function ChangeBadge({ id, seen }: { id: ClassId; seen: Seen }) {
   const n = latestCount(id);
-  if (!n) return null;
+  if (!n || seen[id] === PATCHES[0].id) return null;
   return (
     <span className="pointer-events-none absolute -top-1 -right-1 grid h-5 min-w-5 place-items-center rounded-full bg-cls px-1 text-[11px] font-bold text-[#0b0d18] tabular-nums shadow-[0_0_8px_var(--cls)]">
       {n}
@@ -207,6 +211,12 @@ export function AppShell() {
   }));
   const { has, toggle } = useFavorites();
   const [savedOnly, setSavedOnly] = useState(false);
+  const [seen, setSeen] = useStored<Seen>("stancebook-patch-seen", () => ({}), isSeen);
+
+  /** Clicking a class (or opening its patch notes) marks the newest patch as read for it. */
+  function markSeen(id: ClassId) {
+    if (seen[id] !== PATCHES[0].id) setSeen({ ...seen, [id]: PATCHES[0].id });
+  }
 
   const { tab, c: classId } = state;
   const meta = classMeta(classId);
@@ -236,6 +246,7 @@ export function AppShell() {
   }
 
   function pickClass(id: ClassId) {
+    markSeen(id);
     patch({ c: id, spec: "all", cat: "all", m: undefined, q: "" });
   }
 
@@ -273,7 +284,10 @@ export function AppShell() {
 
   return (
     <div className="flex h-full flex-col">
-      <PatchStrip classId={classId} onOpenNotes={() => patch({ tab: "patches" })} />
+      <PatchStrip classId={classId} onOpenNotes={() => {
+          markSeen(classId);
+          patch({ tab: "patches" });
+        }} />
       <div className="flex min-h-0 flex-1">
         {/* Class rail, like the bookmark tabs down the side of the in-game spellbook */}
         <nav
@@ -300,7 +314,7 @@ export function AppShell() {
                 />
                 <span className="relative transition-transform duration-150 ease-out group-active:scale-95">
                   <ClassCrest id={c.id} size={42} on={on} />
-                  <ChangeBadge id={c.id} />
+                  <ChangeBadge id={c.id} seen={seen} />
                 </span>
                 <span className="pointer-events-none absolute left-full z-20 ml-1 rounded-md bg-[#101326] px-2.5 py-1 text-sm font-semibold whitespace-nowrap text-white opacity-0 shadow-lg ring-1 ring-[#8f8f9a] transition-opacity group-hover:opacity-100">
                   {c.label}
@@ -346,7 +360,7 @@ export function AppShell() {
                     className="relative shrink-0 p-1 transition-transform duration-150 ease-out active:scale-95"
                   >
                     <ClassCrest id={c.id} size={38} on={classId === c.id} />
-                    <ChangeBadge id={c.id} />
+                    <ChangeBadge id={c.id} seen={seen} />
                   </button>
                 ))}
               </nav>
@@ -356,7 +370,10 @@ export function AppShell() {
                   <button
                     key={id}
                     type="button"
-                    onClick={() => patch({ tab: id })}
+                    onClick={() => {
+                      if (id === "patches") markSeen(classId);
+                      patch({ tab: id });
+                    }}
                     aria-current={tab === id ? "page" : undefined}
                     className="tab"
                   >
