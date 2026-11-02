@@ -1,5 +1,6 @@
 ## What's new
 
+- **Change counts work like unread:** a class's change bubble goes away once you click that class or open its patch notes, and stays gone until a newer patch changes that class again.
 - **See your class's changes at a glance:** the top bar says how many changes your class got in the latest patch (or "no changes"), and each class icon shows a small count bubble when the latest patch changed it.
 - **Every patch checked and dated:** the Patch notes tab now shows the full date of every update and lists two updates it was missing (Oct 18 and Oct 23). Oct 30 and Oct 31 are now separate, each change sits under the update that made it, and updates with no official notes are marked "From game data".
 - **Simpler patch bar:** the bar at the top now just names the latest patch update, with a button straight to your class's patch notes. The Patch notes tab opens with a short description instead of counts and chips.
