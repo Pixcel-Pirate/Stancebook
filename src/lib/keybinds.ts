@@ -272,7 +272,7 @@ export const KEYBINDS: Record<ClassId, BindGroup[]> = {
       ["4", "Frost Shock"],
       ["Shift+4", "Earthbind Totem"],
       ["5", "Stormstrike"],
-      ["Shift+5", "Elemental Mastery"],
+      ["Shift+5", "Lightning Mastery"],
     ] },
     { ...KEYS, binds: [
       ["R", "Nature's Swiftness"],
