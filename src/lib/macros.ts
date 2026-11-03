@@ -264,7 +264,7 @@ export const CLASS_META: {
     hint: "Shocks, totems, heals",
     specs: [
       { id: "all", label: "All specs", hint: "Every shaman" },
-      { id: "elemental", label: "Elemental", hint: "Lava Burst, Lightning" },
+      { id: "elemental", label: "Elemental", hint: "Lightning, Flame Shock" },
       { id: "enhancement", label: "Enhancement", hint: "Stormstrike, Maelstrom" },
       { id: "restoration", label: "Restoration", hint: "Riptide, Chain Heal" },
     ],

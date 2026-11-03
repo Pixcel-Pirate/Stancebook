@@ -123,26 +123,6 @@ export const PRIEST_MACROS: Macro[] = [
     ],
   },
   {
-    id: "priest-binding",
-    classId: "priest",
-    name: "Binding Heal",
-    summary: "Heals the target and you at the same time. Forever’s ‘I am also dying’ button.",
-    how: "Binding Heal is a Forever priest tool: one cast, two people (the ally and yourself). Mouseover the other player. Efficient when you took splash damage too.",
-    when: "You and a teammate are both hurt. Not when you are full and the tank is not.",
-    category: "heal",
-    specs: ["holy", "discipline"],
-    level: 30,
-    bind: "Shift+2",
-    forever: true,
-    lines: [
-      { code: "#showtooltip Binding Heal", why: "Heals the ally and you." },
-      {
-        code: "/cast [@mouseover,help,nodead][] Binding Heal",
-        why: "Bind the mouseover (and you), else your target (and you).",
-      },
-    ],
-  },
-  {
     id: "priest-fade",
     classId: "priest",
     name: "Fade",

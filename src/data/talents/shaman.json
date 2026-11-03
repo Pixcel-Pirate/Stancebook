@@ -11,10 +11,10 @@
 {"n":"Eye of the Storm","t":4,"c":2,"r":3,"i":"spell_nature_eyeofthestorm","e":"Gives Lightning Bolt, Chain Lightning and Lava Burst a {23|70}% chance to keep casting when damaged.","s":"c"},
 {"n":"Earthbound","t":4,"c":4,"r":1,"i":"spell_nature_stranglevines","e":"Earthbind Totem immobilizes nearby enemies for five seconds when cast.","s":"n"},
 {"n":"Elemental Reach","t":5,"c":1,"r":2,"i":"spell_nature_stormreach","e":"Adds {3|6} yards to Lightning Bolt, Chain Lightning, Fire Nova and Lava Burst; Totemic Projection cooldown drops {10|20} sec.","s":"c"},
-{"n":"Lava Burst","t":5,"c":2,"r":1,"i":"spell_shaman_lavaburst","e":"Fire bolt hitting for roughly 150 to 193, stronger on Flame Shocked targets.","s":"n"},
+{"n":"Call of Thunder","t":5,"c":2,"r":1,"i":"spell_nature_callstorm","e":"Raises Lightning Bolt and Chain Lightning critical strike chance by 5%.","s":"c"},
 {"n":"Lightning Overload","t":5,"c":3,"r":3,"i":"spell_nature_lightningoverload","e":"Gives Lightning Bolt and Chain Lightning a {3|10}% chance to cast a free half-damage copy on the same target.","s":"n","p":"Elemental Alacrity"},
 {"n":"Elemental Fury","t":6,"c":3,"r":5,"i":"spell_fire_volcano","e":"Gives Searing and Magma Totems and Fire, Frost and Nature spells a {20|100}% critical strike damage bonus.","s":"c","p":"Lightning Overload"},
-{"n":"Elemental Mastery","t":7,"c":2,"r":1,"i":"spell_nature_wispheal","e":"Shortens Lightning Bolt and Lava Burst casts and frees Chain Lightning's cooldown.","s":"c","p":"Lava Burst"}
+{"n":"Lightning Mastery","t":7,"c":2,"r":1,"i":"spell_nature_wispheal","e":"Shortens Lightning Bolt casts by 0.5 sec and frees Chain Lightning's cooldown for 15 sec.","s":"c"}
 ]},
 {"tree":"Enhancement","talents":[
 {"n":"Earth's Grasp","t":1,"c":1,"r":2,"i":"spell_nature_stoneclawtotem","e":"Raises Stoneclaw Totem health by {25|50}% and Earthbind Totem radius by {10|20}%."},
@@ -22,7 +22,6 @@
 {"n":"Ancestral Knowledge","t":1,"c":3,"r":5,"i":"spell_shadow_grimward","e":"Raises Intellect by {2|10}%.","s":"c"},
 {"n":"Guardian Totems","t":2,"c":1,"r":2,"i":"spell_nature_stoneskintotem","e":"Stoneskin and Windwall Totems reduce {10|20}% more damage; Grounding Totem cooldown drops {1|2} sec."},
 {"n":"Mental Dexterity","t":2,"c":2,"r":3,"i":"spell_nature_mentalquickness","e":"Adds Attack Power equal to {33|100}% of your Intellect.","s":"n"},
-{"n":"Improved Ghost Wolf","t":2,"c":3,"r":2,"i":"spell_nature_spiritwolf","e":"Cuts Ghost Wolf cast time by {1|3} sec and lets you use it indoors.","s":"c"},
 {"n":"Improved Lightning Shield","t":2,"c":4,"r":3,"i":"spell_nature_lightningshield","e":"Lightning Shield orbs deal {5|15}% more damage."},
 {"n":"Elemental Weapons","t":3,"c":1,"r":3,"i":"spell_fire_flametounge","e":"Rockbiter adds {7|20}% melee AP, Windfury gains {13|40}% effect, Flametongue and Frostbrand gain {5|15}% damage.","s":"c"},
 {"n":"Shamanistic Focus","t":3,"c":3,"r":1,"i":"spell_nature_elementalabsorption","e":"Cuts Shock and Lightning Shield mana costs by 45 percent.","s":"n"},
@@ -30,6 +29,7 @@
 {"n":"Toughness","t":4,"c":1,"r":5,"i":"spell_holy_devotion","e":"Raises Stamina by {2|10}%.","s":"c"},
 {"n":"Flurry","t":4,"c":2,"r":5,"i":"ability_ghoulfrenzy","e":"After a melee crit, gives {5|25}% attack speed for your next 3 swings.","s":"c","p":"Mental Dexterity"},
 {"n":"Stormstrike","t":4,"c":3,"r":1,"i":"ability_shaman_stormstrike","e":"Instant melee strike that empowers your next lightning or Earth Shock spell.","s":"c"},
+{"n":"Improved Ghost Wolf","t":4,"c":4,"r":2,"i":"spell_nature_spiritwolf","e":"Cuts Ghost Wolf cast time by {1|3} sec and lets you use it indoors.","s":"c"},
 {"n":"Spirit Weapons","t":5,"c":1,"r":1,"i":"ability_parry","e":"Adds parry chance; threat changes based on Rockbiter Weapon being active.","s":"c"},
 {"n":"Mental Quickness","t":5,"c":2,"r":2,"i":"spell_nature_sleep","e":"Raises spell damage and healing by up to {15|30}% of your Intellect.","s":"n"},
 {"n":"Improved Stormstrike","t":5,"c":3,"r":2,"i":"spell_shaman_improvedstormstrike","e":"Gives a {50|100}% chance of 50% mana regen while casting for 15 sec, and a {50|100}% chance to reset Stormstrike's cooldown on dodge or parry.","s":"n","p":"Stormstrike"},

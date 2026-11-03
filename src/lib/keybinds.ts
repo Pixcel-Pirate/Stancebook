@@ -248,7 +248,6 @@ export const KEYBINDS: Record<ClassId, BindGroup[]> = {
       ["C", "Heal"],
       ["Shift+C", "Prayer of Healing"],
       ["X", "Penance"],
-      ["Shift+X", "Binding Heal"],
       ...EVERYDAY,
     ] },
     { ...MOUSE, binds: [
@@ -268,7 +267,6 @@ export const KEYBINDS: Record<ClassId, BindGroup[]> = {
       ["1", "Lightning Bolt"],
       ["Shift+1", "Chain Lightning"],
       ["2", "Flame Shock"],
-      ["Shift+2", "Lava Burst"],
       ["3", "Earth Shock", "Interrupt."],
       ["Shift+3", "Purge"],
       ["4", "Frost Shock"],
@@ -413,7 +411,6 @@ export const KEYBINDS: Record<ClassId, BindGroup[]> = {
       ["Shift+4", "Pounce"],
       ["5", "Ravage"],
       ["Shift+5", "Dash"],
-      ["Mouse 4", "Berserk"],
     ] },
     { title: "Bear Form bar", hint: "Shifting swaps the number row for these", binds: [
       ["1", "Maul"],

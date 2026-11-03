@@ -11,6 +11,7 @@ import type { ClassId } from "./macros";
 export type Patch = { id: string; label: string; date?: string; official: boolean; summary: string };
 
 export const PATCHES: Patch[] = [
+  { id: "nov2", label: "Nov 2 patch", date: "2026-11-02", official: true, summary: "Launch notes: confirms the Oct 30-31 changes, plus Rogue Shank, Feral and Hunter damage, and racial fixes." },
   { id: "oct31", label: "Oct 31 hotfix", date: "2026-10-31", official: false, summary: "Server hotfix with big Paladin and Druid talent changes." },
   { id: "oct30", label: "Oct 30 patch", date: "2026-10-30", official: false, summary: "Last client build before launch: Mage and Hunter tuning." },
   { id: "oct26", label: "Oct 26 patch", date: "2026-10-26", official: true, summary: "Racials only (with an Oct 27 addendum). No class changes." },
@@ -29,6 +30,10 @@ const WANDS = "Wands need you to stand still for 0.5 seconds before they shoot."
 
 export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
   warrior: {
+    nov2: [
+      "Improved Hamstring and Counterattack roots now share diminishing returns.",
+      "Training every ability from 1 to 60 costs about 207 gold. New spells no longer go on your action bars by themselves.",
+    ],
     oct30: [
       "Revenge and Victory Rush now scale with Attack Power.",
       "Improved Hamstring's root shares diminishing returns with mage and hunter roots.",
@@ -78,6 +83,14 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   paladin: {
+    nov2: [
+      "Righteous Fury is learned at level 10, adds 33% threat and 90% more threat from Holy damage.",
+      "Salvation, Mass Salvation, Revoke and Blessing of Light are removed.",
+      "Judgement of Fury taunts for 3 seconds (was 4).",
+      "Protection: Reckoning gives one attack per stack. Templar's Bulwark moved to row 3. Iron Creed is 3 ranks.",
+      "Retribution: Vengeance stacks to 5 and needs Seal of Command. Vindication no longer adds Attack Power. Unsealed Wrath needs Repentance.",
+      "Holy: Improved Seals is 5 ranks. Voice of Truth is removed.",
+    ],
     oct31: [
       "Righteous Fury adds 33% threat. Seal of Fury taunts for 3 seconds (was 4). Holy Shield is retuned to 4 ranks.",
       "Salvation, Mass Salvation, Revoke and Blessing of Light were pulled from the spell data.",
@@ -138,6 +151,15 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   hunter: {
+    nov2: [
+      "Aimed Shot bonus damage is roughly doubled. Arcane Shot hits about 30% harder, Serpent Sting about 20%.",
+      "All traps share a 30-second cooldown.",
+      "Only one Hunter's Mark per target. Rank 4 gives 143 ranged Attack Power.",
+      "Aspect of the Hawk gives more ranged Attack Power.",
+      "Pets keep their natural attack speed when untrained.",
+      "Marksmanship: Barrage is 5/10/15%, Sniper Shot bonus damage doubled, Trueshot Aura gives up to 100 ranged Attack Power.",
+      "Survival: Lightning Reflexes is 3 to 15% Agility.",
+    ],
     oct31: [
       "Beast Mastery: Pathfinding moved to row 3.",
     ],
@@ -190,6 +212,15 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   rogue: {
+    nov2: [
+      "New Shank (level 24): 5 energy, 10-second cooldown, an off-hand stab that gives back 15 energy.",
+      "New Poised (level 18): your next energy ability costs 10 less.",
+      "Deadly and Instant Poison scale twice as hard with Attack Power.",
+      "Slice and Dice no longer makes a sitting target stand up.",
+      "Assassination: Murder removed, Lethality 2 ranks, Seal Fate 3 ranks, new Blood Splatter. Mutilate does 90% weapon damage.",
+      "Combat: new Composure and Flash of Steel. Aggression is 5/10/15%.",
+      "Subtlety: Cutthroat, Thousand Cuts, Quietus and Improved Distract removed. Ghostly Strike lets you Ambush or Garrote without stealth for 7 seconds. New Death Mark capstone.",
+    ],
     oct15: [
       "Poisons no longer proc on enemies that are hitting you.",
       "Sap no longer triggers weapon procs.",
@@ -210,6 +241,12 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   priest: {
+    nov2: [
+      "Power Word: Shield can be replaced by an equal or higher rank.",
+      "Shadow Word: Death no longer hurts you on a miss.",
+      "Dark Sacrifice no longer breaks crowd control.",
+      "Shadow: Vampiric Embrace healing can't crit. Devouring Contagion no longer spreads from critters.",
+    ],
     oct31: [
       "Binding Heal is replaced by Holy Binding: you heal yourself for 50% of what Flash Heal heals others.",
       "Shadow Word: Death backlash is 30% of your max health if the target lives (was 10%).",
@@ -256,6 +293,11 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   shaman: {
+    nov2: [
+      "Lava Burst is removed. Call of Thunder (+5% Lightning crit) is back in its row, and Elemental Mastery is now Lightning Mastery.",
+      "Improved Ghost Wolf moved to row 4.",
+      "Training every ability from 1 to 60 costs about 207 gold.",
+    ],
     oct30: [
       "Lava Burst rank 3's bonus against Flame Shocked targets no longer scales with level.",
     ],
@@ -304,6 +346,12 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   mage: {
+    nov2: [
+      "Frost Blast is removed.",
+      "Arcane: Missile Barrage is used up when Arcane Missiles starts. Clearcasting isn't spent while Missile Barrage is active.",
+      "Fire: Ignite also covers Flamestrike. Improved Fire Blast moved to row 3.",
+      "Frost: Frost Warding can fully negate a spell instead of reflecting it. Elemental Precision is now Precision.",
+    ],
     oct31: [
       "Arcane Blast gives 12% of Intellect per stack (was 15%), stacks last 18 seconds, and the mana cost rises 100% per stack.",
       "Ice Lance does 300% to frozen targets again (was 200%).",
@@ -362,6 +410,9 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   warlock: {
+    nov2: [
+      "Training costs are lower to make up for Grimoires.",
+    ],
     oct31: [
       "Improved Drains boosts Drain Life, Drain Soul and Drain Mana by 20% (no longer Wrack).",
     ],
@@ -402,6 +453,15 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   druid: {
+    nov2: [
+      "Shred does 200% weapon damage, Claw 140%, Ravage 435%.",
+      "Rip, Rake, Ferocious Bite and Pounce do about 25% more damage.",
+      "Bear and Dire Bear Form threat is +115% (was +50%).",
+      "New Poised (level 32): your next energy ability costs 10 less.",
+      "Lacerate is now a Feral talent. Ferocious Bite has a new rank 1 at level 24.",
+      "Starfire hits about 40% harder.",
+      "Restoration: Swiftmend only uses your own HoTs. Reflection and Subtlety swapped rows.",
+    ],
     oct31: [
       "Feral: Berserk removed. Primal Bite moved to row 7 (needs Leader of the Pack), now 2 ranks learned at 50 and 60.",
       "Feral: Lacerate is a stacking bleed (up to 5) that also adds weapon damage per stack.",

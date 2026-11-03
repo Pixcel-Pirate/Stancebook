@@ -40,7 +40,7 @@
 {"tree":"Frost","talents":[
 {"n":"Frost Warding","t":1,"c":1,"r":2,"i":"spell_frost_frostward","e":"Frost and Ice Armor +{15|30}% armor and resistances; Frost Ward {10|20}% negate chance; Ice Barrier and Frost Ward absorb +{10|20}%.","s":"c"},
 {"n":"Improved Frostbolt","t":1,"c":2,"r":5,"i":"spell_frost_frostbolt02","e":"Reduces Frostbolt and Frost Blast cast time by {0.1|0.5} sec.","s":"c"},
-{"n":"Elemental Precision","t":1,"c":3,"r":3,"i":"spell_ice_magicdamage","e":"Increases chance to hit with all spells by {2|6}%.","s":"c"},
+{"n":"Precision","t":1,"c":3,"r":3,"i":"spell_ice_magicdamage","e":"Increases chance to hit with all spells by {2|6}%.","s":"c"},
 {"n":"Ice Shards","t":2,"c":1,"r":5,"i":"spell_frost_iceshard","e":"Increases the critical strike damage bonus of Frost spells by {20|100}%."},
 {"n":"Frostbite","t":2,"c":2,"r":3,"i":"spell_frost_frostarmor","e":"Gives Chill effects a {5|15}% chance to Freeze the target for 5 sec.","s":"c"},
 {"n":"Improved Frost Nova","t":2,"c":3,"r":2,"i":"spell_frost_freezingbreath","e":"Reduces Frost Nova cooldown by {2|4} sec."},
