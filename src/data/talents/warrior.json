@@ -25,16 +25,17 @@
 {"n":"Furious Precision","t":3,"c":1,"r":3,"i":"ability_warrior_incite","e":"Off-hand hit chance raised by {4|10}%.","s":"n"},
 {"n":"Piercing Howl","t":3,"c":2,"r":1,"i":"spell_shadow_deathscream","e":"Slows all enemies within 10 yards by half for 6 seconds."},
 {"n":"Blood Craze","t":3,"c":3,"r":3,"i":"spell_shadow_summonimp","e":"Regenerate {1|3}% of max Health over 6 sec after a crit or a hit over 20% max Health.","s":"c"},
+{"n":"Enrage","t":3,"c":4,"r":5,"i":"spell_shadow_unholyfrenzy","e":"30% chance after being hit to deal {2|10}% more Physical damage for 12 sec.","s":"c"},
 {"n":"Dual Wield Specialization","t":4,"c":1,"r":5,"i":"ability_dualwield","e":"Off-hand damage raised by {5|25}%; off-hand attacks generate {10|50}% more Rage.","s":"c"},
-{"n":"Raging Blows","t":4,"c":2,"r":1,"i":"ability_whirlwind","e":"Cleave and Whirlwind cost 3 less Rage.","s":"n"},
-{"n":"Enrage","t":4,"c":3,"r":5,"i":"spell_shadow_unholyfrenzy","e":"30% chance after being hit to deal {2|10}% more Physical damage for 12 sec.","s":"c"},
+{"n":"Reckless Swings","t":4,"c":2,"r":1,"i":"ability_warrior_bloodfrenzy","e":"Your next 4 melee attacks generate 5 extra Rage for 8 sec. 15 sec cooldown.","s":"n"},
 {"n":"Improved Execute","t":4,"c":4,"r":2,"i":"inv_sword_48","e":"Execute costs {3|5} less Rage.","s":"c"},
 {"n":"Improved Berserker Rage","t":5,"c":1,"r":2,"i":"spell_nature_ancestralguardian","e":"Berserker Rage generates {5|10} Rage and has a {50|100}% chance to remove movement impairing effects.","s":"c"},
 {"n":"Death Wish","t":5,"c":2,"r":1,"i":"spell_shadow_deathpact","e":"Raises physical damage 20% and grants fear immunity, but increases damage taken 5%.","s":"c"},
+{"n":"Gore Drinker","t":5,"c":3,"r":2,"i":"racial_troll_berserk","e":"Next 3 melee hits restore {0.5|1}% of max Health after Enrage, Berserker Rage, Bloodrage, Death Wish or Bloodthirst.","s":"n","p":"Blood Craze"},
 {"n":"Improved Intercept","t":5,"c":4,"r":2,"i":"ability_rogue_sprint","e":"Intercept cooldown reduced by {5|10} sec."},
-{"n":"Flurry","t":6,"c":2,"r":5,"i":"ability_ghoulfrenzy","e":"Melee attack speed raised by {5|25}% for 3 swings after a critical strike.","s":"c","p":"Death Wish"},
-{"n":"Gore Drinker","t":6,"c":3,"r":2,"i":"racial_troll_berserk","e":"Next 3 melee hits restore {0.5|1}% of max Health after Enrage, Berserker Rage, Bloodrage, Death Wish or Bloodthirst.","s":"n","p":"Enrage"},
-{"n":"Bloodthirst","t":7,"c":2,"r":1,"i":"spell_nature_bloodlust","e":"Hits for 45% attack power plus 30 and boosts movement speed 10% for 10 seconds.","s":"c"}
+{"n":"Improved Whirlwind","t":6,"c":1,"r":2,"i":"ability_whirlwind","e":"Whirlwind cooldown reduced by {1|2} sec and its damage to the closest enemy raised by {15|30}%.","s":"n"},
+{"n":"Flurry","t":6,"c":3,"r":3,"i":"ability_ghoulfrenzy","e":"Melee attack speed raised by {10|30}% for 3 swings after a critical strike.","s":"c"},
+{"n":"Bloodthirst","t":7,"c":2,"r":1,"i":"spell_nature_bloodlust","e":"Hits for 45% attack power plus 30 and boosts movement speed 10% for 10 seconds.","s":"c","p":"Death Wish"}
 ]},
 {"tree":"Protection","talents":[
 {"n":"Improved Bloodrage","t":1,"c":1,"r":2,"i":"ability_racial_bloodrage","e":"Bloodrage generates {25|50}% more Rage in total.","s":"c"},

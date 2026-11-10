@@ -5,5 +5,5 @@ import { LATEST_PATCH, latestPatchNotes } from "../src/lib/guide.ts";
 
 assert.match(LATEST_PATCH, /^\w+ \d+ patch$/);
 assert.ok(latestPatchNotes("warrior").every((n) => n.tag === LATEST_PATCH));
-assert.ok(["warrior", "mage", "druid"].some((c) => latestPatchNotes(c as "warrior").length > 0));
+assert.ok(["warrior", "hunter", "shaman", "warlock", "mage", "druid"].some((c) => latestPatchNotes(c as "warrior").length > 0));
 console.log("ok", LATEST_PATCH);
