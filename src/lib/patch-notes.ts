@@ -12,6 +12,7 @@ export type Patch = { id: string; label: string; date?: string; official: boolea
 
 export const PATCHES: Patch[] = [
   { id: "nov10", label: "Nov 10 tuning", date: "2026-11-10", official: true, summary: "First live tuning pass: tanking pets, Affliction DoTs next to Wrack, and Enhancement back on Strength." },
+  { id: "nov9", label: "Nov 9 hotfixes", date: "2026-11-09", official: true, summary: "Bug fixes for every class: Flamestrike and Clearcasting, Shadowform and Fear Ward, Lightning Overload." },
   { id: "nov6", label: "Nov 6 hotfixes", date: "2026-11-06", official: true, summary: "Bug fixes: Voidwalker health, Soul Siphon and Wrack, Druid Bloom, Mage Arcane Blast." },
   { id: "nov4", label: "Nov 3-4 hotfixes", date: "2026-11-04", official: false, summary: "Launch-day server changes: Fury talent swap, tank stance threat, Shaman Totemic Call and Riptide." },
   { id: "nov2", label: "Nov 2 patch", date: "2026-11-02", official: true, summary: "Launch notes: confirms the Oct 30-31 changes, plus Rogue Shank, Feral and Hunter damage, and racial fixes." },
@@ -33,6 +34,9 @@ const WANDS = "Wands need you to stand still for 0.5 seconds before they shoot."
 
 export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
   warrior: {
+    nov9: [
+      "Thunder Clap shows only its cooldown in the Cooldown Manager.",
+    ],
     nov6: [
       "Reckless Swings' tooltip now says it triggers Gore Drinker.",
     ],
@@ -97,6 +101,9 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   paladin: {
+    nov9: [
+      "Consecration gets its damage bonus correctly again.",
+    ],
     nov4: [
       "Protection: Holy Shield is 3 ranks. The top rank hits harder and has 4 charges.",
     ],
@@ -168,6 +175,9 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   hunter: {
+    nov9: [
+      "A few pets moved to their correct families. Pulling aggro from far away by targeting is fixed.",
+    ],
     nov10: [
       "Pets you use as tanks get stats closer to Classic Era. Blizzard gave no numbers.",
     ],
@@ -270,6 +280,10 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   priest: {
+    nov9: [
+      "Fear Ward no longer knocks you out of Shadowform.",
+      "Power Infusion stays on allies as it should.",
+    ],
     nov2: [
       "Power Word: Shield can be replaced by an equal or higher rank.",
       "Shadow Word: Death no longer hurts you on a miss.",
@@ -322,6 +336,10 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   shaman: {
+    nov9: [
+      "Lightning Overload deals the right damage again.",
+      "Lightning Mastery has a new visual.",
+    ],
     nov10: [
       "Enhancement: Strength is the best stat again. Collect Strength and Attack Power gear.",
     ],
@@ -383,6 +401,10 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   mage: {
+    nov9: [
+      "Flamestrike ticks no longer use up Clearcasting.",
+      "Arcane Concentration's chance is split between the cast and each missile.",
+    ],
     nov6: [
       "Arcane Blast's buff lasts 18 seconds as intended.",
       "The Research spell no longer flickers after a relog. You get Study after the quest.",
@@ -451,6 +473,10 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   warlock: {
+    nov9: [
+      "Incinerate can only be learned by Destruction.",
+      "The Felsteed quest now teaches riding.",
+    ],
     nov10: [
       "Voidwalker gets tank stats closer to Classic Era. Blizzard gave no numbers.",
       "Affliction: Corruption, Siphon Life and Bane of Agony are retuned so they are worth casting next to Wrack. Total damage stays the same.",
@@ -507,6 +533,9 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   druid: {
+    nov9: [
+      "Feral Charge (Cat), Natural Instinct and the Pounce debuff work and display correctly.",
+    ],
     nov6: [
       "Restoration: Bloom now heals its target.",
       "Shadowmelded Night Elf Druids no longer get Ravage and Pounce.",

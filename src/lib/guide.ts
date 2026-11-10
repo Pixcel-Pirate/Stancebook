@@ -230,7 +230,7 @@ const CAP: ForeverNote = {
 const RACIALS: ForeverNote = {
   title: "Racials retuned",
   tag: "Nov 2 patch",
-  body: "Orc Blood Fury is a 2-minute cooldown and Command is back (+5% pet damage, replacing Savage). Troll Berserking lasts 15 seconds. Dwarves trade Earth Fury for Artisan's Precision (1% hit). Human crit is 1% and Spirit 10%. Tauren Endurance is 5% health, Plainsrunning no longer speeds mounts, and Tauren Warriors now get the right +5 Strength. Undead Dark Sacrifice no longer breaks crowd control. Skyborne High Order and Windshaper stats were corrected. A burst macro with Blood Fury lines up with your other 2-minute cooldowns.",
+  body: "Orc Blood Fury is a 2-minute cooldown and Command is back (+5% pet damage, replacing Savage). Troll Berserking lasts 15 seconds. Dwarves trade Earth Fury for Artisan's Precision (1% hit). Human crit is 1% and Spirit 10%. Tauren Endurance is 5% health, Plainsrunning no longer speeds mounts, and Tauren Warriors now get the right +5 Strength. Undead Dark Sacrifice no longer breaks crowd control. Skyborne High Order and Windshaper stats were corrected. Tauren Cultivation's cooldown now starts after the cast finishes (Nov 9). A burst macro with Blood Fury lines up with your other 2-minute cooldowns.",
 };
 
 const WARRIOR_FOREVER: ForeverNote[] = [
