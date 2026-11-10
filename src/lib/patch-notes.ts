@@ -11,6 +11,9 @@ import type { ClassId } from "./macros";
 export type Patch = { id: string; label: string; date?: string; official: boolean; summary: string };
 
 export const PATCHES: Patch[] = [
+  { id: "nov10", label: "Nov 10 tuning", date: "2026-11-10", official: true, summary: "First live tuning pass: tanking pets, Affliction DoTs next to Wrack, and Enhancement back on Strength." },
+  { id: "nov6", label: "Nov 6 hotfixes", date: "2026-11-06", official: true, summary: "Bug fixes: Voidwalker health, Soul Siphon and Wrack, Druid Bloom, Mage Arcane Blast." },
+  { id: "nov4", label: "Nov 3-4 hotfixes", date: "2026-11-04", official: false, summary: "Launch-day server changes: Fury talent swap, tank stance threat, Shaman Totemic Call and Riptide." },
   { id: "nov2", label: "Nov 2 patch", date: "2026-11-02", official: true, summary: "Launch notes: confirms the Oct 30-31 changes, plus Rogue Shank, Feral and Hunter damage, and racial fixes." },
   { id: "oct31", label: "Oct 31 hotfix", date: "2026-10-31", official: false, summary: "Server hotfix with big Paladin and Druid talent changes." },
   { id: "oct30", label: "Oct 30 patch", date: "2026-10-30", official: false, summary: "Last client build before launch: Mage and Hunter tuning." },
@@ -30,6 +33,17 @@ const WANDS = "Wands need you to stand still for 0.5 seconds before they shoot."
 
 export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
   warrior: {
+    nov6: [
+      "Reckless Swings' tooltip now says it triggers Gore Drinker.",
+    ],
+    nov4: [
+      "Fury: Raging Blows is removed. New Reckless Swings (row 4): your next 4 swings give 5 extra rage.",
+      "Fury: new Improved Whirlwind (row 6) cuts Whirlwind's cooldown by up to 2 seconds and adds up to 30% damage.",
+      "Fury: Flurry is 3 ranks (up to 30% speed). Gore Drinker moved to row 5 and needs Blood Craze. Enrage moved to row 3.",
+      "Fury: Bloodthirst now needs a point in Death Wish.",
+      "Slam's cooldown is 15 seconds (was 18).",
+      "Defensive Stance gives 80% more threat (was 30%). Defiance is 7 to 20% (was 5 to 15%).",
+    ],
     nov2: [
       "Improved Hamstring and Counterattack roots now share diminishing returns.",
       "Training every ability from 1 to 60 costs about 207 gold. New spells no longer go on your action bars by themselves.",
@@ -83,6 +97,9 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   paladin: {
+    nov4: [
+      "Protection: Holy Shield is 3 ranks. The top rank hits harder and has 4 charges.",
+    ],
     nov2: [
       "Righteous Fury is learned at level 10, adds 33% threat and 90% more threat from Holy damage.",
       "Salvation, Mass Salvation, Revoke and Blessing of Light are removed.",
@@ -151,6 +168,9 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   hunter: {
+    nov10: [
+      "Pets you use as tanks get stats closer to Classic Era. Blizzard gave no numbers.",
+    ],
     nov2: [
       "Aimed Shot bonus damage is roughly doubled. Arcane Shot hits about 30% harder, Serpent Sting about 20%.",
       "All traps share a 30-second cooldown.",
@@ -212,6 +232,15 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   rogue: {
+    nov6: [
+      "Shank's tooltip shows its ranks, and the combo points from Boot Knife now display correctly.",
+    ],
+    nov4: [
+      "Improved Eviscerate is now Coup de Grace (also boosts Death Mark). Improved Sinister Strike is now Efficient Strikes.",
+      "Assassination: new Venom makes Shank boost your poisons for 6 seconds. Mutilate now needs Venom.",
+      "Assassination: Relentless Strikes is 5 ranks, up to 20% per combo point to get 25 energy back.",
+      "Subtlety: new Quick Getaway (Sap hits one more target) and Boot Knife (Shank can add 2 combo points).",
+    ],
     nov2: [
       "New Shank (level 24): 5 energy, 10-second cooldown, an off-hand stab that gives back 15 energy.",
       "New Poised (level 18): your next energy ability costs 10 less.",
@@ -293,6 +322,14 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   shaman: {
+    nov10: [
+      "Enhancement: Strength is the best stat again. Collect Strength and Attack Power gear.",
+    ],
+    nov4: [
+      "Totemic Call replaces Totemic Projection: it pulls your totems to where you stand, 30 second cooldown.",
+      "Restoration: Riptide no longer heals up front. It is a 15 second HoT on a 12 second cooldown.",
+      "Chain Lightning has a 2.5 second cast. Lightning Bolt and Earth Shock hit harder.",
+    ],
     nov2: [
       "Lava Burst is removed. Call of Thunder (+5% Lightning crit) is back in its row, and Elemental Mastery is now Lightning Mastery.",
       "Improved Ghost Wolf moved to row 4.",
@@ -346,6 +383,10 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   mage: {
+    nov6: [
+      "Arcane Blast's buff lasts 18 seconds as intended.",
+      "The Research spell no longer flickers after a relog. You get Study after the quest.",
+    ],
     nov2: [
       "Frost Blast is removed.",
       "Arcane: Missile Barrage is used up when Arcane Missiles starts. Clearcasting isn't spent while Missile Barrage is active.",
@@ -410,6 +451,19 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   warlock: {
+    nov10: [
+      "Voidwalker gets tank stats closer to Classic Era. Blizzard gave no numbers.",
+      "Affliction: Corruption, Siphon Life and Bane of Agony are retuned so they are worth casting next to Wrack. Total damage stays the same.",
+    ],
+    nov6: [
+      "Voidwalker has about 40 more health at every level.",
+      "Soul Siphon no longer makes Wrack boost its own damage.",
+      "Orc Command no longer over-boosts some pet abilities.",
+    ],
+    nov4: [
+      "Wrack deals 86 damage per tick (was 36).",
+      "Destruction: Shadow and Flame is 4 to 20% (was 2 to 10%).",
+    ],
     nov2: [
       "Training costs are lower to make up for Grimoires.",
     ],
@@ -453,6 +507,14 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   druid: {
+    nov6: [
+      "Restoration: Bloom now heals its target.",
+      "Shadowmelded Night Elf Druids no longer get Ravage and Pounce.",
+      "Bear Form, Ravage and Swiftmend tooltips fixed. Their real effects did not change.",
+    ],
+    nov4: [
+      "Feral: Rend and Tear is 3 to 15% (was 2 to 10%).",
+    ],
     nov2: [
       "Shred does 200% weapon damage, Claw 140%, Ravage 435%.",
       "Rip, Rake, Ferocious Bite and Pounce do about 25% more damage.",

@@ -302,7 +302,7 @@ const DATA: Record<ClassId, Row[]> = {
     ["Lesser Healing Wave", "spell_nature_healingwavelesser", "1.5 sec cast · 40 yd", "Fast heal."],
     ["Call of the Elements", "spell_shaman_dropall_01", "3 sec cast · Forever", "New in Forever, trained at 20. Drops up to four totems from your totem bar at once."],
     ["Totemic Recall", "spell_shaman_totemrecall", "Instant · Forever", "New in Forever. Destroys your totems and returns 25% of their mana."],
-    ["Totemic Projection", "ability_shaman_totemrelocation", "Instant · 1 min cooldown · 30 yd · Forever", "New in Forever, trained at 22. Moves your active totems to a spot you pick."],
+    ["Totemic Call", "ability_shaman_totemrelocation", "Instant · 30 sec cooldown · 30 yd · Forever", "New in Forever, trained at 22. Moves your active totems to where you stand (replaced Totemic Projection on Nov 3)."],
     ["Water Breathing", "spell_shadow_demonbreath", "Instant · 30 yd", "The target can breathe underwater for 10 min."],
     ["Cure Disease", "spell_nature_removedisease", "Instant · 30 yd", "Removes a disease."],
     ["Poison Cleansing Totem", "spell_nature_poisoncleansingtotem", "Instant · Water totem", "Removes a poison from nearby party members every few seconds."],
@@ -332,7 +332,7 @@ const DATA: Record<ClassId, Row[]> = {
     ["Water Shield", "ability_shaman_watershield", "Instant · Talent", "Talent (Restoration, 10 points). New in Forever. Three water globes that restore mana when you are hit."],
     ["Mana Tide Totem", "spell_frost_summonwaterelemental", "Instant · 5 min cooldown · Water totem · Talent", "Talent (Restoration, 15 points), then more ranks from the trainer. Restores mana to your group every 3 sec for 12 sec."],
     ["Nature's Swiftness", "spell_nature_ravenform", "Instant · 3 min cooldown · Talent", "Talent (Restoration, 20 points). Your next Nature spell is instant."],
-    ["Riptide", "spell_nature_riptide", "Instant · 6 sec cooldown · 40 yd · Talent", "Talent (Restoration, 30 points), then more ranks from the trainer. New in Forever. Instant heal plus a heal over 15 sec, and your Chain Heal is stronger on that target."],
+    ["Riptide", "spell_nature_riptide", "Instant · 12 sec cooldown · 40 yd · Talent", "Talent (Restoration, 30 points), then more ranks from the trainer. New in Forever. A heal over 15 sec (no upfront heal since Nov 3), and your Chain Heal is stronger on that target."],
   ],
   mage: [
     ["Fireball", "spell_fire_flamebolt", "3.5 sec cast · 35 yd", "Fire bolt with a small burn. Ranks 4–5 hit harder since Oct 8."],

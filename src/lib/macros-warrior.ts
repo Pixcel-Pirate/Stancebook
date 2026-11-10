@@ -236,7 +236,7 @@ export const WARRIOR_MACROS: MacroDraft[] = [
     id: "whirlwind",
     name: "Whirlwind (Berserker Stance)",
     summary: "Melee AoE. Berserker Stance only — the macro puts you there.",
-    how: "Whirlwind requires Berserker Stance (stance:3). Forever’s Raging Blows talent also swings the off-hand. Same two-press pattern as other stance macros if you started in Battle or Defensive.",
+    how: "Whirlwind requires Berserker Stance (stance:3). Forever’s Improved Whirlwind talent cuts its cooldown by up to 2 sec. Same two-press pattern as other stance macros if you started in Battle or Defensive.",
     when: "Three or more melee targets. Sweeping Strikes (Arms) into Whirlwind is the classic cleave opener.",
     category: "combat",
     specs: ["arms", "fury"],
@@ -246,7 +246,7 @@ export const WARRIOR_MACROS: MacroDraft[] = [
     lines: [
       { code: "#showtooltip Whirlwind", why: "Shows the Whirlwind cooldown, not the stance." },
       { code: "/cast [nostance:3] Berserker Stance", why: "Enter Berserker if you are not already there." },
-      { code: "/cast [stance:3] Whirlwind", why: "Only then attempt the AoE. Raging Blows adds the off-hand hit." },
+      { code: "/cast [stance:3] Whirlwind", why: "Only then attempt the AoE. Improved Whirlwind makes it come back faster." },
     ],
     caveats: [
       "Berserker Stance takes 10% more damage. Swap back to Battle or Defensive when the pack is under control.",
