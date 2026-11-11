@@ -52,7 +52,7 @@ jobs:
           # the desktop app's Update button downloads this and swaps it in place
           mkdir desktop && cp /tmp/neu/dist/Stancebook/resources.neu desktop/
           git init -qb gh-pages && git add -A
-          git -c user.name=github-actions -c user.email=actions@github.com commit -qm "Deploy $GITHUB_REF_NAME"
+          git -c user.name=Pixcel -c user.email=338333206+Pixcel-Pirate@users.noreply.github.com commit -qm "Deploy $GITHUB_REF_NAME"
           git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" gh-pages
 
       - name: Publish release
