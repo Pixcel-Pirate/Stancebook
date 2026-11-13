@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { SpellIcon } from "@/components/spell-icon";
 import { classMeta, type ClassId, type Spec } from "@/lib/macros";
+import { PROFESSIONS } from "@/lib/professions";
 import { LEVELING_TIP, PROF_META, PROF_PICKS, type ProfId, type ProfPick } from "@/lib/profession-picks";
 
 /** Recommended profession pairs for each spec of the picked class, each linking to its 1-300 guide below. */
@@ -46,6 +47,14 @@ function PickCard({ label, pick }: { label: string; pick: ProfPick }) {
 
 function ProfLink({ id }: { id: ProfId }) {
   const m = PROF_META[id];
+  const body = (
+    <>
+      <SpellIcon ability={{ name: m.label, icon: m.icon, meta: "", desc: "" }} size={32} />
+      {m.label}
+    </>
+  );
+  const pill = "flex min-h-11 items-center gap-2 rounded-md bg-inset py-1 pr-3 pl-1 font-semibold";
+  if (!PROFESSIONS.some((g) => g.id === id)) return <span className={`${pill} text-fg-soft`}>{body}</span>;
   return (
     <a
       href={`#prof-${id}`}
@@ -53,10 +62,9 @@ function ProfLink({ id }: { id: ProfId }) {
         e.preventDefault();
         document.getElementById(`prof-${id}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
       }}
-      className="flex min-h-11 items-center gap-2 rounded-md bg-inset py-1 pr-3 pl-1 font-semibold text-glow-hi hover:text-fg"
+      className={`${pill} text-glow-hi hover:text-fg`}
     >
-      <SpellIcon ability={{ name: m.label, icon: m.icon, meta: "", desc: "" }} size={32} />
-      {m.label}
+      {body}
     </a>
   );
 }

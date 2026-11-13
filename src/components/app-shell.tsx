@@ -10,6 +10,7 @@ import { RacesView } from "@/components/races-view";
 import { ArmoryView } from "@/components/armory-view";
 import { KeybindsView } from "@/components/keybinds-view";
 import { ProfessionsView } from "@/components/professions-view";
+import { ProfessionPicks } from "@/components/profession-picks";
 import { UpdateButton } from "@/components/update-button";
 import { ActionBar, dragMacro } from "@/components/action-bar";
 import { AbilityTip, CLASS_ICON, ClassIcon, primaryAbility, SpellIcon } from "@/components/spell-icon";
@@ -570,7 +571,10 @@ export function AppShell() {
                   ) : tab === "armory" ? (
                     <ArmoryView classId={classId} />
                   ) : tab === "progression" ? (
-                    <ProfessionsView />
+                    <>
+                      <ProfessionPicks classId={classId} spec={spec} />
+                      <ProfessionsView />
+                    </>
                   ) : tab === "guide" ? (
                     <HowItWorks classId={classId} />
                   ) : tab === "patches" ? (

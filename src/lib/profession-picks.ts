@@ -1,9 +1,8 @@
 import type { ClassId, Spec } from "./macros";
+import type { ProfessionId } from "./professions";
 
-// Ids match the Progression tab guides (section DOM id prof-<id>).
-export type ProfId =
-  | "alchemy" | "blacksmithing" | "enchanting" | "engineering" | "leatherworking" | "tailoring"
-  | "herbalism" | "mining" | "skinning";
+// The nine primary professions; Progression tab guides render at #prof-<id>.
+export type ProfId = Exclude<ProfessionId, "cooking" | "first-aid" | "fishing">;
 
 export type ProfPick = { pair: [ProfId, ProfId]; why: string };
 export type SpecPicks = { best: ProfPick; alt: ProfPick };
@@ -80,7 +79,7 @@ export const PROF_PICKS: Record<ClassId, Partial<Record<Spec, SpecPicks>>> = {
 export const LEVELING_TIP =
   "While leveling, many players take two gathering professions (Herbalism, Mining or Skinning) to pay for training and a mount, then swap one for a crafting profession near 60. Take First Aid, Cooking and Fishing on every character: they don't use a profession slot.";
 
-// ponytail: own label/icon map; swap to the Progression registry if it exports icons.
+// Own map because PROFESSIONS only lists guides that are written so far.
 export const PROF_META: Record<ProfId, { label: string; icon: string; gather?: true }> = {
   alchemy: { label: "Alchemy", icon: "trade_alchemy" },
   blacksmithing: { label: "Blacksmithing", icon: "trade_blacksmithing" },
