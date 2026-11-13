@@ -1,8 +1,36 @@
+<div align="center">
+
+<img src="public/icon-192.png" alt="" width="96" height="96">
+
 # Stancebook
 
-**A macro spellbook for World of Warcraft: Forever.** Stancebook collects ready-to-use macros for all nine classes in one place, with notes from the latest patches. It's styled like an in-game spellbook. Pick your class and find the macro you need. Read what each line does, then copy it straight into `/macro`.
+**A macro spellbook for World of Warcraft: Forever.**
+
+Macros for all nine classes, explained line by line, ready to copy into <code>/macro</code>.
+
+<a href="https://github.com/Pixcel-Pirate/Stancebook/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/Pixcel-Pirate/Stancebook?label=release&color=c9a227"></a>
+<a href="https://github.com/Pixcel-Pirate/Stancebook/releases"><img alt="Downloads" src="https://img.shields.io/github/downloads/Pixcel-Pirate/Stancebook/total?color=2ea043"></a>
+<a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-yellow"></a>
+<img alt="Windows" src="https://img.shields.io/badge/Windows-0078D4?logo=windows&logoColor=white">
+<img alt="React" src="https://img.shields.io/badge/React-20232A?logo=react&logoColor=white">
+<img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white">
+<img alt="Vite" src="https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white">
+<img alt="PWA" src="https://img.shields.io/badge/PWA-5A0FC8?logo=pwa&logoColor=white">
+<a href="https://github.com/Pixcel-Pirate/Stancebook/commits/main"><img alt="Last commit" src="https://img.shields.io/github/last-commit/Pixcel-Pirate/Stancebook"></a>
+
+<br><br>
 
 **[⬇ Download for Windows](https://github.com/Pixcel-Pirate/Stancebook/releases/latest/download/Stancebook-Setup.exe)** · **[Open the web app](https://pixcel-pirate.github.io/stancebook/)** · **[All releases](https://github.com/Pixcel-Pirate/Stancebook/releases)**
+
+<a href="https://buymeacoffee.com/saucie83g"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me a Coffee" height="48"></a>
+
+[What's inside](#whats-inside) · [Always up to date](#always-up-to-date) · [Install](#install) · [Privacy](#privacy) · [Build from source](#build-from-source) · [License](#license)
+
+</div>
+
+---
+
+Stancebook collects ready-to-use macros for all nine classes in one place, with notes from the latest patches. It's styled like an in-game spellbook. Pick your class and find the macro you need. Read what each line does, then copy it straight into `/macro`.
 
 ## What's inside
 
@@ -36,6 +64,10 @@ Stancebook has no accounts, no tracking and no ads. Your favorites, action bar a
     npm run build    # production build in dist/
 
 Macros live in `src/lib/macros-*.ts`, guides and patch notes in `src/lib/guide.ts`, ability tooltips in `src/lib/abilities.ts`, and talent trees in `src/data/talents/`. Releases are built by `.github/workflows/release.yml`.
+
+## License
+
+[MIT](LICENSE) © 2026 Pixcel. If Stancebook saves you time, you can [buy me a coffee](https://buymeacoffee.com/saucie83g).
 
 ---
 
