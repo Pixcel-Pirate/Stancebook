@@ -1,0 +1,48 @@
+Head|1|Defender's Leather Helm|252455|inv_helmet_33|Crafted Leatherworking|N
+Head|2|Enduring Cap|3020|-|World drop (0.003%)|-
+Head|3|Dokebi Hat|14584|-|Drops from Kovork (0.33%)|-
+Neck|1|Kaleidoscope Chain|13084|-|World drop (0.003%)|-
+Neck|2|Scorn's Icy Choker|23169|-|Drops from Scorn (33.3%) in Scarlet Monastery|-
+Neck|3|Scout's Medallion|19537|-|Vendor Kelm Hargunth — Warsong Supply Officer|-
+Shoulders|1|Forest Tracker Epaulets|2278|-|World drop (0.003%)|-
+Shoulders|2|Barbaric Shoulders|5964|-|Crafted Leatherworking|C
+Shoulders|3|Mantle of Thieves|2264|-|Drops from Trash mobs (0.03%) in Razorfen Kraul|-
+Back|1|Sergeant Major's Cape|16315|-|Unknown source|-
+Back|2|Furs of the Earthen Ring|271719|inv_misc_cape_04|Unknown source|N
+Back|3|Crocolisk Skin Gaiter|271720|inv_misc_monsterscales_02|Unknown source|N
+Chest|1|Spirewind Fetter|9406|-|Drops from Trash mobs (0.01%) in Uldaman|X
+Chest|2|Totemic Leather Tunic|252451|inv_chest_leather_02|Crafted Leatherworking|N
+Chest|3|Brawler's Leather Tunic|252508|inv_chest_leather_02|Crafted Leatherworking|N
+Wrists|1|Barbaric Bracers|18948|-|Crafted Leatherworking|C
+Wrists|2|Hawkeye's Bracers|14590|-|Drops from Kovork (0.33%)|-
+Wrists|3|Bands of Serra'kis|6902|-|Drops from Old Serra'kis (30%) in Blackfathom Deeps|-
+Hands|1|Wolfclaw Gloves|1978|-|Drops from Trash mobs (0.03%) in Razorfen Kraul|-
+Hands|2|Toughened Leather Gloves|4253|-|Crafted Leatherworking|C
+Hands|3|Insignia Gloves|6408|-|World drop (0.007%)|-
+Waist|1|Prowler's Leather Belt|252459|inv_belt_43|Crafted Leatherworking|N
+Waist|2|Skirmisher's Leather Belt|252461|inv_belt_37a|Crafted Leatherworking|N
+Waist|3|Skulker's Leather Belt|252520|inv_belt_37b|Crafted Leatherworking|N
+Legs|1|Totemic Leather Leggings|252458|inv_pants_01|Crafted Leatherworking|N
+Legs|2|Trapper's Leather Pants|252501|inv_pants_14|Crafted Leatherworking|N
+Legs|3|Brawler's Leather Legguards|252516|inv_pants_leather_19|Crafted Leatherworking|N
+Feet|1|Highlander's Lizardhide Boots|20102|-|Vendor Samuel Hawke — League of Arathor Supply Officer|-
+Feet|2|Defiler's Lizardhide Boots|20169|-|Vendor Rutherford Twing — Defilers Supply Officer|-
+Feet|3|Brawler's Leather Boots|252439|inv_boots_09|Crafted Leatherworking|N
+Ring 1|1|Legionnaire's Band|19513|-|Vendor Kelm Hargunth — Warsong Supply Officer|-
+Ring 1|2|Protector's Band|19517|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Ring 1|3|Ironspine's Eye|7686|-|Drops from Ironspine (33.3%) in Scarlet Monastery|X
+Ring 2|1|Protector's Band|19517|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Ring 2|2|Ironspine's Eye|7686|-|Drops from Ironspine (33.3%) in Scarlet Monastery|X
+Ring 2|3|Seal of Wrynn|2933|-|Quest An Audience with the King (level 31, Alliance) in Stormwind City|-
+Trinket 1|1|Talisman of Arathor|21119|-|Vendor Samuel Hawke — League of Arathor Supply Officer|C
+Trinket 1|2|Defiler's Talisman|21120|-|Vendor Rutherford Twing — Defilers Supply Officer|C
+Trinket 1|3|Rune of Perfection|21566|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|C
+Trinket 2|1|Defiler's Talisman|21120|-|Vendor Rutherford Twing — Defilers Supply Officer|C
+Trinket 2|2|Rune of Perfection|21566|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|C
+Trinket 2|3|Rune of Duty|21568|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|C
+Main hand|1|Viscous Hammer|13045|-|World drop (0.003%)|-
+Main hand|2|Corpsemaker|6687|-|Drops from Overlord Ramtusk (40%) in Razorfen Kraul|-
+Main hand|3|Heavehammer|271766|inv_hammer_09|Unknown source|N
+Off hand|1|Slayer's Shield|15892|-|World drop (0.008%)|-
+Off hand|2|Shield of Thorsen|13079|-|World drop (0.003%)|-
+Off hand|3|Redbeard Crest|12997|-|World drop (0.003%)|-

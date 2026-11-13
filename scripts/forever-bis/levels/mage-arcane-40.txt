@@ -1,0 +1,51 @@
+Head|1|Spellpower Goggles Xtreme|10502|-|Crafted Engineering|-
+Head|2|Augural Shroud|2620|-|Drops from Nether Sorceress (1.3%)|X
+Head|3|Living Cowl|5608|-|Drops from Tangled Horror (2%)|-
+Neck|1|Scorn's Icy Choker|23169|-|Drops from Scorn (33.3%) in Scarlet Monastery|-
+Neck|2|Necklace of Calisea|1714|-|Chest Witch Doctor's Chest (0.1%) in Zul'Farrak|-
+Neck|3|Seal of the Expedition|271919|inv_jewelry_necklace_08|Unknown source|N
+Shoulders|1|Green Silken Shoulders|7057|-|Crafted Tailoring|C
+Shoulders|2|Inquisitor's Shawl|19507|-|Drops from High Inquisitor Fairbanks (33.3%) in Scarlet Monastery|X
+Shoulders|3|Death Speaker Mantle|6685|-|Drops from Death Speaker Jargba (40%) in Razorfen Kraul|-
+Back|1|Mantle of Lady Falther'ess|23178|-|Drops from Lady Falther'ess (50%) in Razorfen Downs|X
+Back|2|Brilliant Cloak|277206|inv_misc_cape_16|Unknown source|N
+Back|3|Battle Healer's Cloak|19528|-|Vendor Kelm Hargunth — Warsong Supply Officer|C
+Chest|1|Robe of the Magi|1716|-|World drop (0.003%)|-
+Chest|2|Dreamweave Vest|10021|-|Crafted Tailoring|-
+Chest|3|Elemental Raiment|9434|-|World drop (0.003%)|-
+Wrists|1|Dryad's Wrist Bindings|19597|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Wrists|2|Arcane Runed Bracers|4744|-|Quest Wanted! Marez Cowl (level 39, Alliance) in Arathi Highlands|C
+Wrists|3|Condor Bracers|15864|-|Quest Ghost-o-plasm Round Up (level 39) in Desolace|C
+Hands|1|Dreamweave Gloves|10019|-|Crafted Tailoring|-
+Hands|2|Golden Handwraps|254029|inv_gauntlets_23|Crafted Tailoring|N
+Hands|3|Black Mageweave Gloves|10003|-|Crafted Tailoring|-
+Waist|1|Golden Cord|254045|inv_belt_34|Crafted Tailoring|N
+Waist|2|Highlander's Cloth Girdle|20098|-|Vendor Samuel Hawke — League of Arathor Supply Officer|-
+Waist|3|Defiler's Cloth Girdle|20166|-|Vendor Rutherford Twing — Defilers Supply Officer|-
+Legs|1|Red Mageweave Pants|10009|-|Crafted Tailoring|-
+Legs|2|Pearly Leggings|253995|inv_pants_10|Crafted Tailoring|N
+Legs|3|Beggar's Leggings|270090|inv_pants_13|Unknown source|N
+Feet|1|Earthen Silk Slippers|254013|inv_boots_cloth_22|Crafted Tailoring|N
+Feet|2|Golden Slippers|254009|inv_boots_cloth_06|Crafted Tailoring|N
+Feet|3|Southsea Mojo Boots|20641|-|Quest Southsea Shakedown (level 45) in Tanaris|-
+Ring 1|1|Advisor's Ring|19520|-|Vendor Kelm Hargunth — Warsong Supply Officer|-
+Ring 1|2|Lorekeeper's Ring|19524|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Ring 1|3|Bloodmaster's Ring|275043|inv_jewelry_ring_25|Unknown source|N
+Ring 2|1|Lorekeeper's Ring|19524|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Ring 2|2|Bloodmaster's Ring|275043|inv_jewelry_ring_25|Unknown source|N
+Ring 2|3|Philanthropist's Ring|281635|inv_jewelry_ring_14|Unknown source|N
+Trinket 1|1|Enriched Seal|271905|inv_misc_rune_06|Unknown source|N
+Trinket 1|2|Darkspear Voodoo Seal|272059|inv_misc_rune_06|Unknown source|N
+Trinket 1|3|Defiler's Talisman|21116|-|Vendor Rutherford Twing — Defilers Supply Officer|C
+Trinket 2|1|Darkspear Voodoo Seal|272059|inv_misc_rune_06|Unknown source|N
+Trinket 2|2|Defiler's Talisman|21116|-|Vendor Rutherford Twing — Defilers Supply Officer|C
+Trinket 2|3|Talisman of Arathor|21118|-|Vendor Samuel Hawke — League of Arathor Supply Officer|C
+Main hand|1|Staff of Jordan|873|-|World drop (0.001%)|-
+Main hand|2|Hypnotic Blade|7714|-|Drops from Arcanist Doan (25%) in Scarlet Monastery|X
+Main hand|3|Scorn's Focal Dagger|23168|-|Drops from Scorn (33.3%) in Scarlet Monastery|X
+Off hand|1|Celestial Orb|7515|-|Quest Celestial Power (level 40)|-
+Off hand|2|Orb of the Forgotten Seer|7685|-|Drops from Bloodmage Thalnos (50%) in Scarlet Monastery|X
+Off hand|3|Omega Orb|7749|-|Quest Compendium of the Fallen (level 38, Horde) in Scarlet Monastery|X
+Ranged|1|Nether Force Wand|11263|-|Quest Mage's Wand (level 40)|-
+Ranged|2|Jaina's Firestarter|13064|-|World drop (0.003%)|-
+Ranged|3|Icefury Wand|7514|-|Quest Mage's Wand (level 40)|-

@@ -85,7 +85,11 @@ const ofaPiece = new Map([...ofa.values()].flatMap((s) => s.pieces.map((p) => [p
 const iconByName = new Map<string, string>();
 for (const i of db.items) if (i.icon && !iconByName.has(i.name)) iconByName.set(i.name, i.icon);
 // Forever-new pieces none of the above cover, with the icon The Forever Era shows (theforeverera.com/en/items/<id>/).
-const EXTRA_ICONS: Record<number, string> = { 250591: "inv_pants_plate_04" };
+// Classic icons (wow-classic-items) for BIS picks the other sources lack; 10049 is from The Forever Era page.
+const EXTRA_ICONS: Record<number, string> = {
+  250591: "inv_pants_plate_04", 10049: "inv_weapon_shortblade_02", 23072: "inv_gauntlets_22", 2316: "inv_misc_cape_10", 3480: "inv_shoulder_05",
+  3719: "inv_misc_cape_07", 4314: "inv_shoulder_06", 4315: "inv_shoulder_09", 6189: "inv_shoulder_05",
+};
 const iconOf = (id: number, name: string) => EXTRA_ICONS[id] || known.get(id)?.icon || csfIcon.get(id) || ofaPiece.get(id)?.i || iconByName.get(name) || "";
 
 // Inventory type -> slot, and the order pieces are listed in.

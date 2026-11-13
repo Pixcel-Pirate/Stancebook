@@ -48,4 +48,4 @@ Off hand|3|Legionnaire's Sword|19553|-|Vendor Kelm Hargunth — Warsong Supply O
 Off hand|4|Protector's Sword|19557|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
 Ranged|1|Booty Bay Bruiser's Buckshot|274748|inv_weapon_rifle_02|Unknown source|N
 Ranged|2|Moonsight Rifle|4383|-|Crafted Engineering|-
-Ranged|3|Double-barreled Shotgun|2098|-|Seen on the server (70862, Nov 8, 2026)|-
+Ranged|3|Double-barreled Shotgun|2098|-|World drop (0.003%)|-

@@ -1,0 +1,48 @@
+Head|1|Hawkeye's Helm|14591|-|Drops from Ironeye the Invincible (0.21%)|-
+Head|2|Warden's Wizard Hat|14604|-|Drops from Mosh'Ogg Butcher (0.28%)|-
+Head|3|Nightscape Headband|8176|-|Crafted Leatherworking|-
+Neck|1|Corrupted Riverglades Pendant|281657|inv_jewelry_necklace_11|Unknown source|N
+Neck|2|Scout's Medallion|19536|-|Vendor Kelm Hargunth — Warsong Supply Officer|-
+Neck|3|Sentinel's Medallion|19540|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Shoulders|1|Flintrock Shoulders|7755|-|Drops from Trash mobs (0.01%) in Scarlet Monastery|X
+Shoulders|2|Sunburn Spaulders|274751|inv_shoulder_08|Unknown source|N
+Shoulders|3|Forest Tracker Epaulets|2278|-|World drop (0.003%)|-
+Back|1|Sergeant Major's Cape|16336|-|Unknown source|-
+Back|2|Dark Hooded Cape|5257|-|Drops from Nimar the Slayer (10%)|X
+Back|3|Corpsefeeder's Shedding|271810|inv_misc_cape_11|Unknown source|N
+Chest|1|Quillward Harness|10583|-|Drops from Trash mobs (0.02%) in Razorfen Downs|X
+Chest|2|Grimtotem Naturalist's Tunic|277221|inv_chest_leather_06|Unknown source|N
+Chest|3|Wolffear Harness|13110|-|World drop (0.003%)|-
+Wrists|1|Forest Stalker's Bracers|19590|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Wrists|2|Overgrown Cuffs|272186|inv_bracer_02|Unknown source|N
+Wrists|3|Arathi Armbands|270080|inv_bracer_09|Unknown source|N
+Hands|1|Skulker's Leather Gloves|252525|inv_gauntlets_22|Crafted Leatherworking|N
+Hands|2|Prowler's Leather Gloves|252524|inv_gauntlets_18|Crafted Leatherworking|N
+Hands|3|Pratt's Handcrafted Gloves|9631|-|Quest The Mark of Quality (level 46, Alliance) in Feralas|-
+Waist|1|Ogron's Sash|13117|-|World drop (0.003%)|-
+Waist|2|Highlander's Leather Girdle|20116|-|Vendor Samuel Hawke — League of Arathor Supply Officer|-
+Waist|3|Defiler's Leather Girdle|20192|-|Vendor Rutherford Twing — Defilers Supply Officer|-
+Legs|1|Basilisk Hide Pants|1718|-|World drop (0.003%)|-
+Legs|2|Triprunner Dungarees|9624|-|Quest Rig Wars (level 35, Horde) in Gnomeregan|X
+Legs|3|Stromgarde Operative Pants|270057|inv_pants_07|Unknown source|N
+Feet|1|Skulker's Leather Shoes|252531|inv_boots_05|Crafted Leatherworking|N
+Feet|2|Prowler's Leather Shoes|252465|inv_boots_cloth_19|Crafted Leatherworking|N
+Feet|3|Warden's Leather Shoes|252466|inv_boots_cloth_20|Crafted Leatherworking|N
+Ring 1|1|Legionnaire's Band|19512|-|Vendor Kelm Hargunth — Warsong Supply Officer|-
+Ring 1|2|Protector's Band|19515|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Ring 1|3|Bloodsport Band|275044|inv_jewelry_ring_04|Unknown source|N
+Ring 2|1|Protector's Band|19515|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Ring 2|2|Bloodsport Band|275044|inv_jewelry_ring_04|Unknown source|N
+Ring 2|3|Ring of the Underwood|2951|-|World drop (0.003%)|-
+Trinket 1|1|Defiler's Talisman|21116|-|Vendor Rutherford Twing — Defilers Supply Officer|C
+Trinket 1|2|Talisman of Arathor|21118|-|Vendor Samuel Hawke — League of Arathor Supply Officer|C
+Trinket 1|3|Rune of Perfection|21565|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|C
+Trinket 2|1|Talisman of Arathor|21118|-|Vendor Samuel Hawke — League of Arathor Supply Officer|C
+Trinket 2|2|Rune of Perfection|21565|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|C
+Trinket 2|3|Rune of Duty|21567|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|C
+Main hand|1|Staff of Jordan|873|-|World drop (0.001%)|-
+Main hand|2|Mithril Warhammer|250608|inv_hammer_03|Crafted Blacksmithing|N
+Main hand|3|Viscous Hammer|13045|-|World drop (0.003%)|-
+Off hand|1|Stonecloth Branch|15963|-|Drops from Kovork (0.33%)|-
+Off hand|2|Fermented Restoration Potion|277259|inv_potion_19|Unknown source|N
+Off hand|3|Researcher's Night Light|277260|inv_torch_lit|Unknown source|N

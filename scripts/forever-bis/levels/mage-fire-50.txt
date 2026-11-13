@@ -1,0 +1,51 @@
+Head|1|Eye of Flame|3075|-|World drop (0.001%)|X
+Head|2|Spellpower Goggles Xtreme Plus|15999|-|Crafted Engineering|-
+Head|3|Red Mageweave Headband|10033|-|Crafted Tailoring|C
+Neck|1|Arcane Crystal Pendant|20037|-|Quest Destroy Morphaz (level 52)|X
+Neck|2|Scorn's Icy Choker|23169|-|Drops from Scorn (33.3%) in Scarlet Monastery|-
+Neck|3|Feardred's Cleansed Amulet|259892|inv_jewelry_amulet_07|Unknown source|N
+Shoulders|1|Netherflame Shoulders|254053|inv_shoulder_23|Crafted Tailoring|N
+Shoulders|2|Kentic Amice|11624|-|Drops from High Interrogator Gerstahn (25%) in Blackrock Depths|X
+Shoulders|3|Flameseer Mantle|11310|-|Drops from Galgann Firehammer (20%) in Uldaman|X
+Back|1|Spritecaster Cape|11623|-|Drops from Houndmaster Grebmar (35%) in Blackrock Depths|X
+Back|2|Deep Woodlands Cloak|19121|-|Quest Wanted: Vile Priestess Hexx and Her Minions (level 51, Horde) in The Hinterlands|-
+Back|3|Cindercloth Cloak|14044|-|Crafted Tailoring|-
+Chest|1|Robes of Servitude|20530|-|Quest Trolls of a Feather (level 52)|X
+Chest|2|Cindercloth Robe|10042|-|Crafted Tailoring|-
+Chest|3|Robe of the Magi|1716|-|World drop (0.003%)|-
+Wrists|1|Dryad's Wrist Bindings|19596|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Wrists|2|Netherflame Cuffs|254065|inv_bracer_23a|Crafted Tailoring|N
+Wrists|3|Nethergeld Cuffs|254061|inv_bracer_23b|Crafted Tailoring|N
+Hands|1|Sorcerer's Gloves|22066|-|Quest Just Compensation (level 60, Alliance) in Ironforge|-
+Hands|2|Fiery Gloves|254099|inv_gauntlets_19|Crafted Tailoring|N
+Hands|3|Dreamweave Gloves|10019|-|Crafted Tailoring|-
+Waist|1|Ban'thok Sash|11662|-|Drops from Ok'thor the Breaker (35%) in Blackrock Depths|X
+Waist|2|Fiery Waistcord|254085|inv_belt_37a|Crafted Tailoring|N
+Waist|3|Highlander's Cloth Girdle|20097|-|Vendor Samuel Hawke — League of Arathor Supply Officer|-
+Legs|1|Spellshock Leggings|9484|-|Drops from Trash mobs (0.02%) in Zul'Farrak|X
+Legs|2|Cindercloth Leggings|12256|-|Vendor Thralosh — Cloth & Leather Armor Merchant|-
+Legs|3|Wizardweave Leggings|14132|-|Crafted Tailoring|C
+Feet|1|Fiery Sandals|254111|inv_boots_05|Crafted Tailoring|N
+Feet|2|Earthen Silk Slippers|254013|inv_boots_cloth_22|Crafted Tailoring|N
+Feet|3|Cindercloth Boots|10044|-|Crafted Tailoring|-
+Ring 1|1|Advisor's Ring|19519|-|Vendor Kelm Hargunth — Warsong Supply Officer|-
+Ring 1|2|Lorekeeper's Ring|19523|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Ring 1|3|Blackstone Ring|17713|-|Drops from Princess Theradras (25%) in Maraudon|X
+Ring 2|1|Lorekeeper's Ring|19523|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Ring 2|2|Blackstone Ring|17713|-|Drops from Princess Theradras (25%) in Maraudon|X
+Ring 2|3|Cyclopean Band|11824|-|Drops from Ok'thor the Breaker (15%) in Blackrock Depths|X
+Trinket 1|1|Jewel of the Guard Captain|270225|inv_qiraj_jewelglyphed|Unknown source|N
+Trinket 1|2|Cleansed Vilebranch Icon|270276|inv_misc_coin_08|Unknown source|N
+Trinket 1|3|Enriched Seal|271903|inv_misc_rune_06|Unknown source|N
+Trinket 2|1|Cleansed Vilebranch Icon|270276|inv_misc_coin_08|Unknown source|N
+Trinket 2|2|Enriched Seal|271903|inv_misc_rune_06|Unknown source|N
+Trinket 2|3|Darkspear Voodoo Seal|272061|inv_misc_rune_06|Unknown source|N
+Main hand|1|Searing Golden Blade|12260|-|Crafted Blacksmithing|C
+Main hand|2|Moonshadow Stave|22458|-|Quest A Better Ingredient (level 52)|X
+Main hand|3|Hypnotic Blade|7714|-|Drops from Arcanist Doan (25%) in Scarlet Monastery|X
+Off hand|1|Shard of the Green Flame|18762|-|Quest Kroshius' Infernal Core (level 55)|-
+Off hand|2|Gryphon Rider's Crop|270112|inv_staff_13|Unknown source|N
+Off hand|3|Truesilver Conduit|249455|inv_rod_enchantedadamantite|Crafted Enchanting|N
+Ranged|1|Pyric Caduceus|11748|-|Drops from Pyromancer Loregrain (26.7%) in Blackrock Depths|X
+Ranged|2|Woestave|20082|-|Quest Blood of Morphaz (level 52)|X
+Ranged|3|Noxious Shooter|17745|-|Drops from Noxxion (20%) in Maraudon|X

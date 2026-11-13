@@ -1,0 +1,51 @@
+Head|1|Brawler's Leather Helm|252512|inv_helmet_15|Crafted Leatherworking|N
+Head|2|Brawler's Leather Hood|252504|inv_helmet_31|Crafted Leatherworking|N
+Head|3|Tribal Worg Helm|6204|-|Drops from Fenros (25%)|-
+Neck|1|Scout's Medallion|19537|-|Vendor Kelm Hargunth — Warsong Supply Officer|-
+Neck|2|Sentinel's Medallion|19541|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Neck|3|Kaleidoscope Chain|13084|-|World drop (0.003%)|-
+Shoulders|1|Forest Tracker Epaulets|2278|-|World drop (0.003%)|-
+Shoulders|2|Mantle of Thieves|2264|-|Drops from Trash mobs (0.03%) in Razorfen Kraul|-
+Shoulders|3|Cloudy Gustwoven Spaulders|277043|inv_shoulder_leather_skybornec60_b_02|Crafted Leatherworking|N
+Back|1|Tigerstrike Mantle|13108|-|World drop (0.003%)|-
+Back|2|Hawkeye's Cloak|14593|-|Drops from Kovork (0.33%)|-
+Back|3|Sergeant Major's Cape|16315|-|Unknown source|-
+Chest|1|Dusky Leather Armor|7374|-|Crafted Leatherworking|-
+Chest|2|Tunic of Westfall|2041|-|Quest The Defias Brotherhood (level 22, Alliance) in The Deadmines|-
+Chest|3|Trapper's Leather Tunic|252509|inv_chest_leather_01|Crafted Leatherworking|N
+Wrists|1|Insignia Bracers|6410|-|World drop (0.008%)|-
+Wrists|2|Hawkeye's Bracers|14590|-|Drops from Kovork (0.33%)|-
+Wrists|3|Barbaric Bracers|18948|-|Crafted Leatherworking|C
+Hands|1|Ebon Vise|7690|-|Drops from Fallen Champion (33.3%) in Scarlet Monastery|X
+Hands|2|Wolfclaw Gloves|1978|-|Drops from Trash mobs (0.03%) in Razorfen Kraul|-
+Hands|3|Heavy Earthen Gloves|7359|-|Crafted Leatherworking|-
+Waist|1|Highlander's Chain Girdle|20090|-|Vendor Samuel Hawke — League of Arathor Supply Officer|-
+Waist|2|Defiler's Chain Girdle|20152|-|Vendor Rutherford Twing — Defilers Supply Officer|-
+Waist|3|Highlander's Leather Girdle|20117|-|Vendor Samuel Hawke — League of Arathor Supply Officer|-
+Legs|1|Petrolspill Leggings|9509|-|Drops from Trash mobs (0.03%) in Gnomeregan|-
+Legs|2|Troll's Bane Leggings|13114|-|World drop (0.003%)|-
+Legs|3|Trapper's Leather Legguards|252517|inv_pants_05|Crafted Leatherworking|N
+Feet|1|Highlander's Chain Greaves|20093|-|Vendor Samuel Hawke — League of Arathor Supply Officer|-
+Feet|2|Highlander's Mail Greaves|20123|-|Vendor Samuel Hawke — League of Arathor Supply Officer|-
+Feet|3|Defiler's Chain Greaves|20157|-|Vendor Rutherford Twing — Defilers Supply Officer|-
+Ring 1|1|Ironspine's Eye|7686|-|Drops from Ironspine (33.3%) in Scarlet Monastery|X
+Ring 1|2|Field Researcher's Loop|281634|inv_jewelry_ring_02|Unknown source|N
+Ring 1|3|Swamp Ring|270052|inv_jewelry_ring_08|Unknown source|N
+Ring 2|1|Field Researcher's Loop|281634|inv_jewelry_ring_02|Unknown source|N
+Ring 2|2|Swamp Ring|270052|inv_jewelry_ring_08|Unknown source|N
+Ring 2|3|Legionnaire's Band|19513|-|Vendor Kelm Hargunth — Warsong Supply Officer|-
+Trinket 1|1|Talisman of Arathor|21119|-|Vendor Samuel Hawke — League of Arathor Supply Officer|C
+Trinket 1|2|Defiler's Talisman|21120|-|Vendor Rutherford Twing — Defilers Supply Officer|C
+Trinket 1|3|Rune of Perfection|21566|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|C
+Trinket 2|1|Defiler's Talisman|21120|-|Vendor Rutherford Twing — Defilers Supply Officer|C
+Trinket 2|2|Rune of Perfection|21566|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|C
+Trinket 2|3|Rune of Duty|21568|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|C
+Main hand|1|Scout's Blade|19545|-|Vendor Kelm Hargunth — Warsong Supply Officer|-
+Main hand|2|Sentinel's Blade|19549|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Main hand|3|Subdued Dragon's Fang|281314|inv_weapon_shortblade_01|Unknown source|N
+Off hand|1|Sentinel's Blade|19549|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Off hand|2|Subdued Dragon's Fang|281314|inv_weapon_shortblade_01|Unknown source|N
+Off hand|3|Outlaw Sabre|16886|-|Quest Baron Aquanis (level 30, Horde) in Ashenvale|X
+Ranged|1|Booty Bay Bruiser's Buckshot|274748|inv_weapon_rifle_02|Unknown source|N
+Ranged|2|Glass Shooter|9456|-|Drops from Dark Iron Ambassador (33.3%) in Gnomeregan|X
+Ranged|3|Ironweaver|13137|-|World drop (0.003%)|-

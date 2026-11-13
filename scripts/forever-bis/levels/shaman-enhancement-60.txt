@@ -1,0 +1,48 @@
+Head|1|Stormcaller's Diadem|21372|-|Quest Stormcaller's Diadem (level 60, Horde) in Ahn'Qiraj|-
+Head|2|Black Dragonscale Helm|252605|inv_helmet_09|Crafted Leatherworking|N
+Head|3|Crown of Destruction|18817|-|Drops from Ragnaros (20%) in Molten Core|X
+Neck|1|Stormrage's Talisman of Seething|23053|-|Drops from Kel'Thuzad (16.7%) in Naxxramas|-
+Neck|2|Gem of Trapped Innocents|23057|-|Drops from Kel'Thuzad (20%) in Naxxramas|-
+Neck|3|Barbed Choker|21664|-|Drops from Fankriss the Unyielding (18%) in Ahn'Qiraj Temple|-
+Shoulders|1|Warlord's Mail Spaulders|16580|-|Vendor Lady Palanseer — Armor Quartermaster|-
+Shoulders|2|Highlander's Mail Pauldrons|20056|-|Vendor Samuel Hawke — League of Arathor Supply Officer|-
+Shoulders|3|Defiler's Mail Pauldrons|20203|-|Vendor Rutherford Twing — Defilers Supply Officer|-
+Back|1|Cloak of Concentrated Hatred|21701|-|Drops from The Prophet Skeram (18%) in Ahn'Qiraj Temple|X
+Back|2|Shroud of Dominion|23045|-|Drops from Sapphiron (20%) in Naxxramas|X
+Back|3|Puissant Cape|18541|-|Drops from Azuregos (19%)|X
+Chest|1|Stormcaller's Hauberk|21374|-|Quest Stormcaller's Hauberk (level 60, Horde) in Ahn'Qiraj|C
+Chest|2|Ghoul Skin Tunic|23226|-|Drops from Death Touched Warrior (2.1%) in Naxxramas|X
+Chest|3|Runed Bloodstained Hauberk|19904|-|Drops from High Priest Venoxis (16.7%) in Zul'Gurub|X
+Wrists|1|Qiraji Execution Bracers|21602|-|Drops from Emperor Vek'lor (16.7%) in Ahn'Qiraj Temple|-
+Wrists|2|Wristguards of True Flight|18812|-|Drops from Flamewaker Elite (0.46%) in Molten Core|X
+Wrists|3|Bracers of the Fallen Son|21594|-|Unknown source|-
+Hands|1|Vek'lor's Gloves of Devastation|21599|-|Drops from Emperor Vek'lor (16.7%) in Ahn'Qiraj Temple|X
+Hands|2|Gloves of Enforcement|21672|-|Drops from Battleguard Sartura (15%) in Ahn'Qiraj Temple|-
+Hands|3|General's Mail Gauntlets|16574|-|Vendor Lady Palanseer — Armor Quartermaster|-
+Waist|1|Belt of Never-ending Agony|21586|-|Drops from C'Thun (18.4%) in Ahn'Qiraj Temple|-
+Waist|2|Ossirian's Binding|21463|-|Drops from Ossirian the Unscarred (18%) in Ruins of Ahn'Qiraj|X
+Waist|3|Therazane's Link|19380|-|Drops from Nefarian (20%) in Blackwing Lair|X
+Legs|1|Scaled Sand Reaver Leggings|21651|-|Drops from Fankriss the Unyielding (18%) in Ahn'Qiraj Temple|X
+Legs|2|Leggings of Apocalypse|23071|-|Chest Four Horsemen Chest (16.7%) in Naxxramas|X
+Legs|3|Stormcaller's Leggings|21375|-|Quest Stormcaller's Leggings (level 60, Horde) in Ahn'Qiraj|-
+Feet|1|Boots of the Shadow Flame|19381|-|Drops from Nefarian (20%) in Blackwing Lair|X
+Feet|2|Boots of the Fallen Prophet|21705|-|Drops from The Prophet Skeram (15%) in Ahn'Qiraj Temple|X
+Feet|3|Wormhide Boots|21613|-|Unknown source|-
+Ring 1|1|Band of Unnatural Forces|23038|-|Drops from Loatheb (20%) in Naxxramas|-
+Ring 1|2|Band of Accuria|17063|-|Drops from Ragnaros (20%) in Molten Core|X
+Ring 1|3|Master Dragonslayer's Ring|19384|-|Quest The Lord of Blackrock (level 60, Alliance) in Stormwind City|-
+Ring 2|1|Band of Accuria|17063|-|Drops from Ragnaros (20%) in Molten Core|X
+Ring 2|2|Master Dragonslayer's Ring|19384|-|Quest The Lord of Blackrock (level 60, Alliance) in Stormwind City|-
+Ring 2|3|Don Julio's Band|19325|-|Vendor Gaelden Hammersmith — Stormpike Supply Officer in Alterac Valley|C
+Trinket 1|1|Drake Fang Talisman|19406|-|Drops from Ebonroc (18%) in Blackwing Lair|-
+Trinket 1|2|Neltharion's Tear|19379|-|Drops from Nefarian (20%) in Blackwing Lair|-
+Trinket 1|3|Slayer's Crest|23041|-|Drops from Sapphiron (20%) in Naxxramas|-
+Trinket 2|1|Neltharion's Tear|19379|-|Drops from Nefarian (20%) in Blackwing Lair|-
+Trinket 2|2|Slayer's Crest|23041|-|Drops from Sapphiron (20%) in Naxxramas|-
+Trinket 2|3|Rune of the Guard Captain|19120|-|Quest Job Opening: Guard Captain of Revantusk Village (level 51, Horde) in The Hinterlands|C
+Main hand|1|Might of Menethil|22798|-|Drops from Kel'Thuzad (16.7%) in Naxxramas|X
+Main hand|2|Dark Edge of Insanity|21134|-|Drops from C'Thun (8%) in Ahn'Qiraj Temple|-
+Main hand|3|Severance|22815|-|Drops from Patchwerk (20%) in Naxxramas|X
+Off hand|1|Evergreen Shield|279262|inv_shield_1h_raidhyjalc60_d_01|Crafted Blacksmithing|N
+Off hand|2|Wormscale Blocker|21610|-|Drops from Ouro (16.7%) in Ahn'Qiraj Temple|C
+Off hand|3|Red Dragonscale Protector|19348|-|Drops from Vaelastrasz the Corrupt (16.7%) in Blackwing Lair|X

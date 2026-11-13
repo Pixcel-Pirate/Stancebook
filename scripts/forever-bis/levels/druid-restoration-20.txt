@@ -1,0 +1,45 @@
+Head|1|Pristine Circlet|253949|inv_crown_01|Crafted Tailoring|N
+Head|2|Wisdom's Leather Hood|252507|inv_helmet_33|Crafted Leatherworking|N
+Head|3|Totemic Leather Hood|252448|inv_helmet_15|Crafted Leatherworking|N
+Neck|1|Scholarly Pendant|277203|inv_jewelry_necklace_11|Unknown source|N
+Neck|2|Roadwatcher's Confidence|281265|inv_jewelry_necklace_01|Unknown source|N
+Neck|3|Erudite's Amulet|277204|inv_jewelry_necklace_01|Unknown source|N
+Shoulders|1|Magician's Mantle|12998|-|World drop (0.003%)|-
+Shoulders|2|Slime-encrusted Pads|6461|-|Drops from Mutanus the Devourer (33.3%) in Wailing Caverns|-
+Shoulders|3|Reinforced Woolen Shoulders|4315|-|Crafted Tailoring|C
+Back|1|Battle Healer's Cloak|20427|-|Vendor Kelm Hargunth — Warsong Supply Officer|C
+Back|2|Caretaker's Cape|20428|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|C
+Back|3|Heavy Woolen Cloak|4311|-|Crafted Tailoring|C
+Chest|1|Wisdom's Leather Armor|252493|inv_chest_fur|Crafted Leatherworking|N
+Chest|2|Filigreed Pristine Gown|253901|inv_chest_cloth_32|Crafted Tailoring|N
+Chest|3|Corsair's Overshirt|5202|-|Drops from Edwin VanCleef (30%) in Deadmines|-
+Wrists|1|Mindthrust Bracers|1974|-|Drops from Trash mobs (0.02%) in Shadowfang Keep|-
+Wrists|2|Drakewing Bands|12999|-|World drop (0.003%)|-
+Wrists|3|Tabitha's Cuffs|251486|inv_bracer_10|Unknown source|N
+Hands|1|Pristine Gloves|253913|inv_gauntlets_16|Crafted Tailoring|N
+Hands|2|Wisdom's Leather Gloves|252499|inv_gauntlets_60|Crafted Leatherworking|N
+Hands|3|Stormrider's Leather Gloves|252498|inv_gauntlets_24|Crafted Leatherworking|N
+Waist|1|Pristine Sash|253925|inv_belt_43|Crafted Tailoring|N
+Waist|2|Wisdom's Leather Belt|252433|inv_belt_06|Crafted Leatherworking|N
+Waist|3|Novice Ardent's Sash|253887|inv_belt_43|Crafted Tailoring|N
+Legs|1|Wisdom's Leather Pants|252503|inv_pants_06|Crafted Leatherworking|N
+Legs|2|Filigreed Pristine Leggings|253937|inv_pants_01|Crafted Tailoring|N
+Legs|3|Stormrider's Leather Pants|252502|inv_pants_10|Crafted Leatherworking|N
+Feet|1|Wisdom's Leather Boots|252444|inv_boots_chain_03|Crafted Leatherworking|N
+Feet|2|Pristine Boots|253889|inv_boots_cloth_03|Crafted Tailoring|N
+Feet|3|Black Whelp Slippers|252424|inv_boots_leather_05red|Crafted Leatherworking|N
+Ring 1|1|Advisor's Ring|20426|-|Vendor Kelm Hargunth — Warsong Supply Officer|-
+Ring 1|2|Lorekeeper's Ring|20431|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Ring 1|3|Minor Channeling Ring|1449|-|Quest WANTED: Chok'sul (level 22, Alliance) in Loch Modan|C
+Ring 2|1|Lorekeeper's Ring|20431|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Ring 2|2|Minor Channeling Ring|1449|-|Quest WANTED: Chok'sul (level 22, Alliance) in Loch Modan|C
+Ring 2|3|Black Pearl Ring|6332|-|Drops from Lady Vespira (40%)|-
+Trinket 1|1|Rune of Perfection|21566|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|C
+Trinket 1|2|Rune of Duty|21568|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|C
+Trinket 2|1|Rune of Duty|21568|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|C
+Main hand|1|Advisor's Gnarled Staff|20425|-|Vendor Kelm Hargunth — Warsong Supply Officer|-
+Main hand|2|Lorekeeper's Staff|20434|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Main hand|3|Staff of Orgrimmar|15444|-|Quest Hidden Enemies (level 16, Horde) in Orgrimmar|-
+Off hand|1|Defective Samophlange|274743|inv_gizmo_06|Unknown source|N
+Off hand|2|Onu's Patience|281292|inv_jewelry_talisman_03|Unknown source|N
+Off hand|3|Expended Apothecary Vial|281294|inv_potion_12|Unknown source|N

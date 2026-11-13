@@ -1,0 +1,51 @@
+Head|1|Brawler's Leather Helm|252512|inv_helmet_15|Crafted Leatherworking|N
+Head|2|Brawler's Leather Hood|252504|inv_helmet_31|Crafted Leatherworking|N
+Head|3|Defender's Leather Helm|252455|inv_helmet_33|Crafted Leatherworking|N
+Neck|1|Scout's Medallion|19537|-|Vendor Kelm Hargunth — Warsong Supply Officer|-
+Neck|2|Sentinel's Medallion|19541|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Neck|3|Kaleidoscope Chain|13084|-|World drop (0.003%)|-
+Shoulders|1|Forest Tracker Epaulets|2278|-|World drop (0.003%)|-
+Shoulders|2|Mantle of Thieves|2264|-|Drops from Trash mobs (0.03%) in Razorfen Kraul|-
+Shoulders|3|Barbaric Shoulders|5964|-|Crafted Leatherworking|C
+Back|1|Tigerstrike Mantle|13108|-|World drop (0.003%)|-
+Back|2|Hawkeye's Cloak|14593|-|Drops from Kovork (0.33%)|-
+Back|3|Crocolisk Skin Gaiter|271720|inv_misc_monsterscales_02|Unknown source|N
+Chest|1|Dusky Leather Armor|7374|-|Crafted Leatherworking|-
+Chest|2|Brawler's Leather Tunic|252508|inv_chest_leather_02|Crafted Leatherworking|N
+Chest|3|Tunic of Westfall|2041|-|Quest The Defias Brotherhood (level 22, Alliance) in The Deadmines|-
+Wrists|1|Hawkeye's Bracers|14590|-|Drops from Kovork (0.33%)|-
+Wrists|2|Barbaric Bracers|18948|-|Crafted Leatherworking|C
+Wrists|3|Jurassic Wristguards|6198|-|Drops from Razormaw Matriarch (60%)|-
+Hands|1|Ebon Vise|7690|-|Drops from Fallen Champion (33.3%) in Scarlet Monastery|X
+Hands|2|Wolfclaw Gloves|1978|-|Drops from Trash mobs (0.03%) in Razorfen Kraul|-
+Hands|3|Toughened Leather Gloves|4253|-|Crafted Leatherworking|C
+Waist|1|Skulker's Leather Belt|252520|inv_belt_37b|Crafted Leatherworking|N
+Waist|2|Highlander's Chain Girdle|20090|-|Vendor Samuel Hawke — League of Arathor Supply Officer|-
+Waist|3|Defiler's Chain Girdle|20152|-|Vendor Rutherford Twing — Defilers Supply Officer|-
+Legs|1|Petrolspill Leggings|9509|-|Drops from Trash mobs (0.03%) in Gnomeregan|-
+Legs|2|Troll's Bane Leggings|13114|-|World drop (0.003%)|-
+Legs|3|Brawler's Leather Legguards|252516|inv_pants_leather_19|Crafted Leatherworking|N
+Feet|1|Highlander's Chain Greaves|20093|-|Vendor Samuel Hawke — League of Arathor Supply Officer|-
+Feet|2|Highlander's Mail Greaves|20123|-|Vendor Samuel Hawke — League of Arathor Supply Officer|-
+Feet|3|Defiler's Chain Greaves|20157|-|Vendor Rutherford Twing — Defilers Supply Officer|-
+Ring 1|1|Ironspine's Eye|7686|-|Drops from Ironspine (33.3%) in Scarlet Monastery|X
+Ring 1|2|Pyrewood Signet Ring|277210|inv_jewelry_ring_02|Unknown source|N
+Ring 1|3|Legionnaire's Band|19513|-|Vendor Kelm Hargunth — Warsong Supply Officer|-
+Ring 2|1|Pyrewood Signet Ring|277210|inv_jewelry_ring_02|Unknown source|N
+Ring 2|2|Legionnaire's Band|19513|-|Vendor Kelm Hargunth — Warsong Supply Officer|-
+Ring 2|3|Protector's Band|19517|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Trinket 1|1|Talisman of Arathor|21119|-|Vendor Samuel Hawke — League of Arathor Supply Officer|C
+Trinket 1|2|Defiler's Talisman|21120|-|Vendor Rutherford Twing — Defilers Supply Officer|C
+Trinket 1|3|Rune of Perfection|21566|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|C
+Trinket 2|1|Defiler's Talisman|21120|-|Vendor Rutherford Twing — Defilers Supply Officer|C
+Trinket 2|2|Rune of Perfection|21566|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|C
+Trinket 2|3|Rune of Duty|21568|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|C
+Main hand|1|Swinetusk Shank|6691|-|Drops from Agathelos the Raging (40%) in Razorfen Kraul|-
+Main hand|2|Scout's Blade|19545|-|Vendor Kelm Hargunth — Warsong Supply Officer|-
+Main hand|3|Sentinel's Blade|19549|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Off hand|1|Scout's Blade|19545|-|Vendor Kelm Hargunth — Warsong Supply Officer|-
+Off hand|2|Sentinel's Blade|19549|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Off hand|3|Bloody Brass Knuckles|7683|-|Drops from Interrogator Vishas (90%) in Scarlet Monastery|-
+Ranged|1|Booty Bay Bruiser's Buckshot|274748|inv_weapon_rifle_02|Unknown source|N
+Ranged|2|Double-barreled Shotgun|2098|-|World drop (0.003%)|-
+Ranged|3|Silver Star|3463|-|Quest Stealing Supplies (level 35) in Desolace|C

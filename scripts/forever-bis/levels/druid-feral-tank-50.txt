@@ -1,0 +1,48 @@
+Head|1|Embrace of the Lycan|9479|-|Drops from Chief Ukorz Sandscalp (20%) in Zul'Farrak|X
+Head|2|Pirate's Eye Patch|19986|-|Unknown source|-
+Head|3|Ebon Mask|19984|-|Quest The Azure Key (level 52)|X
+Neck|1|Woven Ivy Necklace|19159|-|Quest Wanted: Vile Priestess Hexx and Her Minions (level 51, Horde) in The Hinterlands|-
+Neck|2|Scout's Medallion|19535|-|Vendor Kelm Hargunth — Warsong Supply Officer|-
+Neck|3|Sentinel's Medallion|19539|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Shoulders|1|Warden's Leather Shoulders|252536|inv_shoulder_06|Crafted Leatherworking|N
+Shoulders|2|Phytoskin Spaulders|17749|-|Drops from Razorlash (25%) in Maraudon|X
+Shoulders|3|Fleshhide Shoulders|10774|-|Drops from Glutton (50%) in Razorfen Downs|X
+Back|1|Sergeant's Cloak|16341|-|Vendor Sergeant Ba'sha — Accessories Quartermaster|-
+Back|2|Sergeant's Cape|18441|-|Vendor Officer Areyn — Accessories Quartermaster|-
+Back|3|Corpsefeeder's Shedding|271810|inv_misc_cape_11|Unknown source|N
+Chest|1|Warbear Harness|15064|-|Crafted Leatherworking|C
+Chest|2|Mixologist's Tunic|12793|-|Drops from Plugger Spazzring (33.3%) in Blackrock Depths|X
+Chest|3|Grizzled Pelt|22274|-|Quest A Better Ingredient (level 52)|X
+Wrists|1|Forest Stalker's Bracers|19589|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Wrists|2|Bladebane Armguards|14550|-|Unknown source|-
+Wrists|3|Warden's Leather Bracers|252541|inv_bracer_22|Crafted Leatherworking|N
+Hands|1|Warden's Leather Gauntlets|252549|inv_gauntlets_21|Crafted Leatherworking|N
+Hands|2|Skulker's Leather Gauntlets|252548|inv_gauntlets_15|Crafted Leatherworking|N
+Hands|3|Prowler's Leather Gauntlets|252547|inv_gauntlets_17|Crafted Leatherworking|N
+Waist|1|Skulker's Leather Waistguard|252474|inv_belt_43|Crafted Leatherworking|N
+Waist|2|Prowler's Leather Waistguard|252473|inv_belt_37b|Crafted Leatherworking|N
+Waist|3|Warden's Leather Waistguard|252475|inv_belt_04|Crafted Leatherworking|N
+Legs|1|Basilisk Hide Pants|1718|-|World drop (0.003%)|-
+Legs|2|Serpentskin Leggings|8262|-|Drops from General Fangferror (0.24%)|-
+Legs|3|Keeper's Woolies|14668|-|Drops from General Fangferror (0.24%)|-
+Feet|1|Highlander's Leather Boots|20112|-|Vendor Samuel Hawke — League of Arathor Supply Officer|-
+Feet|2|Defiler's Leather Boots|20189|-|Vendor Rutherford Twing — Defilers Supply Officer|-
+Feet|3|Shadefiend Boots|11675|-|Drops from Anub'shiah (42.5%) in Blackrock Depths|X
+Ring 1|1|Theramore Signet|271909|inv_jewelry_ring_28|Unknown source|N
+Ring 1|2|Insurgent's Band|272065|inv_jewelry_ring_20|Unknown source|N
+Ring 1|3|Legionnaire's Band|19511|-|Vendor Kelm Hargunth — Warsong Supply Officer|-
+Ring 2|1|Insurgent's Band|272065|inv_jewelry_ring_20|Unknown source|N
+Ring 2|2|Legionnaire's Band|19511|-|Vendor Kelm Hargunth — Warsong Supply Officer|-
+Ring 2|3|Protector's Band|19516|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Trinket 1|1|Rune of the Guard Captain|19120|-|Quest Job Opening: Guard Captain of Revantusk Village (level 51, Horde) in The Hinterlands|C
+Trinket 1|2|Cleansed Vilebranch Medallion|270275|inv_misc_coin_09|Unknown source|N
+Trinket 1|3|Smotts' Compass|4130|-|Quest Facing Negolash (level 50) in Stranglethorn Vale|-
+Trinket 2|1|Cleansed Vilebranch Medallion|270275|inv_misc_coin_09|Unknown source|N
+Trinket 2|2|Smotts' Compass|4130|-|Quest Facing Negolash (level 50) in Stranglethorn Vale|-
+Trinket 2|3|Arena Grand Master|19024|-|Quest Arena Grandmaster (level 55) in Stranglethorn Vale|C
+Main hand|1|Warden Staff|943|-|World drop (0.001%)|X
+Main hand|2|Feral Staff|20522|-|Unknown source|-
+Main hand|3|Thorium Cestus|250614|inv_gauntlets_11|Crafted Blacksmithing|N
+Off hand|1|Shard of the Green Flame|18762|-|Quest Kroshius' Infernal Core (level 55)|-
+Off hand|2|Fermented Restoration Potion|277259|inv_potion_19|Unknown source|N
+Off hand|3|Researcher's Night Light|277260|inv_torch_lit|Unknown source|N

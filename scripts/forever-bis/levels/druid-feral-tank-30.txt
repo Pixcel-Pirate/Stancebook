@@ -1,0 +1,48 @@
+Head|1|Brawler's Leather Helm|252512|inv_helmet_15|Crafted Leatherworking|N
+Head|2|Defender's Leather Helm|252455|inv_helmet_33|Crafted Leatherworking|N
+Head|3|Brawler's Leather Hood|252504|inv_helmet_31|Crafted Leatherworking|N
+Neck|1|Souvenir Sea Shell|274749|inv_jewelry_necklace_10|Unknown source|N
+Neck|2|Scout's Medallion|19537|-|Vendor Kelm Hargunth — Warsong Supply Officer|-
+Neck|3|Sentinel's Medallion|19541|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Shoulders|1|Cloudy Gustwoven Spaulders|277043|inv_shoulder_leather_skybornec60_b_02|Crafted Leatherworking|N
+Shoulders|2|Azure Gustwoven Spaulders|277051|inv_shoulder_leather_skybornec60_b_01|Crafted Leatherworking|N
+Shoulders|3|Watchman Pauldrons|7727|-|Drops from Trash mobs (0.01%) in Scarlet Monastery|-
+Back|1|Tigerstrike Mantle|13108|-|World drop (0.003%)|-
+Back|2|Sergeant's Cloak|18427|-|Vendor Sergeant Ba'sha — Accessories Quartermaster|-
+Back|3|Sergeant's Cape|18440|-|Vendor Officer Areyn — Accessories Quartermaster|-
+Chest|1|Defender's Leather Tunic|252450|inv_chest_leather_07|Crafted Leatherworking|N
+Chest|2|Spirewind Fetter|9406|-|Drops from Trash mobs (0.01%) in Uldaman|X
+Chest|3|Brawler's Leather Tunic|252508|inv_chest_leather_02|Crafted Leatherworking|N
+Wrists|1|Barbaric Bracers|18948|-|Crafted Leatherworking|C
+Wrists|2|Black Wolf Bracers|3230|-|Drops from Fenrus the Devourer (30%) in Shadowfang Keep|-
+Wrists|3|Hawkeye's Bracers|14590|-|Drops from Kovork (0.33%)|-
+Hands|1|Ebon Vise|7690|-|Drops from Fallen Champion (33.3%) in Scarlet Monastery|X
+Hands|2|Wolfclaw Gloves|1978|-|Drops from Trash mobs (0.03%) in Razorfen Kraul|-
+Hands|3|Brawler Gloves|720|-|World drop (0.003%)|-
+Waist|1|Warden's Leather Belt|252460|inv_belt_06|Crafted Leatherworking|N
+Waist|2|Skulker's Leather Belt|252520|inv_belt_37b|Crafted Leatherworking|N
+Waist|3|Prowler's Leather Belt|252459|inv_belt_43|Crafted Leatherworking|N
+Legs|1|Defender's Leather Kilt|252457|inv_kilt_cloth_04v4|Crafted Leatherworking|N
+Legs|2|Brawler's Leather Legguards|252516|inv_pants_leather_19|Crafted Leatherworking|N
+Legs|3|Petrolspill Leggings|9509|-|Drops from Trash mobs (0.03%) in Gnomeregan|-
+Feet|1|Highlander's Leather Boots|20114|-|Vendor Samuel Hawke — League of Arathor Supply Officer|-
+Feet|2|Defiler's Leather Boots|20188|-|Vendor Rutherford Twing — Defilers Supply Officer|-
+Feet|3|Highlander's Chain Greaves|20093|-|Vendor Samuel Hawke — League of Arathor Supply Officer|-
+Ring 1|1|Field Researcher's Loop|281634|inv_jewelry_ring_02|Unknown source|N
+Ring 1|2|Legionnaire's Band|19513|-|Vendor Kelm Hargunth — Warsong Supply Officer|-
+Ring 1|3|Protector's Band|19517|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Ring 2|1|Legionnaire's Band|19513|-|Vendor Kelm Hargunth — Warsong Supply Officer|-
+Ring 2|2|Protector's Band|19517|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Ring 2|3|Theramore Signet|271911|inv_jewelry_ring_28|Unknown source|N
+Trinket 1|1|Talisman of Arathor|21119|-|Vendor Samuel Hawke — League of Arathor Supply Officer|C
+Trinket 1|2|Defiler's Talisman|21120|-|Vendor Rutherford Twing — Defilers Supply Officer|C
+Trinket 1|3|Rune of Perfection|21566|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|C
+Trinket 2|1|Defiler's Talisman|21120|-|Vendor Rutherford Twing — Defilers Supply Officer|C
+Trinket 2|2|Rune of Perfection|21566|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|C
+Trinket 2|3|Rune of Duty|21568|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|C
+Main hand|1|Viscous Hammer|13045|-|World drop (0.003%)|-
+Main hand|2|Slaghammer|1976|-|Drops from Trash mobs (0.03%) in Razorfen Kraul|-
+Main hand|3|Dense Triangle Mace|3203|-|World drop (0.003%)|-
+Off hand|1|Witch's Finger|16887|-|Quest Baron Aquanis (level 30, Horde) in Ashenvale|X
+Off hand|2|Bouquet of Auberdine Flowers|281318|inv_misc_flower_02|Unknown source|N
+Off hand|3|Eerie Stable Lantern|6341|-|Drops from Fel Steed (8.2%) in Shadowfang Keep|-
