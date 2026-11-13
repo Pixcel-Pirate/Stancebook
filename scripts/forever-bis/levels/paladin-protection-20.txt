@@ -1,0 +1,45 @@
+Head|1|Protector's Silvered Chain Helm|250530|inv_helmet_39|Crafted Blacksmithing|N
+Head|2|Guard's Silvered Chain Helm|250529|inv_helmet_38|Crafted Blacksmithing|N
+Head|3|Veteran's Silvered Chain Helm|250528|inv_helmet_39|Crafted Blacksmithing|N
+Neck|1|Scout's Medallion|20442|-|Vendor Kelm Hargunth — Warsong Supply Officer|-
+Neck|2|Sentinel's Medallion|20444|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Neck|3|Erudite's Amulet|277204|inv_jewelry_necklace_01|Unknown source|N
+Shoulders|1|Durable Chain Shoulders|6189|-|Quest WANTED: Chok'sul (level 22, Alliance) in Loch Modan|C
+Shoulders|2|Rough Bronze Shoulders|3480|-|Crafted Blacksmithing|C
+Shoulders|3|Silvered Bronze Shoulders|3481|-|Crafted Blacksmithing|-
+Back|1|Sentry Cloak|2059|-|World drop (0.003%)|-
+Back|2|Feyscale Cloak|6632|-|Drops from Deviate Faerie Dragon (50%) in Wailing Caverns|-
+Back|3|Sporid Cape|6629|-|Drops from Verdan the Everliving (20%) in Wailing Caverns|-
+Chest|1|Guard's Chain Shirt|250489|inv_chest_chain_09|Crafted Blacksmithing|N
+Chest|2|Protector's Chain Shirt|250490|inv_chest_chain_07|Crafted Blacksmithing|N
+Chest|3|Veteran's Chain Shirt|250488|inv_chest_chain_07|Crafted Blacksmithing|N
+Wrists|1|Rift Bracers|5943|-|Drops from Arugal's Voidwalker (3.4%) in Shadowfang Keep|-
+Wrists|2|Rough Bronze Bracers|2867|-|Crafted Blacksmithing|-
+Wrists|3|Hulking Bands|14743|-|Drops from Geopriest Gukk'rok (0.52%)|-
+Hands|1|Guard's Gloves|250509|inv_gauntlets_15|Crafted Blacksmithing|N
+Hands|2|Protector's Gloves|250510|inv_gauntlets_26|Crafted Blacksmithing|N
+Hands|3|Veteran's Gloves|250508|inv_gauntlets_26|Crafted Blacksmithing|N
+Waist|1|Guard's Chain Belt|250514|inv_belt_15|Crafted Blacksmithing|N
+Waist|2|Protector's Chain Belt|250515|inv_belt_17|Crafted Blacksmithing|N
+Waist|3|Veteran's Chain Belt|250513|inv_belt_17|Crafted Blacksmithing|N
+Legs|1|Guard's Chain Leggings|250494|inv_pants_mail_16|Crafted Blacksmithing|N
+Legs|2|Protector's Chain Leggings|250495|inv_pants_mail_05|Crafted Blacksmithing|N
+Legs|3|Veteran's Chain Leggings|250493|inv_pants_mail_05|Crafted Blacksmithing|N
+Feet|1|Protector's Boots|250505|inv_boots_chain_03|Crafted Blacksmithing|N
+Feet|2|Guard's Boots|250504|inv_boots_chain_01|Crafted Blacksmithing|N
+Feet|3|Veteran's Boots|250503|inv_boots_chain_03|Crafted Blacksmithing|N
+Ring 1|1|Legionnaire's Band|20429|-|Vendor Kelm Hargunth — Warsong Supply Officer|-
+Ring 1|2|Protector's Band|20439|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Ring 1|3|Advisor's Ring|20426|-|Vendor Kelm Hargunth — Warsong Supply Officer|-
+Ring 2|1|Protector's Band|20439|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Ring 2|2|Advisor's Ring|20426|-|Vendor Kelm Hargunth — Warsong Supply Officer|-
+Ring 2|3|Lorekeeper's Ring|20431|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Trinket 1|1|Rune of Perfection|21566|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|C
+Trinket 1|2|Rune of Duty|21568|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|C
+Trinket 2|1|Rune of Duty|21568|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|C
+Main hand|1|Barrens Basher|274744|inv_hammer_09|Unknown source|N
+Main hand|2|Diamond Hammer|2194|-|World drop (0.003%)|-
+Main hand|3|Wingblade|6504|-|Quest Leaders of the Fang (level 22, Horde) in Wailing Caverns|-
+Off hand|1|Redbeard Crest|12997|-|World drop (0.003%)|-
+Off hand|2|Stormwind Guard Shield|7188|-|Unknown source|X
+Off hand|3|Bastion of Stormwind|9607|-|Quest The Tome of Valor (level 25, Alliance)|-

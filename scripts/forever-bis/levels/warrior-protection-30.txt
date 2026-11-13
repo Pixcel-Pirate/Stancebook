@@ -1,0 +1,51 @@
+Head|1|Protector's Chain Helm|250500|inv_helmet_39|Crafted Blacksmithing|N
+Head|2|Protector's Silvered Chain Helm|250530|inv_helmet_39|Crafted Blacksmithing|N
+Head|3|Guard's Chain Helm|250499|inv_helmet_38|Crafted Blacksmithing|N
+Neck|1|Souvenir Sea Shell|274749|inv_jewelry_necklace_10|Unknown source|N
+Neck|2|River Pride Choker|13087|-|World drop (0.003%)|-
+Neck|3|Scout's Medallion|19537|-|Vendor Kelm Hargunth — Warsong Supply Officer|-
+Shoulders|1|Sparkleshell Mantle|13131|-|World drop (0.003%)|-
+Shoulders|2|Cloudy Skyforged Pauldrons|277041|inv_shoulder_mail_skybornec60_b_01|Crafted Blacksmithing|N
+Shoulders|3|Azure Skyforged Pauldrons|277049|inv_shoulder_mail_skybornec60_b_01|Crafted Blacksmithing|N
+Back|1|Tigerstrike Mantle|13108|-|World drop (0.003%)|-
+Back|2|Sergeant's Cloak|18427|-|Vendor Sergeant Ba'sha — Accessories Quartermaster|-
+Back|3|Sergeant's Cape|18440|-|Vendor Officer Areyn — Accessories Quartermaster|-
+Chest|1|Ironspine's Ribcage|7688|-|Drops from Ironspine (33.3%) in Scarlet Monastery|X
+Chest|2|Guard's Silvered Chain Shirt|250519|inv_chest_chain_09|Crafted Blacksmithing|N
+Chest|3|Protector's Silvered Chain Shirt|250520|inv_chest_chain_07|Crafted Blacksmithing|N
+Wrists|1|Jimmied Handcuffs|3228|-|Drops from Bruegal Ironknuckle (33.3%) in Stormwind Stockade|-
+Wrists|2|Enduring Bracers|14759|-|World drop (0.007%)|-
+Wrists|3|Yorgen Bracers|13012|-|World drop (0.003%)|-
+Hands|1|The Frozen Clutch|23170|-|Drops from Scorn (33.3%) in Scarlet Monastery|X
+Hands|2|Guard's Gloves|250509|inv_gauntlets_15|Crafted Blacksmithing|N
+Hands|3|Enduring Gauntlets|14764|-|Drops from Kovork (0.33%)|-
+Waist|1|Sentinel's Belt|250557|inv_belt_37a|Crafted Blacksmithing|N
+Waist|2|Warder's Belt|250558|inv_belt_29|Crafted Blacksmithing|N
+Waist|3|Officer's Belt|250556|inv_belt_20|Crafted Blacksmithing|N
+Legs|1|Guard's Silvered Chain Leggings|250524|inv_pants_mail_16|Crafted Blacksmithing|N
+Legs|2|Protector's Silvered Chain Leggings|250525|inv_pants_mail_05|Crafted Blacksmithing|N
+Legs|3|Guard's Chain Leggings|250494|inv_pants_mail_16|Crafted Blacksmithing|N
+Feet|1|Scarlet Boots|10332|-|Drops from Trash mobs (0.01%) in Scarlet Monastery|X
+Feet|2|Caverndeep Trudgers|9510|-|Drops from Trash mobs (0.03%) in Gnomeregan|X
+Feet|3|Ravasaur Scale Boots|13124|-|World drop (0.003%)|-
+Ring 1|1|Field Researcher's Loop|281634|inv_jewelry_ring_02|Unknown source|N
+Ring 1|2|Theramore Signet|271911|inv_jewelry_ring_28|Unknown source|N
+Ring 1|3|Insurgent's Band|272067|inv_jewelry_ring_20|Unknown source|N
+Ring 2|1|Theramore Signet|271911|inv_jewelry_ring_28|Unknown source|N
+Ring 2|2|Insurgent's Band|272067|inv_jewelry_ring_20|Unknown source|N
+Ring 2|3|Legionnaire's Band|19513|-|Vendor Kelm Hargunth — Warsong Supply Officer|-
+Trinket 1|1|Talisman of Arathor|21119|-|Vendor Samuel Hawke — League of Arathor Supply Officer|C
+Trinket 1|2|Defiler's Talisman|21120|-|Vendor Rutherford Twing — Defilers Supply Officer|C
+Trinket 1|3|Rune of Perfection|21566|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|C
+Trinket 2|1|Defiler's Talisman|21120|-|Vendor Rutherford Twing — Defilers Supply Officer|C
+Trinket 2|2|Rune of Perfection|21566|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|C
+Trinket 2|3|Rune of Duty|21568|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|C
+Main hand|1|Swinetusk Shank|6691|-|Drops from Agathelos the Raging (40%) in Razorfen Kraul|-
+Main hand|2|Scout's Blade|19545|-|Vendor Kelm Hargunth — Warsong Supply Officer|-
+Main hand|3|Sentinel's Blade|19549|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Off hand|1|Resplendent Guardian|7787|-|Drops from Trash mobs (0.01%) in Scarlet Monastery|X
+Off hand|2|Crest of Darkshire|6223|-|Quest Bride of the Embalmer (level 30, Alliance) in Duskwood|-
+Off hand|3|Deadskull Shield|3761|-|Quest Battle of Hillsbrad (level 32, Horde) in Hillsbrad Foothills|-
+Ranged|1|Ironweaver|13137|-|World drop (0.003%)|-
+Ranged|2|Outrider's Bow|19561|-|Vendor Kelm Hargunth — Warsong Supply Officer|C
+Ranged|3|Outrunner's Bow|19565|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|C

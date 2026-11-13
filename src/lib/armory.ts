@@ -66,9 +66,13 @@ export function setClasses(s: GearSet): ClassId[] {
   return s.cls.length ? s.cls : ARMOR_CLASSES[s.armor ?? "cloth"];
 }
 
-/** WoW Forever level 60 best-in-slot lists per class and spec, from The Forever Era (see scripts/armory.gen.ts). */
-export type BisFlag = "" | "New in Forever" | "Changed" | "Not in beta client";
-export type BisRow = [slot: string, itemId: number, source: string, flag: BisFlag];
-export type BisItem = { n: string; i: string; q: number };
-export const BIS = data.bis as unknown as { cls: ClassId; specs: { name: string; list: BisRow[] }[] }[];
+/** WoW Forever best-in-slot lists per class, spec and level (20-60), from The Forever Era (see scripts/armory.gen.ts). */
+export type BisFlag = "" | "N" | "C" | "X";
+/** Where a pick comes from: quest, dungeon or raid drop, crafted, vendor, world drop, unknown. */
+export type BisKind = "q" | "d" | "c" | "v" | "w" | "u";
+export type BisPick = [itemId: number, source: string, flag: BisFlag, kind: BisKind];
+export type BisSlot = [slot: string, picks: BisPick[]];
+export type BisItem = { n: string; i: string; q: number; r: number };
+export const BIS_LEVELS = [20, 30, 40, 50, 60] as const;
+export const BIS = data.bis as unknown as { cls: ClassId; specs: { name: string; levels: Record<string, BisSlot[]> }[] }[];
 export const BIS_ITEMS = data.bisItems as unknown as Record<string, BisItem>;

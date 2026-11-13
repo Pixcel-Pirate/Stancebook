@@ -17,13 +17,18 @@ for (const n of ["Inquisition Warplate", "Inquisition Armor", "Inquisition Bulwa
 assert(sets.length > 300, "expected every Forever set");
 for (const w of weapons) assert(icon.test(w.i) && w.id > 0 && w.id < 24000, `${w.n} needs a zamimg icon name and a Classic item id`);
 assert(sets.some((s: { armor: string }) => s.armor === "plate") && weapons.some((w: { kind: string }) => w.kind === "Shield"));
-// All 28 Forever specs have a level 60 list of at least 15 slots, each with a source, and every item has a real icon.
-const FLAGS = ["", "New in Forever", "Changed", "Not in beta client"];
+// All 28 Forever specs have a list at every level (20-60) of at least 15 slots; every pick has a source, a known
+// source type and flag, and every item has a real icon.
+const FLAGS = ["", "N", "C", "X"];
 assert.equal(bis.reduce((n: number, b: { specs: unknown[] }) => n + b.specs.length, 0), 28);
 for (const b of bis)
-  for (const sp of b.specs) {
-    assert(sp.list.length >= 15, `${b.cls} ${sp.name}: BIS list too short`);
-    for (const [slot, id, src, flag] of sp.list) assert(bisItems[id] && src && FLAGS.includes(flag), `${b.cls} ${sp.name} ${slot}: bad row`);
-  }
+  for (const sp of b.specs)
+    for (const lvl of [20, 30, 40, 50, 60]) {
+      const slots = sp.levels[lvl];
+      assert(slots?.length >= 15, `${b.cls} ${sp.name} ${lvl}: BIS list too short`);
+      for (const [slot, picks] of slots)
+        for (const [id, src, flag, kind] of picks)
+          assert(bisItems[id] && src && FLAGS.includes(flag) && "qdcvwu".includes(kind), `${b.cls} ${sp.name} ${lvl} ${slot}: bad pick ${id}`);
+    }
 for (const [id, it] of Object.entries(bisItems) as [string, { i: string }][]) assert(icon.test(it.i), `BIS item ${id} needs an icon`);
 console.log(`armory ok: ${sets.length} sets, ${weapons.length} weapons`);
