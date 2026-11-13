@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { Bookmark, BookOpen, Shield, Feather, FileText, Keyboard, Network, ScrollText, Search, Sparkles, Users, X } from "lucide-react";
+import { Bookmark, BookOpen, Shield, Feather, FileText, Hammer, Keyboard, Network, ScrollText, Search, Sparkles, Users, X } from "lucide-react";
 import { CopyButton } from "@/components/copy-button";
 import { MacroDetail } from "@/components/macro-detail";
 import { ForeverView, HowItWorks, PatchNotesView } from "@/components/guide-view";
@@ -9,6 +9,7 @@ import { TALENT_HASH, TalentsView } from "@/components/talents-view";
 import { RacesView } from "@/components/races-view";
 import { ArmoryView } from "@/components/armory-view";
 import { KeybindsView } from "@/components/keybinds-view";
+import { ProfessionsView } from "@/components/professions-view";
 import { UpdateButton } from "@/components/update-button";
 import { ActionBar, dragMacro } from "@/components/action-bar";
 import { AbilityTip, CLASS_ICON, ClassIcon, primaryAbility, SpellIcon } from "@/components/spell-icon";
@@ -31,7 +32,7 @@ import {
 } from "@/lib/macros";
 import { cn, useStored } from "@/lib/utils";
 
-export type Tab = "macros" | "abilities" | "talents" | "keybinds" | "races" | "armory" | "guide" | "forever" | "patches";
+export type Tab = "macros" | "abilities" | "talents" | "keybinds" | "races" | "armory" | "progression" | "guide" | "forever" | "patches";
 
 type State = {
   tab: Tab;
@@ -195,6 +196,7 @@ const TABS = [
   ["keybinds", "Keybinds", Keyboard],
   ["races", "Races", Users],
   ["armory", "Armory", Shield],
+  ["progression", "Progression", Hammer],
   ["guide", "How they work", Feather],
   ["forever", "Forever notes", ScrollText],
   ["patches", "Patch notes", FileText],
@@ -567,6 +569,8 @@ export function AppShell() {
                     <RacesView classId={classId} />
                   ) : tab === "armory" ? (
                     <ArmoryView classId={classId} />
+                  ) : tab === "progression" ? (
+                    <ProfessionsView />
                   ) : tab === "guide" ? (
                     <HowItWorks classId={classId} />
                   ) : tab === "patches" ? (
