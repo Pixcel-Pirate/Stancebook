@@ -1,0 +1,51 @@
+Head|1|Don Rigoberto's Lost Hat|21615|-|Drops from Ouro (16.7%) in Ahn'Qiraj Temple|C
+Head|2|Circlet of Faith|22514|-|Quest Circlet of Faith (level 60) in Naxxramas|-
+Head|3|Crystal Adorned Crown|19132|-|Drops from Azuregos (19%)|X
+Neck|1|Life Channeling Necklace|23058|-|Unknown source|-
+Neck|2|Amulet of the Fallen God|21712|-|Quest The Savior of Kalimdor (level 60) in Ahn'Qiraj|-
+Neck|3|Necklace of Necropsy|23036|-|Drops from Heigan the Unclean (20%) in Naxxramas|-
+Shoulders|1|Shoulderpads of Faith|22515|-|Quest Shoulderpads of Faith (level 60) in Naxxramas|-
+Shoulders|2|Ternary Mantle|21694|-|Drops from Lord Kri (16.7%) in Ahn'Qiraj Temple|-
+Shoulders|3|Mooncloth Shoulders|14139|-|Crafted Tailoring|C
+Back|1|Cloak of Suturing|22960|-|Drops from Patchwerk (20%) in Naxxramas|X
+Back|2|Cloak of Clarity|21583|-|Drops from C'Thun (21%) in Ahn'Qiraj Temple|-
+Back|3|Hide of the Wild|18510|-|Crafted Leatherworking|C
+Chest|1|Robes of the Guardian Saint|21663|-|Drops from Fankriss the Unyielding (18%) in Ahn'Qiraj Temple|C
+Chest|2|Robe of Faith|22512|-|Quest Robe of Faith (level 60) in Naxxramas|-
+Chest|3|Truefaith Vestments|14154|-|Crafted Tailoring|C
+Wrists|1|Bracelets of Royal Redemption|21604|-|Drops from Emperor Vek'nilash (14.3%) in Ahn'Qiraj Temple|-
+Wrists|2|Bindings of Faith|22519|-|Quest Bindings of Faith (level 60) in Naxxramas|-
+Wrists|3|Bindings of Transcendence|16926|-|Drops from Razorgore the Untamed (21%) in Blackwing Lair|X
+Hands|1|Gloves of Faith|22517|-|Quest Gloves of Faith (level 60) in Naxxramas|-
+Hands|2|Gloves of the Messiah|21619|-|Drops from Princess Huhuran (16.7%) in Ahn'Qiraj Temple|C
+Hands|3|Desert Bloom Gloves|20717|-|Quest Armaments of War (level 60) in Silithus|C
+Waist|1|Belt of Faith|22518|-|Quest Belt of Faith (level 60) in Naxxramas|-
+Waist|2|Firemaw's Clutch|19400|-|Drops from Firemaw (12.5%) in Blackwing Lair|X
+Waist|3|Wisdom of the Timbermaw|19047|-|Crafted Tailoring|C
+Legs|1|Empowered Leggings|19385|-|Drops from Chromaggus (20%) in Blackwing Lair|X
+Legs|2|Leggings of Faith|22513|-|Quest Leggings of Faith (level 60) in Naxxramas|-
+Legs|3|Leggings of Transcendence|16922|-|Drops from Ragnaros (21%) in Molten Core|X
+Feet|1|Sandals of Faith|22516|-|Quest Sandals of Faith (level 60) in Naxxramas|-
+Feet|2|Boots of Pure Thought|19437|-|Drops from Death Talon Wyrmkin (4.1%) in Blackwing Lair|X
+Feet|3|Swarmtender's Footpads|275609|inv_boots_cloth_01|Crafted Tailoring|N
+Ring 1|1|Ring of Faith|23061|-|Drops from Kel'Thuzad (21%) in Naxxramas|-
+Ring 1|2|Cauterizing Band|19140|-|Drops from Flamewaker Elite (0.46%) in Molten Core|C
+Ring 1|3|Ring of the Martyr|21620|-|Drops from Princess Huhuran (16.7%) in Ahn'Qiraj Temple|-
+Ring 2|1|Cauterizing Band|19140|-|Drops from Flamewaker Elite (0.46%) in Molten Core|C
+Ring 2|2|Ring of the Martyr|21620|-|Drops from Princess Huhuran (16.7%) in Ahn'Qiraj Temple|-
+Ring 2|3|Band of Unanswered Prayers|22939|-|Drops from Anub'Rekhan (20%) in Naxxramas|-
+Trinket 1|1|Rejuvenating Gem|19395|-|Drops from Flamegor (14%) in Blackwing Lair|-
+Trinket 1|2|Eye of the Dead|23047|-|Drops from Sapphiron (20%) in Naxxramas|-
+Trinket 1|3|Serenity Field|272439|inv_misc_enggizmos_36|Unknown source|N
+Trinket 2|1|Eye of the Dead|23047|-|Drops from Sapphiron (20%) in Naxxramas|-
+Trinket 2|2|Serenity Field|272439|inv_misc_enggizmos_36|Unknown source|N
+Trinket 2|3|Shard of the Scale|17064|-|Drops from Onyxia (8%) in Onyxia's Lair|X
+Main hand|1|Hammer of the Twisting Nether|23056|-|Drops from Kel'Thuzad (20%) in Naxxramas|X
+Main hand|2|The Widow's Embrace|22942|-|Drops from Grand Widow Faerlina (20%) in Naxxramas|X
+Main hand|3|Spire of Twilight|22801|-|Drops from Thaddius (20%) in Naxxramas|X
+Off hand|1|Sapphiron's Right Eye|23048|-|Drops from Sapphiron (20%) in Naxxramas|X
+Off hand|2|Sartura's Might|21666|-|Drops from Battleguard Sartura (10%) in Ahn'Qiraj Temple|X
+Off hand|3|Noth's Frigid Heart|23029|-|Drops from Noth the Plaguebringer (14.3%) in Naxxramas|X
+Ranged|1|Doomfinger|22821|-|Drops from Kel'Thuzad (20%) in Naxxramas|X
+Ranged|2|Wand of the Whispering Dead|23009|-|Drops from Instructor Razuvious (16.7%) in Naxxramas|X
+Ranged|3|Wand of Fates|22820|-|Drops from Patchwerk (20%) in Naxxramas|X

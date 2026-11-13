@@ -1,0 +1,42 @@
+Head|1|Veteran's Silvered Chain Helm|250528|inv_helmet_39|Crafted Blacksmithing|N
+Head|2|Defender's Leather Hood|252447|inv_helmet_48|Crafted Leatherworking|N
+Head|3|Guard's Silvered Chain Helm|250529|inv_helmet_38|Crafted Blacksmithing|N
+Neck|1|Scout's Medallion|20442|-|Vendor Kelm Hargunth — Warsong Supply Officer|-
+Neck|2|Sentinel's Medallion|20444|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Neck|3|Erudite's Amulet|277204|inv_jewelry_necklace_01|Unknown source|N
+Shoulders|1|Rough Bronze Shoulders|3480|-|Crafted Blacksmithing|C
+Shoulders|2|Silvered Bronze Shoulders|3481|-|Crafted Blacksmithing|-
+Shoulders|3|Durable Chain Shoulders|6189|-|Quest WANTED: Chok'sul (level 22, Alliance) in Loch Modan|C
+Back|1|Lambent Scale Cloak|4706|-|World drop (0.01%)|-
+Back|2|Miner's Cape|5444|-|Drops from Miner Johnson (50%) in Deadmines|-
+Back|3|Dark Leather Cloak|2316|-|Crafted Leatherworking|C
+Chest|1|Mutant Scale Breastplate|6627|-|Drops from Mutanus the Devourer (33.3%) in Wailing Caverns|-
+Chest|2|Veteran's Chain Shirt|250488|inv_chest_chain_07|Crafted Blacksmithing|N
+Chest|3|Totemic Leather Armor|252435|inv_chest_leather_01|Crafted Leatherworking|N
+Wrists|1|Patterned Bronze Bracers|2868|-|Crafted Blacksmithing|-
+Wrists|2|Raptorcrest Bracers|270010|inv_bracer_03|Unknown source|N
+Wrists|3|Bristlebark Bindings|14569|-|Drops from Geopriest Gukk'rok (0.52%)|-
+Hands|1|Thorbia's Gauntlets|12994|-|World drop (0.003%)|-
+Hands|2|Veteran's Gloves|250508|inv_gauntlets_26|Crafted Blacksmithing|N
+Hands|3|Guard's Gloves|250509|inv_gauntlets_15|Crafted Blacksmithing|N
+Waist|1|Cobrahn's Grasp|6460|-|Drops from Lord Cobrahn (20%) in Wailing Caverns|-
+Waist|2|Blackened Defias Belt|10403|-|Drops from Captain Greenskin (30%) in Deadmines|-
+Waist|3|Veteran's Chain Belt|250513|inv_belt_17|Crafted Blacksmithing|N
+Legs|1|Veteran's Chain Leggings|250493|inv_pants_mail_05|Crafted Blacksmithing|N
+Legs|2|Chausses of Westfall|6087|-|Quest The Defias Brotherhood (level 22, Alliance) in The Deadmines|-
+Legs|3|Defender's Leather Pants|252445|inv_pants_leather_01|Crafted Leatherworking|N
+Feet|1|Veteran's Boots|250503|inv_boots_chain_03|Crafted Blacksmithing|N
+Feet|2|Brawler's Leather Boots|252439|inv_boots_09|Crafted Leatherworking|N
+Feet|3|Crusader's Boots|250507|inv_boots_chain_05|Crafted Blacksmithing|N
+Ring 1|1|Legionnaire's Band|20429|-|Vendor Kelm Hargunth — Warsong Supply Officer|-
+Ring 1|2|Protector's Band|20439|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Ring 1|3|Demon Band|12054|-|Contained in Minor Darkmoon Prize (1.2%)|-
+Ring 2|1|Protector's Band|20439|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Ring 2|2|Demon Band|12054|-|Contained in Minor Darkmoon Prize (1.2%)|-
+Ring 2|3|Overseer's Ring|1189|-|Unknown source|-
+Trinket 1|1|Rune of Perfection|21566|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|C
+Trinket 1|2|Rune of Duty|21568|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|C
+Trinket 2|1|Rune of Duty|21568|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|C
+Main hand|1|The Axe of Severing|23171|-|Drops from Sever (50%) in Shadowfang Keep|X
+Main hand|2|Smite's Mighty Hammer|7230|-|Drops from Mr. Smite (20%) in Deadmines|-
+Main hand|3|Duskbringer|2205|-|Drops from Trash mobs (0.02%) in Shadowfang Keep|-

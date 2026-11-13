@@ -1,0 +1,45 @@
+Head|1|Lionheart Helm|12640|-|Crafted Blacksmithing|-
+Head|2|Crown of Destruction|18817|-|Drops from Ragnaros (20%) in Molten Core|X
+Head|3|Avenger's Crown|21387|-|Quest Avenger's Crown (level 60, Alliance) in Ahn'Qiraj|-
+Neck|1|Stormrage's Talisman of Seething|23053|-|Drops from Kel'Thuzad (16.7%) in Naxxramas|-
+Neck|2|Barbed Choker|21664|-|Drops from Fankriss the Unyielding (18%) in Ahn'Qiraj Temple|-
+Neck|3|Fury of the Forgotten Swarm|21809|-|Drops from Colonel Zerran (13.2%) in Ruins of Ahn'Qiraj|-
+Shoulders|1|Spaulders of the Grand Crusader|23667|-|Drops from Plagued Ghoul (0.71%) in Naxxramas|X
+Shoulders|2|Truestrike Shoulders|12927|-|Drops from Pyroguard Emberseer (20%) in Blackrock Spire|X
+Shoulders|3|Avenger's Pauldrons|21391|-|Quest Avenger's Pauldrons (level 60, Alliance) in Ahn'Qiraj|-
+Back|1|Shroud of Dominion|23045|-|Drops from Sapphiron (20%) in Naxxramas|X
+Back|2|Puissant Cape|18541|-|Drops from Azuregos (19%)|X
+Back|3|Cloak of the Scourge|23030|-|Drops from Noth the Plaguebringer (14.3%) in Naxxramas|X
+Chest|1|Plated Abomination Ribcage|23000|-|Drops from Thaddius (20%) in Naxxramas|X
+Chest|2|Breastplate of Annihilation|21814|-|Drops from The Prophet Skeram (15%) in Ahn'Qiraj Temple|X
+Chest|3|Ghoul Skin Tunic|23226|-|Drops from Death Touched Warrior (2.1%) in Naxxramas|X
+Wrists|1|Wristguards of Vengeance|22936|-|Drops from Anub'Rekhan (20%) in Naxxramas|X
+Wrists|2|Qiraji Execution Bracers|21602|-|Drops from Emperor Vek'lor (16.7%) in Ahn'Qiraj Temple|-
+Wrists|3|Hive Defiler Wristguards|21618|-|Drops from Princess Huhuran (16.7%) in Ahn'Qiraj Temple|-
+Hands|1|Gauntlets of Annihilation|21581|-|Drops from C'Thun (21%) in Ahn'Qiraj Temple|-
+Hands|2|Fists of the Unrelenting|23072|-|Unknown source|X
+Hands|3|Gloves of Enforcement|21672|-|Drops from Battleguard Sartura (15%) in Ahn'Qiraj Temple|-
+Waist|1|Girdle of the Mentor|23219|-|Drops from Instructor Razuvious (16.7%) in Naxxramas|X
+Waist|2|Onslaught Girdle|19137|-|Drops from Ragnaros (20%) in Molten Core|X
+Waist|3|Belt of Never-ending Agony|21586|-|Drops from C'Thun (18.4%) in Ahn'Qiraj Temple|-
+Legs|1|Legplates of Carnage|23068|-|Drops from Heigan the Unclean (20%) in Naxxramas|X
+Legs|2|Titanic Leggings|22385|-|Crafted Blacksmithing|-
+Legs|3|Scaled Sand Reaver Leggings|21651|-|Drops from Fankriss the Unyielding (18%) in Ahn'Qiraj Temple|X
+Feet|1|Boots of the Shadow Flame|19381|-|Drops from Nefarian (20%) in Blackwing Lair|X
+Feet|2|Chromatic Boots|19387|-|Drops from Chromaggus (20%) in Blackwing Lair|X
+Feet|3|Boots of the Fallen Hero|21688|-|Drops from Vem (25%) in Ahn'Qiraj Temple|X
+Ring 1|1|Band of Unnatural Forces|23038|-|Drops from Loatheb (20%) in Naxxramas|-
+Ring 1|2|Master Dragonslayer's Ring|19384|-|Quest The Lord of Blackrock (level 60, Alliance) in Stormwind City|-
+Ring 1|3|Band of Accuria|17063|-|Drops from Ragnaros (20%) in Molten Core|X
+Ring 2|1|Master Dragonslayer's Ring|19384|-|Quest The Lord of Blackrock (level 60, Alliance) in Stormwind City|-
+Ring 2|2|Band of Accuria|17063|-|Drops from Ragnaros (20%) in Molten Core|X
+Ring 2|3|Seal of the Damned|23025|-|Chest Four Horsemen Chest (16.7%) in Naxxramas|-
+Trinket 1|1|Drake Fang Talisman|19406|-|Drops from Ebonroc (18%) in Blackwing Lair|-
+Trinket 1|2|Neltharion's Tear|19379|-|Drops from Nefarian (20%) in Blackwing Lair|-
+Trinket 1|3|Slayer's Crest|23041|-|Drops from Sapphiron (20%) in Naxxramas|-
+Trinket 2|1|Neltharion's Tear|19379|-|Drops from Nefarian (20%) in Blackwing Lair|-
+Trinket 2|2|Slayer's Crest|23041|-|Drops from Sapphiron (20%) in Naxxramas|-
+Trinket 2|3|Rune of the Guard Captain|19120|-|Quest Job Opening: Guard Captain of Revantusk Village (level 51, Horde) in The Hinterlands|C
+Main hand|1|Might of Menethil|22798|-|Drops from Kel'Thuzad (16.7%) in Naxxramas|X
+Main hand|2|Dark Edge of Insanity|21134|-|Drops from C'Thun (8%) in Ahn'Qiraj Temple|-
+Main hand|3|Severance|22815|-|Drops from Patchwerk (20%) in Naxxramas|X

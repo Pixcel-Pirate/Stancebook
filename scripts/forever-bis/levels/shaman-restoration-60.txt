@@ -1,0 +1,48 @@
+Head|1|Don Rigoberto's Lost Hat|21615|-|Drops from Ouro (16.7%) in Ahn'Qiraj Temple|C
+Head|2|Earthshatter Headpiece|22466|-|Quest Earthshatter Headpiece (level 60) in Naxxramas|-
+Head|3|Living Crown|252561|inv_helmet_32|Crafted Leatherworking|N
+Neck|1|Life Channeling Necklace|23058|-|Unknown source|-
+Neck|2|Amulet of the Fallen God|21712|-|Quest The Savior of Kalimdor (level 60) in Ahn'Qiraj|-
+Neck|3|Amulet of the Shifting Sands|21507|-|Quest The Fall of Ossirian (level 60) in Ruins of Ahn'Qiraj|-
+Shoulders|1|Earthshatter Spaulders|22467|-|Quest Earthshatter Spaulders (level 60) in Naxxramas|-
+Shoulders|2|Wild Growth Spaulders|18810|-|Drops from Flamewaker Elite (0.36%) in Molten Core|X
+Shoulders|3|Ternary Mantle|21694|-|Drops from Lord Kri (16.7%) in Ahn'Qiraj Temple|-
+Back|1|Cloak of Clarity|21583|-|Drops from C'Thun (21%) in Ahn'Qiraj Temple|-
+Back|2|Cloak of Suturing|22960|-|Drops from Patchwerk (20%) in Naxxramas|X
+Back|3|Hide of the Wild|18510|-|Crafted Leatherworking|C
+Chest|1|Robes of the Guardian Saint|21663|-|Drops from Fankriss the Unyielding (18%) in Ahn'Qiraj Temple|C
+Chest|2|Earthshatter Tunic|22464|-|Quest Earthshatter Tunic (level 60) in Naxxramas|-
+Chest|3|Red Dragonscale Breastplate|15047|-|Crafted Leatherworking|C
+Wrists|1|Bracelets of Royal Redemption|21604|-|Drops from Emperor Vek'nilash (14.3%) in Ahn'Qiraj Temple|-
+Wrists|2|Earthshatter Wristguards|22471|-|Quest Earthshatter Wristguards (level 60) in Naxxramas|-
+Wrists|3|Wristguards of Elemental Fury|21588|-|Unknown source|-
+Hands|1|Gloves of the Messiah|21619|-|Drops from Princess Huhuran (16.7%) in Ahn'Qiraj Temple|C
+Hands|2|Desert Bloom Gloves|20717|-|Quest Armaments of War (level 60) in Silithus|C
+Hands|3|Earthshatter Handguards|22469|-|Quest Earthshatter Handguards (level 60) in Naxxramas|-
+Waist|1|Corehound Belt|19162|-|Crafted Leatherworking|C
+Waist|2|Earthshatter Girdle|22470|-|Quest Earthshatter Girdle (level 60) in Naxxramas|-
+Waist|3|Regenerating Belt of Vek'nilash|21609|-|Drops from Emperor Vek'nilash (14.3%) in Ahn'Qiraj Temple|-
+Legs|1|Earthshatter Legguards|22465|-|Quest Earthshatter Legguards (level 60) in Naxxramas|-
+Legs|2|Empowered Leggings|19385|-|Drops from Chromaggus (20%) in Blackwing Lair|X
+Legs|3|Salamander Scale Pants|18875|-|Drops from Gehennas (5%) in Molten Core|X
+Feet|1|Boots of Pure Thought|19437|-|Drops from Death Talon Wyrmkin (4.1%) in Blackwing Lair|X
+Feet|2|Earthshatter Boots|22468|-|Quest Earthshatter Boots (level 60) in Naxxramas|-
+Feet|3|Broodwatcher's Treaders|275621|inv_boots_chain_12|Crafted Leatherworking|N
+Ring 1|1|Cauterizing Band|19140|-|Drops from Flamewaker Elite (0.46%) in Molten Core|C
+Ring 1|2|Ring of the Martyr|21620|-|Drops from Princess Huhuran (16.7%) in Ahn'Qiraj Temple|-
+Ring 1|3|Ring of the Earthshatterer|23065|-|Drops from Kel'Thuzad (21%) in Naxxramas|-
+Ring 2|1|Ring of the Martyr|21620|-|Drops from Princess Huhuran (16.7%) in Ahn'Qiraj Temple|-
+Ring 2|2|Ring of the Earthshatterer|23065|-|Drops from Kel'Thuzad (21%) in Naxxramas|-
+Ring 2|3|Pure Elementium Band|19382|-|Drops from Nefarian (20%) in Blackwing Lair|-
+Trinket 1|1|Rejuvenating Gem|19395|-|Drops from Flamegor (14%) in Blackwing Lair|-
+Trinket 1|2|Eye of the Dead|23047|-|Drops from Sapphiron (20%) in Naxxramas|-
+Trinket 1|3|Shard of the Scale|17064|-|Drops from Onyxia (8%) in Onyxia's Lair|X
+Trinket 2|1|Eye of the Dead|23047|-|Drops from Sapphiron (20%) in Naxxramas|-
+Trinket 2|2|Shard of the Scale|17064|-|Drops from Onyxia (8%) in Onyxia's Lair|X
+Trinket 2|3|Enriched Seal|271903|inv_misc_rune_06|Unknown source|N
+Main hand|1|Hammer of the Twisting Nether|23056|-|Drops from Kel'Thuzad (20%) in Naxxramas|X
+Main hand|2|The Widow's Embrace|22942|-|Drops from Grand Widow Faerlina (20%) in Naxxramas|X
+Main hand|3|Spire of Twilight|22801|-|Drops from Thaddius (20%) in Naxxramas|X
+Off hand|1|Shield of Condemnation|22819|-|Drops from Kel'Thuzad (20%) in Naxxramas|X
+Off hand|2|Wormscale Blocker|21610|-|Drops from Ouro (16.7%) in Ahn'Qiraj Temple|C
+Off hand|3|Sapphiron's Right Eye|23048|-|Drops from Sapphiron (20%) in Naxxramas|X

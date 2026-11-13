@@ -1,0 +1,48 @@
+Head|1|Southsea Head Bucket|20640|-|Quest Southsea Shakedown (level 45) in Tanaris|-
+Head|2|Horned Viking Helmet|9394|-|Drops from Eric "The Swift" (50%) in Uldaman|X
+Head|3|Icemetal Barbute|10763|-|Drops from Amnennar the Coldbringer (20%) in Razorfen Downs|X
+Neck|1|Seal of the Expedition|271919|inv_jewelry_necklace_08|Unknown source|N
+Neck|2|Darkspear Warding Pendant|272074|inv_jewelry_necklace_08|Unknown source|N
+Neck|3|Souvenir Sea Shell|274749|inv_jewelry_necklace_10|Unknown source|N
+Shoulders|1|Pauldrons of Vindication|277236|inv_shoulder_09|Unknown source|N
+Shoulders|2|Clacking Carapace Spaulders|271811|inv_shoulder_29|Unknown source|N
+Shoulders|3|Ornate Mithril Shoulders|7928|-|Crafted Blacksmithing|C
+Back|1|Corpsefeeder's Shedding|271810|inv_misc_cape_11|Unknown source|N
+Back|2|Sergeant Major's Cape|16336|-|Unknown source|-
+Back|3|Wing of the Whelpling|13121|-|Contained in Hoard of the Black Dragonflight (1.2%)|-
+Chest|1|Carapace of Tuten'kash|10775|-|Drops from Tuten'kash (33.3%) in Razorfen Downs|X
+Chest|2|Steel Breastplate|7963|-|Crafted Blacksmithing|C
+Chest|3|Scarlet Chestpiece|10328|-|Drops from Scarlet Champion (0.5%) in Scarlet Monastery|X
+Wrists|1|Berserker Bracers|19581|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Wrists|2|Windtalker's Wristguards|19584|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Wrists|3|Crushridge Bindings|13199|-|World drop (0.003%)|-
+Hands|1|Plated Fist of Hakoo|13071|-|World drop (0.003%)|-
+Hands|2|Warder's Gauntlet|250568|inv_gauntlets_50|Crafted Blacksmithing|N
+Hands|3|Sentinel's Gauntlet|250567|inv_gauntlets_22|Crafted Blacksmithing|N
+Waist|1|Warder's Belt|250558|inv_belt_29|Crafted Blacksmithing|N
+Waist|2|Sentinel's Belt|250557|inv_belt_37a|Crafted Blacksmithing|N
+Waist|3|Highlander's Lamellar Girdle|20107|-|Vendor Samuel Hawke — League of Arathor Supply Officer|-
+Legs|1|Guard's Silvered Chain Leggings|250524|inv_pants_mail_16|Crafted Blacksmithing|N
+Legs|2|Protector's Silvered Chain Leggings|250525|inv_pants_mail_05|Crafted Blacksmithing|N
+Legs|3|Double-Plated Legplates|277241|inv_pants_01|Unknown source|N
+Feet|1|Boots of Avoidance|14549|-|World drop (0.001%)|-
+Feet|2|Warder's Boots|250548|inv_boots_plate_19v1|Crafted Blacksmithing|N
+Feet|3|Sentinel's Boots|250547|inv_boots_plate_20v1|Crafted Blacksmithing|N
+Ring 1|1|Ogre Horn Ring|275045|inv_misc_bone_05|Unknown source|N
+Ring 1|2|Darkspear Signet|272070|inv_jewelry_ring_28|Unknown source|N
+Ring 1|3|Suspicious Spare Part|274754|inv_misc_gear_04|Unknown source|N
+Ring 2|1|Darkspear Signet|272070|inv_jewelry_ring_28|Unknown source|N
+Ring 2|2|Suspicious Spare Part|274754|inv_misc_gear_04|Unknown source|N
+Ring 2|3|Theramore Signet|271910|inv_jewelry_ring_28|Unknown source|N
+Trinket 1|1|Enriched Seal|271905|inv_misc_rune_06|Unknown source|N
+Trinket 1|2|Darkspear Voodoo Seal|272059|inv_misc_rune_06|Unknown source|N
+Trinket 1|3|Defiler's Talisman|21116|-|Vendor Rutherford Twing — Defilers Supply Officer|C
+Trinket 2|1|Darkspear Voodoo Seal|272059|inv_misc_rune_06|Unknown source|N
+Trinket 2|2|Defiler's Talisman|21116|-|Vendor Rutherford Twing — Defilers Supply Officer|C
+Trinket 2|3|Talisman of Arathor|21118|-|Vendor Samuel Hawke — League of Arathor Supply Officer|C
+Main hand|1|Ardent Custodian|868|-|World drop (0.001%)|-
+Main hand|2|Swampspine Crusher|277245|inv_hammer_03|Unknown source|N
+Main hand|3|Hammer of Expertise|8708|-|Unknown source|-
+Off hand|1|Collection Plate|4129|-|Quest Cracking Maury's Foot (level 44) in Stranglethorn Vale|-
+Off hand|2|Olaf's All Purpose Shield|9404|-|Drops from Olaf (50%) in Uldaman|X
+Off hand|3|Savage Boar's Guard|10767|-|Drops from Ragglesnout (40%) in Razorfen Downs|X

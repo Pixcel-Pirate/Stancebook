@@ -1,0 +1,51 @@
+Head|1|Filigreed Silky Circlet|253977|inv_crown_01|Crafted Tailoring|N
+Head|2|Silky Circlet|253951|inv_crown_01|Crafted Tailoring|N
+Head|3|Holy Shroud|2721|-|World drop (0.003%)|-
+Neck|1|Scorn's Icy Choker|23169|-|Drops from Scorn (33.3%) in Scarlet Monastery|-
+Neck|2|Seal of the Expedition|271920|inv_jewelry_necklace_08|Unknown source|N
+Neck|3|Darkspear Warding Pendant|272075|inv_jewelry_necklace_08|Unknown source|N
+Shoulders|1|Death Speaker Mantle|6685|-|Drops from Death Speaker Jargba (40%) in Razorfen Kraul|-
+Shoulders|2|Moonlit Amice|11884|-|Quest Return to Vahlarriel (level 33, Alliance) in Desolace|C
+Shoulders|3|Magician's Mantle|12998|-|World drop (0.003%)|-
+Back|1|Azure Silk Cloak|7053|-|Crafted Tailoring|-
+Back|2|Hillman's Cloak|3719|-|Crafted Leatherworking|C
+Back|3|Battle Healer's Cloak|19529|-|Vendor Kelm Hargunth — Warsong Supply Officer|C
+Chest|1|Silky Gown|253963|inv_chest_cloth_03|Crafted Tailoring|N
+Chest|2|Green Silk Armor|7065|-|Crafted Tailoring|C
+Chest|3|Tree Bark Jacket|1486|-|Drops from Trash mobs (0.02%) in Blackfathom Deeps|-
+Wrists|1|Knife-Polishing Rag|271740|inv_bracer_10|Unknown source|N
+Wrists|2|Mindthrust Bracers|1974|-|Drops from Trash mobs (0.02%) in Shadowfang Keep|-
+Wrists|3|Tabitha's Cuffs|251486|inv_bracer_10|Unknown source|N
+Hands|1|Azure Silk Gloves|4319|-|Crafted Tailoring|-
+Hands|2|Silky Gloves|253915|inv_gauntlets_17|Crafted Tailoring|N
+Hands|3|Jutebraid Gloves|10654|-|Quest Horde Presence (level 29, Horde) in The Barrens|C
+Waist|1|Highlander's Cloth Girdle|20099|-|Vendor Samuel Hawke — League of Arathor Supply Officer|-
+Waist|2|Defiler's Cloth Girdle|20164|-|Vendor Rutherford Twing — Defilers Supply Officer|-
+Waist|3|Warsong Sash|16975|-|Quest Warsong Supplies (level 27, Horde) in Ashenvale|C
+Legs|1|Silky Leggings|253989|inv_pants_08|Crafted Tailoring|N
+Legs|2|Filigreed Silky Leggings|253939|inv_pants_08|Crafted Tailoring|N
+Legs|3|Abomination Skin Leggings|23173|-|Drops from Sever (50%) in Shadowfang Keep|X
+Feet|1|Frothing Slippers|254003|inv_boots_cloth_03|Crafted Tailoring|N
+Feet|2|Gilded Slippers|254001|inv_boots_cloth_08|Crafted Tailoring|N
+Feet|3|Spidersilk Boots|4320|-|Crafted Tailoring|C
+Ring 1|1|Philanthropist's Ring|281635|inv_jewelry_ring_14|Unknown source|N
+Ring 1|2|Advisor's Ring|19521|-|Vendor Kelm Hargunth — Warsong Supply Officer|-
+Ring 1|3|Lorekeeper's Ring|19525|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Ring 2|1|Advisor's Ring|19521|-|Vendor Kelm Hargunth — Warsong Supply Officer|-
+Ring 2|2|Lorekeeper's Ring|19525|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Ring 2|3|Ring of Forlorn Spirits|2043|-|Quest The Legend of Stalvan (level 35, Alliance) in Duskwood|C
+Trinket 1|1|Talisman of Arathor|21119|-|Vendor Samuel Hawke — League of Arathor Supply Officer|C
+Trinket 1|2|Defiler's Talisman|21120|-|Vendor Rutherford Twing — Defilers Supply Officer|C
+Trinket 1|3|Rune of Perfection|21566|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|C
+Trinket 2|1|Defiler's Talisman|21120|-|Vendor Rutherford Twing — Defilers Supply Officer|C
+Trinket 2|2|Rune of Perfection|21566|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|C
+Trinket 2|3|Rune of Duty|21568|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|C
+Main hand|1|Scorn's Focal Dagger|23168|-|Drops from Scorn (33.3%) in Scarlet Monastery|X
+Main hand|2|Zealot Blade|13033|-|World drop (0.003%)|-
+Main hand|3|Swinetusk Shank|6691|-|Drops from Agathelos the Raging (40%) in Razorfen Kraul|-
+Off hand|1|Orb of Mystic Insight|249394|inv_misc_orb_blue|Crafted Enchanting|N
+Off hand|2|Antipodean Rod|2879|-|World drop (0.004%)|-
+Off hand|3|Orb of Souls|249395|inv_misc_orb_04|Crafted Enchanting|N
+Ranged|1|Starfaller|13063|-|World drop (0.003%)|-
+Ranged|2|Necrotic Wand|7708|-|Drops from Azshir the Sleepless (33.3%) in Scarlet Monastery|X
+Ranged|3|Greater Mystic Wand|217287|inv_wand_07|Crafted Enchanting|-

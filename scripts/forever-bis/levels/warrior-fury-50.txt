@@ -1,0 +1,51 @@
+Head|1|Fury Visor|20521|-|Quest Voodoo Feathers (level 52)|X
+Head|2|Ebon Mask|19984|-|Quest The Azure Key (level 52)|X
+Head|3|Raging Berserker's Helm|7719|-|Drops from Herod (35%) in Scarlet Monastery|X
+Neck|1|Woven Ivy Necklace|19159|-|Quest Wanted: Vile Priestess Hexx and Her Minions (level 51, Horde) in The Hinterlands|-
+Neck|2|Skibi's Pendant|13089|-|World drop (0.003%)|-
+Neck|3|Corrupted Riverglades Pendant|281657|inv_jewelry_necklace_11|Unknown source|N
+Shoulders|1|Razorsteel Shoulders|20517|-|Quest Voodoo Feathers (level 52)|X
+Shoulders|2|Pauldrons of Vindication|277236|inv_shoulder_09|Unknown source|N
+Shoulders|3|Officer's Pauldrons|250576|inv_shoulder_13|Crafted Blacksmithing|N
+Back|1|Frightmaw Hide|22230|-|Unknown source|-
+Back|2|Blackveil Cape|11626|-|Drops from High Interrogator Gerstahn (25%) in Blackrock Depths|X
+Back|3|Sergeant Major's Cape|16336|-|Unknown source|-
+Chest|1|Warbear Harness|15064|-|Crafted Leatherworking|C
+Chest|2|Mixologist's Tunic|12793|-|Drops from Plugger Spazzring (33.3%) in Blackrock Depths|X
+Chest|3|Grizzled Pelt|22274|-|Quest A Better Ingredient (level 52)|X
+Wrists|1|Berserker Bracers|19580|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Wrists|2|Forest Stalker's Bracers|19589|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Wrists|3|Windtalker's Wristguards|19583|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Hands|1|Gauntlets of Heroism|21998|-|Quest Just Compensation (level 60, Alliance) in Ironforge|-
+Hands|2|Theramore Gauntlets|271941|inv_gauntlets_29|Unknown source|N
+Hands|3|Raider Gauntlets|272096|inv_gauntlets_29|Unknown source|N
+Waist|1|Highlander's Plate Girdle|20124|-|Vendor Samuel Hawke — League of Arathor Supply Officer|-
+Waist|2|Defiler's Plate Girdle|20205|-|Vendor Rutherford Twing — Defilers Supply Officer|-
+Waist|3|Highlander's Lamellar Girdle|20106|-|Vendor Samuel Hawke — League of Arathor Supply Officer|-
+Legs|1|Leggings of the Ursa|21316|-|Quest Deadwood of the North (level 55) in Timbermaw Hold|-
+Legs|2|Elemental Rockridge Leggings|17711|-|Drops from Princess Theradras (20%) in Maraudon|X
+Legs|3|Stormshroud Pants|15057|-|Crafted Leatherworking|-
+Feet|1|Battlechaser's Greaves|12555|-|Drops from Trash mobs (0.02%) in Blackrock Depths|X
+Feet|2|Officer's Sabatons|250561|inv_boots_plate_19v2|Crafted Blacksmithing|N
+Feet|3|Highlander's Plate Greaves|20127|-|Vendor Samuel Hawke — League of Arathor Supply Officer|-
+Ring 1|1|Blackstone Ring|17713|-|Drops from Princess Theradras (25%) in Maraudon|X
+Ring 1|2|Legionnaire's Band|19511|-|Vendor Kelm Hargunth — Warsong Supply Officer|-
+Ring 1|3|Protector's Band|19516|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Ring 2|1|Legionnaire's Band|19511|-|Vendor Kelm Hargunth — Warsong Supply Officer|-
+Ring 2|2|Protector's Band|19516|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Ring 2|3|Bloodsport Band|275044|inv_jewelry_ring_04|Unknown source|N
+Trinket 1|1|Rune of the Guard Captain|19120|-|Quest Job Opening: Guard Captain of Revantusk Village (level 51, Horde) in The Hinterlands|C
+Trinket 1|2|Cleansed Vilebranch Medallion|270275|inv_misc_coin_09|Unknown source|N
+Trinket 1|3|Frozen Heart of the Mountain|249469|inv_misc_gem_sapphire_01|Crafted Enchanting|N
+Trinket 2|1|Cleansed Vilebranch Medallion|270275|inv_misc_coin_09|Unknown source|N
+Trinket 2|2|Frozen Heart of the Mountain|249469|inv_misc_gem_sapphire_01|Crafted Enchanting|N
+Trinket 2|3|Jewel of the Guard Captain|270225|inv_qiraj_jewelglyphed|Unknown source|N
+Main hand|1|Warmonger|13052|-|World drop (0.003%)|-
+Main hand|2|Glowing Brightwood Staff|812|-|World drop (0.001%)|X
+Main hand|3|Sul'thraze the Lasher|9372|-|Unknown source|X
+Off hand|2|Doomforged Straightedge|12535|-|Drops from Trash mobs (0.02%) in Blackrock Depths|X
+Off hand|2|Dawn's Edge|12774|-|Crafted Blacksmithing|-
+Off hand|2|Thorium Cestus|250614|inv_gauntlets_11|Crafted Blacksmithing|N
+Ranged|1|Stinging Bow|10624|-|Drops from Trash mobs (0.02%) in Sunken Temple|X
+Ranged|2|Skull Splitting Crossbow|13039|-|World drop (0.003%)|-
+Ranged|3|Precisely Calibrated Boomstick|2100|-|World drop (0.001%)|X

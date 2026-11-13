@@ -1,0 +1,48 @@
+Head|1|Moonshadow Hood|22273|-|Unknown source|-
+Head|2|Red Mageweave Headband|10033|-|Crafted Tailoring|C
+Head|3|Eye of Flame|3075|-|World drop (0.001%)|X
+Neck|1|Arcane Crystal Pendant|20037|-|Quest Destroy Morphaz (level 52)|X
+Neck|2|Darkmoon Necklace|19303|-|Vendor Lhara — Darkmoon Faire Exotic Goods|-
+Neck|3|Scorn's Icy Choker|23169|-|Drops from Scorn (33.3%) in Scarlet Monastery|-
+Shoulders|1|Ironfeather Shoulders|15067|-|Crafted Leatherworking|C
+Shoulders|2|Lead Surveyor's Mantle|11842|-|Drops from Fineous Darkvire (25%) in Blackrock Depths|X
+Shoulders|3|Kentic Amice|11624|-|Drops from High Interrogator Gerstahn (25%) in Blackrock Depths|X
+Back|1|Deep Woodlands Cloak|19121|-|Quest Wanted: Vile Priestess Hexx and Her Minions (level 51, Horde) in The Hinterlands|-
+Back|2|Spritecaster Cape|11623|-|Drops from Houndmaster Grebmar (35%) in Blackrock Depths|X
+Back|3|Mantle of Lady Falther'ess|23178|-|Drops from Lady Falther'ess (50%) in Razorfen Downs|X
+Chest|1|Feathered Breastplate|8349|-|Crafted Leatherworking|C
+Chest|2|Flamestrider Robes|11747|-|Drops from Pyromancer Loregrain (26.7%) in Blackrock Depths|X
+Chest|3|Robe of the Magi|1716|-|World drop (0.003%)|-
+Wrists|1|Dryad's Wrist Bindings|19596|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Wrists|2|Skycaller's Mail Bracers|252571|inv_bracer_25|Crafted Leatherworking|N
+Wrists|3|Skycaller's Leather Bracers|252542|inv_bracer_22a|Crafted Leatherworking|N
+Hands|1|Gloves of the Greatfather|17721|-|Crafted Leatherworking|C
+Hands|2|Gauntlets of The Five Thunders|22099|-|Quest Just Compensation (level 60, Horde) in Orgrimmar|-
+Hands|3|Skycaller's Mail Gauntlets|252585|inv_gauntlets_30|Crafted Leatherworking|N
+Waist|1|Ban'thok Sash|11662|-|Drops from Ok'thor the Breaker (35%) in Blackrock Depths|X
+Waist|2|Skycaller's Mail Belt|252589|inv_belt_22|Crafted Leatherworking|N
+Waist|3|Skycaller's Leather Waistguard|252476|inv_belt_43a|Crafted Leatherworking|N
+Legs|1|Spellshock Leggings|9484|-|Drops from Trash mobs (0.02%) in Zul'Farrak|X
+Legs|2|Stormshroud Pants|15057|-|Crafted Leatherworking|-
+Legs|3|Green Dragonscale Leggings|15046|-|Crafted Leatherworking|C
+Feet|1|Greaves of Withering Despair|22240|-|Drops from High Interrogator Gerstahn (25%) in Blackrock Depths|X
+Feet|2|Stormcloth Boots|10039|-|Crafted Tailoring|C
+Feet|3|Earthen Silk Slippers|254013|inv_boots_cloth_22|Crafted Tailoring|N
+Ring 1|1|Advisor's Ring|19519|-|Vendor Kelm Hargunth — Warsong Supply Officer|-
+Ring 1|2|Lorekeeper's Ring|19523|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Ring 1|3|Cyclopean Band|11824|-|Drops from Ok'thor the Breaker (15%) in Blackrock Depths|X
+Ring 2|1|Lorekeeper's Ring|19523|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Ring 2|2|Cyclopean Band|11824|-|Drops from Ok'thor the Breaker (15%) in Blackrock Depths|X
+Ring 2|3|Darkspear Signet|272069|inv_jewelry_ring_28|Unknown source|N
+Trinket 1|1|Jewel of the Guard Captain|270225|inv_qiraj_jewelglyphed|Unknown source|N
+Trinket 1|2|Cleansed Vilebranch Icon|270276|inv_misc_coin_08|Unknown source|N
+Trinket 1|3|Enriched Seal|271903|inv_misc_rune_06|Unknown source|N
+Trinket 2|1|Cleansed Vilebranch Icon|270276|inv_misc_coin_08|Unknown source|N
+Trinket 2|2|Enriched Seal|271903|inv_misc_rune_06|Unknown source|N
+Trinket 2|3|Darkspear Voodoo Seal|272061|inv_misc_rune_06|Unknown source|N
+Main hand|1|Searing Golden Blade|12260|-|Crafted Blacksmithing|C
+Main hand|2|Moonshadow Stave|22458|-|Quest A Better Ingredient (level 52)|X
+Main hand|3|Hypnotic Blade|7714|-|Drops from Arcanist Doan (25%) in Scarlet Monastery|X
+Off hand|1|Thrash's Trash|276204|inv_shield_02|Unknown source|N
+Off hand|2|Sunderbark Vigil|276754|inv_shield_13|Unknown source|N
+Off hand|3|Truesilver Conduit|249455|inv_rod_enchantedadamantite|Crafted Enchanting|N

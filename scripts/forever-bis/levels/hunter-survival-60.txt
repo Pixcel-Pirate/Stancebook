@@ -1,0 +1,51 @@
+Head|1|Cryptstalker Headpiece|22438|-|Quest Cryptstalker Headpiece (level 60) in Naxxramas|-
+Head|2|Field Marshal's Chain Helm|16465|-|Vendor Captain Dirgehammer — Armor Quartermaster|-
+Head|3|Warlord's Chain Helmet|16566|-|Vendor Lady Palanseer — Armor Quartermaster|-
+Neck|1|Prestor's Talisman of Connivery|19377|-|Drops from Nefarian (20%) in Blackwing Lair|-
+Neck|2|Stormrage's Talisman of Seething|23053|-|Drops from Kel'Thuzad (16.7%) in Naxxramas|-
+Neck|3|Barbed Choker|21664|-|Drops from Fankriss the Unyielding (18%) in Ahn'Qiraj Temple|-
+Shoulders|1|Cryptstalker Spaulders|22439|-|Quest Cryptstalker Spaulders (level 60) in Naxxramas|-
+Shoulders|2|Field Marshal's Chain Spaulders|16468|-|Vendor Captain Dirgehammer — Armor Quartermaster|-
+Shoulders|3|Warlord's Chain Shoulders|16568|-|Vendor Lady Palanseer — Armor Quartermaster|-
+Back|1|Shroud of Dominion|23045|-|Drops from Sapphiron (20%) in Naxxramas|X
+Back|2|Puissant Cape|18541|-|Drops from Azuregos (19%)|X
+Back|3|Cloak of Concentrated Hatred|21701|-|Drops from The Prophet Skeram (18%) in Ahn'Qiraj Temple|X
+Chest|1|Cryptstalker Tunic|22436|-|Quest Cryptstalker Tunic (level 60) in Naxxramas|-
+Chest|2|Striker's Hauberk|21370|-|Quest Striker's Hauberk (level 60) in Ahn'Qiraj|-
+Chest|3|Dawn Armor|252483|inv_chest_leather_08|Crafted Leatherworking|N
+Wrists|1|Cryptstalker Wristguards|22443|-|Quest Cryptstalker Wristguards (level 60) in Naxxramas|-
+Wrists|2|Wristguards of True Flight|18812|-|Drops from Flamewaker Elite (0.46%) in Molten Core|X
+Wrists|3|Qiraji Execution Bracers|21602|-|Drops from Emperor Vek'lor (16.7%) in Ahn'Qiraj Temple|-
+Hands|1|Cryptstalker Handguards|22441|-|Quest Cryptstalker Handguards (level 60) in Naxxramas|-
+Hands|2|Giantstalker's Gloves|16852|-|Drops from Shazzrah (33.3%) in Molten Core|X
+Hands|3|Vek'lor's Gloves of Devastation|21599|-|Drops from Emperor Vek'lor (16.7%) in Ahn'Qiraj Temple|X
+Waist|1|Belt of Never-ending Agony|21586|-|Drops from C'Thun (18.4%) in Ahn'Qiraj Temple|-
+Waist|2|Cryptstalker Girdle|22442|-|Quest Cryptstalker Girdle (level 60) in Naxxramas|-
+Waist|3|Ossirian's Binding|21463|-|Drops from Ossirian the Unscarred (18%) in Ruins of Ahn'Qiraj|X
+Legs|1|Cryptstalker Legguards|22437|-|Quest Cryptstalker Legguards (level 60) in Naxxramas|-
+Legs|2|Dragonstalker's Legguards|16938|-|Drops from Ragnaros (21%) in Molten Core|X
+Legs|3|Outrider's Chain Leggings|22673|-|Vendor Kelm Hargunth — Warsong Supply Officer|-
+Feet|1|Cryptstalker Boots|22440|-|Quest Cryptstalker Boots (level 60) in Naxxramas|-
+Feet|2|Boots of the Shadow Flame|19381|-|Drops from Nefarian (20%) in Blackwing Lair|X
+Feet|3|Marshal's Chain Boots|16462|-|Vendor Captain Dirgehammer — Armor Quartermaster|-
+Ring 1|1|Band of Unnatural Forces|23038|-|Drops from Loatheb (20%) in Naxxramas|-
+Ring 1|2|Band of Accuria|17063|-|Drops from Ragnaros (20%) in Molten Core|X
+Ring 1|3|Signet Ring of the Bronze Dragonflight|21205|-|Quest The Qiraji Conqueror (level 60) in Tanaris|-
+Ring 2|1|Band of Accuria|17063|-|Drops from Ragnaros (20%) in Molten Core|X
+Ring 2|2|Signet Ring of the Bronze Dragonflight|21205|-|Quest The Qiraji Conqueror (level 60) in Tanaris|-
+Ring 2|3|Master Dragonslayer's Ring|19384|-|Quest The Lord of Blackrock (level 60, Alliance) in Stormwind City|-
+Trinket 1|1|Drake Fang Talisman|19406|-|Drops from Ebonroc (18%) in Blackwing Lair|-
+Trinket 1|2|Slayer's Crest|23041|-|Drops from Sapphiron (20%) in Naxxramas|-
+Trinket 1|3|Rune of the Guard Captain|19120|-|Quest Job Opening: Guard Captain of Revantusk Village (level 51, Horde) in The Hinterlands|C
+Trinket 2|1|Slayer's Crest|23041|-|Drops from Sapphiron (20%) in Naxxramas|-
+Trinket 2|2|Rune of the Guard Captain|19120|-|Quest Job Opening: Guard Captain of Revantusk Village (level 51, Horde) in The Hinterlands|C
+Trinket 2|3|Cleansed Vilebranch Medallion|270275|inv_misc_coin_09|Unknown source|N
+Main hand|1|Kingsfall|22802|-|Drops from Kel'Thuzad (16.7%) in Naxxramas|X
+Main hand|2|Iblis, Blade of the Fallen Seraph|23014|-|Drops from Instructor Razuvious (16.7%) in Naxxramas|X
+Main hand|3|Harbinger of Doom|23044|-|Drops from Shade of Naxxramas (2%) in Naxxramas|X
+Off hand|1|Claw of the Frost Wyrm|23242|-|Drops from Sapphiron (20%) in Naxxramas|X
+Off hand|2|Iblis, Blade of the Fallen Seraph|23014|-|Drops from Instructor Razuvious (16.7%) in Naxxramas|X
+Off hand|3|Harbinger of Doom|23044|-|Drops from Shade of Naxxramas (2%) in Naxxramas|X
+Ranged|1|Nerubian Slavemaker|22812|-|Drops from Kel'Thuzad (16.7%) in Naxxramas|X
+Ranged|2|Soulstring|22811|-|Chest Four Horsemen Chest (16.7%) in Naxxramas|X
+Ranged|3|Larvae of the Great Worm|23557|-|Drops from Ouro (16.7%) in Ahn'Qiraj Temple|-

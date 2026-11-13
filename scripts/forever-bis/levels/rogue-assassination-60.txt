@@ -1,0 +1,51 @@
+Head|1|Bonescythe Helmet|22478|-|Quest Bonescythe Helmet (level 60) in Naxxramas|-
+Head|2|Deathdealer's Helm|21360|-|Quest Deathdealer's Helm (level 60) in Ahn'Qiraj|-
+Head|3|Field Marshal's Leather Mask|16455|-|Vendor Captain Dirgehammer — Armor Quartermaster|-
+Neck|1|Prestor's Talisman of Connivery|19377|-|Drops from Nefarian (20%) in Blackwing Lair|-
+Neck|2|Stormrage's Talisman of Seething|23053|-|Drops from Kel'Thuzad (16.7%) in Naxxramas|-
+Neck|3|Onyxia Tooth Pendant|18404|-|Quest For All To See (level 60, Horde) in Orgrimmar|C
+Shoulders|1|Bonescythe Pauldrons|22479|-|Quest Bonescythe Pauldrons (level 60) in Naxxramas|-
+Shoulders|2|Deathdealer's Spaulders|21361|-|Quest Deathdealer's Spaulders (level 60) in Ahn'Qiraj|-
+Shoulders|3|Nightslayer Shoulder Pads|16823|-|Drops from Sulfuron Harbinger (33%) in Molten Core|X
+Back|1|Cloak of Concentrated Hatred|21701|-|Drops from The Prophet Skeram (18%) in Ahn'Qiraj Temple|X
+Back|2|Shroud of Dominion|23045|-|Drops from Sapphiron (20%) in Naxxramas|X
+Back|3|Puissant Cape|18541|-|Drops from Azuregos (19%)|X
+Chest|1|Bonescythe Breastplate|22476|-|Quest Bonescythe Breastplate (level 60) in Naxxramas|-
+Chest|2|Deathdealer's Vest|21364|-|Quest Deathdealer's Vest (level 60) in Ahn'Qiraj|-
+Chest|3|Bloodfang Chestpiece|16905|-|Drops from Nefarian (21%) in Blackwing Lair|X
+Wrists|1|Qiraji Execution Bracers|21602|-|Drops from Emperor Vek'lor (16.7%) in Ahn'Qiraj Temple|-
+Wrists|2|Bonescythe Bracers|22483|-|Quest Bonescythe Bracers (level 60) in Naxxramas|-
+Wrists|3|Bloodfang Bracers|16911|-|Drops from Razorgore the Untamed (21%) in Blackwing Lair|X
+Hands|1|Bonescythe Gauntlets|22481|-|Quest Bonescythe Gauntlets (level 60) in Naxxramas|-
+Hands|2|Gloves of Enforcement|21672|-|Drops from Battleguard Sartura (15%) in Ahn'Qiraj Temple|-
+Hands|3|Nightslayer Gloves|16826|-|Drops from Gehennas (25%) in Molten Core|X
+Waist|1|Belt of Never-ending Agony|21586|-|Drops from C'Thun (18.4%) in Ahn'Qiraj Temple|-
+Waist|2|Bonescythe Waistguard|22482|-|Quest Bonescythe Waistguard (level 60) in Naxxramas|-
+Waist|3|Assassin's Waistguard|272395|inv_belt_26|Unknown source|N
+Legs|1|Bonescythe Legplates|22477|-|Quest Bonescythe Legplates (level 60) in Naxxramas|-
+Legs|2|Marshal's Leather Leggings|16456|-|Vendor Captain Dirgehammer — Armor Quartermaster|-
+Legs|3|General's Leather Legguards|16564|-|Vendor Lady Palanseer — Armor Quartermaster|-
+Feet|1|Bonescythe Sabatons|22480|-|Quest Bonescythe Sabatons (level 60) in Naxxramas|-
+Feet|2|Boots of the Shadow Flame|19381|-|Drops from Nefarian (20%) in Blackwing Lair|X
+Feet|3|Deathdealer's Boots|21359|-|Quest Deathdealer's Boots (level 60) in Ahn'Qiraj|-
+Ring 1|1|Band of Unnatural Forces|23038|-|Drops from Loatheb (20%) in Naxxramas|-
+Ring 1|2|Band of Accuria|17063|-|Drops from Ragnaros (20%) in Molten Core|X
+Ring 1|3|Bonescythe Ring|23060|-|Drops from Kel'Thuzad (21%) in Naxxramas|-
+Ring 2|1|Band of Accuria|17063|-|Drops from Ragnaros (20%) in Molten Core|X
+Ring 2|2|Bonescythe Ring|23060|-|Drops from Kel'Thuzad (21%) in Naxxramas|-
+Ring 2|3|Master Dragonslayer's Ring|19384|-|Quest The Lord of Blackrock (level 60, Alliance) in Stormwind City|-
+Trinket 1|1|Drake Fang Talisman|19406|-|Drops from Ebonroc (18%) in Blackwing Lair|-
+Trinket 1|2|Rune of the Guard Captain|19120|-|Quest Job Opening: Guard Captain of Revantusk Village (level 51, Horde) in The Hinterlands|C
+Trinket 1|3|Cleansed Vilebranch Medallion|270275|inv_misc_coin_09|Unknown source|N
+Trinket 2|1|Rune of the Guard Captain|19120|-|Quest Job Opening: Guard Captain of Revantusk Village (level 51, Horde) in The Hinterlands|C
+Trinket 2|2|Cleansed Vilebranch Medallion|270275|inv_misc_coin_09|Unknown source|N
+Trinket 2|3|Royal Seal of Eldre'Thalas|18465|-|Quest Garona: A Study on Stealth and Treachery (level 60) in Dire Maul|X
+Main hand|1|Kingsfall|22802|-|Drops from Kel'Thuzad (16.7%) in Naxxramas|X
+Main hand|2|Harbinger of Doom|23044|-|Drops from Shade of Naxxramas (2%) in Naxxramas|X
+Main hand|3|Maexxna's Fang|22804|-|Drops from Maexxna (20%) in Naxxramas|X
+Off hand|1|The End of Dreams|22988|-|Drops from Grobbulus (20%) in Naxxramas|X
+Off hand|2|Claw of the Frost Wyrm|23242|-|Drops from Sapphiron (20%) in Naxxramas|X
+Off hand|3|Harbinger of Doom|23044|-|Drops from Shade of Naxxramas (2%) in Naxxramas|X
+Ranged|1|Nerubian Slavemaker|22812|-|Drops from Kel'Thuzad (16.7%) in Naxxramas|X
+Ranged|2|Crossbow of Imminent Doom|21459|-|Drops from Ossirian the Unscarred (10%) in Ruins of Ahn'Qiraj|X
+Ranged|3|Striker's Mark|17069|-|Drops from Magmadar (20%) in Molten Core|X

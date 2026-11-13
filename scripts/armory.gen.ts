@@ -44,7 +44,7 @@ const FS = "https://raw.githubusercontent.com/jhunthrop/foreversixty/main/data/b
 const OFA = "https://raw.githubusercontent.com/smoergi/OneForAll_Forever/main/OneForAll/Data/Armory.lua";
 const SOD = "https://raw.githubusercontent.com/wowsims/sod/master/assets/database/db.json";
 const get = async (u: string) => { const r = await fetch(u); if (!r.ok) throw new Error(`${u}: ${r.status}`); return r; };
-type FsItem = { id: number; name: string; quality: number; class_id: number; subclass_id: number; inventory_type: number; faction_restriction: string };
+type FsItem = { id: number; name: string; quality: number; class_id: number; subclass_id: number; inventory_type: number; faction_restriction: string; required_level?: number };
 type FsSet = { id: number; name: string; item_ids: number[]; bonuses: { pieces: number; description: string }[] };
 const fsSets = (await (await get(`${FS}/sets.json`)).json()) as FsSet[];
 const fsItems = new Map(((await (await get(`${FS}/items.json`)).json()) as FsItem[]).map((i) => [i.id, i]));
@@ -85,7 +85,11 @@ const ofaPiece = new Map([...ofa.values()].flatMap((s) => s.pieces.map((p) => [p
 const iconByName = new Map<string, string>();
 for (const i of db.items) if (i.icon && !iconByName.has(i.name)) iconByName.set(i.name, i.icon);
 // Forever-new pieces none of the above cover, with the icon The Forever Era shows (theforeverera.com/en/items/<id>/).
-const EXTRA_ICONS: Record<number, string> = { 250591: "inv_pants_plate_04" };
+// Classic icons (wow-classic-items) for BIS picks the other sources lack; 10049 is from The Forever Era page.
+const EXTRA_ICONS: Record<number, string> = {
+  250591: "inv_pants_plate_04", 10049: "inv_weapon_shortblade_02", 23072: "inv_gauntlets_22", 2316: "inv_misc_cape_10", 3480: "inv_shoulder_05",
+  3719: "inv_misc_cape_07", 4314: "inv_shoulder_06", 4315: "inv_shoulder_09", 6189: "inv_shoulder_05",
+};
 const iconOf = (id: number, name: string) => EXTRA_ICONS[id] || known.get(id)?.icon || csfIcon.get(id) || ofaPiece.get(id)?.i || iconByName.get(name) || "";
 
 // Inventory type -> slot, and the order pieces are listed in.
@@ -163,11 +167,13 @@ const weapons = items
   .filter((w) => w.kind)
   .sort((a, b) => a.kind.localeCompare(b.kind) || b.q - a.q || a.n.localeCompare(b.n));
 
-// BIS lists are The Forever Era's level 60 lists (theforeverera.com/en/bis/<class>/<spec>/60/, beta build 1.60.1.70532,
-// updated Oct 25 2026), copied by hand into scripts/forever-bis/<class>-<spec>.txt as Slot|Item|ItemId|Source|Flag.
-// The beta was capped at level 30, so these are forecasts. Flag is the site's Forever marker:
-// "New in Forever", "Changed" (stats differ from Classic) or "Not in beta client" (may not exist in Forever).
-// Names, icons and quality come from wowsims' db; a name mismatch fails the build so a bad copy can't slip in.
+// BIS lists are The Forever Era's per-level lists (theforeverera.com/en/bis/<class>/<spec>/<level>/ for levels 20, 30, 40,
+// 50 and 60), copied with WebFetch into scripts/forever-bis/levels/<class>-<spec>-<level>.txt, one line per item:
+// Slot|Rank|Item|ItemId|Icon|Source|Flag. Rank 1 is the site's top pick, the rest are its alternatives in page order.
+// Icon is the zamimg name the site shows, needed only where wowsims' dbs have none. Flag: N new in Forever, C changed
+// from Classic, X not in the Forever client, - none. Names are checked against Forever's own item table (foreversixty)
+// so a bad copy fails the build. The layout copies the Forever Leveling BiS addon: a level picker, the best item per
+// slot with ranked alternatives, and where each one comes from, grouped by source type.
 const SPEC_ORDER: Record<string, string[]> = {
   warrior: ["arms", "fury", "protection"], paladin: ["holy", "protection", "retribution"],
   hunter: ["beast-mastery", "marksmanship", "survival"], rogue: ["assassination", "combat", "subtlety"],
@@ -175,30 +181,37 @@ const SPEC_ORDER: Record<string, string[]> = {
   mage: ["arcane", "fire", "frost"], warlock: ["affliction", "demonology", "destruction"],
   druid: ["balance", "feral", "feral-tank", "restoration"],
 };
-// Items missing from wowsims' Classic db, with the icons The Forever Era shows for them. 250600 is new in Forever
-// (epic per its tooltip). 21594 and 23058 are unused Classic raid ids with no source yet; the site has no tooltip
-// for them, so epic is assumed from the raid tier they sit in.
-const FOREVER_ITEMS: Record<number, { n: string; i: string; q: number }> = {
-  250600: { n: "Martyr's Legplates", i: "inv_pants_plate_21", q: 4 },
-  21594: { n: "Bracers of the Fallen Son", i: "inv_bracer_11", q: 4 },
-  23058: { n: "Life Channeling Necklace", i: "inv_jewelry_necklace_30naxxramas", q: 4 },
-};
+const LEVELS = [20, 30, 40, 50, 60];
+const SLOTS = ["Head", "Neck", "Shoulders", "Back", "Chest", "Wrists", "Hands", "Waist", "Legs", "Feet", "Ring 1", "Ring 2", "Trinket 1", "Trinket 2", "Main hand", "Off hand", "Ranged"];
 const allById = new Map(db.items.map((i) => [i.id, i]));
+// Source type, like the addon's sections: q quest, d dungeon or raid drop, c crafted, v vendor, w world drop, u unknown.
+const kindOf = (src: string) =>
+  /^Quest/.test(src) ? "q" : /^Crafted/.test(src) ? "c" : /^Vendor/.test(src) ? "v" : /^Drops from .* in /.test(src) ? "d" : /^(World drop|Drops from|Contained|Chest)/.test(src) ? "w" : "u";
 const label = (s: string) => s.split("-").map((w) => w[0].toUpperCase() + w.slice(1)).join(" ").replace("Feral Tank", "Feral (tank)");
-const bisItems: Record<number, { n: string; i: string; q: number }> = {};
+const bisItems: Record<number, { n: string; i: string; q: number; r: number }> = {};
+let iconless = 0;
 const bis = Object.entries(SPEC_ORDER).map(([cls, specs]) => ({
   cls,
-  specs: specs.map((spec) => {
-    const rows = fs.readFileSync(`scripts/forever-bis/${cls}-${spec}.txt`, "utf8").trim().split("\n").map((l) => {
-      const [slot, name, id, src, flag] = l.split("|");
-      const it = FOREVER_ITEMS[+id] ?? allById.get(+id);
-      if (!it || ("name" in it ? it.name : it.n) !== name) throw new Error(`${cls}-${spec}: ${name} (${id}) doesn't match the item db`);
-      bisItems[+id] = "name" in it ? { n: it.name, i: it.icon, q: it.quality } : it;
-      return [slot, +id, src.replace(/ \(Classic data\)/g, ""), flag ?? ""] as const;
-    });
-    return { name: label(spec), list: rows };
-  }),
+  specs: specs.map((spec) => ({
+    name: label(spec),
+    levels: Object.fromEntries(LEVELS.map((lvl) => {
+      const bySlot = new Map<string, [number, string, string, string][]>();
+      for (const l of fs.readFileSync(`scripts/forever-bis/levels/${cls}-${spec}-${lvl}.txt`, "utf8").trim().split("\n")) {
+        const [slot, , name, id, icon, src, flag] = l.split("|");
+        const it = fsItems.get(+id) ?? allById.get(+id);
+        if (!SLOTS.includes(slot) || !it || it.name !== name) throw new Error(`${cls}-${spec}-${lvl}: ${slot} ${name} (${id}) doesn't match Forever's item table`);
+        const i = (icon !== "-" ? icon : "") || iconOf(+id, name);
+        if (!i) { iconless++; continue; }
+        bisItems[+id] = { n: name, i, q: it.quality, r: fsItems.get(+id)?.required_level ?? 0 };
+        const picks = bySlot.get(slot) ?? [];
+        if (!picks.some(([p]) => p === +id)) picks.push([+id, src, flag === "-" ? "" : flag, kindOf(src)]);
+        bySlot.set(slot, picks);
+      }
+      return [lvl, SLOTS.filter((s) => bySlot.has(s)).map((s) => [s, bySlot.get(s)!])];
+    })),
+  })),
 }));
+if (iconless) console.warn(`BIS: ${iconless} picks left out because no real icon is known`);
 
 fs.writeFileSync("src/data/armory.json", JSON.stringify({ sets, weapons, bis, bisItems }));
-console.log(`armory: ${sets.length} sets, ${weapons.length} weapons and shields, BIS for ${bis.reduce((n, b) => n + b.specs.length, 0)} specs (${Object.keys(bisItems).length} items)`);
+console.log(`armory: ${sets.length} sets, ${weapons.length} weapons and shields, BIS for ${bis.reduce((n, b) => n + b.specs.length, 0)} specs at ${LEVELS.length} levels (${Object.keys(bisItems).length} items)`);

@@ -1,0 +1,51 @@
+Head|1|Frostfire Circlet|22498|-|Quest Frostfire Circlet (level 60) in Naxxramas|-
+Head|2|Enigma Circlet|21347|-|Quest Enigma Circlet (level 60) in Ahn'Qiraj|-
+Head|3|Mish'undare, Circlet of the Mind Flayer|19375|-|Drops from Nefarian (20%) in Blackwing Lair|X
+Neck|1|Amulet of Vek'nilash|21608|-|Drops from Emperor Vek'nilash (14.3%) in Ahn'Qiraj Temple|-
+Neck|2|Gem of Trapped Innocents|23057|-|Drops from Kel'Thuzad (20%) in Naxxramas|-
+Neck|3|Choker of the Fire Lord|18814|-|Drops from Ragnaros (20%) in Molten Core|-
+Shoulders|1|Rime Covered Mantle|22983|-|Drops from Gluth (20%) in Naxxramas|X
+Shoulders|2|Frostfire Shoulderpads|22499|-|Quest Frostfire Shoulderpads (level 60) in Naxxramas|-
+Shoulders|3|Mantle of the Blackwing Cabal|19370|-|Drops from Razorgore the Untamed (16.7%) in Blackwing Lair|X
+Back|1|Cloak of the Necropolis|23050|-|Drops from Sapphiron (20%) in Naxxramas|X
+Back|2|Cloak of the Devoured|22731|-|Drops from C'Thun (18.4%) in Ahn'Qiraj Temple|X
+Back|3|Cloak of Consumption|19857|-|Drops from Hakkar (14.3%) in Zul'Gurub|X
+Chest|1|Frostfire Robe|22496|-|Quest Frostfire Robe (level 60) in Naxxramas|C
+Chest|2|Crystal Webbed Robe|23220|-|Drops from Maexxna (20%) in Naxxramas|X
+Chest|3|Enigma Robes|21343|-|Quest Enigma Robes (level 60) in Ahn'Qiraj|-
+Wrists|1|Rockfury Bracers|21186|-|Quest Stalwart's Battlegear (level 60) in Silithus|-
+Wrists|2|Bracers of Arcane Accuracy|19374|-|Drops from Broodlord Lashlayer (16.7%) in Blackwing Lair|X
+Wrists|3|The Soul Harvester's Bindings|23021|-|Drops from Gothik the Harvester (20%) in Naxxramas|X
+Hands|1|Dark Storm Gauntlets|21585|-|Drops from C'Thun (18.4%) in Ahn'Qiraj Temple|-
+Hands|2|Frostfire Gloves|22501|-|Quest Frostfire Gloves (level 60) in Naxxramas|-
+Hands|3|Netherwind Gloves|16913|-|Drops from Flamegor (4%) in Blackwing Lair|X
+Waist|1|Eyestalk Waist Cord|22730|-|Drops from C'Thun (18.4%) in Ahn'Qiraj Temple|X
+Waist|2|Frostfire Belt|22502|-|Quest Frostfire Belt (level 60) in Naxxramas|-
+Waist|3|Firemaw's Clutch|19400|-|Drops from Firemaw (12.5%) in Blackwing Lair|X
+Legs|1|Frostfire Leggings|22497|-|Quest Frostfire Leggings (level 60) in Naxxramas|-
+Legs|2|Leggings of Polarity|23070|-|Drops from Thaddius (20%) in Naxxramas|X
+Legs|3|Enigma Leggings|21346|-|Quest Enigma Leggings (level 60) in Ahn'Qiraj|-
+Feet|1|Ringo's Blizzard Boots|19438|-|Drops from Death Talon Wyrmguard (9.4%) in Blackwing Lair|X
+Feet|2|Enigma Boots|21344|-|Quest Enigma Boots (level 60) in Ahn'Qiraj|-
+Feet|3|Frostfire Sandals|22500|-|Quest Frostfire Sandals (level 60) in Naxxramas|-
+Ring 1|1|Ring of the Fallen God|21709|-|Quest The Savior of Kalimdor (level 60) in Ahn'Qiraj|-
+Ring 1|2|Band of the Inevitable|23031|-|Drops from Noth the Plaguebringer (14.3%) in Naxxramas|-
+Ring 1|3|Seal of the Damned|23025|-|Chest Four Horsemen Chest (16.7%) in Naxxramas|-
+Ring 2|1|Band of the Inevitable|23031|-|Drops from Noth the Plaguebringer (14.3%) in Naxxramas|-
+Ring 2|2|Seal of the Damned|23025|-|Chest Four Horsemen Chest (16.7%) in Naxxramas|-
+Ring 2|3|Frostfire Ring|23062|-|Drops from Kel'Thuzad (21%) in Naxxramas|-
+Trinket 1|1|Neltharion's Tear|19379|-|Drops from Nefarian (20%) in Blackwing Lair|-
+Trinket 1|2|The Restrained Essence of Sapphiron|23046|-|Drops from Sapphiron (20%) in Naxxramas|-
+Trinket 1|3|Briarwood Reed|12930|-|Drops from Jed Runewatcher (33.3%) in Blackrock Spire|X
+Trinket 2|1|The Restrained Essence of Sapphiron|23046|-|Drops from Sapphiron (20%) in Naxxramas|-
+Trinket 2|2|Briarwood Reed|12930|-|Drops from Jed Runewatcher (33.3%) in Blackrock Spire|X
+Trinket 2|3|Jewel of the Guard Captain|270225|inv_qiraj_jewelglyphed|Unknown source|N
+Main hand|1|Wraith Blade|22807|-|Drops from Maexxna (20%) in Naxxramas|X
+Main hand|2|Brimstone Staff|22800|-|Drops from Loatheb (20%) in Naxxramas|X
+Main hand|3|Soulseeker|22799|-|Drops from Kel'Thuzad (20%) in Naxxramas|-
+Off hand|1|Sapphiron's Left Eye|23049|-|Drops from Sapphiron (20%) in Naxxramas|X
+Off hand|2|Royal Scepter of Vek'lor|21597|-|Drops from Emperor Vek'lor (16.7%) in Ahn'Qiraj Temple|-
+Off hand|3|Jin'do's Bag of Whammies|19891|-|Drops from Jin'do the Hexxer (16.7%) in Zul'Gurub|X
+Ranged|1|Doomfinger|22821|-|Drops from Kel'Thuzad (20%) in Naxxramas|X
+Ranged|2|Wand of Fates|22820|-|Drops from Patchwerk (20%) in Naxxramas|X
+Ranged|3|Wand of the Whispering Dead|23009|-|Drops from Instructor Razuvious (16.7%) in Naxxramas|X

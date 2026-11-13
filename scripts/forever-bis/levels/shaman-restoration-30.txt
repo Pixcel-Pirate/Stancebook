@@ -1,0 +1,48 @@
+Head|1|Holy Shroud|2721|-|World drop (0.003%)|-
+Head|2|Filigreed Pristine Circlet|253975|inv_crown_01|Crafted Tailoring|N
+Head|3|Wisdom's Leather Helm|252515|inv_helmet_26|Crafted Leatherworking|N
+Neck|1|Scorn's Icy Choker|23169|-|Drops from Scorn (33.3%) in Scarlet Monastery|-
+Neck|2|Seal of the Expedition|271920|inv_jewelry_necklace_08|Unknown source|N
+Neck|3|Darkspear Warding Pendant|272075|inv_jewelry_necklace_08|Unknown source|N
+Shoulders|1|Ghostly Mantle|3324|-|Quest Deathstalkers in Shadowfang (level 25, Horde) in Shadowfang Keep|-
+Shoulders|2|Death Speaker Mantle|6685|-|Drops from Death Speaker Jargba (40%) in Razorfen Kraul|-
+Shoulders|3|Fairywing Mantle|9536|-|Quest A Fine Mess (level 30) in Gnomeregan|-
+Back|1|Battle Healer's Cloak|19529|-|Vendor Kelm Hargunth — Warsong Supply Officer|C
+Back|2|Caretaker's Cape|19533|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|C
+Back|3|Prelacy Cape|7004|-|Quest Researching the Corruption (level 24, Alliance) in Blackfathom Deeps|-
+Chest|1|Death Speaker Robes|6682|-|Drops from Death Speaker Jargba (40%) in Razorfen Kraul|-
+Chest|2|Pristine Gown|253961|inv_chest_cloth_32|Crafted Tailoring|N
+Chest|3|Wisdom's Leather Tunic|252511|inv_chest_leather_01|Crafted Leatherworking|N
+Wrists|1|Mindthrust Bracers|1974|-|Drops from Trash mobs (0.02%) in Shadowfang Keep|-
+Wrists|2|Spidertank Oilrag|9448|-|Drops from Electrocutioner 6000 (40%) in Gnomeregan|X
+Wrists|3|Knife-Polishing Rag|271740|inv_bracer_10|Unknown source|N
+Hands|1|Truefaith Gloves|7049|-|Crafted Tailoring|C
+Hands|2|Naga Battle Gloves|888|-|Drops from Lady Sarevess (40%) in Blackfathom Deeps|-
+Hands|3|Pristine Gloves|253913|inv_gauntlets_16|Crafted Tailoring|N
+Waist|1|Mender's Leather Belt|252523|inv_belt_26|Crafted Leatherworking|N
+Waist|2|Pristine Sash|253925|inv_belt_43|Crafted Tailoring|N
+Waist|3|Skycaller's Leather Belt|252522|inv_belt_39a|Crafted Leatherworking|N
+Legs|1|Pristine Leggings|253987|inv_pants_01|Crafted Tailoring|N
+Legs|2|Wisdom's Leather Leggings|252519|inv_pants_02|Crafted Leatherworking|N
+Legs|3|Wisdom's Leather Pants|252503|inv_pants_06|Crafted Leatherworking|N
+Feet|1|Gilded Slippers|254001|inv_boots_cloth_08|Crafted Tailoring|N
+Feet|2|Nimbus Boots|6998|-|Quest Twilight Falls (level 25, Alliance) in Blackfathom Deeps|-
+Feet|3|Wisdom's Leather Boots|252444|inv_boots_chain_03|Crafted Leatherworking|N
+Ring 1|1|Sea Giant's Toe Ring|274746|inv_jewelry_ring_02|Unknown source|N
+Ring 1|2|Advisor's Ring|19521|-|Vendor Kelm Hargunth — Warsong Supply Officer|-
+Ring 1|3|Lorekeeper's Ring|19525|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Ring 2|1|Advisor's Ring|19521|-|Vendor Kelm Hargunth — Warsong Supply Officer|-
+Ring 2|2|Lorekeeper's Ring|19525|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Ring 2|3|Darkspear Signet|272071|inv_jewelry_ring_28|Unknown source|N
+Trinket 1|1|Talisman of Arathor|21119|-|Vendor Samuel Hawke — League of Arathor Supply Officer|C
+Trinket 1|2|Defiler's Talisman|21120|-|Vendor Rutherford Twing — Defilers Supply Officer|C
+Trinket 1|3|Rune of Perfection|21566|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|C
+Trinket 2|1|Defiler's Talisman|21120|-|Vendor Rutherford Twing — Defilers Supply Officer|C
+Trinket 2|2|Rune of Perfection|21566|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|C
+Trinket 2|3|Rune of Duty|21568|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|C
+Main hand|1|Death Speaker Scepter|2816|-|Drops from Death Speaker Jargba (20%) in Razorfen Kraul|-
+Main hand|2|Reef Axe|6905|-|Drops from Gelihast (50%) in Blackfathom Deeps|-
+Main hand|3|Scorn's Focal Dagger|23168|-|Drops from Scorn (33.3%) in Scarlet Monastery|X
+Off hand|1|Orb of Souls|249395|inv_misc_orb_04|Crafted Enchanting|N
+Off hand|2|Eye of Paleth|2943|-|Quest Cleansing the Eye (level 30, Alliance) in Wetlands|C
+Off hand|3|Orb of Mistmantle|13031|-|World drop (0.003%)|-

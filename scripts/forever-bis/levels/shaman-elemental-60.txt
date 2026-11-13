@@ -1,0 +1,48 @@
+Head|1|Mish'undare, Circlet of the Mind Flayer|19375|-|Drops from Nefarian (20%) in Blackwing Lair|X
+Head|2|Preceptor's Hat|23035|-|Drops from Heigan the Unclean (20%) in Naxxramas|X
+Head|3|Stormcaller's Diadem|21372|-|Quest Stormcaller's Diadem (level 60, Horde) in Ahn'Qiraj|-
+Neck|1|Amulet of Vek'nilash|21608|-|Drops from Emperor Vek'nilash (14.3%) in Ahn'Qiraj Temple|-
+Neck|2|Gem of Trapped Innocents|23057|-|Drops from Kel'Thuzad (20%) in Naxxramas|-
+Neck|3|Choker of the Fire Lord|18814|-|Drops from Ragnaros (20%) in Molten Core|-
+Shoulders|1|Pauldrons of Elemental Fury|23664|-|Drops from Spirit of Naxxramas (0.86%) in Naxxramas|X
+Shoulders|2|Rime Covered Mantle|22983|-|Drops from Gluth (20%) in Naxxramas|X
+Shoulders|3|Deep Earth Spaulders|18829|-|Drops from Magmadar (5.5%) in Molten Core|X
+Back|1|Cloak of the Necropolis|23050|-|Drops from Sapphiron (20%) in Naxxramas|X
+Back|2|Cloak of the Devoured|22731|-|Drops from C'Thun (18.4%) in Ahn'Qiraj Temple|X
+Back|3|Cloak of Consumption|19857|-|Drops from Hakkar (14.3%) in Zul'Gurub|X
+Chest|1|Crystal Webbed Robe|23220|-|Drops from Maexxna (20%) in Naxxramas|X
+Chest|2|Stormcaller's Hauberk|21374|-|Quest Stormcaller's Hauberk (level 60, Horde) in Ahn'Qiraj|C
+Chest|3|Garb of Royal Ascension|21838|-|Drops from Vekniss Wasp (0.57%) in Ahn'Qiraj Temple|X
+Wrists|1|Bracers of the Fallen Son|21594|-|Unknown source|-
+Wrists|2|Wristguards of Elemental Fury|21588|-|Unknown source|-
+Wrists|3|Rockfury Bracers|21186|-|Quest Stalwart's Battlegear (level 60) in Silithus|-
+Hands|1|Dark Storm Gauntlets|21585|-|Drops from C'Thun (18.4%) in Ahn'Qiraj Temple|-
+Hands|2|Gloves of Ebru|21689|-|Drops from Vem (25%) in Ahn'Qiraj Temple|X
+Hands|3|Gloves of Delusional Power|20618|-|Drops from Emeriss (13.8%) in Nightmare Grove|X
+Waist|1|Eyestalk Waist Cord|22730|-|Drops from C'Thun (18.4%) in Ahn'Qiraj Temple|X
+Waist|2|Girdle of Elemental Fury|23663|-|Drops from Patchwork Golem (0.33%) in Naxxramas|X
+Waist|3|Firemaw's Clutch|19400|-|Drops from Firemaw (12.5%) in Blackwing Lair|X
+Legs|1|Leggings of Polarity|23070|-|Drops from Thaddius (20%) in Naxxramas|X
+Legs|2|Leggings of Elemental Fury|23665|-|Drops from Necro Knight (2.2%) in Naxxramas|X
+Legs|3|Leggings of the Black Blizzard|21461|-|Drops from Ossirian the Unscarred (18%) in Ruins of Ahn'Qiraj|X
+Feet|1|Boots of Epiphany|21600|-|Drops from Emperor Vek'lor (16.7%) in Ahn'Qiraj Temple|-
+Feet|2|Snowblind Shoes|19131|-|Drops from Azuregos (19%)|X
+Feet|3|Boots of Fright|20634|-|Drops from Taerar (13.8%) in Nightmare Grove|X
+Ring 1|1|Ring of the Fallen God|21709|-|Quest The Savior of Kalimdor (level 60) in Ahn'Qiraj|-
+Ring 1|2|Band of the Inevitable|23031|-|Drops from Noth the Plaguebringer (14.3%) in Naxxramas|-
+Ring 1|3|Seal of the Damned|23025|-|Chest Four Horsemen Chest (16.7%) in Naxxramas|-
+Ring 2|1|Band of the Inevitable|23031|-|Drops from Noth the Plaguebringer (14.3%) in Naxxramas|-
+Ring 2|2|Seal of the Damned|23025|-|Chest Four Horsemen Chest (16.7%) in Naxxramas|-
+Ring 2|3|Signet Ring of the Bronze Dragonflight|21210|-|Quest The Grand Invoker (level 60) in Tanaris|-
+Trinket 1|1|Neltharion's Tear|19379|-|Drops from Nefarian (20%) in Blackwing Lair|-
+Trinket 1|2|The Restrained Essence of Sapphiron|23046|-|Drops from Sapphiron (20%) in Naxxramas|-
+Trinket 1|3|Briarwood Reed|12930|-|Drops from Jed Runewatcher (33.3%) in Blackrock Spire|X
+Trinket 2|1|The Restrained Essence of Sapphiron|23046|-|Drops from Sapphiron (20%) in Naxxramas|-
+Trinket 2|2|Briarwood Reed|12930|-|Drops from Jed Runewatcher (33.3%) in Blackrock Spire|X
+Trinket 2|3|Jewel of the Guard Captain|270225|inv_qiraj_jewelglyphed|Unknown source|N
+Main hand|1|Brimstone Staff|22800|-|Drops from Loatheb (20%) in Naxxramas|X
+Main hand|2|Soulseeker|22799|-|Drops from Kel'Thuzad (20%) in Naxxramas|-
+Main hand|3|The End of Dreams|22988|-|Drops from Grobbulus (20%) in Naxxramas|X
+Off hand|1|Sapphiron's Left Eye|23049|-|Drops from Sapphiron (20%) in Naxxramas|X
+Off hand|2|Royal Scepter of Vek'lor|21597|-|Drops from Emperor Vek'lor (16.7%) in Ahn'Qiraj Temple|-
+Off hand|3|Jin'do's Bag of Whammies|19891|-|Drops from Jin'do the Hexxer (16.7%) in Zul'Gurub|X

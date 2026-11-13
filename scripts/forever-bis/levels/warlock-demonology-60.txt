@@ -1,0 +1,51 @@
+Head|1|Plagueheart Circlet|22506|-|Quest Plagueheart Circlet (level 60) in Naxxramas|-
+Head|2|Doomcaller's Circlet|21337|-|Quest Doomcaller's Circlet (level 60) in Ahn'Qiraj|-
+Head|3|Preceptor's Hat|23035|-|Drops from Heigan the Unclean (20%) in Naxxramas|X
+Neck|1|Choker of the Fire Lord|18814|-|Drops from Ragnaros (20%) in Molten Core|-
+Neck|2|Amulet of Vek'nilash|21608|-|Drops from Emperor Vek'nilash (14.3%) in Ahn'Qiraj Temple|-
+Neck|3|Malice Stone Pendant|22943|-|Drops from Grand Widow Faerlina (20%) in Naxxramas|C
+Shoulders|1|Plagueheart Shoulderpads|22507|-|Quest Plagueheart Shoulderpads (level 60) in Naxxramas|-
+Shoulders|2|Rime Covered Mantle|22983|-|Drops from Gluth (20%) in Naxxramas|X
+Shoulders|3|Doomcaller's Mantle|21335|-|Quest Doomcaller's Mantle (level 60) in Ahn'Qiraj|-
+Back|1|Cloak of the Necropolis|23050|-|Drops from Sapphiron (20%) in Naxxramas|X
+Back|2|Cloak of the Devoured|22731|-|Drops from C'Thun (18.4%) in Ahn'Qiraj Temple|X
+Back|3|Cloak of Consumption|19857|-|Drops from Hakkar (14.3%) in Zul'Gurub|X
+Chest|1|Plagueheart Robe|22504|-|Quest Plagueheart Robe (level 60) in Naxxramas|-
+Chest|2|Crystal Webbed Robe|23220|-|Drops from Maexxna (20%) in Naxxramas|X
+Chest|3|Doomcaller's Robes|21334|-|Quest Doomcaller's Robes (level 60) in Ahn'Qiraj|-
+Wrists|1|Rockfury Bracers|21186|-|Quest Stalwart's Battlegear (level 60) in Silithus|-
+Wrists|2|Bracers of Arcane Accuracy|19374|-|Drops from Broodlord Lashlayer (16.7%) in Blackwing Lair|X
+Wrists|3|Plagueheart Bindings|22511|-|Quest Plagueheart Bindings (level 60) in Naxxramas|-
+Hands|1|Dark Storm Gauntlets|21585|-|Drops from C'Thun (18.4%) in Ahn'Qiraj Temple|-
+Hands|2|Ebony Flame Gloves|19407|-|Drops from Ebonroc (18%) in Blackwing Lair|X
+Hands|3|Plagueheart Gloves|22509|-|Quest Plagueheart Gloves (level 60) in Naxxramas|-
+Waist|1|Plagueheart Belt|22510|-|Quest Plagueheart Belt (level 60) in Naxxramas|-
+Waist|2|Eyestalk Waist Cord|22730|-|Drops from C'Thun (18.4%) in Ahn'Qiraj Temple|X
+Waist|3|Firemaw's Clutch|19400|-|Drops from Firemaw (12.5%) in Blackwing Lair|X
+Legs|1|Leggings of Polarity|23070|-|Drops from Thaddius (20%) in Naxxramas|X
+Legs|2|Fel Infused Leggings|19133|-|Drops from Lord Kazzak (19%)|X
+Legs|3|Plagueheart Leggings|22505|-|Quest Plagueheart Leggings (level 60) in Naxxramas|-
+Feet|1|Plagueheart Sandals|22508|-|Quest Plagueheart Sandals (level 60) in Naxxramas|-
+Feet|2|Boots of Epiphany|21600|-|Drops from Emperor Vek'lor (16.7%) in Ahn'Qiraj Temple|-
+Feet|3|Snowblind Shoes|19131|-|Drops from Azuregos (19%)|X
+Ring 1|1|Ring of the Fallen God|21709|-|Quest The Savior of Kalimdor (level 60) in Ahn'Qiraj|-
+Ring 1|2|Band of the Inevitable|23031|-|Drops from Noth the Plaguebringer (14.3%) in Naxxramas|-
+Ring 1|3|Seal of the Damned|23025|-|Chest Four Horsemen Chest (16.7%) in Naxxramas|-
+Ring 2|1|Band of the Inevitable|23031|-|Drops from Noth the Plaguebringer (14.3%) in Naxxramas|-
+Ring 2|2|Seal of the Damned|23025|-|Chest Four Horsemen Chest (16.7%) in Naxxramas|-
+Ring 2|3|Band of Forced Concentration|19403|-|Drops from Ebonroc (18%) in Blackwing Lair|-
+Trinket 1|1|Neltharion's Tear|19379|-|Drops from Nefarian (20%) in Blackwing Lair|-
+Trinket 1|2|The Restrained Essence of Sapphiron|23046|-|Drops from Sapphiron (20%) in Naxxramas|-
+Trinket 1|3|Briarwood Reed|12930|-|Drops from Jed Runewatcher (33.3%) in Blackrock Spire|X
+Trinket 2|1|The Restrained Essence of Sapphiron|23046|-|Drops from Sapphiron (20%) in Naxxramas|-
+Trinket 2|2|Briarwood Reed|12930|-|Drops from Jed Runewatcher (33.3%) in Blackrock Spire|X
+Trinket 2|3|Jewel of the Guard Captain|270225|inv_qiraj_jewelglyphed|Unknown source|N
+Main hand|1|Wraith Blade|22807|-|Drops from Maexxna (20%) in Naxxramas|X
+Main hand|2|Brimstone Staff|22800|-|Drops from Loatheb (20%) in Naxxramas|X
+Main hand|3|Soulseeker|22799|-|Drops from Kel'Thuzad (20%) in Naxxramas|-
+Off hand|1|Sapphiron's Left Eye|23049|-|Drops from Sapphiron (20%) in Naxxramas|X
+Off hand|2|Royal Scepter of Vek'lor|21597|-|Drops from Emperor Vek'lor (16.7%) in Ahn'Qiraj Temple|-
+Off hand|3|Master Dragonslayer's Orb|19366|-|Quest The Lord of Blackrock (level 60, Alliance) in Stormwind City|-
+Ranged|1|Doomfinger|22821|-|Drops from Kel'Thuzad (20%) in Naxxramas|X
+Ranged|2|Wand of Fates|22820|-|Drops from Patchwerk (20%) in Naxxramas|X
+Ranged|3|Wand of the Whispering Dead|23009|-|Drops from Instructor Razuvious (16.7%) in Naxxramas|X

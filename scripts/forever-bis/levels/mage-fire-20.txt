@@ -1,0 +1,48 @@
+Head|1|Flame Circlet|253953|inv_crown_01|Crafted Tailoring|N
+Head|2|Pristine Circlet|253949|inv_crown_01|Crafted Tailoring|N
+Head|3|Shadow Goggles|4373|-|Crafted Engineering|-
+Neck|1|Scholarly Pendant|277203|inv_jewelry_necklace_11|Unknown source|N
+Neck|2|Erudite's Amulet|277204|inv_jewelry_necklace_01|Unknown source|N
+Neck|3|Scout's Medallion|20442|-|Vendor Kelm Hargunth — Warsong Supply Officer|-
+Shoulders|1|Magician's Mantle|12998|-|World drop (0.003%)|-
+Shoulders|2|Reinforced Woolen Shoulders|4315|-|Crafted Tailoring|C
+Shoulders|3|Double-Stitched Woolen Shoulders|4314|-|Crafted Tailoring|C
+Back|1|Heavy Woolen Cloak|4311|-|Crafted Tailoring|C
+Back|2|Feyscale Cloak|6632|-|Drops from Deviate Faerie Dragon (50%) in Wailing Caverns|-
+Back|3|Battle Healer's Cloak|20427|-|Vendor Kelm Hargunth — Warsong Supply Officer|C
+Chest|1|Filigreed Flame Gown|253905|inv_chest_cloth_02|Crafted Tailoring|N
+Chest|2|High Robe of the Adjudicator|3461|-|Quest Assault on Fenris Isle (level 24, Horde) in Silverpine Forest|C
+Chest|3|Filigreed Pristine Gown|253901|inv_chest_cloth_32|Crafted Tailoring|N
+Wrists|1|Mindthrust Bracers|1974|-|Drops from Trash mobs (0.02%) in Shadowfang Keep|-
+Wrists|2|Tabitha's Cuffs|251486|inv_bracer_10|Unknown source|N
+Wrists|3|Owlbeard Bracers|16981|-|Quest Earthen Arise (level 20, Horde) in Stonetalon Mountains|C
+Hands|1|Phoenix Gloves|4331|-|Crafted Tailoring|-
+Hands|2|Flame Gloves|253917|inv_gauntlets_19|Crafted Tailoring|N
+Hands|3|Serpent Gloves|5970|-|Drops from Lord Serpentis (25%) in Wailing Caverns|-
+Waist|1|Flame Sash|253929|inv_belt_43c|Crafted Tailoring|N
+Waist|2|Pristine Sash|253925|inv_belt_43|Crafted Tailoring|N
+Waist|3|Novice Arcanist's Sash|253885|inv_belt_43a|Crafted Tailoring|N
+Legs|1|Filigreed Flame Leggings|253941|inv_pants_06|Crafted Tailoring|N
+Legs|2|Abomination Skin Leggings|23173|-|Drops from Sever (50%) in Shadowfang Keep|X
+Legs|3|Phoenix Pants|4317|-|Crafted Tailoring|-
+Feet|1|Spidersilk Boots|4320|-|Crafted Tailoring|C
+Feet|2|Flame Boots|253893|inv_boots_cloth_02|Crafted Tailoring|N
+Feet|3|Pristine Boots|253889|inv_boots_cloth_03|Crafted Tailoring|N
+Ring 1|1|Advisor's Ring|20426|-|Vendor Kelm Hargunth — Warsong Supply Officer|-
+Ring 1|2|Lorekeeper's Ring|20431|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Ring 1|3|Minor Channeling Ring|1449|-|Quest WANTED: Chok'sul (level 22, Alliance) in Loch Modan|C
+Ring 2|1|Lorekeeper's Ring|20431|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Ring 2|2|Minor Channeling Ring|1449|-|Quest WANTED: Chok'sul (level 22, Alliance) in Loch Modan|C
+Ring 2|3|Sacred Band|6669|-|Quest The Den (level 29, Horde) in Stonetalon Mountains|C
+Trinket 1|1|Rune of Perfection|21566|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|C
+Trinket 1|2|Rune of Duty|21568|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|C
+Trinket 2|1|Rune of Duty|21568|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|C
+Main hand|1|Royal Dagger|281297|inv_weapon_shortblade_01|Unknown source|N
+Main hand|2|Evocator's Blade|2567|-|Drops from Trash mobs (0.02%) in Blackfathom Deeps|-
+Main hand|3|Quilboar Toothpick|276888|inv_weapon_shortblade_01|Unknown source|N
+Off hand|1|Pulsating Hydra Heart|5183|-|Drops from Gesharahan (25%)|-
+Off hand|2|Antipodean Rod|2879|-|World drop (0.004%)|-
+Off hand|3|Mathystra Channeling Orb|281291|inv_misc_orb_01|Unknown source|N
+Ranged|1|Firebelcher|5243|-|Drops from Deviate Faerie Dragon (50%) in Wailing Caverns|-
+Ranged|2|Cookie's Stirring Rod|5198|-|Drops from Cookie (35%) in Deadmines|-
+Ranged|3|Skycaller|12984|-|World drop (0.004%)|-

@@ -1,0 +1,51 @@
+Head|1|Ebon Mask|19984|-|Quest The Azure Key (level 52)|X
+Head|2|Bloomsprout Headpiece|17767|-|Drops from Meshlok the Harvester (33.3%) in Maraudon|X
+Head|3|Embrace of the Lycan|9479|-|Drops from Chief Ukorz Sandscalp (20%) in Zul'Farrak|X
+Neck|1|Scout's Medallion|19535|-|Vendor Kelm Hargunth — Warsong Supply Officer|-
+Neck|2|Sentinel's Medallion|19539|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Neck|3|Skibi's Pendant|13089|-|World drop (0.003%)|-
+Shoulders|1|Phytoskin Spaulders|17749|-|Drops from Razorlash (25%) in Maraudon|X
+Shoulders|2|Shadowskin Spaulders|15822|-|Quest Runecloth (level 55) in Timbermaw Hold|-
+Shoulders|3|Sunburn Spaulders|274751|inv_shoulder_08|Unknown source|N
+Back|1|Blisterbane Wrap|12552|-|Drops from Trash mobs (0.02%) in Blackrock Depths|X
+Back|2|Dark Phantom Cape|13122|-|Contained in Emerald Encrusted Chest (2.1%)|-
+Back|3|Blackveil Cape|11626|-|Drops from High Interrogator Gerstahn (25%) in Blackrock Depths|X
+Chest|1|Fungus Shroud Armor|17742|-|Drops from Meshlok the Harvester (33.3%) in Maraudon|X
+Chest|2|Warbear Harness|15064|-|Crafted Leatherworking|C
+Chest|3|Grizzled Pelt|22274|-|Quest A Better Ingredient (level 52)|X
+Wrists|1|Windtalker's Wristguards|19583|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Wrists|2|Forest Stalker's Bracers|19589|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Wrists|3|Bracers of the Stone Princess|17714|-|Drops from Princess Theradras (25%) in Maraudon|X
+Hands|1|Beastmaster's Gloves|22015|-|Quest Just Compensation (level 60, Alliance) in Ironforge|-
+Hands|2|Stalker's Mail Gauntlets|252584|inv_gauntlets_29|Crafted Leatherworking|N
+Hands|3|Dragonscale Gauntlets|8347|-|Crafted Leatherworking|C
+Waist|1|Highlander's Chain Girdle|20088|-|Vendor Samuel Hawke — League of Arathor Supply Officer|-
+Waist|2|Defiler's Chain Girdle|20151|-|Vendor Rutherford Twing — Defilers Supply Officer|-
+Waist|3|Highlander's Leather Girdle|20115|-|Vendor Samuel Hawke — League of Arathor Supply Officer|-
+Legs|1|Stormshroud Pants|15057|-|Crafted Leatherworking|-
+Legs|2|Basilisk Hide Pants|1718|-|World drop (0.003%)|-
+Legs|3|Infernal Trickster Leggings|17754|-|Drops from Lord Vyletongue (33.3%) in Maraudon|X
+Feet|1|Fleetfoot Greaves|11627|-|Drops from Houndmaster Grebmar (35%) in Blackrock Depths|X
+Feet|2|Albino Crocscale Boots|17728|-|Drops from Rotgrip (40%) in Maraudon|X
+Feet|3|Highlander's Leather Boots|20112|-|Vendor Samuel Hawke — League of Arathor Supply Officer|-
+Ring 1|1|Blackstone Ring|17713|-|Drops from Princess Theradras (25%) in Maraudon|X
+Ring 1|2|Masons Fraternity Ring|9533|-|Quest Divino-matic Rod (level 47) in Zul'Farrak|X
+Ring 1|3|Bloodsport Band|275044|inv_jewelry_ring_04|Unknown source|N
+Ring 2|1|Masons Fraternity Ring|9533|-|Quest Divino-matic Rod (level 47) in Zul'Farrak|X
+Ring 2|2|Bloodsport Band|275044|inv_jewelry_ring_04|Unknown source|N
+Ring 2|3|Assault Band|13095|-|World drop (0.003%)|-
+Trinket 1|1|Rune of the Guard Captain|19120|-|Quest Job Opening: Guard Captain of Revantusk Village (level 51, Horde) in The Hinterlands|C
+Trinket 1|2|Cleansed Vilebranch Medallion|270275|inv_misc_coin_09|Unknown source|N
+Trinket 1|3|Frozen Heart of the Mountain|249469|inv_misc_gem_sapphire_01|Crafted Enchanting|N
+Trinket 2|1|Cleansed Vilebranch Medallion|270275|inv_misc_coin_09|Unknown source|N
+Trinket 2|2|Frozen Heart of the Mountain|249469|inv_misc_gem_sapphire_01|Crafted Enchanting|N
+Trinket 2|3|Enriched Seal|271903|inv_misc_rune_06|Unknown source|N
+Main hand|1|Warmonger|13052|-|World drop (0.003%)|-
+Main hand|2|Wildstaff|20556|-|Quest Da Voodoo (level 52, Horde)|X
+Main hand|3|Devilsaur Claws|20003|-|Unknown source|-
+Off hand|2|Vanquisher's Sword|10823|-|Quest Bring the End (level 42, Horde) in Razorfen Downs|X
+Off hand|3|Scout's Blade|19543|-|Vendor Kelm Hargunth — Warsong Supply Officer|-
+Off hand|4|Sentinel's Blade|19547|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Ranged|1|Hurricane|2824|-|World drop (0.001%)|X
+Ranged|2|Gryphonwing Long Bow|13022|-|Chest Relic Coffer (0.1%) in Blackrock Depths|-
+Ranged|3|Precisely Calibrated Boomstick|2100|-|World drop (0.001%)|X

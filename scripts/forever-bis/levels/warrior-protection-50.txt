@@ -1,0 +1,51 @@
+Head|1|Avenguard Helm|10749|-|Quest The God Hakkar (level 53) in Sunken Temple|X
+Head|2|Mugthol's Helm|13073|-|Drops from Colossus of Zora (10%)|-
+Head|3|Sunscale Helmet|14849|-|Drops from General Fangferror (0.24%)|-
+Neck|1|Woven Ivy Necklace|19159|-|Quest Wanted: Vile Priestess Hexx and Her Minions (level 51, Horde) in The Hinterlands|-
+Neck|2|Scout's Medallion|19535|-|Vendor Kelm Hargunth — Warsong Supply Officer|-
+Neck|3|Sentinel's Medallion|19539|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Shoulders|1|Stockade Pauldrons|14552|-|World drop (0.001%)|X
+Shoulders|2|Sentinel's Pauldrons|250577|inv_shoulder_12|Crafted Blacksmithing|N
+Shoulders|3|Razorsteel Shoulders|20517|-|Quest Voodoo Feathers (level 52)|X
+Back|1|Sergeant's Cloak|16341|-|Vendor Sergeant Ba'sha — Accessories Quartermaster|-
+Back|2|Sergeant's Cape|18441|-|Vendor Officer Areyn — Accessories Quartermaster|-
+Back|3|Graverot Cape|11677|-|Drops from Anub'shiah (42.5%) in Blackrock Depths|X
+Chest|1|Warrior's Embrace|10845|-|Drops from Avatar of Hakkar (39.8%) in Sunken Temple|X
+Chest|2|Carapace of Anub'shiah|11678|-|Drops from Anub'shiah (15%) in Blackrock Depths|X
+Chest|3|Hydralick Armor|13067|-|Drops from Colossus of Zora (10%)|-
+Wrists|1|Sentinel's Wristguards|250582|inv_bracer_23a|Crafted Blacksmithing|N
+Wrists|2|Berserker Bracers|19580|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Wrists|3|Warder's Wristguards|250583|inv_bracer_14|Crafted Blacksmithing|N
+Hands|1|Sentinel's Gloves|250552|inv_gauntlets_22|Crafted Blacksmithing|N
+Hands|2|Warder's Gloves|250553|inv_gauntlets_50|Crafted Blacksmithing|N
+Hands|3|Theramore Gauntlets|271941|inv_gauntlets_29|Unknown source|N
+Waist|1|Sentinel's Waistguard|250572|inv_belt_37a|Crafted Blacksmithing|N
+Waist|2|Warder's Waistguard|250573|inv_belt_29|Crafted Blacksmithing|N
+Waist|3|Officer's Waistguard|250571|inv_belt_20|Crafted Blacksmithing|N
+Legs|1|Elemental Rockridge Leggings|17711|-|Drops from Princess Theradras (20%) in Maraudon|X
+Legs|2|Bejeweled Legguards|11910|-|Quest A Little Help From My Friends (level 55) in Un'Goro Crater|X
+Legs|3|Silvershell Leggings|10633|-|Drops from Trash mobs (0.02%) in Sunken Temple|X
+Feet|1|Boots of Avoidance|14549|-|World drop (0.001%)|-
+Feet|2|Sentinel's Sabatons|250562|inv_boots_plate_20v1|Crafted Blacksmithing|N
+Feet|3|Sentinel's Boots|250547|inv_boots_plate_20v1|Crafted Blacksmithing|N
+Ring 1|1|Ring of Saviors|1447|-|World drop (0.001%)|-
+Ring 1|2|Darkmoon Ring|19302|-|Vendor Lhara — Darkmoon Faire Exotic Goods|C
+Ring 1|3|Theramore Signet|271909|inv_jewelry_ring_28|Unknown source|N
+Ring 2|1|Darkmoon Ring|19302|-|Vendor Lhara — Darkmoon Faire Exotic Goods|C
+Ring 2|2|Theramore Signet|271909|inv_jewelry_ring_28|Unknown source|N
+Ring 2|3|Insurgent's Band|272065|inv_jewelry_ring_20|Unknown source|N
+Trinket 1|1|Rune of the Guard Captain|19120|-|Quest Job Opening: Guard Captain of Revantusk Village (level 51, Horde) in The Hinterlands|C
+Trinket 1|2|Cleansed Vilebranch Medallion|270275|inv_misc_coin_09|Unknown source|N
+Trinket 1|3|Smotts' Compass|4130|-|Quest Facing Negolash (level 50) in Stranglethorn Vale|-
+Trinket 2|1|Cleansed Vilebranch Medallion|270275|inv_misc_coin_09|Unknown source|N
+Trinket 2|2|Smotts' Compass|4130|-|Quest Facing Negolash (level 50) in Stranglethorn Vale|-
+Trinket 2|3|Arena Grand Master|19024|-|Quest Arena Grandmaster (level 55) in Stranglethorn Vale|C
+Main hand|1|Thorium Cestus|250614|inv_gauntlets_11|Crafted Blacksmithing|N
+Main hand|2|Grizzle's Skinner|11702|-|Drops from Grizzle (35%) in Blackrock Depths|X
+Main hand|3|Viking Warhammer|1721|-|World drop (0.003%)|-
+Off hand|1|Wall of the Dead|1979|-|World drop (0.001%)|X
+Off hand|2|Aegis of Stormwind|1203|-|Drops from Colossus of Zora (10%)|-
+Off hand|3|Stoneshell Guard|11631|-|Drops from Lord Roccor (25%) in Blackrock Depths|X
+Ranged|1|Outrider's Bow|19559|-|Vendor Kelm Hargunth — Warsong Supply Officer|-
+Ranged|2|Outrunner's Bow|19563|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Ranged|3|Gryphonwing Long Bow|13022|-|Chest Relic Coffer (0.1%) in Blackrock Depths|-

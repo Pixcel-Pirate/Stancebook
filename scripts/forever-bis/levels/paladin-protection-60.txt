@@ -1,0 +1,48 @@
+Head|1|Helm of Domination|21460|-|Drops from Ossirian the Unscarred (18%) in Ruins of Ahn'Qiraj|X
+Head|2|Avenger's Crown|21387|-|Quest Avenger's Crown (level 60, Alliance) in Ahn'Qiraj|-
+Head|3|Helm of Endless Rage|19372|-|Drops from Vaelastrasz the Corrupt (16.7%) in Blackwing Lair|X
+Neck|1|Mark of C'Thun|22732|-|Drops from C'Thun (21%) in Ahn'Qiraj Temple|-
+Neck|2|Gluth's Missing Collar|22981|-|Drops from Gluth (20%) in Naxxramas|-
+Neck|3|Master Dragonslayer's Medallion|19383|-|Quest The Lord of Blackrock (level 60, Alliance) in Stormwind City|-
+Shoulders|1|Pauldrons of the Unrelenting|21639|-|Unknown source|-
+Shoulders|2|Drake Talon Pauldrons|19394|-|Drops from Flamegor (14%) in Blackwing Lair|X
+Shoulders|3|Spaulders of the Grand Crusader|23667|-|Drops from Plagued Ghoul (0.71%) in Naxxramas|X
+Back|1|Cryptfiend Silk Cloak|22938|-|Drops from Anub'Rekhan (20%) in Naxxramas|X
+Back|2|Elementium Threaded Cloak|19386|-|Drops from Chromaggus (16%) in Blackwing Lair|X
+Back|3|Sandstorm Cloak|21456|-|Drops from Ossirian the Unscarred (18%) in Ruins of Ahn'Qiraj|X
+Chest|1|Avenger's Breastplate|21389|-|Quest Avenger's Breastplate (level 60, Alliance) in Ahn'Qiraj|C
+Chest|2|Plated Abomination Ribcage|23000|-|Drops from Thaddius (20%) in Naxxramas|X
+Chest|3|Field Marshal's Lamellar Chestplate|16473|-|Vendor Captain Dirgehammer — Armor Quartermaster|-
+Wrists|1|Redemption Wristguards|22424|-|Quest Redemption Wristguards (level 60) in Naxxramas|-
+Wrists|2|Judgement Bindings|16951|-|Drops from Razorgore the Untamed (21%) in Blackwing Lair|X
+Wrists|3|Bracers of Eternal Reckoning|21584|-|Unknown source|-
+Hands|1|Gauntlets of Steadfast Determination|21674|-|Drops from Battleguard Sartura (18%) in Ahn'Qiraj Temple|-
+Hands|2|Fists of the Unrelenting|23072|-|Unknown source|X
+Hands|3|Gauntlets of the Immovable|21479|-|Drops from Moam (10%) in Ruins of Ahn'Qiraj|X
+Waist|1|Royal Qiraji Belt|21598|-|Drops from Emperor Vek'lor (16.7%) in Ahn'Qiraj Temple|-
+Waist|2|Girdle of the Mentor|23219|-|Drops from Instructor Razuvious (16.7%) in Naxxramas|X
+Waist|3|Belt of the Grand Crusader|23666|-|Drops from Shade of Naxxramas (0.79%) in Naxxramas|X
+Legs|1|Avenger's Legguards|21390|-|Quest Avenger's Legguards (level 60, Alliance) in Ahn'Qiraj|-
+Legs|2|Leggings of the Grand Crusader|23668|-|Drops from Mad Scientist (1.9%) in Naxxramas|X
+Legs|3|Redemption Legguards|22427|-|Quest Redemption Legguards (level 60) in Naxxramas|-
+Feet|1|Boots of the Unwavering Will|21706|-|Drops from The Prophet Skeram (15%) in Ahn'Qiraj Temple|X
+Feet|2|Avenger's Greaves|21388|-|Quest Avenger's Greaves (level 60, Alliance) in Ahn'Qiraj|-
+Feet|3|Chromatic Boots|19387|-|Drops from Chromaggus (20%) in Blackwing Lair|X
+Ring 1|1|Angelista's Touch|21695|-|Drops from Lord Kri (16.7%) in Ahn'Qiraj Temple|-
+Ring 1|2|Ring of Emperor Vek'lor|21601|-|Drops from Emperor Vek'lor (16.7%) in Ahn'Qiraj Temple|-
+Ring 1|3|Signet Ring of the Bronze Dragonflight|21200|-|Quest The Protector of Kalimdor (level 60) in Tanaris|-
+Ring 2|1|Ring of Emperor Vek'lor|21601|-|Drops from Emperor Vek'lor (16.7%) in Ahn'Qiraj Temple|-
+Ring 2|2|Signet Ring of the Bronze Dragonflight|21200|-|Quest The Protector of Kalimdor (level 60) in Tanaris|-
+Ring 2|3|Archimtiros' Ring of Reckoning|19376|-|Drops from Nefarian (20%) in Blackwing Lair|-
+Trinket 1|1|Styleen's Impeding Scarab|19431|-|Drops from Flamegor (20%) in Blackwing Lair|-
+Trinket 1|2|Drake Fang Talisman|19406|-|Drops from Ebonroc (18%) in Blackwing Lair|-
+Trinket 1|3|Glyph of Deflection|23040|-|Drops from Sapphiron (20%) in Naxxramas|-
+Trinket 2|1|Drake Fang Talisman|19406|-|Drops from Ebonroc (18%) in Blackwing Lair|-
+Trinket 2|2|Glyph of Deflection|23040|-|Drops from Sapphiron (20%) in Naxxramas|-
+Trinket 2|3|Stormpike Insignia Rank 6|17904|-|Quest The Eye of Command (level 60) in Alterac Valley|-
+Main hand|1|The End of Dreams|22988|-|Drops from Grobbulus (20%) in Naxxramas|X
+Main hand|2|Gressil, Dawn of Ruin|23054|-|Drops from Kel'Thuzad (16.7%) in Naxxramas|X
+Main hand|3|The Hungering Cold|23577|-|Drops from Kel'Thuzad (16.7%) in Naxxramas|X
+Off hand|1|The Face of Death|23043|-|Drops from Sapphiron (20%) in Naxxramas|X
+Off hand|2|Blessed Qiraji Bulwark|21269|-|Quest Imperial Qiraji Armaments (level 60) in Ahn'Qiraj|-
+Off hand|3|Shield of Condemnation|22819|-|Drops from Kel'Thuzad (20%) in Naxxramas|X

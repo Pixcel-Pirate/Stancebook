@@ -1,0 +1,48 @@
+Head|1|Raging Berserker's Helm|7719|-|Drops from Herod (35%) in Scarlet Monastery|X
+Head|2|Icemetal Barbute|10763|-|Drops from Amnennar the Coldbringer (20%) in Razorfen Downs|X
+Head|3|Chromite Barbute|8142|-|Drops from Mosh'Ogg Butcher (0.28%)|-
+Neck|1|Corrupted Riverglades Pendant|281657|inv_jewelry_necklace_11|Unknown source|N
+Neck|2|Zealous Shadowshard Pendant|17772|-|Quest Shadowshard Fragments (level 42, Horde) in Maraudon|X
+Neck|3|Ethereal Talisman|4430|-|Quest The Crown of Will (level 43, Horde) in Hillsbrad Foothills|-
+Shoulders|1|Pauldrons of Vindication|277236|inv_shoulder_09|Unknown source|N
+Shoulders|2|Chromite Pauldrons|8144|-|Drops from Mosh'Ogg Butcher (0.28%)|-
+Shoulders|3|Clacking Carapace Spaulders|271811|inv_shoulder_29|Unknown source|N
+Back|1|Sergeant Major's Cape|16336|-|Unknown source|-
+Back|2|Corpsefeeder's Shedding|271810|inv_misc_cape_11|Unknown source|N
+Back|3|Dark Hooded Cape|5257|-|Drops from Nimar the Slayer (10%)|X
+Chest|1|Carapace of Tuten'kash|10775|-|Drops from Tuten'kash (33.3%) in Razorfen Downs|X
+Chest|2|Kolkar Marauder Chain|6773|-|Quest Khan Hratha (level 42) in Desolace|C
+Chest|3|Symbolic Breastplate|14821|-|Drops from Mosh'Ogg Butcher (0.28%)|-
+Wrists|1|Berserker Bracers|19581|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Wrists|2|Windtalker's Wristguards|19584|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Wrists|3|Forest Stalker's Bracers|19590|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Hands|1|Plated Fist of Hakoo|13071|-|World drop (0.003%)|-
+Hands|2|Truesilver Gauntlets|7938|-|Crafted Blacksmithing|-
+Hands|3|Gauntlets of Divinity|7724|-|Drops from Scarlet Commander Mograine (22.5%) in Scarlet Monastery|X
+Waist|1|Highlander's Chain Girdle|20089|-|Vendor Samuel Hawke — League of Arathor Supply Officer|-
+Waist|2|Defiler's Chain Girdle|20153|-|Vendor Rutherford Twing — Defilers Supply Officer|-
+Waist|3|Highlander's Plate Girdle|20125|-|Vendor Samuel Hawke — League of Arathor Supply Officer|-
+Legs|1|Scarlet Leggings|10330|-|Drops from Herod (15%) in Scarlet Monastery|X
+Legs|2|Firemane Leggings|13129|-|World drop (0.003%)|-
+Legs|3|Legguards of the Vault|9396|-|Drops from Trash mobs (0.01%) in Uldaman|X
+Feet|1|Officer's Boots|250546|inv_boots_plate_19v2|Crafted Blacksmithing|N
+Feet|2|Obsidian Greaves|13068|-|World drop (0.003%)|-
+Feet|3|Highlander's Plate Greaves|20128|-|Vendor Samuel Hawke — League of Arathor Supply Officer|-
+Ring 1|1|Legionnaire's Band|19512|-|Vendor Kelm Hargunth — Warsong Supply Officer|-
+Ring 1|2|Protector's Band|19515|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Ring 1|3|Bloodsport Band|275044|inv_jewelry_ring_04|Unknown source|N
+Ring 2|1|Protector's Band|19515|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Ring 2|2|Bloodsport Band|275044|inv_jewelry_ring_04|Unknown source|N
+Ring 2|3|Assault Band|13095|-|World drop (0.003%)|-
+Trinket 1|1|Defiler's Talisman|21116|-|Vendor Rutherford Twing — Defilers Supply Officer|C
+Trinket 1|2|Talisman of Arathor|21118|-|Vendor Samuel Hawke — League of Arathor Supply Officer|C
+Trinket 1|3|Rune of Perfection|21565|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|C
+Trinket 2|1|Talisman of Arathor|21118|-|Vendor Samuel Hawke — League of Arathor Supply Officer|C
+Trinket 2|2|Rune of Perfection|21565|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|C
+Trinket 2|3|Rune of Duty|21567|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|C
+Main hand|1|Staff of Jordan|873|-|World drop (0.001%)|-
+Main hand|2|Fiery War Axe|870|-|World drop (0.001%)|-
+Main hand|3|Nightblade|1982|-|World drop (0.001%)|X
+Ranged|1|Monolithic Bow|9426|-|Drops from Trash mobs (0.01%) in Uldaman|X
+Ranged|2|The Silencer|13138|-|World drop (0.003%)|-
+Ranged|3|Master Hunter's Rifle|17687|-|Quest Big Game Hunter (level 43) in Stranglethorn Vale|C

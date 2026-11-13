@@ -1,0 +1,48 @@
+Head|1|Southwind Helm|21455|-|Drops from Moam (20%) in Ruins of Ahn'Qiraj|X
+Head|2|Field Marshal's Dragonhide Helmet|16451|-|Vendor Captain Dirgehammer — Armor Quartermaster|-
+Head|3|Warlord's Dragonhide Helmet|16550|-|Vendor Lady Palanseer — Armor Quartermaster|-
+Neck|1|Prestor's Talisman of Connivery|19377|-|Drops from Nefarian (20%) in Blackwing Lair|-
+Neck|2|Stormrage's Talisman of Seething|23053|-|Drops from Kel'Thuzad (16.7%) in Naxxramas|-
+Neck|3|Barbed Choker|21664|-|Drops from Fankriss the Unyielding (18%) in Ahn'Qiraj Temple|-
+Shoulders|1|Mantle of Wicked Revenge|21665|-|Drops from Fankriss the Unyielding (18%) in Ahn'Qiraj Temple|-
+Shoulders|2|Theramore Pauldrons|271955|inv_shoulder_06|Unknown source|N
+Shoulders|3|Darkspear Pauldrons|272105|inv_shoulder_06|Unknown source|N
+Back|1|Cloak of Concentrated Hatred|21701|-|Drops from The Prophet Skeram (18%) in Ahn'Qiraj Temple|X
+Back|2|Shroud of Dominion|23045|-|Drops from Sapphiron (20%) in Naxxramas|X
+Back|3|Cloak of the Fallen God|21710|-|Quest The Savior of Kalimdor (level 60) in Ahn'Qiraj|-
+Chest|1|Ghoul Skin Tunic|23226|-|Drops from Death Touched Warrior (2.1%) in Naxxramas|X
+Chest|2|Vest of Swift Execution|21680|-|Drops from Lord Kri (25%) in Ahn'Qiraj Temple|X
+Chest|3|Dawn Armor|252483|inv_chest_leather_08|Crafted Leatherworking|N
+Wrists|1|Qiraji Execution Bracers|21602|-|Drops from Emperor Vek'lor (16.7%) in Ahn'Qiraj Temple|-
+Wrists|2|Forest Stalker's Bracers|19587|-|Vendor Illiyana Moonblaze — Silverwing Supply Officer|-
+Wrists|3|Primal Batskin Bracers|19687|-|Crafted Leatherworking|-
+Hands|1|Gloves of Enforcement|21672|-|Drops from Battleguard Sartura (15%) in Ahn'Qiraj Temple|-
+Hands|2|Gloves of the Hidden Temple|21605|-|Drops from Emperor Vek'nilash (14.3%) in Ahn'Qiraj Temple|-
+Hands|3|Primal Batskin Gloves|19686|-|Crafted Leatherworking|-
+Waist|1|Belt of Never-ending Agony|21586|-|Drops from C'Thun (18.4%) in Ahn'Qiraj Temple|-
+Waist|2|Belt of Preserved Heads|20216|-|Quest A Collection of Heads (level 60) in Zul'Gurub|-
+Waist|3|Shifter's Belt|272396|inv_belt_16|Unknown source|N
+Legs|1|Leggings of Apocalypse|23071|-|Chest Four Horsemen Chest (16.7%) in Naxxramas|X
+Legs|2|Marshal's Dragonhide Legguards|16450|-|Vendor Captain Dirgehammer — Armor Quartermaster|-
+Legs|3|General's Dragonhide Leggings|16552|-|Vendor Lady Palanseer — Armor Quartermaster|-
+Feet|1|Boots of the Shadow Flame|19381|-|Drops from Nefarian (20%) in Blackwing Lair|X
+Feet|2|Wormhide Boots|21613|-|Unknown source|-
+Feet|3|Boots of the Vanguard|21493|-|Drops from General Rajaxx (10%)|X
+Ring 1|1|Band of Unnatural Forces|23038|-|Drops from Loatheb (20%) in Naxxramas|-
+Ring 1|2|Band of Accuria|17063|-|Drops from Ragnaros (20%) in Molten Core|X
+Ring 1|3|Master Dragonslayer's Ring|19384|-|Quest The Lord of Blackrock (level 60, Alliance) in Stormwind City|-
+Ring 2|1|Band of Accuria|17063|-|Drops from Ragnaros (20%) in Molten Core|X
+Ring 2|2|Master Dragonslayer's Ring|19384|-|Quest The Lord of Blackrock (level 60, Alliance) in Stormwind City|-
+Ring 2|3|Signet Ring of the Bronze Dragonflight|21205|-|Quest The Qiraji Conqueror (level 60) in Tanaris|-
+Trinket 1|1|Drake Fang Talisman|19406|-|Drops from Ebonroc (18%) in Blackwing Lair|-
+Trinket 1|2|Slayer's Crest|23041|-|Drops from Sapphiron (20%) in Naxxramas|-
+Trinket 1|3|Rune of the Guard Captain|19120|-|Quest Job Opening: Guard Captain of Revantusk Village (level 51, Horde) in The Hinterlands|C
+Trinket 2|1|Slayer's Crest|23041|-|Drops from Sapphiron (20%) in Naxxramas|-
+Trinket 2|2|Rune of the Guard Captain|19120|-|Quest Job Opening: Guard Captain of Revantusk Village (level 51, Horde) in The Hinterlands|C
+Trinket 2|3|Cleansed Vilebranch Medallion|270275|inv_misc_coin_09|Unknown source|N
+Main hand|1|The End of Dreams|22988|-|Drops from Grobbulus (20%) in Naxxramas|X
+Main hand|2|Mace of Unending Life|21407|-|Quest Mace of Unending Life (level 60) in Ahn'Qiraj|C
+Main hand|3|Kingsfall|22802|-|Drops from Kel'Thuzad (16.7%) in Naxxramas|X
+Off hand|1|Royal Scepter of Vek'lor|21597|-|Drops from Emperor Vek'lor (16.7%) in Ahn'Qiraj Temple|-
+Off hand|2|Tome of Knowledge|13385|-|Drops from Archivist Galford (12%) in Stratholme|X
+Off hand|3|Grand Marshal's Tome of Power|23452|-|Vendor Captain O'Neal — Weapons Quartermaster|-
