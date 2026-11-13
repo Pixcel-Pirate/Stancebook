@@ -1,4 +1,10 @@
 import { BLACKSMITHING } from "../data/professions/blacksmithing.ts";
+import { MINING } from "../data/professions/mining.ts";
+import { HERBALISM } from "../data/professions/herbalism.ts";
+import { SKINNING } from "../data/professions/skinning.ts";
+import { COOKING } from "../data/professions/cooking.ts";
+import { FIRST_AID } from "../data/professions/first-aid.ts";
+import { FISHING } from "../data/professions/fishing.ts";
 
 export type ProfessionId =
   | "alchemy"
@@ -45,7 +51,7 @@ export type ProfessionGuide = {
 };
 
 /** Add a guide: one file in src/data/professions/, one line here. */
-export const PROFESSIONS: ProfessionGuide[] = [BLACKSMITHING];
+export const PROFESSIONS: ProfessionGuide[] = [BLACKSMITHING, MINING, HERBALISM, SKINNING, COOKING, FIRST_AID, FISHING];
 
 export type Total = Mat & { made?: number };
 
