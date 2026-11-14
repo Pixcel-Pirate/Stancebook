@@ -1,5 +1,5 @@
 import { ICON_CDN } from "@/lib/abilities";
-import { materialTotals, PROFESSIONS, type ProfessionGuide } from "@/lib/professions";
+import { materialTotals, PROFESSIONS, type ProfessionGuide, type ProfessionId } from "@/lib/professions";
 
 const card = "rounded-lg bg-white/[0.035] p-3 shadow-[inset_0_0_0_1px_var(--color-line)]";
 
@@ -23,7 +23,7 @@ function Guide({ g }: { g: ProfessionGuide }) {
   const totals = materialTotals(g);
   const crafts = g.steps.reduce((n, s) => n + (s.count ?? 0), 0);
   return (
-    <section id={`prof-${g.id}`} className="flex scroll-mt-4 flex-col gap-6">
+    <section className="flex flex-col gap-6">
       <header className="flex items-start gap-4">
         <Icon icon={g.icon} size={56} />
         <div className="min-w-0">
@@ -112,26 +112,12 @@ function Guide({ g }: { g: ProfessionGuide }) {
   );
 }
 
-/** Profession leveling guides, 1-300, with material totals computed from the recipes. */
-export function ProfessionsView() {
+/** One profession's 1-300 leveling guide, with material totals computed from the recipes. */
+export function ProfessionsView({ id }: { id: ProfessionId }) {
+  const g = PROFESSIONS.find((p) => p.id === id) ?? PROFESSIONS[0];
   return (
     <div className="mx-auto flex w-full max-w-5xl flex-col gap-12 pb-16">
-      <header className="flex flex-col gap-3">
-        <h2 className="font-display text-3xl font-bold text-fg">Profession progression</h2>
-        {PROFESSIONS.length > 1 && (
-          <nav className="flex flex-wrap gap-2" aria-label="Professions">
-            {PROFESSIONS.map((g) => (
-              <a key={g.id} href={`#prof-${g.id}`} className="btn-glass inline-flex h-9 items-center gap-2 rounded-md px-3 font-display text-sm font-bold">
-                <Icon icon={g.icon} size={20} />
-                {g.name}
-              </a>
-            ))}
-          </nav>
-        )}
-      </header>
-      {PROFESSIONS.map((g) => (
-        <Guide key={g.id} g={g} />
-      ))}
+      <Guide g={g} />
     </div>
   );
 }

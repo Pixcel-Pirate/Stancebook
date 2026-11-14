@@ -1,4 +1,15 @@
+import { ALCHEMY } from "../data/professions/alchemy.ts";
+import { ENCHANTING } from "../data/professions/enchanting.ts";
+import { ENGINEERING } from "../data/professions/engineering.ts";
+import { LEATHERWORKING } from "../data/professions/leatherworking.ts";
+import { TAILORING } from "../data/professions/tailoring.ts";
 import { BLACKSMITHING } from "../data/professions/blacksmithing.ts";
+import { MINING } from "../data/professions/mining.ts";
+import { HERBALISM } from "../data/professions/herbalism.ts";
+import { SKINNING } from "../data/professions/skinning.ts";
+import { COOKING } from "../data/professions/cooking.ts";
+import { FIRST_AID } from "../data/professions/first-aid.ts";
+import { FISHING } from "../data/professions/fishing.ts";
 
 export type ProfessionId =
   | "alchemy"
@@ -26,6 +37,8 @@ export type Step = {
   /** Wowhead item id of what the step makes, for a link. */
   id?: number;
   count?: number;
+  /** Items one craft makes, when more than 1 (Fire Oil, Stonescale Oil). */
+  makes?: number;
   mats?: Mat[];
   where?: string;
   note?: string;
@@ -45,7 +58,11 @@ export type ProfessionGuide = {
 };
 
 /** Add a guide: one file in src/data/professions/, one line here. */
-export const PROFESSIONS: ProfessionGuide[] = [BLACKSMITHING];
+export const PROFESSIONS: ProfessionGuide[] = [
+  ALCHEMY, BLACKSMITHING, ENCHANTING, ENGINEERING, LEATHERWORKING, TAILORING,
+  MINING, HERBALISM, SKINNING,
+  COOKING, FIRST_AID, FISHING,
+];
 
 export type Total = Mat & { made?: number };
 
@@ -69,8 +86,8 @@ export function materialTotals(g: ProfessionGuide): Total[] {
   for (const [name, recipe] of made) {
     const m = need.get(name);
     if (!m) continue;
-    const crafted = g.steps.filter((s) => s.title === name).reduce((n, s) => n + (s.count ?? 0), 0);
-    const short = m.qty - crafted;
+    const crafted = g.steps.filter((s) => s.title === name).reduce((n, s) => n + (s.count ?? 0) * (s.makes ?? 1), 0);
+    const short = Math.ceil((m.qty - crafted) / (recipe.makes ?? 1));
     if (short > 0) for (const r of recipe.mats ?? []) add(r, r.qty * short);
     need.delete(name);
   }

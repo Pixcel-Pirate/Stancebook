@@ -12,8 +12,10 @@ import { KeybindsView } from "@/components/keybinds-view";
 import { ProfessionsView } from "@/components/professions-view";
 import { UpdateButton } from "@/components/update-button";
 import { ActionBar, dragMacro } from "@/components/action-bar";
-import { AbilityTip, CLASS_ICON, ClassIcon, primaryAbility, SpellIcon } from "@/components/spell-icon";
+import { AbilityTip, CLASS_ICON, ClassIcon, IconArt, primaryAbility, SpellIcon } from "@/components/spell-icon";
+import { PROFESSIONS, type ProfessionId } from "@/lib/professions";
 import { useFavorites } from "@/lib/favorites";
+import { ICON_CDN } from "@/lib/abilities";
 import { guideFor } from "@/lib/guide";
 import { PATCHES, PATCH_NOTES } from "@/lib/patch-notes";
 import {
@@ -32,7 +34,7 @@ import {
 } from "@/lib/macros";
 import { cn, useStored } from "@/lib/utils";
 
-export type Tab = "macros" | "abilities" | "talents" | "keybinds" | "races" | "armory" | "progression" | "guide" | "forever" | "patches";
+export type Tab = "macros" | "abilities" | "talents" | "keybinds" | "races" | "armory" | "guide" | "forever" | "patches";
 
 type State = {
   tab: Tab;
@@ -41,6 +43,9 @@ type State = {
   cat: Category | "all";
   q: string;
   m?: string;
+  /** Professions is picked in the class rail like a class; its tabs are the guides. */
+  profs: boolean;
+  prof: ProfessionId;
 };
 
 const PREFS_KEY = "stancebook-prefs";
@@ -51,12 +56,12 @@ function sharedBuild(): Partial<State> {
   return m && isClassId(m[1]) ? { tab: "talents", c: m[1] } : {};
 }
 
-function loadPrefs(): Pick<State, "c"> {
+function loadPrefs(): Pick<State, "c" | "prof"> {
   try {
     const raw = JSON.parse(localStorage.getItem(PREFS_KEY) ?? "{}") as Partial<State>;
-    return { c: isClassId(raw.c) ? raw.c : "warrior" };
+    return { c: isClassId(raw.c) ? raw.c : "warrior", prof: isProfId(raw.prof) ? raw.prof : PROFESSIONS[0].id };
   } catch {
-    return { c: "warrior" };
+    return { c: "warrior", prof: PROFESSIONS[0].id };
   }
 }
 
@@ -97,6 +102,10 @@ const CLASS_COLOR: Record<ClassId, string> = {
   druid: "#ff7c0a",
 };
 
+const PROF_COLOR = "#e8b64c";
+const PROF_ICON = "trade_blacksmithing";
+const isProfId = (v: unknown): v is ProfessionId => PROFESSIONS.some((p) => p.id === v);
+
 function matchesQuery(m: Macro, q: string): boolean {
   if (!q) return true;
   const hay = [
@@ -133,6 +142,27 @@ function ClassCrest({ id, size = 40, on }: { id: ClassId; size?: number; on?: bo
       aria-hidden
     >
       <ClassIcon id={id} size={size} fallback={<Icon size={Math.round(size * 0.5)} strokeWidth={1.75} />} />
+    </span>
+  );
+}
+
+function ProfCrest({ size = 40, on }: { size?: number; on?: boolean }) {
+  return (
+    <span
+      className="relative grid shrink-0 place-items-center overflow-hidden rounded-[30%] transition-[filter,box-shadow] duration-300 ease-out"
+      style={{
+        width: size,
+        height: size,
+        color: PROF_COLOR,
+        background: "radial-gradient(circle at 35% 30%, #20253a, #07080d)",
+        boxShadow: on
+          ? `0 0 0 1px #000, 0 0 0 2px ${PROF_COLOR}, 0 0 22px -2px ${PROF_COLOR}`
+          : "0 0 0 1px #000, 0 0 0 2px rgba(190,210,255,.12)",
+        filter: on ? undefined : "saturate(.55) brightness(.8)",
+      }}
+      aria-hidden
+    >
+      <IconArt icon={PROF_ICON} size={size} fallback={<Hammer size={Math.round(size * 0.5)} strokeWidth={1.75} />} />
     </span>
   );
 }
@@ -196,7 +226,6 @@ const TABS = [
   ["keybinds", "Keybinds", Keyboard],
   ["races", "Races", Users],
   ["armory", "Armory", Shield],
-  ["progression", "Progression", Hammer],
   ["guide", "How they work", Feather],
   ["forever", "Forever notes", ScrollText],
   ["patches", "Patch notes", FileText],
@@ -208,6 +237,7 @@ export function AppShell() {
     spec: "all",
     cat: "all",
     q: "",
+    profs: false,
     ...loadPrefs(),
     ...sharedBuild(),
   }));
@@ -220,7 +250,8 @@ export function AppShell() {
     if (seen[id] !== PATCHES[0].id) setSeen({ ...seen, [id]: PATCHES[0].id });
   }
 
-  const { tab, c: classId } = state;
+  const { tab, c: classId, profs, prof } = state;
+  const profGuide = PROFESSIONS.find((p) => p.id === prof) ?? PROFESSIONS[0];
   const meta = classMeta(classId);
   const spec = state.spec;
   const cat = state.cat;
@@ -232,16 +263,16 @@ export function AppShell() {
 
   // Dye the whole book in the class color; html transitions --cls so the change fades in.
   useEffect(() => {
-    document.documentElement.style.setProperty("--cls", CLASS_COLOR[classId]);
-  }, [classId]);
+    document.documentElement.style.setProperty("--cls", profs ? PROF_COLOR : CLASS_COLOR[classId]);
+  }, [classId, profs]);
 
   useEffect(() => {
     try {
-      localStorage.setItem(PREFS_KEY, JSON.stringify({ c: classId }));
+      localStorage.setItem(PREFS_KEY, JSON.stringify({ c: classId, prof }));
     } catch {
       /* storage unavailable: prefs just won't persist */
     }
-  }, [classId]);
+  }, [classId, prof]);
 
   function patch(p: Partial<State>) {
     setState((s) => ({ ...s, ...p }));
@@ -249,7 +280,7 @@ export function AppShell() {
 
   function pickClass(id: ClassId) {
     markSeen(id);
-    patch({ c: id, spec: "all", cat: "all", m: undefined, q: "" });
+    patch({ c: id, profs: false, spec: "all", cat: "all", m: undefined, q: "" });
   }
 
   const filtered = useMemo(
@@ -288,7 +319,7 @@ export function AppShell() {
     <div className="flex h-full flex-col">
       <PatchStrip classId={classId} onOpenNotes={() => {
           markSeen(classId);
-          patch({ tab: "patches" });
+          patch({ tab: "patches", profs: false });
         }} />
       <div className="flex min-h-0 flex-1">
         {/* Class rail, like the bookmark tabs down the side of the in-game spellbook */}
@@ -298,7 +329,7 @@ export function AppShell() {
         >
           <Logo className="mb-3 size-9 text-glow-hi drop-shadow-[0_0_8px_var(--cls)]" />
           {CLASS_META.map((c) => {
-            const on = classId === c.id;
+            const on = !profs && classId === c.id;
             return (
               <button
                 key={c.id}
@@ -324,22 +355,53 @@ export function AppShell() {
               </button>
             );
           })}
+          <span className="my-1 h-px w-10 bg-line" aria-hidden />
+          <button
+            type="button"
+            onClick={() => patch({ profs: true })}
+            aria-pressed={profs}
+            aria-label="Professions"
+            className="group relative grid h-14 w-full place-items-center"
+          >
+            <span
+              className={cn(
+                "absolute top-2 bottom-2 left-0 w-[3px] rounded-r-full bg-cls shadow-[0_0_10px_var(--cls)] transition-[opacity,scale] duration-300 ease-out",
+                profs ? "opacity-100" : "scale-y-0 opacity-0",
+              )}
+            />
+            <span className="relative transition-transform duration-150 ease-out group-active:scale-95">
+              <ProfCrest size={42} on={profs} />
+            </span>
+            <span className="pointer-events-none absolute left-full z-20 ml-1 rounded-md bg-[#101326] px-2.5 py-1 text-sm font-semibold whitespace-nowrap text-white opacity-0 shadow-lg ring-1 ring-[#8f8f9a] transition-opacity group-hover:opacity-100">
+              Professions
+            </span>
+          </button>
         </nav>
 
         <div className="flex min-w-0 flex-1 flex-col">
           {/* Class banner */}
           <header className="shrink-0 px-3 pt-3 sm:px-5">
             <div className="banner">
-              <span key={classId} className="sweep" aria-hidden />
-              <ClassIcon id={classId} size={240} fallback={null} imgClassName="banner-art" />
+              <span key={profs ? "profs" : classId} className="sweep" aria-hidden />
+              {profs ? (
+                <IconArt icon={profGuide.icon} size={240} fallback={null} className="banner-art" />
+              ) : (
+                <ClassIcon id={classId} size={240} fallback={null} imgClassName="banner-art" />
+              )}
               <div className="flex flex-wrap items-center gap-x-5 gap-y-3 px-4 pt-4 sm:px-6 sm:pt-5">
-                <ClassCrest id={classId} size={56} on />
-                <div key={classId} className="dye-in min-w-0 flex-1">
+                {profs ? <ProfCrest size={56} on /> : <ClassCrest id={classId} size={56} on />}
+                <div key={profs ? "profs" : classId} className="dye-in min-w-0 flex-1">
                   <div className="flex flex-wrap items-baseline gap-x-3">
-                    <h1 className="font-display text-3xl leading-tight font-bold tracking-[0.01em] text-white uppercase sm:text-4xl">{meta.label}</h1>
-                    <span className="text-sm font-semibold text-fg-soft tabular-nums">{bookCount} macros</span>
+                    <h1 className="font-display text-3xl leading-tight font-bold tracking-[0.01em] text-white uppercase sm:text-4xl">
+                      {profs ? "Professions" : meta.label}
+                    </h1>
+                    <span className="text-sm font-semibold text-fg-soft tabular-nums">
+                      {profs ? `${PROFESSIONS.length} guides` : `${bookCount} macros`}
+                    </span>
                   </div>
-                  <p className="text-sm text-fg-soft">{meta.hint}</p>
+                  <p className="text-sm text-fg-soft">
+                    {profs ? "Leveling guides from 1 to 300, with trainers, a shopping list and every step." : meta.hint}
+                  </p>
                 </div>
                 <div className="flex items-center gap-3">
                   <UpdateButton />
@@ -357,18 +419,38 @@ export function AppShell() {
                     key={c.id}
                     type="button"
                     onClick={() => pickClass(c.id)}
-                    aria-pressed={classId === c.id}
+                    aria-pressed={!profs && classId === c.id}
                     aria-label={`${c.label}, ${changesText(latestCount(c.id))} in ${PATCHES[0].label}`}
                     className="relative shrink-0 p-1 transition-transform duration-150 ease-out active:scale-95"
                   >
-                    <ClassCrest id={c.id} size={38} on={classId === c.id} />
+                    <ClassCrest id={c.id} size={38} on={!profs && classId === c.id} />
                     <ChangeBadge id={c.id} seen={seen} />
                   </button>
                 ))}
+                <button
+                  type="button"
+                  onClick={() => patch({ profs: true })}
+                  aria-pressed={profs}
+                  aria-label="Professions"
+                  className="relative ml-1 shrink-0 p-1 transition-transform duration-150 ease-out active:scale-95"
+                >
+                  <ProfCrest size={38} on={profs} />
+                </button>
               </nav>
 
-              <nav className="mt-2 flex overflow-x-auto px-2 sm:px-4" aria-label="Sections">
-                {TABS.map(([id, label, Icon]) => (
+              <nav className="mt-2 flex overflow-x-auto px-2 sm:px-4" aria-label={profs ? "Professions" : "Sections"}>
+                {profs ? PROFESSIONS.map((g) => (
+                  <button
+                    key={g.id}
+                    type="button"
+                    onClick={() => patch({ prof: g.id })}
+                    aria-current={prof === g.id ? "page" : undefined}
+                    className="tab"
+                  >
+                    <img src={ICON_CDN + g.icon + ".jpg"} alt="" width={20} height={20} draggable={false} className="size-5 rounded ring-1 ring-line" />
+                    {g.name}
+                  </button>
+                )) : TABS.map(([id, label, Icon]) => (
                   <button
                     key={id}
                     type="button"
@@ -388,7 +470,13 @@ export function AppShell() {
           </header>
 
           <main className="book flex min-h-0 flex-1 flex-col p-3 sm:px-5">
-            {tab === "macros" ? (
+            {profs ? (
+              <section className="page h-full min-h-0 overflow-y-auto">
+                <div key={prof} className="page-in px-4 py-7 sm:px-10">
+                  <ProfessionsView id={prof} />
+                </div>
+              </section>
+            ) : tab === "macros" ? (
               <div className="grid h-full min-h-0 gap-3 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)]">
                 {/* Spell list */}
                 <section className={cn("page min-h-0 overflow-y-auto", selected && "hidden lg:block")}>
@@ -569,8 +657,6 @@ export function AppShell() {
                     <RacesView classId={classId} />
                   ) : tab === "armory" ? (
                     <ArmoryView classId={classId} />
-                  ) : tab === "progression" ? (
-                    <ProfessionsView />
                   ) : tab === "guide" ? (
                     <HowItWorks classId={classId} />
                   ) : tab === "patches" ? (
@@ -584,7 +670,7 @@ export function AppShell() {
           </main>
 
           {/* Action bar: drag macros in */}
-          {tab === "macros" && (
+          {!profs && tab === "macros" && (
             <ActionBar classId={classId} starters={starters} selectedId={selected?.id} onOpen={(id) => patch({ m: id })} />
           )}
         </div>
