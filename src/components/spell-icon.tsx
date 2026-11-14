@@ -85,7 +85,7 @@ export function primaryAbility(macro: Macro): Ability | undefined {
 }
 
 /** Real in-game icon art; falls back to a drawn glyph offline or if the art is missing. */
-function IconArt({ icon, size, fallback, className }: { icon?: string; size: number; fallback: ReactNode; className?: string }) {
+export function IconArt({ icon, size, fallback, className }: { icon?: string; size: number; fallback: ReactNode; className?: string }) {
   const [failed, setFailed] = useState(false);
   if (!icon || failed) return <>{fallback}</>;
   return (
