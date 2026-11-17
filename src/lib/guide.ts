@@ -250,6 +250,7 @@ const WARRIOR_FOREVER: ForeverNote[] = [
   RACIALS,
   { title: "Launch notes", tag: "Nov 2 patch", body: "Improved Hamstring and Counterattack roots now share diminishing returns. Training every ability from 1 to 60 costs about 207 gold, and new spells no longer land on your bars by themselves, so drag them on." },
   { title: "Fury talent swap", tag: "Nov 4 patch", body: "Raging Blows is gone. Reckless Swings gives 5 extra rage on your next 4 swings, and Improved Whirlwind brings Whirlwind back up to 2 seconds sooner. Bloodthirst now needs Death Wish, Slam's cooldown is 15 seconds, and Defensive Stance makes 80% more threat." },
+  { title: "Fury procs from Cleave", tag: "Nov 16 patch", body: "Unbridled Wrath, Flurry and Reckless Swings now work with Cleave and Heroic Strike, so a Heroic Strike / Cleave key no longer wastes them. Berserker Rage breaks Sap since Nov 13." },
   CAP,
 ];
 
@@ -267,7 +268,7 @@ const HUNTER_FOREVER: ForeverNote[] = [
   { title: "Traps and pets", tag: "Oct 15 patch", body: "Fire Traps scale with Attack Power, and you can have one Fire and one Ice Trap out at once. Trueshot Aura is raid-wide, Strider Kick works while disarmed, and pet exotic skills got longer cooldowns." },
   RACIALS,
   { title: "Shots hit harder, traps share a cooldown", tag: "Nov 2 patch", body: "Aimed Shot bonus damage roughly doubled, Arcane Shot and Serpent Sting hit harder, and Aspect of the Hawk gives more ranged power. All traps now share a 30-second cooldown, so one trap key is enough. Only one Hunter's Mark fits on a target." },
-  { title: "Tank pets retuned", tag: "Nov 10 patch", body: "Pets you use as tanks get stats closer to Classic Era. Blizzard gave no numbers. Your pet macros stay the same." },
+  { title: "Tank pets retuned", tag: "Nov 10 patch", body: "Pets were getting 150% health by mistake and now have 115%. Arcane Shot and Summon Hawk cost 11% of base mana, and the Hawk hits about 80% harder. Your pet macros stay the same." },
   CAP,
 ];
 
@@ -283,6 +284,7 @@ const ROGUE_FOREVER: ForeverNote[] = [
   { title: "Shank and Poised", tag: "Nov 2 patch", body: "New Shank (level 24): a cheap off-hand stab on a 10-second cooldown that gives back 15 energy. Give it its own key and press it on cooldown. Poised (level 18) makes your next energy ability 10 cheaper. Deadly and Instant Poison scale twice as hard." },
   { title: "Subtlety reworked", tag: "Nov 2 patch", body: "Cutthroat, Thousand Cuts, Quietus and Improved Distract are gone. Ghostly Strike now unlocks Ambush and Garrote for 7 seconds. Death Mark is the new 31-point talent. Re-check your talents." },
   { title: "Talent trees reshuffled", tag: "Nov 4 patch", body: "Venom makes Shank boost your poisons, so Shank on cooldown matters even more for Assassination. Mutilate now needs Venom. Boot Knife lets Shank add 2 combo points in Subtlety. Your macros don't change." },
+  { title: "Shank and poison fixes", tag: "Nov 16 patch", body: "Shank no longer wipes combo points from another target, and poison ranks can't go above max. Your macros don't change." },
   CAP,
 ];
 
@@ -301,6 +303,7 @@ const PALADIN_FOREVER: ForeverNote[] = [
   { title: "Reckoning and Righteous Fury", tag: "Oct 15 patch", body: "Reckoning stores up to 4 charges that fire on your next swing. Righteous Fury threat is up to 90%, so tanks should keep it on. Consecration and Champion of the Light numbers changed too." },
   RACIALS,
   { title: "Salvation and Blessing of Light are gone", tag: "Nov 2 patch", body: "Salvation, Mass Salvation, Revoke and Blessing of Light were removed. Delete any macro that casts them. Righteous Fury is learned at level 10 and adds 33% threat, and Judgement of Fury taunts for 3 seconds." },
+  { title: "Judgement is ranged", tag: "Nov 13 patch", body: "Judgement uses your ranged hit chance since Nov 11, and Judgement of Command now counts as a melee hit with on-hit effects. Your Judgement keys don't change." },
   CAP,
 ];
 
@@ -319,6 +322,7 @@ const PRIEST_FOREVER: ForeverNote[] = [
   { title: "Shadow talents reshuffled", tag: "Oct 15 patch", body: "Dark Inspiration is new, Improved Mind Flay adds damage per tick, and Improved Fade and Shadow Infinity are gone. Re-check your talents." },
   RACIALS,
   { title: "Shield and Death changes", tag: "Nov 2 patch", body: "Power Word: Shield can be replaced by an equal or higher rank. Shadow Word: Death hurts you for 30% of your health if the target lives, but not on a miss. Binding Heal is gone; the Holy Binding talent heals you when your Flash Heal heals someone else, so a mouseover Flash Heal covers it." },
+  { title: "Vampiric Embrace heals less", tag: "Nov 16 patch", body: "Vampiric Embrace heals the party for 10% of your Shadow damage (was 20%), and you get twice that. Gnome Confounding Flash and Twilight Focus work in Shadowform." },
   CAP,
 ];
 
@@ -338,7 +342,8 @@ const SHAMAN_FOREVER: ForeverNote[] = [
   RACIALS,
   { title: "Lava Burst is gone", tag: "Nov 2 patch", body: "Lava Burst was removed from Elemental; Call of Thunder (+5% Lightning crit) is back in its spot, and Elemental Mastery is now Lightning Mastery. Delete any Lava Burst macro and put Lightning Bolt on that key." },
   { title: "Totemic Call, not Projection", tag: "Nov 4 patch", body: "Totemic Projection is gone. Totemic Call pulls your totems to where you stand, so the macro is a plain /cast with no cursor. Riptide is now only a HoT on a 12-second cooldown." },
-  { title: "Enhancement wants Strength", tag: "Nov 10 patch", body: "Blizzard retuned Enhancement so Strength is the best stat again. Pick Strength and Attack Power gear. Your keys stay the same." },
+  { title: "Enhancement wants Strength", tag: "Nov 10 patch", body: "Stormstrike now does 100% weapon damage on an 8-second cooldown, and Maelstrom Weapon procs 6 to 10 times a minute. Strength is the best stat again, and imbues and weapon totems stack." },
+  { title: "Windfury Totem fixed", tag: "Nov 16 patch", body: "Windfury Totem procs from every melee ability, respects armor, has an internal cooldown and gives Warriors rage. Maelstrom Weapon is used up by one cast." },
   CAP,
 ];
 
@@ -356,6 +361,7 @@ const MAGE_FOREVER: ForeverNote[] = [
   RACIALS,
   { title: "Frost Blast is gone", tag: "Nov 2 patch", body: "Frost Blast was removed, so drop it from your macros. Missile Barrage now triggers at the start of Arcane Missiles, Ignite also covers Flamestrike, and Frost Warding can fully negate a spell." },
   { title: "Arcane Blast fixed", tag: "Nov 6 patch", body: "Arcane Blast's buff lasts the intended 18 seconds. Your Arcane Blast key works the same." },
+  { title: "Frost Nova breaks on Blizzard", tag: "Nov 13 patch", body: "Frost Nova now breaks from proc damage and Blizzard. Don't Blizzard on top of a Nova you want to keep." },
   CAP,
 ];
 
@@ -371,7 +377,7 @@ const WARLOCK_FOREVER: ForeverNote[] = [
   { title: "Range talents", tag: "Oct 15 patch", body: "Malediction is replaced by Grim Reach (Affliction range), and Destructive Reach adds Destruction range. Shadow Mastery is up to 10%. Re-check your talents." },
   RACIALS,
   { title: "Launch notes", tag: "Nov 2 patch", body: "No class changes. Warlock training costs were lowered to make up for Grimoires, and new spells no longer land on your bars by themselves." },
-  { title: "Voidwalker and Affliction DoTs", tag: "Nov 10 patch", body: "Voidwalker got about 40 more health on Nov 6 and tank stats closer to Classic on Nov 10. Corruption, Siphon Life and Bane of Agony were retuned to be worth keeping up next to Wrack, so keep your DoT keys bound." },
+  { title: "Voidwalker and Affliction DoTs", tag: "Nov 10 patch", body: "Wrack does 30% less damage and no longer boosts your DoTs. Instead your Corruption, Siphon Life and Bane of Agony tick twice as fast while you channel it, so put the DoTs up first and then channel Wrack. All pets got about 15% more health." },
   CAP,
 ];
 
@@ -392,6 +398,7 @@ const DRUID_FOREVER: ForeverNote[] = [
   { title: "Feral hits harder", tag: "Nov 2 patch", body: "Shred, Claw, Ravage, Rip, Rake, Ferocious Bite and Pounce all hit harder. Bear Form threat is +115%. Poised (level 32) makes your next energy ability 10 cheaper. Lacerate is now a Feral talent, not a trainer spell." },
   { title: "Restoration and Balance", tag: "Nov 2 patch", body: "Swiftmend only eats your own HoTs. Starfire hits about 40% harder. Moonkin Aura and Leader of the Pack don't stack with each other." },
   { title: "Bloom heals again", tag: "Nov 6 patch", body: "Bloom now heals its target. Shadowmelded Night Elves no longer get Ravage and Pounce, so open from Prowl as normal." },
+  { title: "Wild Growth doubled", tag: "Nov 16 patch", body: "Wild Growth heals twice as much and can't be cast while moving, and Nature's Swiftness makes it instant. Rend and Tear and Genesis now count Pounce's bleed." },
   CAP,
 ];
 
@@ -403,7 +410,7 @@ const GUIDES: Record<ClassId, ClassGuide> = {
     intro: "Macros in WoW Forever are Classic-era: 255 characters, no rotation brain, conditions checked left to right. The rules below are the ones that actually change how a warrior plays.",
     sections: [RANK, STARTATTACK, ...CORE.slice(0, 1), STANCE, ...CORE.slice(1, 3), COMBAT, ...CORE.slice(3)],
     foreverHeading: "What changed for warriors",
-    foreverIntro: "Updated with the Sept 24, Oct 1, Oct 8, Oct 15, Oct 26, Nov 2, Nov 6 and Nov 10 patches. Victory Rush, baseline Tactical Mastery, and Charge in Defensive Stance are the three that actually change which macros you bind.",
+    foreverIntro: "Updated with the Sept 24, Oct 1, Oct 8, Oct 15, Oct 26, Nov 2, Nov 6, Nov 10, Nov 13 and Nov 16 patches. Victory Rush, baseline Tactical Mastery, and Charge in Defensive Stance are the three that actually change which macros you bind.",
     forever: WARRIOR_FOREVER,
   },
   paladin: {
@@ -411,7 +418,7 @@ const GUIDES: Record<ClassId, ClassGuide> = {
     intro: "A paladin’s extra rule is Seals: Judgement no longer eats them, so your keys change.",
     sections: [rankExample("/cast Holy Strike", "Same rule for Flash of Light and Judgement."), STARTATTACK, SEALS, MOUSEHEAL, GCD, TARGETS, MODS, STOPCAST, SHOWTOOLTIP, CANNOT],
     foreverHeading: "What changed for paladins",
-    foreverIntro: "Updated with the Sept 24, Oct 1, Oct 8, Oct 15, Oct 26, Nov 2, Nov 6 and Nov 10 patches. Holy Strike, Seal of Fury, Judgement that keeps the Seal, and baseline Consecration are the four that change which macros you bind.",
+    foreverIntro: "Updated with the Sept 24, Oct 1, Oct 8, Oct 15, Oct 26, Nov 2, Nov 6, Nov 10, Nov 13 and Nov 16 patches. Holy Strike, Seal of Fury, Judgement that keeps the Seal, and baseline Consecration are the four that change which macros you bind.",
     forever: PALADIN_FOREVER,
   },
   hunter: {
@@ -419,7 +426,7 @@ const GUIDES: Record<ClassId, ClassGuide> = {
     intro: "A hunter’s extra rule is the pet: it does not assist like a retail pet. You send it, or it sits on a corpse.",
     sections: [rankExample("/cast Serpent Sting", "Hunters almost never want a downrank."), PET_ATTACK, AUTO_SHOT, PET_STANCES, GCD, TARGETS, MODS, COMBAT, SHOWTOOLTIP, CANNOT],
     foreverHeading: "What changed for hunters",
-    foreverIntro: "Updated with the Sept 24, Oct 1, Oct 8, Oct 15, Oct 26, Nov 2, Nov 6 and Nov 10 patches. Aimed Shot is trained, the pet gained Assist, and Summon Hawk / Strider Kick sit on shared cooldowns.",
+    foreverIntro: "Updated with the Sept 24, Oct 1, Oct 8, Oct 15, Oct 26, Nov 2, Nov 6, Nov 10, Nov 13 and Nov 16 patches. Aimed Shot is trained, the pet gained Assist, and Summon Hawk / Strider Kick sit on shared cooldowns.",
     forever: HUNTER_FOREVER,
   },
   rogue: {
@@ -427,7 +434,7 @@ const GUIDES: Record<ClassId, ClassGuide> = {
     intro: "A rogue’s extra rules are stealth, combo points, and /startattack so you never stand still between builders.",
     sections: [rankExample("/cast Sinister Strike", "A ranked icon from the spellbook will not upgrade when you train."), STARTATTACK, COMBO, STEALTH, GCD, TARGETS, MODS, COMBAT, SHOWTOOLTIP, CANNOT],
     foreverHeading: "What changed for rogues",
-    foreverIntro: "Updated with the Sept 24, Oct 1, Oct 8, Oct 15, Oct 26, Nov 2, Nov 6 and Nov 10 patches. Shank, Mutilate, and Ghostly Strike into Ambush are the three that change which macros you bind.",
+    foreverIntro: "Updated with the Sept 24, Oct 1, Oct 8, Oct 15, Oct 26, Nov 2, Nov 6, Nov 10, Nov 13 and Nov 16 patches. Shank, Mutilate, and Ghostly Strike into Ambush are the three that change which macros you bind.",
     forever: ROGUE_FOREVER,
   },
   priest: {
@@ -435,7 +442,7 @@ const GUIDES: Record<ClassId, ClassGuide> = {
     intro: "A priest’s extra rule is mouseover: never tab onto a friend if you can help it.",
     sections: [rankExample("/cast Flash Heal", "Downranks are a conscious choice, not a spellbook icon."), MOUSEHEAL, GCD, TARGETS, MODS, STOPCAST, SHOWTOOLTIP, CANNOT],
     foreverHeading: "What changed for priests",
-    foreverIntro: "Updated with the Sept 24, Oct 1, Oct 8, Oct 15, Oct 26, Nov 2, Nov 6 and Nov 10 patches. Fear Ward for every race, SW:Death from the trainer, a Shadowform that actually has mana, and Penance / Prayer of Mending.",
+    foreverIntro: "Updated with the Sept 24, Oct 1, Oct 8, Oct 15, Oct 26, Nov 2, Nov 6, Nov 10, Nov 13 and Nov 16 patches. Fear Ward for every race, SW:Death from the trainer, a Shadowform that actually has mana, and Penance / Prayer of Mending.",
     forever: PRIEST_FOREVER,
   },
   shaman: {
@@ -443,7 +450,7 @@ const GUIDES: Record<ClassId, ClassGuide> = {
     intro: "A shaman’s extra rules are a shared shock cooldown and a totem bar that finally drops four at once.",
     sections: [rankExample("/cast Lightning Bolt", "Healing Wave downranks are a separate bind if you want them."), SHOCKS, TOTEMS, STARTATTACK, MOUSEHEAL, GCD, TARGETS, MODS, STOPCAST, SHOWTOOLTIP, CANNOT],
     foreverHeading: "What changed for shaman",
-    foreverIntro: "Updated with the Sept 24, Oct 1, Oct 8, Oct 15, Oct 26, Nov 2, Nov 6 and Nov 10 patches. Call of the Elements, Lightning Mastery, Riptide, Fire Nova as a spell, and a faster Lightning Bolt.",
+    foreverIntro: "Updated with the Sept 24, Oct 1, Oct 8, Oct 15, Oct 26, Nov 2, Nov 6, Nov 10, Nov 13 and Nov 16 patches. Call of the Elements, Lightning Mastery, Riptide, Fire Nova as a spell, and a faster Lightning Bolt.",
     forever: SHAMAN_FOREVER,
   },
   mage: {
@@ -451,7 +458,7 @@ const GUIDES: Record<ClassId, ClassGuide> = {
     intro: "A mage’s extra rule is /stopcasting: a bolt in progress will eat Blink, Counterspell, and sheep if you let it.",
     sections: [rankExample("/cast Frostbolt", "Rank 1 Frostbolt as a snare is a different macro, on purpose."), STOPCAST, AUTO_SHOT, GCD, TARGETS, MODS, SHOWTOOLTIP, CANNOT],
     foreverHeading: "What changed for mages",
-    foreverIntro: "Updated with the Sept 24, Oct 1, Oct 8, Oct 15, Oct 26, Nov 2, Nov 6 and Nov 10 patches. Frostfire Bolt is trained, Arcane Blast makes Arcane a spec, and Ice Lance exists for shatter windows.",
+    foreverIntro: "Updated with the Sept 24, Oct 1, Oct 8, Oct 15, Oct 26, Nov 2, Nov 6, Nov 10, Nov 13 and Nov 16 patches. Frostfire Bolt is trained, Arcane Blast makes Arcane a spec, and Ice Lance exists for shatter windows.",
     forever: MAGE_FOREVER,
   },
   warlock: {
@@ -459,7 +466,7 @@ const GUIDES: Record<ClassId, ClassGuide> = {
     intro: "A warlock’s extra rule is the same as the hunter’s: the demon does not assist. You send it, or it sits on a corpse.",
     sections: [rankExample("/cast Shadow Bolt", "Corruption and Bane of Agony follow the same rule."), PET_ATTACK, BANES, GCD, TARGETS, MODS, STOPCAST, SHOWTOOLTIP, CANNOT],
     foreverHeading: "What changed for warlocks",
-    foreverIntro: "Updated with the Sept 24, Oct 1, Oct 8, Oct 15, Oct 26, Nov 2, Nov 6 and Nov 10 patches. Agony and Doom are Banes, Destruction’s capstone is Incinerate, and the pet still needs /petattack on the filler.",
+    foreverIntro: "Updated with the Sept 24, Oct 1, Oct 8, Oct 15, Oct 26, Nov 2, Nov 6, Nov 10, Nov 13 and Nov 16 patches. Agony and Doom are Banes, Destruction’s capstone is Incinerate, and the pet still needs /petattack on the filler.",
     forever: WARLOCK_FOREVER,
   },
   druid: {
@@ -467,7 +474,7 @@ const GUIDES: Record<ClassId, ClassGuide> = {
     intro: "A druid’s extra rules are numbered forms and mouseover heals so you can stay in Cat on the kill.",
     sections: [rankExample("/cast Rejuvenation", "Healing Touch downranks are a separate bind if you want them."), FORMS, STARTATTACK, MOUSEHEAL, GCD, TARGETS, MODS, SHOWTOOLTIP, CANNOT],
     foreverHeading: "What changed for druids",
-    foreverIntro: "Updated with the Sept 24, Oct 1, Oct 8, Oct 15, Oct 26, Nov 2, Nov 6 and Nov 10 patches. Lacerate, Primal Bite, Eclipse, and Wild Growth are the ones that change keys.",
+    foreverIntro: "Updated with the Sept 24, Oct 1, Oct 8, Oct 15, Oct 26, Nov 2, Nov 6, Nov 10, Nov 13 and Nov 16 patches. Lacerate, Primal Bite, Eclipse, and Wild Growth are the ones that change keys.",
     forever: DRUID_FOREVER,
   },
 };

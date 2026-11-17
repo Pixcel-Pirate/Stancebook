@@ -33,7 +33,7 @@
 {"n":"Spirit Weapons","t":5,"c":1,"r":1,"i":"ability_parry","e":"Adds parry chance; threat changes based on Rockbiter Weapon being active.","s":"c"},
 {"n":"Mental Quickness","t":5,"c":2,"r":2,"i":"spell_nature_sleep","e":"Raises spell damage and healing by up to {15|30}% of your Intellect.","s":"n"},
 {"n":"Improved Stormstrike","t":5,"c":3,"r":2,"i":"spell_shaman_improvedstormstrike","e":"Gives a {50|100}% chance of 50% mana regen while casting for 15 sec, and a {50|100}% chance to reset Stormstrike's cooldown on dodge or parry.","s":"n","p":"Stormstrike"},
-{"n":"Maelstrom Weapon","t":6,"c":3,"r":5,"i":"spell_shaman_maelstromweapon","e":"Each melee hit has a {4|20}% chance to cut your next Lightning Bolt's cast time and mana; stacks 5 times for 30 sec.","s":"n"},
+{"n":"Maelstrom Weapon","t":6,"c":3,"r":5,"i":"spell_shaman_maelstromweapon","e":"Melee hits can trigger it {6|10} times a minute; each stack cuts your next Lightning Bolt's cast time and mana by 20%, up to 5 stacks.","s":"n"},
 {"n":"Rage of the Farseer","t":7,"c":2,"r":1,"i":"spell_nature_bloodlust","e":"Thirty percent attack speed boost for 25 seconds on a three-minute cooldown.","s":"n","p":"Mental Quickness"}
 ]},
 {"tree":"Restoration","talents":[

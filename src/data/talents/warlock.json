@@ -13,9 +13,9 @@
 {"n":"Nightfall","t":4,"c":2,"r":2,"i":"spell_shadow_twilight","e":"Gives Corruption, Drain Soul, Drain Life, and Wrack a {2|4}% chance to make your next Shadow Bolt instant.","s":"c"},
 {"n":"Curse of Exhaustion","t":4,"c":3,"r":1,"i":"spell_shadow_grimward","e":"Slows the target's movement by thirty percent for twelve seconds.","s":"c","p":"Amplify Curse"},
 {"n":"Siphon Life","t":5,"c":2,"r":1,"i":"spell_shadow_requiem","e":"Steals eleven health from the target every three seconds for thirty seconds.","s":"c"},
-{"n":"Soul Siphon","t":5,"c":3,"r":3,"i":"spell_shadow_lifedrain02","e":"Raises damage or health drained by Drain Life, Drain Soul, and Wrack by {4|12}% per other Affliction effect on target, max {12|36}%.","s":"c"},
+{"n":"Soul Siphon","t":5,"c":3,"r":3,"i":"spell_shadow_lifedrain02","e":"Raises damage or health drained by Drain Life, Drain Soul, and Wrack by {4|12}% per Corruption, Siphon Life and Bane of Agony on target, max {12|36}%.","s":"c"},
 {"n":"Shadow Mastery","t":6,"c":3,"r":5,"i":"spell_shadow_shadetruesight","e":"Increases damage dealt or life drained by your Shadow spells by {2|10}%."},
-{"n":"Wrack","t":7,"c":2,"r":1,"i":"ability_deathknight_hemorrhagicfever","e":"Inflicts Shadow damage every second and amplifies your other Shadow damage over time.","s":"n","p":"Siphon Life"}
+{"n":"Wrack","t":7,"c":2,"r":1,"i":"ability_deathknight_hemorrhagicfever","e":"Channel Shadow damage every second for 6 sec; your Corruption, Siphon Life and Bane of Agony tick twice as fast while it channels.","s":"n","p":"Siphon Life"}
 ]},
 {"tree":"Demonology","talents":[
 {"n":"Improved Health Funnel","t":1,"c":1,"r":2,"i":"spell_shadow_lifedrain","e":"Raises Health Funnel transfer by {20|40}%, cuts its cost {15|30}%, its threat {50|100}%, and allows use regardless of demon health.","s":"c"},

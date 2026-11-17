@@ -11,7 +11,10 @@ import type { ClassId } from "./macros";
 export type Patch = { id: string; label: string; date?: string; official: boolean; summary: string };
 
 export const PATCHES: Patch[] = [
-  { id: "nov10", label: "Nov 10 tuning", date: "2026-11-10", official: true, summary: "First live tuning pass: tanking pets, Affliction DoTs next to Wrack, and Enhancement back on Strength." },
+  { id: "nov16", label: "Nov 16 hotfixes", date: "2026-11-16", official: true, summary: "Windfury Totem fixes, Vampiric Embrace heals less, Fury procs work from Cleave and Heroic Strike." },
+  { id: "nov13", label: "Nov 13 hotfixes", date: "2026-11-13", official: true, summary: "Wild Growth heals twice as much, Windfury Totem procs from every melee ability, Berserker Rage breaks Sap." },
+  { id: "nov11", label: "Nov 11 hotfixes", date: "2026-11-11", official: true, summary: "Paladin Judgement uses ranged hit, Rend and Tear works on Pounce, Priest racials in Shadowform." },
+  { id: "nov10", label: "Nov 10 tuning", date: "2026-11-10", official: true, summary: "First tuning pass: Wrack reworked, all Warlock pets tougher, Enhancement Stormstrike and Maelstrom nerfed, Hunter mana costs." },
   { id: "nov9", label: "Nov 9 hotfixes", date: "2026-11-09", official: true, summary: "Bug fixes for every class: Flamestrike and Clearcasting, Shadowform and Fear Ward, Lightning Overload." },
   { id: "nov6", label: "Nov 6 hotfixes", date: "2026-11-06", official: true, summary: "Bug fixes: Voidwalker health, Soul Siphon and Wrack, Druid Bloom, Mage Arcane Blast." },
   { id: "nov4", label: "Nov 3-4 hotfixes", date: "2026-11-04", official: false, summary: "Launch-day server changes: Fury talent swap, tank stance threat, Shaman Totemic Call and Riptide." },
@@ -34,6 +37,15 @@ const WANDS = "Wands need you to stand still for 0.5 seconds before they shoot."
 
 export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
   warrior: {
+    nov16: [
+      "Fury: Unbridled Wrath, Flurry and Reckless Swings now work with Cleave and Heroic Strike.",
+    ],
+    nov13: [
+      "Berserker Rage now breaks Sap.",
+    ],
+    nov10: [
+      "Arms: Sweeping Strikes no longer loses charges when there is no second target.",
+    ],
     nov9: [
       "Thunder Clap shows only its cooldown in the Cooldown Manager.",
     ],
@@ -101,6 +113,13 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   paladin: {
+    nov13: [
+      "Judgement of Command now triggers on-hit effects and counts as a melee attack.",
+    ],
+    nov11: [
+      "Judgement is now a ranged attack and uses your ranged hit chance.",
+      "Retribution: Unsealed Fury no longer echoes Windfury Totem attacks.",
+    ],
     nov9: [
       "Consecration gets its damage bonus correctly again.",
     ],
@@ -175,11 +194,16 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   hunter: {
-    nov9: [
-      "A few pets moved to their correct families. Pulling aggro from far away by targeting is fixed.",
+    nov11: [
+      "Volley no longer triggers procs or keeps channeling while you move.",
     ],
     nov10: [
-      "Pets you use as tanks get stats closer to Classic Era. Blizzard gave no numbers.",
+      "Pets have 115% of normal health (a bug gave them 150%).",
+      "Arcane Shot costs 11% of base mana at every rank.",
+      "Beast Mastery: Summon Hawk costs 11% of base mana, and the Hawk hits about 80% harder.",
+    ],
+    nov9: [
+      "A few pets moved to their correct families. Pulling aggro from far away by targeting is fixed.",
     ],
     nov2: [
       "Aimed Shot bonus damage is roughly doubled. Arcane Shot hits about 30% harder, Serpent Sting about 20%.",
@@ -242,6 +266,10 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   rogue: {
+    nov16: [
+      "Poisons can no longer go above their max rank.",
+      "Shank no longer wipes combo points from your other target.",
+    ],
     nov6: [
       "Shank's tooltip shows its ranks, and the combo points from Boot Knife now display correctly.",
     ],
@@ -280,6 +308,16 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   priest: {
+    nov16: [
+      "Shadow: Vampiric Embrace heals the party for 10% of your Shadow damage (was 20%), and you get twice that.",
+      "Dark Inspiration no longer stacks from several Shadow priests.",
+    ],
+    nov13: [
+      "The Quick and the Dead now lowers Divine Spirit's mana cost as intended.",
+    ],
+    nov11: [
+      "Confounding Flash (Gnome) and Twilight Focus now work in Shadowform.",
+    ],
     nov9: [
       "Fear Ward no longer knocks you out of Shadowform.",
       "Power Infusion stays on allies as it should.",
@@ -336,12 +374,26 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   shaman: {
+    nov16: [
+      "Windfury Totem extra attacks respect armor, have an internal cooldown, and give rage.",
+      "Enhancement: Maelstrom Weapon is used up by one cast, not two. Thundering Strikes gives crit with no weapon.",
+    ],
+    nov13: [
+      "Windfury Totem procs from every melee ability, not just main-hand swings.",
+    ],
+    nov11: [
+      "Flametongue Totem rank 2 works again.",
+    ],
+    nov10: [
+      "Weapon imbues and weapon totems now work at the same time (live Nov 12).",
+      "Enhancement: Stormstrike does 100% weapon damage (was 150%) on an 8 second cooldown (was 6).",
+      "Enhancement: Mental Dexterity is 33/66/100% of Intellect as Attack Power (was 50/100/150%).",
+      "Enhancement: Maelstrom Weapon procs 6 to 10 times a minute by rank, and each stack is 20% faster and cheaper.",
+      "Enhancement: Strength is the best stat again. Collect Strength and Attack Power gear.",
+    ],
     nov9: [
       "Lightning Overload deals the right damage again.",
       "Lightning Mastery has a new visual.",
-    ],
-    nov10: [
-      "Enhancement: Strength is the best stat again. Collect Strength and Attack Power gear.",
     ],
     nov4: [
       "Totemic Call replaces Totemic Projection: it pulls your totems to where you stand, 30 second cooldown.",
@@ -401,6 +453,9 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   mage: {
+    nov13: [
+      "Frost Nova now breaks on proc damage and Blizzard damage.",
+    ],
     nov9: [
       "Flamestrike ticks no longer use up Clearcasting.",
       "Arcane Concentration's chance is split between the cast and each missile.",
@@ -473,13 +528,18 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   warlock: {
+    nov13: [
+      "Siphon Life rank 1 can no longer be cast while silenced.",
+    ],
+    nov10: [
+      "Affliction: Wrack does 30% less damage and no longer boosts your DoTs. While you channel it, your DoTs tick twice as fast.",
+      "Affliction: Soul Siphon is 4/8/12% per Corruption, Siphon Life or Bane of Agony on the target, up to 36%.",
+      "Imp, Voidwalker, Succubus and Incubus have about 15% more health. Imp Firebolt ranks 1-4 hit harder.",
+      "Destruction: Bane of Havoc now triggers the global cooldown.",
+    ],
     nov9: [
       "Incinerate can only be learned by Destruction.",
       "The Felsteed quest now teaches riding.",
-    ],
-    nov10: [
-      "Voidwalker gets tank stats closer to Classic Era. Blizzard gave no numbers.",
-      "Affliction: Corruption, Siphon Life and Bane of Agony are retuned so they are worth casting next to Wrack. Total damage stays the same.",
     ],
     nov6: [
       "Voidwalker has about 40 more health at every level.",
@@ -533,6 +593,19 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   druid: {
+    nov16: [
+      "Wild Growth ranks now go on cooldown. Genesis now boosts Pounce's bleed.",
+    ],
+    nov13: [
+      "Restoration: Wild Growth heals twice as much (coefficient 6.6%, was 3.3%) and can't be cast while moving.",
+    ],
+    nov11: [
+      "Feral: Rend and Tear now counts Pounce's bleed.",
+    ],
+    nov10: [
+      "Restoration: Nature's Swiftness also makes Wild Growth instant.",
+      "Omen of Clarity works again after you swap specs.",
+    ],
     nov9: [
       "Feral Charge (Cat), Natural Instinct and the Pounce debuff work and display correctly.",
     ],

@@ -33,7 +33,7 @@
 {"n":"Blood Frenzy","t":4,"c":4,"r":2,"i":"ability_ghoulfrenzy","e":"{50|100}% chance for 5 extra Rage on Bear crits; Cat combo-point crits add a combo point {50|100}% of the time.","s":"c","p":"Sharpened Claws"},
 {"n":"Leader of the Pack","t":5,"c":2,"r":1,"i":"spell_nature_unyeildingstamina","e":"Party critical strike chance rises 3% in cat or bear forms.","s":"c"},
 {"n":"Natural Instinct","t":5,"c":4,"r":2,"i":"ability_druid_predatoryinstincts","e":"Raises melee critical damage bonus by {10|20}% and spell healing by {12|25}% of your Intellect.","s":"n"},
-{"n":"Rend and Tear","t":6,"c":1,"r":5,"i":"ability_druid_primalagression","e":"Raises melee damage against Bleeding targets by {2|10}%.","s":"n"},
+{"n":"Rend and Tear","t":6,"c":1,"r":5,"i":"ability_druid_primalagression","e":"Raises melee damage against Bleeding targets by {3|15}%, including Pounce's bleed.","s":"n"},
 {"n":"Natural Reaction","t":6,"c":4,"r":5,"i":"ability_bullrush","e":"Raises dodge chance by {1|5}% and gives {20|100}% chance for 5 Rage per dodge.","s":"n","p":"Predatory Strikes"},
 {"n":"Primal Bite","t":7,"c":2,"r":1,"i":"ability_racial_cannibalize","e":"Melee bite that deals extra damage and generates heavy threat.","s":"n","p":"Leader of the Pack"},
 {"n":"Shifting Power","t":7,"c":3,"r":1,"i":"spell_druid_displacement","e":"Converts a large chunk of base mana into 40 energy on a cooldown.","s":"n","p":"Predatory Discipline"}
