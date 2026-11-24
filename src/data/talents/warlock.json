@@ -47,7 +47,7 @@
 {"n":"Aftermath","t":2,"c":3,"r":5,"i":"spell_fire_fire","e":"Raises Immolate initial damage by {10|50}%; Conflagrate has a {20|100}% chance to daze, slowing target 50% for 5 sec.","s":"c"},
 {"n":"Ruin","t":3,"c":2,"r":5,"i":"spell_shadow_shadowwordpain","e":"Increases the critical strike damage bonus of your Destruction spells by {20|100}%.","s":"c"},
 {"n":"Shadowburn","t":3,"c":3,"r":1,"i":"spell_shadow_scourgebuild","e":"Instant Shadow blast; killing a non-trivial target within eight seconds grants a Soul Shard.","s":"c"},
-{"n":"Intensity","t":4,"c":1,"r":3,"i":"spell_fire_lavaspawn","e":"Gives Destruction spells a {23|70}% chance to keep cast time when you take damage.","s":"c"},
+{"n":"Intensity","t":4,"c":1,"r":3,"i":"spell_fire_lavaspawn","e":"Gives Destruction spells, including Incinerate, a {23|70}% chance to keep cast time when you take damage.","s":"c"},
 {"n":"Agonizing Flames","t":4,"c":2,"r":3,"i":"spell_fire_soulburn","e":"Increases Searing Pain crit chance by {3|10}% and all Destruction spell damage by {3|10}%.","s":"c"},
 {"n":"Conflagrate","t":4,"c":3,"r":1,"i":"spell_fire_fireball","e":"Consumes your Immolate on an afflicted target to deal Fire damage.","s":"c"},
 {"n":"Pyroclasm","t":5,"c":1,"r":2,"i":"spell_fire_volcano","e":"Soul Fire has a {13|26}% chance to stun for 3 sec; Rain of Fire and Hellfire have a {13|26}% chance to stun targets they damage.","s":"c","p":"Intensity"},

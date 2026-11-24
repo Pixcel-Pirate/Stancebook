@@ -48,7 +48,7 @@
 {"n":"Pursuit of Justice","t":3,"c":4,"r":2,"i":"spell_holy_persuitofjustice","e":"Increases movement and mounted speed by {8|15}%; does not stack with other speed effects.","s":"c"},
 {"n":"Eye for an Eye","t":4,"c":1,"r":2,"i":"spell_holy_eyeforaneye","e":"Crit damage against you returns {5|10}% to the attacker, capped at 50% of your total health.","s":"c"},
 {"n":"Sacred Arbiter","t":4,"c":2,"r":1,"i":"inv_sword_08","e":"Holy Strike deals 20% more and refreshes your Judgements on the target.","s":"n"},
-{"n":"Two-Handed Weapon Specialization","t":4,"c":4,"r":3,"i":"inv_hammer_04","e":"Increases physical damage by {2|6}% and reduces threat by {7|20}% with a two-handed weapon equipped.","s":"c"},
+{"n":"Two-Handed Weapon Specialization","t":4,"c":4,"r":3,"i":"inv_hammer_04","e":"Increases physical and Holy damage by {2|6}% and reduces threat by {7|20}% with a two-handed weapon equipped.","s":"c"},
 {"n":"Turn Evil","t":5,"c":1,"r":2,"i":"spell_holy_turnundead","e":"Reduces Turn Undead cast time by {0.5|1} sec and cooldown by {5|10} sec, and lets it affect Demons.","s":"n"},
 {"n":"Repentance","t":5,"c":2,"r":1,"i":"spell_holy_prayerofhealing","e":"Incapacitates a humanoid for up to 6 sec; damage breaks it."},
 {"n":"Vengeance","t":5,"c":3,"r":3,"i":"ability_racial_avatar","e":"Increases physical and Holy damage by {1|3}% for 30 sec after non-periodic crits, stacking up to 3 times.","s":"c","p":"Seal of Command"},

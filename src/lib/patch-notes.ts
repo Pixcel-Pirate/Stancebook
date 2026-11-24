@@ -11,6 +11,10 @@ import type { ClassId } from "./macros";
 export type Patch = { id: string; label: string; date?: string; official: boolean; summary: string };
 
 export const PATCHES: Patch[] = [
+  { id: "nov23", label: "Nov 23 hotfixes", date: "2026-11-23", official: true, summary: "Mortal Strike needs its talent point, Incinerate gets Intensity, Chastise works in Shadowform." },
+  { id: "nov20", label: "Nov 20 hotfixes", date: "2026-11-20", official: true, summary: "Blade Flurry copies Shank, Demonic Aegis stops snapshotting." },
+  { id: "nov19", label: "Nov 19 hotfixes", date: "2026-11-19", official: true, summary: "Retribution Two-Handed Weapon Specialization boosts Holy damage too." },
+  { id: "nov17", label: "Nov 17 hotfixes", date: "2026-11-17", official: true, summary: "Shaman Flurry keeps its stacks through Windfury Totem attacks." },
   { id: "nov16", label: "Nov 16 hotfixes", date: "2026-11-16", official: true, summary: "Windfury Totem fixes, Vampiric Embrace heals less, Fury procs work from Cleave and Heroic Strike." },
   { id: "nov13", label: "Nov 13 hotfixes", date: "2026-11-13", official: true, summary: "Wild Growth heals twice as much, Windfury Totem procs from every melee ability, Berserker Rage breaks Sap." },
   { id: "nov11", label: "Nov 11 hotfixes", date: "2026-11-11", official: true, summary: "Paladin Judgement uses ranged hit, Rend and Tear works on Pounce, Priest racials in Shadowform." },
@@ -37,6 +41,9 @@ const WANDS = "Wands need you to stand still for 0.5 seconds before they shoot."
 
 export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
   warrior: {
+    nov23: [
+      "Mortal Strike can't be used without its talent point, even though it stays in your spellbook.",
+    ],
     nov16: [
       "Fury: Unbridled Wrath, Flurry and Reckless Swings now work with Cleave and Heroic Strike.",
     ],
@@ -113,6 +120,9 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   paladin: {
+    nov19: [
+      "Retribution: Two-Handed Weapon Specialization now also boosts all Holy damage with a two-hander.",
+    ],
     nov13: [
       "Judgement of Command now triggers on-hit effects and counts as a melee attack.",
     ],
@@ -266,6 +276,9 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   rogue: {
+    nov20: [
+      "Combat: Blade Flurry now copies Shank's damage to a second target.",
+    ],
     nov16: [
       "Poisons can no longer go above their max rank.",
       "Shank no longer wipes combo points from your other target.",
@@ -308,6 +321,10 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   priest: {
+    nov23: [
+      "Shadow: Chastise works in Shadowform, and Dark Inspiration gives the right Spirit bonus from Mind Flay.",
+      "Mind Vision no longer triggers procs.",
+    ],
     nov16: [
       "Shadow: Vampiric Embrace heals the party for 10% of your Shadow damage (was 20%), and you get twice that.",
       "Dark Inspiration no longer stacks from several Shadow priests.",
@@ -374,6 +391,9 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   shaman: {
+    nov17: [
+      "Flurry no longer loses stacks when Windfury Totem attacks land.",
+    ],
     nov16: [
       "Windfury Totem extra attacks respect armor, have an internal cooldown, and give rage.",
       "Enhancement: Maelstrom Weapon is used up by one cast, not two. Thundering Strikes gives crit with no weapon.",
@@ -528,6 +548,12 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   warlock: {
+    nov23: [
+      "Destruction: Intensity now works on Incinerate.",
+    ],
+    nov20: [
+      "Demonology: Demonic Aegis no longer snapshots into Demon Armor or Demon Skin.",
+    ],
     nov13: [
       "Siphon Life rank 1 can no longer be cast while silenced.",
     ],
@@ -593,6 +619,9 @@ export const PATCH_NOTES: Record<ClassId, ClassNotes> = {
     ],
   },
   druid: {
+    nov23: [
+      "Feral: the 4-piece Feralheart bonus gives 4 energy every second for 5 seconds.",
+    ],
     nov16: [
       "Wild Growth ranks now go on cooldown. Genesis now boosts Pounce's bleed.",
     ],
