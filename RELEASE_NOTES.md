@@ -1,6 +1,7 @@
 ## What's new
 
-- **Nov 10 tuning, with numbers:** Wrack is reworked (your DoTs tick twice as fast while you channel it), every Warlock pet is tougher, Enhancement Stormstrike and Maelstrom Weapon are toned down, and Hunter pets and Arcane Shot are fixed.
-- **Nov 11 and Nov 13 hotfixes:** Paladin Judgement uses ranged hit, Wild Growth heals twice as much, Windfury Totem procs from every melee ability, and Berserker Rage breaks Sap.
-- **Nov 16 hotfixes:** Vampiric Embrace heals less, Fury procs work from Cleave and Heroic Strike, and Windfury Totem and Shank bugs are fixed.
-- **Talents and abilities:** Wrack, Soul Siphon, Maelstrom Weapon, Rend and Tear and Vampiric Embrace now show their new numbers.
+- **Nov 17-23 hotfixes** are in the Patch notes tab for every class they touched.
+- **Warrior:** Mortal Strike no longer works without its talent point.
+- **Paladin:** Retribution's Two-Handed Weapon Specialization now boosts Holy damage too.
+- **Rogue, Priest, Warlock:** Blade Flurry copies Shank, Chastise works in Shadowform, and Intensity covers Incinerate.
+- **Shaman and Druid:** Flurry keeps its stacks through Windfury Totem, and the Feralheart 4-piece gives energy over time.
